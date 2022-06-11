@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
+		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* carbonless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carbonless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FF1012028548E3C0048013A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */,
+				3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A87463BF2854596D009AB0DC = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +81,7 @@
 		A87463CA2854596D009AB0DC /* carbonless */ = {
 			isa = PBXGroup;
 			children = (
+				3FF1012028548E3C0048013A /* Fonts */,
 				A87463E6285469B4009AB0DC /* Utils */,
 				A87463E5285469AE009AB0DC /* Data */,
 				A87463E4285469A7009AB0DC /* ViewModel */,
@@ -199,11 +213,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */,
 				A87463DB28545970009AB0DC /* LaunchScreen.storyboard in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
+				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				A87463F428546D97009AB0DC /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
