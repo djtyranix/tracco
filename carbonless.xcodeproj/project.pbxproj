@@ -7,7 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FF1011628547B310048013A /* CO2E.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1011528547B310048013A /* CO2E.swift */; };
+		3F22D6212855E6E9003D95B9 /* OnTripVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22D6202855E6E9003D95B9 /* OnTripVM.swift */; };
+		3FA3E8912855A92F006DCE5D /* MoovitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8902855A92F006DCE5D /* MoovitAPI.swift */; };
+		3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */; };
+		3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */; };
+		3FA3E8972855AEAF006DCE5D /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8962855AEAF006DCE5D /* AlertPresentationController.swift */; };
+		3FA3E8992855AED6006DCE5D /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8982855AED6006DCE5D /* FocusPresentationController.swift */; };
+		3FC0FCA92854CB95001AB96E /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0FCA82854CB95001AB96E /* SheetPresentationController.swift */; };
+		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
+		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
+		3FF10126285490E10048013A /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10125285490E10048013A /* Trip.storyboard */; };
+		3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101272854913A0048013A /* DestinationPlanViewController.swift */; };
+		3FF1012C2854ADA60048013A /* DestinationPlanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1012B2854ADA60048013A /* DestinationPlanVM.swift */; };
+		3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1012D2854B5680048013A /* OnTripViewController.swift */; };
+		3FF101302854B9F90048013A /* TransportRadioButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012F2854B9F90048013A /* TransportRadioButton.xib */; };
+		3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101312854BA190048013A /* TransportRadioButton.swift */; };
+		3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */; };
+		3FF101362854BC0D0048013A /* ChooseTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */; };
+		3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101372854BC200048013A /* CurrentTransportationViewController.swift */; };
+		3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101382854BC200048013A /* CurrentTransportationViewController.xib */; };
+		3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */; };
+		3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */; };
+		3FF101402854C6F10048013A /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1013F2854C6F10048013A /* ViewHelper.swift */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -23,7 +44,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3FF1011528547B310048013A /* CO2E.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2E.swift; sourceTree = SOURCE_ROOT; };
+		3F22D6202855E6E9003D95B9 /* OnTripVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTripVM.swift; sourceTree = SOURCE_ROOT; };
+		3FA3E8902855A92F006DCE5D /* MoovitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoovitAPI.swift; path = carbonless/UI/Dashboard/MoovitAPI.swift; sourceTree = SOURCE_ROOT; };
+		3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateLocationViewController.swift; sourceTree = "<group>"; };
+		3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateLocationViewController.xib; sourceTree = "<group>"; };
+		3FA3E8962855AEAF006DCE5D /* AlertPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertPresentationController.swift; path = carbonless/UI/Dashboard/AlertPresentationController.swift; sourceTree = SOURCE_ROOT; };
+		3FA3E8982855AED6006DCE5D /* FocusPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FocusPresentationController.swift; path = carbonless/UI/Dashboard/FocusPresentationController.swift; sourceTree = SOURCE_ROOT; };
+		3FC0FCA82854CB95001AB96E /* SheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SheetPresentationController.swift; path = carbonless/UI/Dashboard/SheetPresentationController.swift; sourceTree = SOURCE_ROOT; };
+		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3FF10125285490E10048013A /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		3FF101272854913A0048013A /* DestinationPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPlanViewController.swift; sourceTree = "<group>"; };
+		3FF1012B2854ADA60048013A /* DestinationPlanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPlanVM.swift; sourceTree = SOURCE_ROOT; };
+		3FF1012D2854B5680048013A /* OnTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTripViewController.swift; sourceTree = "<group>"; };
+		3FF1012F2854B9F90048013A /* TransportRadioButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportRadioButton.xib; sourceTree = "<group>"; };
+		3FF101312854BA190048013A /* TransportRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRadioButton.swift; sourceTree = "<group>"; };
+		3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTransportationViewController.swift; sourceTree = "<group>"; };
+		3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTransportationViewController.xib; sourceTree = "<group>"; };
+		3FF101372854BC200048013A /* CurrentTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTransportationViewController.swift; sourceTree = "<group>"; };
+		3FF101382854BC200048013A /* CurrentTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTransportationViewController.xib; sourceTree = "<group>"; };
+		3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationCostViewController.swift; sourceTree = "<group>"; };
+		3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportationCostViewController.xib; sourceTree = "<group>"; };
+		3FF1013F2854C6F10048013A /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewHelper.swift; path = carbonless/UI/Dashboard/ViewHelper.swift; sourceTree = SOURCE_ROOT; };
 		A87463C82854596D009AB0DC /* carbonless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carbonless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +93,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F22D6222855E985003D95B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = Data/carbonless;
+			sourceTree = "<group>";
+		};
+		3FF1012028548E3C0048013A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */,
+				3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3FF1012A2854AD900048013A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3FF1012B2854ADA60048013A /* DestinationPlanVM.swift */,
+				3F22D6202855E6E9003D95B9 /* OnTripVM.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
 		A87463BF2854596D009AB0DC = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +138,10 @@
 		A87463CA2854596D009AB0DC /* carbonless */ = {
 			isa = PBXGroup;
 			children = (
+				3FF1012028548E3C0048013A /* Fonts */,
 				A87463E6285469B4009AB0DC /* Utils */,
 				A87463E5285469AE009AB0DC /* Data */,
+				3F22D6222855E985003D95B9 /* Model */,
 				A87463E4285469A7009AB0DC /* ViewModel */,
 				A87463E32854695C009AB0DC /* UI */,
 				A87463CB2854596D009AB0DC /* AppDelegate.swift */,
@@ -98,6 +168,7 @@
 		A87463E4285469A7009AB0DC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3FF1012A2854AD900048013A /* Dashboard */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -112,7 +183,11 @@
 		A87463E6285469B4009AB0DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				3FF1011528547B310048013A /* CO2E.swift */,
+				3FA3E8902855A92F006DCE5D /* MoovitAPI.swift */,
+				3FF1013F2854C6F10048013A /* ViewHelper.swift */,
+				3FC0FCA82854CB95001AB96E /* SheetPresentationController.swift */,
+				3FA3E8962855AEAF006DCE5D /* AlertPresentationController.swift */,
+				3FA3E8982855AED6006DCE5D /* FocusPresentationController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -122,6 +197,19 @@
 			children = (
 				A87463E928546B74009AB0DC /* Dashboard.storyboard */,
 				A87463CF2854596D009AB0DC /* DashboardViewController.swift */,
+				3FF10125285490E10048013A /* Trip.storyboard */,
+				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
+				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
+				3FF101312854BA190048013A /* TransportRadioButton.swift */,
+				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
+				3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */,
+				3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */,
+				3FF101372854BC200048013A /* CurrentTransportationViewController.swift */,
+				3FF101382854BC200048013A /* CurrentTransportationViewController.xib */,
+				3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */,
+				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
+				3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */,
+				3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -202,11 +290,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */,
 				A87463DB28545970009AB0DC /* LaunchScreen.storyboard in Resources */,
+				3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
+				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
+				3FF101362854BC0D0048013A /* ChooseTransportationViewController.xib in Resources */,
+				3FF101302854B9F90048013A /* TransportRadioButton.xib in Resources */,
+				3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
+				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
+				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
 				A87463F428546D97009AB0DC /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,11 +316,24 @@
 			files = (
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
+				3FA3E8912855A92F006DCE5D /* MoovitAPI.swift in Sources */,
+				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
+				3FF1012C2854ADA60048013A /* DestinationPlanVM.swift in Sources */,
 				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
+				3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */,
+				3FF101402854C6F10048013A /* ViewHelper.swift in Sources */,
+				3F22D6212855E6E9003D95B9 /* OnTripVM.swift in Sources */,
+				3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */,
 				A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */,
+				3FA3E8972855AEAF006DCE5D /* AlertPresentationController.swift in Sources */,
+				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
+				3FA3E8992855AED6006DCE5D /* FocusPresentationController.swift in Sources */,
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
-				3FF1011628547B310048013A /* CO2E.swift in Sources */,
+				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
+				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
+				3FC0FCA92854CB95001AB96E /* SheetPresentationController.swift in Sources */,
 				A87463D62854596D009AB0DC /* carbonless.xcdatamodeld in Sources */,
+				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -354,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -380,6 +489,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +519,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

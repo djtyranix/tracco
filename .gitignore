@@ -1,0 +1,8 @@
+# hidden files
+.*
+
+# always include gitignore
+!.gitignore
+
+# ide profile
+**/xcuserdata/*
