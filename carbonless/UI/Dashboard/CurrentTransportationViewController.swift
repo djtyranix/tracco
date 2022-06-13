@@ -17,6 +17,13 @@ class CurrentTransportationViewController: UIViewController
 {
     public weak var delegate: CurrentTransportationViewControllerDelegate?
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var carbonEmissionLabel: UILabel!
+    @IBOutlet weak var approxCostLabel: UILabel!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     public init()
     {
         super.init(nibName: "CurrentTransportationViewController", bundle: nil)

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,6 +16,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentTransportationViewController" customModule="carbonless" customModuleProvider="target">
             <connections>
+                <outlet property="approxCostLabel" destination="Ydo-ef-R7Y" id="u5f-sD-ro9"/>
+                <outlet property="carbonEmissionLabel" destination="E3E-im-6hV" id="AVe-aa-W5C"/>
+                <outlet property="distanceLabel" destination="l3f-v4-C5Q" id="GHp-UY-gMC"/>
+                <outlet property="imageView" destination="RSe-rl-RP2" id="PWA-At-p4M"/>
+                <outlet property="nameLabel" destination="c95-yP-OBI" id="vfo-tq-fQS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,14 +60,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpn-93-dNc">
                     <rect key="frame" x="16" y="87.5" width="358" height="123.5"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="questionmark.app.ar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RSe-rl-RP2">
-                            <rect key="frame" x="12" y="16" width="64" height="62.5"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.app.ar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RSe-rl-RP2">
+                            <rect key="frame" x="12" y="17" width="64" height="60.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="64" id="lko-eR-f7x"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c95-yP-OBI">
-                            <rect key="frame" x="12" y="86.5" width="64" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c95-yP-OBI">
+                            <rect key="frame" x="12" y="87" width="64" height="20.5"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -92,8 +98,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxS-jb-7M8">
-                            <rect key="frame" x="112" y="87" width="62" height="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approx. Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxS-jb-7M8">
+                            <rect key="frame" x="112" y="87" width="79" height="18"/>
                             <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -111,7 +117,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="IDR 3,000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydo-ef-R7Y">
-                            <rect key="frame" x="190" y="87" width="156" height="18"/>
+                            <rect key="frame" x="207" y="87" width="139" height="18"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +21,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -28,7 +29,7 @@
                     <rect key="frame" x="0.0" y="20" width="120" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whh-Sa-7fN">
-                            <rect key="frame" x="20" y="79.5" width="80" height="20.5"/>
+                            <rect key="frame" x="10" y="79.5" width="100" height="20.5"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -36,13 +37,13 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Whh-Sa-7fN" secondAttribute="trailing" constant="20" id="2Xy-u2-BQ3"/>
-                        <constraint firstItem="Whh-Sa-7fN" firstAttribute="leading" secondItem="8Kg-Up-kXB" secondAttribute="leading" constant="20" id="73a-dK-QaT"/>
+                        <constraint firstAttribute="trailing" secondItem="Whh-Sa-7fN" secondAttribute="trailing" constant="10" id="2Xy-u2-BQ3"/>
+                        <constraint firstItem="Whh-Sa-7fN" firstAttribute="leading" secondItem="8Kg-Up-kXB" secondAttribute="leading" constant="10" id="73a-dK-QaT"/>
                         <constraint firstAttribute="bottom" secondItem="Whh-Sa-7fN" secondAttribute="bottom" constant="20" id="moE-S7-5WZ"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.app.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ipx-8g-0c6">
-                    <rect key="frame" x="20" y="1" width="80" height="82.5"/>
+                    <rect key="frame" x="10" y="1" width="100" height="82.5"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,8 +52,8 @@
                 <constraint firstAttribute="bottom" secondItem="Ipx-8g-0c6" secondAttribute="bottom" constant="55" id="WRb-11-MeY"/>
                 <constraint firstItem="8Kg-Up-kXB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="d2e-Zc-6sp"/>
                 <constraint firstItem="Ipx-8g-0c6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dcb-Jx-FvA"/>
-                <constraint firstAttribute="trailing" secondItem="Ipx-8g-0c6" secondAttribute="trailing" constant="20" id="jdk-Bh-hxj"/>
-                <constraint firstItem="Ipx-8g-0c6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="n8A-6S-5CS"/>
+                <constraint firstAttribute="trailing" secondItem="Ipx-8g-0c6" secondAttribute="trailing" constant="10" id="jdk-Bh-hxj"/>
+                <constraint firstItem="Ipx-8g-0c6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="n8A-6S-5CS"/>
                 <constraint firstItem="8Kg-Up-kXB" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="rOl-hf-nai"/>
                 <constraint firstAttribute="trailing" secondItem="8Kg-Up-kXB" secondAttribute="trailing" id="uPU-v1-HtK"/>
             </constraints>

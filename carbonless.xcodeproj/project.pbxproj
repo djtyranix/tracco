@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3F22D6212855E6E9003D95B9 /* OnTripVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22D6202855E6E9003D95B9 /* OnTripVM.swift */; };
+		3F22D62C2855F26F003D95B9 /* RadioButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22D62B2855F26F003D95B9 /* RadioButtonManager.swift */; };
 		3FA3E8912855A92F006DCE5D /* MoovitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8902855A92F006DCE5D /* MoovitAPI.swift */; };
 		3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */; };
 		3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */; };
 		3FA3E8972855AEAF006DCE5D /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8962855AEAF006DCE5D /* AlertPresentationController.swift */; };
 		3FA3E8992855AED6006DCE5D /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8982855AED6006DCE5D /* FocusPresentationController.swift */; };
 		3FC0FCA92854CB95001AB96E /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0FCA82854CB95001AB96E /* SheetPresentationController.swift */; };
+		3FC8259B285616320074B88D /* CO2E.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259A285616320074B88D /* CO2E.swift */; };
+		3FC825A02856177C0074B88D /* TransportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259C2856177C0074B88D /* TransportAnnotation.swift */; };
+		3FC825A12856177C0074B88D /* TransportAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259D2856177C0074B88D /* TransportAnnotationView.swift */; };
+		3FC825A22856177C0074B88D /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259E2856177C0074B88D /* TransitPath.swift */; };
+		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
+		3FC825A528561EDA0074B88D /* SystemUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC825A428561EDA0074B88D /* SystemUnits.swift */; };
+		3FC825A7285638A60074B88D /* TransportRadioButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC825A6285638A60074B88D /* TransportRadioButtonVM.swift */; };
 		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
 		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		3FF10126285490E10048013A /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10125285490E10048013A /* Trip.storyboard */; };
@@ -45,12 +53,20 @@
 
 /* Begin PBXFileReference section */
 		3F22D6202855E6E9003D95B9 /* OnTripVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTripVM.swift; sourceTree = SOURCE_ROOT; };
+		3F22D62B2855F26F003D95B9 /* RadioButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonManager.swift; sourceTree = SOURCE_ROOT; };
 		3FA3E8902855A92F006DCE5D /* MoovitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoovitAPI.swift; path = carbonless/UI/Dashboard/MoovitAPI.swift; sourceTree = SOURCE_ROOT; };
 		3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateLocationViewController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateLocationViewController.xib; sourceTree = "<group>"; };
 		3FA3E8962855AEAF006DCE5D /* AlertPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertPresentationController.swift; path = carbonless/UI/Dashboard/AlertPresentationController.swift; sourceTree = SOURCE_ROOT; };
 		3FA3E8982855AED6006DCE5D /* FocusPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FocusPresentationController.swift; path = carbonless/UI/Dashboard/FocusPresentationController.swift; sourceTree = SOURCE_ROOT; };
 		3FC0FCA82854CB95001AB96E /* SheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SheetPresentationController.swift; path = carbonless/UI/Dashboard/SheetPresentationController.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259A285616320074B88D /* CO2E.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CO2E.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259C2856177C0074B88D /* TransportAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportAnnotation.swift; path = carbonless/UI/Dashboard/TransportAnnotation.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259D2856177C0074B88D /* TransportAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportAnnotationView.swift; path = carbonless/UI/Dashboard/TransportAnnotationView.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259E2856177C0074B88D /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = SOURCE_ROOT; };
+		3FC825A428561EDA0074B88D /* SystemUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUnits.swift; sourceTree = SOURCE_ROOT; };
+		3FC825A6285638A60074B88D /* TransportRadioButtonVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRadioButtonVM.swift; sourceTree = SOURCE_ROOT; };
 		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF10125285490E10048013A /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
@@ -96,6 +112,8 @@
 		3F22D6222855E985003D95B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3FC8259E2856177C0074B88D /* TransitPath.swift */,
+				3FC8259F2856177C0074B88D /* TransportType.swift */,
 			);
 			name = Model;
 			path = Data/carbonless;
@@ -115,6 +133,7 @@
 			children = (
 				3FF1012B2854ADA60048013A /* DestinationPlanVM.swift */,
 				3F22D6202855E6E9003D95B9 /* OnTripVM.swift */,
+				3FC825A6285638A60074B88D /* TransportRadioButtonVM.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -183,11 +202,14 @@
 		A87463E6285469B4009AB0DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3FC825A428561EDA0074B88D /* SystemUnits.swift */,
+				3FC8259A285616320074B88D /* CO2E.swift */,
 				3FA3E8902855A92F006DCE5D /* MoovitAPI.swift */,
 				3FF1013F2854C6F10048013A /* ViewHelper.swift */,
 				3FC0FCA82854CB95001AB96E /* SheetPresentationController.swift */,
 				3FA3E8962855AEAF006DCE5D /* AlertPresentationController.swift */,
 				3FA3E8982855AED6006DCE5D /* FocusPresentationController.swift */,
+				3F22D62B2855F26F003D95B9 /* RadioButtonManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -210,6 +232,8 @@
 				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
 				3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */,
 				3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */,
+				3FC8259C2856177C0074B88D /* TransportAnnotation.swift */,
+				3FC8259D2856177C0074B88D /* TransportAnnotationView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -314,22 +338,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC825A22856177C0074B88D /* TransitPath.swift in Sources */,
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				3FA3E8912855A92F006DCE5D /* MoovitAPI.swift in Sources */,
+				3FC825A12856177C0074B88D /* TransportAnnotationView.swift in Sources */,
 				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
 				3FF1012C2854ADA60048013A /* DestinationPlanVM.swift in Sources */,
 				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
 				3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */,
 				3FF101402854C6F10048013A /* ViewHelper.swift in Sources */,
+				3FC825A7285638A60074B88D /* TransportRadioButtonVM.swift in Sources */,
 				3F22D6212855E6E9003D95B9 /* OnTripVM.swift in Sources */,
 				3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */,
 				A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */,
+				3FC825A02856177C0074B88D /* TransportAnnotation.swift in Sources */,
 				3FA3E8972855AEAF006DCE5D /* AlertPresentationController.swift in Sources */,
+				3FC8259B285616320074B88D /* CO2E.swift in Sources */,
 				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
+				3F22D62C2855F26F003D95B9 /* RadioButtonManager.swift in Sources */,
+				3FC825A528561EDA0074B88D /* SystemUnits.swift in Sources */,
 				3FA3E8992855AED6006DCE5D /* FocusPresentationController.swift in Sources */,
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
+				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
 				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
 				3FC0FCA92854CB95001AB96E /* SheetPresentationController.swift in Sources */,
 				A87463D62854596D009AB0DC /* carbonless.xcdatamodeld in Sources */,
@@ -480,7 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6BV79TUAG4;
+				DEVELOPMENT_TEAM = 435LRWY56J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = carbonless/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -510,7 +542,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6BV79TUAG4;
+				DEVELOPMENT_TEAM = 435LRWY56J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = carbonless/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import MapKit
+import Combine
 
 fileprivate func layoutBottomSheet(_ view: UIView)
 {
@@ -18,16 +19,23 @@ fileprivate func layoutBottomSheet(_ view: UIView)
 
 class OnTripViewController: UIViewController
 {
+    // the order was based on TransportType enum
     private let chooseTransportationVC: ChooseTransportationViewController = {
-        // choose transport for the first time
-        let vc = ChooseTransportationViewController(nil)
+        let options: [TransportType] = TransportType.allCases
+        let buttons: [TransportRadioButton] = options.map {
+            let vm = TransportRadioButtonVM($0)
+            let button = TransportRadioButton()
+            button.title = vm.name
+            button.image = vm.image
+            return button
+        }
+        let vc = ChooseTransportationViewController(buttons)
         vc.modalPresentationStyle = .custom
         layoutBottomSheet(vc.view)
         return vc
     }()
     
     private let costTransportationVC: TransportationCostViewController = {
-        // choose transport for the first time
         let vc = TransportationCostViewController()
         vc.modalPresentationStyle = .custom
         layoutBottomSheet(vc.view)
@@ -35,7 +43,6 @@ class OnTripViewController: UIViewController
     }()
     
     private let currentTransportationVC: CurrentTransportationViewController = {
-        // choose transport for the first time
         let vc = CurrentTransportationViewController()
         layoutBottomSheet(vc.view)
         return vc
@@ -47,6 +54,11 @@ class OnTripViewController: UIViewController
         return manager
     }()
     
+    private var transits: [TransitPath] = []
+    private var viewModel: OnTripVM?
+    private var cancellables: [AnyCancellable]?
+    private var timerUpdate: Timer?
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad()
@@ -56,11 +68,12 @@ class OnTripViewController: UIViewController
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
         
-        locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
         // delegation (event handler)
+        mapView.delegate = self
+        locationManager.delegate = self
         currentTransportationVC.delegate = self
         costTransportationVC.delegate = self
         chooseTransportationVC.delegate = self
@@ -82,6 +95,20 @@ class OnTripViewController: UIViewController
             self.view.addSubview(currentTransportationVC.view)
         }
     }
+    
+    @objc func onUpdate()
+    {
+        viewModel?.currentLocation = mapView.userLocation.location!
+        
+        guard let currLocation = viewModel?.currentLocation
+        else { return }
+        
+        guard let prevLocation = viewModel?.previousLocation
+        else { return }
+        
+        let polyline = MKPolyline(coordinates: [prevLocation.coordinate, currLocation.coordinate], count: 2)
+        mapView.addOverlay(polyline, level: .aboveRoads)
+    }
 }
 
 
@@ -94,6 +121,7 @@ extension OnTripViewController: MKMapViewDelegate
         {
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.lineWidth = 4.0
+            renderer.strokeColor = viewModel?.transportType.color
             return renderer
         }
         if overlay is MKTileOverlay
@@ -130,7 +158,30 @@ extension OnTripViewController: ChooseTransportationViewControllerDelegate
 {
     func onConfirmChanges(_ selected: TransportRadioButton?)
     {
+        let currCoordinate = mapView.userLocation.coordinate
+        let currentType = TransportType.allCases[chooseTransportationVC.radioButton!.selectedIndex]
         
+        let viewModel = OnTripVM(currentType, currentLocation: mapView.userLocation.location!)
+        self.viewModel = viewModel
+        
+        cancellables = [
+            viewModel.$distanceInKmText.sink(receiveValue: { [unowned self] in currentTransportationVC.distanceLabel.text = $0 }),
+            viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
+            viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
+        ]
+        
+        let transit = TransitPath(type: currentType, data: [mapView.userLocation.coordinate])
+        let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
+        transits.append(transit)
+        mapView.addAnnotation(annotation)
+        
+        currentTransportationVC.imageView.image = selected?.image
+        currentTransportationVC.nameLabel.text = selected?.title
+        
+        if (timerUpdate == nil)
+        {
+            timerUpdate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onUpdate), userInfo: nil, repeats: true)
+        }
     }
 }
 
