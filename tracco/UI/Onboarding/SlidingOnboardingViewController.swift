@@ -23,14 +23,14 @@ class SlidingOnboardingViewController: UIViewController {
     @IBAction func upperButtonTapped(_ sender: UIButton) {
         if currentPage == 2 {
             // Don't scroll to higher index
-            
+            performSegue(withIdentifier: "allowNotificationSegue", sender: self)
         } else {
             scrollToNextPage()
         }
     }
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "allowNotificationSegue", sender: self)
     }
     
     override func viewDidLoad() {

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if isOnboardingFinished {
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "loginView") as! UITabBarController
+            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "mainmenu") as! UITabBarController
             self.window?.rootViewController = homePage
         } else {
             let onboardingStoryBoard = UIStoryboard(name: "Onboarding", bundle: nil)
