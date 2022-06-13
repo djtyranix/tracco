@@ -1,25 +1,5 @@
 import Foundation
 
-// system units and their multiplier based on "base"
-enum SystemUnits: Double
-{
-    case peta   = 1e15
-    case tera   = 1e12
-    case giga   = 1e9
-    case mega   = 1e6
-    case kilo   = 1e3
-    case hecto  = 1e2
-    case deca   = 1e1
-    case base   = 1
-    case deci   = 1e-1
-    case centi  = 1e-2
-    case milli  = 1e-3
-    case micro  = 1e-6
-    case nano   = 1e-9
-    case pico   = 1e-12
-    case femto  = 1e-15
-}
-
 struct CO2E
 {
     var carbon: Double
@@ -41,6 +21,42 @@ struct CO2E
         carbon = base.carbon
         massUnits = .base
         distanceUnits = .base
+    }
+    
+    static func * (left: CO2E, right: CO2E) -> CO2E
+    {
+        var temp = left
+        temp.carbon *= matchSI(right, to: left).carbon
+        return temp
+    }
+    
+    static func / (left: CO2E, right: CO2E) -> CO2E
+    {
+        var temp = left
+        temp.carbon /= matchSI(right, to: left).carbon
+        return temp
+    }
+    
+    static func + (left: CO2E, right: CO2E) -> CO2E
+    {
+        var temp = left
+        temp.carbon += matchSI(right, to: left).carbon
+        return temp
+    }
+    
+    static func - (left: CO2E, right: CO2E) -> CO2E
+    {
+        var temp = left
+        temp.carbon -= matchSI(right, to: left).carbon
+        return temp
+    }
+    
+    private static func matchSI(_ from: CO2E, to: CO2E) -> CO2E
+    {
+        var temp = from
+        temp.massUnits      = to.massUnits
+        temp.distanceUnits  = to.distanceUnits
+        return temp
     }
 }
 
@@ -64,5 +80,25 @@ struct CO2EBase: Equatable, ExpressibleByFloatLiteral
         temp.distanceUnits  = .base
         // assign it to the wrapped value
         self.carbon         = temp.carbon
+    }
+    
+    static func * (left: CO2EBase, right: CO2EBase) -> CO2EBase
+    {
+        return CO2EBase(floatLiteral: left.carbon * right.carbon)
+    }
+    
+    static func / (left: CO2EBase, right: CO2EBase) -> CO2EBase
+    {
+        return CO2EBase(floatLiteral: left.carbon / right.carbon)
+    }
+    
+    static func + (left: CO2EBase, right: CO2EBase) -> CO2EBase
+    {
+        return CO2EBase(floatLiteral: left.carbon + right.carbon)
+    }
+    
+    static func - (left: CO2EBase, right: CO2EBase) -> CO2EBase
+    {
+        return CO2EBase(floatLiteral: left.carbon - right.carbon)
     }
 }
