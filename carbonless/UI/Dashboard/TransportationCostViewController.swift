@@ -9,12 +9,16 @@ import UIKit
 
 @objc protocol TransportationCostViewControllerDelegate: AnyObject
 {
+    @objc optional func onCancelCost()
     @objc optional func onConfirmCost(_ cost: Int)
 }
 
 class TransportationCostViewController: UIViewController
 {
     public weak var delegate: TransportationCostViewControllerDelegate?
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
     
     public init()
     {
@@ -35,6 +39,12 @@ class TransportationCostViewController: UIViewController
     {
         self.dismiss(animated: true)
         delegate?.onConfirmCost?(0)
+    }
+    
+    @IBAction func onCancelButton(_ sender: UIButton)
+    {
+        self.dismiss(animated: true)
+        delegate?.onCancelCost?()
     }
 }
 

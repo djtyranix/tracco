@@ -19,17 +19,15 @@ fileprivate func layoutBottomSheet(_ view: UIView)
 
 class OnTripViewController: UIViewController
 {
-    // the order was based on TransportType enum
     private let chooseTransportationVC: ChooseTransportationViewController = {
-        let options: [TransportType] = TransportType.allCases
-        let buttons: [TransportRadioButton] = options.map {
-            let vm = TransportRadioButtonVM($0)
-            let button = TransportRadioButton()
-            button.title = vm.name
-            button.image = vm.image
-            return button
-        }
-        let vc = ChooseTransportationViewController(buttons)
+        let vc = ChooseTransportationViewController(TransportType.allCases)
+        vc.modalPresentationStyle = .custom
+        layoutBottomSheet(vc.view)
+        return vc
+    }()
+    
+    private let changeTransportationVC: ChangeTransportViewController = {
+        let vc = ChangeTransportViewController(TransportType.allCases)
         vc.modalPresentationStyle = .custom
         layoutBottomSheet(vc.view)
         return vc
@@ -60,6 +58,7 @@ class OnTripViewController: UIViewController
     private var timerUpdate: Timer?
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad()
     {
@@ -72,21 +71,27 @@ class OnTripViewController: UIViewController
         locationManager.requestWhenInUseAuthorization()
         
         // delegation (event handler)
-        mapView.delegate = self
-        locationManager.delegate = self
-        currentTransportationVC.delegate = self
-        costTransportationVC.delegate = self
-        chooseTransportationVC.delegate = self
+        mapView.delegate                    = self
+        locationManager.delegate            = self
+        currentTransportationVC.delegate    = self
+        costTransportationVC.delegate       = self
+        chooseTransportationVC.delegate     = self
+        changeTransportationVC.delegate     = self
         
         // presentation controller will disabled input from container vc
-        chooseTransportationVC.transitioningDelegate = self
-        costTransportationVC.transitioningDelegate = self
+        chooseTransportationVC.transitioningDelegate    = self
+        costTransportationVC.transitioningDelegate      = self
+        changeTransportationVC.transitioningDelegate    = self
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         present(chooseTransportationVC, animated: true) { [unowned self] in
+            // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
+            UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
+                mapViewBottomConstraint.constant = 330
+            }
             // current transporation view always exists on the bottom of the container view
             currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
                 currentTransportationVC.view,
@@ -108,6 +113,34 @@ class OnTripViewController: UIViewController
         
         let polyline = MKPolyline(coordinates: [prevLocation.coordinate, currLocation.coordinate], count: 2)
         mapView.addOverlay(polyline, level: .aboveRoads)
+    }
+    
+    private func updateTransportation(_ selected: TransportRadioButton?)
+    {
+        let currCoordinate = mapView.userLocation.coordinate
+        let currentType = TransportType.allCases[chooseTransportationVC.radioButton!.selectedIndex]
+        
+        let viewModel = OnTripVM(currentType, currentLocation: mapView.userLocation.location!)
+        self.viewModel = viewModel
+        
+        cancellables = [
+            viewModel.$distanceInKmText.sink(receiveValue: { [unowned self] in currentTransportationVC.distanceLabel.text = $0 }),
+            viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
+            viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
+        ]
+        
+        let transit = TransitPath(type: currentType, data: [mapView.userLocation.coordinate])
+        let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
+        transits.append(transit)
+        mapView.addAnnotation(annotation)
+        
+        currentTransportationVC.imageView.image = selected?.image
+        currentTransportationVC.nameLabel.text = selected?.title
+        
+        if (timerUpdate == nil)
+        {
+            timerUpdate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onUpdate), userInfo: nil, repeats: true)
+        }
     }
 }
 
@@ -156,32 +189,18 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
 // MARK: ChooseTransportationViewControllerDelegate
 extension OnTripViewController: ChooseTransportationViewControllerDelegate
 {
-    func onConfirmChanges(_ selected: TransportRadioButton?)
+    func onConfirmChoose(_ selected: TransportRadioButton?)
     {
-        let currCoordinate = mapView.userLocation.coordinate
-        let currentType = TransportType.allCases[chooseTransportationVC.radioButton!.selectedIndex]
-        
-        let viewModel = OnTripVM(currentType, currentLocation: mapView.userLocation.location!)
-        self.viewModel = viewModel
-        
-        cancellables = [
-            viewModel.$distanceInKmText.sink(receiveValue: { [unowned self] in currentTransportationVC.distanceLabel.text = $0 }),
-            viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
-            viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
-        ]
-        
-        let transit = TransitPath(type: currentType, data: [mapView.userLocation.coordinate])
-        let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
-        transits.append(transit)
-        mapView.addAnnotation(annotation)
-        
-        currentTransportationVC.imageView.image = selected?.image
-        currentTransportationVC.nameLabel.text = selected?.title
-        
-        if (timerUpdate == nil)
-        {
-            timerUpdate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onUpdate), userInfo: nil, repeats: true)
-        }
+        updateTransportation(selected)
+    }
+}
+
+// MARK: ChangeTransportViewControllerDelegate
+extension OnTripViewController: ChangeTransportViewControllerDelegate
+{
+    func onConfirmChange(_ selected: TransportRadioButton?)
+    {
+        updateTransportation(selected)
     }
 }
 
@@ -190,10 +209,11 @@ extension OnTripViewController: TransportationCostViewControllerDelegate
 {
     func onConfirmCost(_ cost: Int)
     {
-        present(chooseTransportationVC, animated: true)
+        present(changeTransportationVC, animated: true)
     }
 }
 
+// MARK: TransitioningDelegate
 extension OnTripViewController: UIViewControllerTransitioningDelegate
 {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?
