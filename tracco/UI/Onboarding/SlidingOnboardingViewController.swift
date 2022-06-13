@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SlidingOnboardingViewController: UIViewController {
-
+class SlidingOnboardingViewController: UIViewController
+{
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var upperButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
@@ -17,35 +17,36 @@ class SlidingOnboardingViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var superScrollView: UIView!
     
+    let allowNotificationSegueId = "allowNotificationSegue"
     let totalPage = 3
-    var currentPage = 0
     
-    @IBAction func upperButtonTapped(_ sender: UIButton) {
-        if currentPage == 2 {
-            // Don't scroll to higher index
-            performSegue(withIdentifier: "allowNotificationSegue", sender: self)
-        } else {
-            scrollToNextPage()
-        }
+    private var currentPage = 0
+    
+    @IBAction func upperButtonTapped(_ sender: UIButton)
+    {
+        // allow scroll until the end of index of pages
+        currentPage == (totalPage - 1) ? performSegue(withIdentifier: allowNotificationSegueId, sender: self) : scrollToNextPage()
     }
     
-    @IBAction func skipButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "allowNotificationSegue", sender: self)
+    @IBAction func skipButtonTapped(_ sender: UIButton)
+    {
+        performSegue(withIdentifier: allowNotificationSegueId, sender: self)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         scrollView.delegate = self
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews()
+    {
         super.viewDidLayoutSubviews()
         setUpSlider()
     }
     
-    private func setUpSlider() {
+    private func setUpSlider()
+    {
         let width = superScrollView.frame.width
         let height = superScrollView.frame.height
         
@@ -53,28 +54,20 @@ class SlidingOnboardingViewController: UIViewController {
         scrollView.contentInsetAdjustmentBehavior = .never
         
         let currentMode = traitCollection.userInterfaceStyle
+        let styleIdentifier = currentMode == .dark ? "Dark" : "Light"
         
-        for i in 0..<totalPage {
-            let imageView: UIImageView
-            
-            switch currentMode {
-            case .unspecified:
-                imageView = UIImageView(image: UIImage(named: "OnboardingLight\(i+1)"))
-            case .light:
-                imageView = UIImageView(image: UIImage(named: "OnboardingLight\(i+1)"))
-            case .dark:
-                imageView = UIImageView(image: UIImage(named: "OnboardingDark\(i+1)"))
-            @unknown default:
-                imageView = UIImageView(image: UIImage(named: "OnboardingLight\(i+1)"))
-            }
-            
-            imageView.frame = CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height)
+        for i in 0..<totalPage
+        {
+            let imageAssetName  = String(format: "Onboarding%s%d", styleIdentifier, i+1)
+            let imageView       = UIImageView(image: UIImage(named: imageAssetName))
+            imageView.frame     = CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height)
             scrollView.addSubview(imageView)
             imageView.layoutIfNeeded()
         }
     }
     
-    private func scrollToNextPage() {
+    private func scrollToNextPage()
+    {
         let width = superScrollView.frame.width
         let height = superScrollView.frame.height
         let nextPage = currentPage + 1
@@ -82,8 +75,10 @@ class SlidingOnboardingViewController: UIViewController {
         currentPage = nextPage
     }
     
-    private func updatePage() {
-        switch currentPage {
+    private func updatePage()
+    {
+        switch currentPage
+        {
         case 0:
             upperLabel.text = "Choose Your Transportation"
             lowerLabel.text = "Choose what kind of transportations you take for each transit you use"
@@ -104,15 +99,14 @@ class SlidingOnboardingViewController: UIViewController {
     }
 }
 
-extension SlidingOnboardingViewController: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let index = scrollView.contentOffset.x / scrollView.frame.size.width
-        currentPage = Int(floor(index))
-        pageControl.currentPage = currentPage
-        updatePage()
-    }
+extension SlidingOnboardingViewController: UIScrollViewDelegate
+{
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) { scrollViewDidEndScroll() }
     
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) { scrollViewDidEndScroll() }
+    
+    private func scrollViewDidEndScroll()
+    {
         let index = scrollView.contentOffset.x / scrollView.frame.size.width
         currentPage = Int(floor(index))
         pageControl.currentPage = currentPage
