@@ -21,6 +21,9 @@
 		A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463EF28546D4F009AB0DC /* HistoryViewController.swift */; };
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
+		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
+		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
+		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		A87463EF28546D4F009AB0DC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		A87463F128546D72009AB0DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A87463F328546D97009AB0DC /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingOnboardingViewController.swift; sourceTree = "<group>"; };
+		A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeyStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 		A87463E32854695C009AB0DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A8FB37BE2856D3670057F6A3 /* Onboarding */,
 				A87463EC28546CEC009AB0DC /* Profile */,
 				A87463E828546A06009AB0DC /* Dashboard */,
 				A87463EB28546CD8009AB0DC /* History */,
@@ -117,6 +124,7 @@
 		A87463E5285469AE009AB0DC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -153,6 +161,15 @@
 				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A8FB37BE2856D3670057F6A3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */,
+				A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +236,7 @@
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
+				A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				A87463F428546D97009AB0DC /* History.storyboard in Resources */,
 			);
@@ -233,7 +251,9 @@
 			files = (
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
+				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
 				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
+				A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */,
 				A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */,
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* carbonless.xcdatamodeld in Sources */,
