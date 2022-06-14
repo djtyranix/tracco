@@ -58,7 +58,7 @@ class SlidingOnboardingViewController: UIViewController
         
         for i in 0..<totalPage
         {
-            let imageAssetName  = String(format: "Onboarding%s%d", styleIdentifier, i+1)
+            let imageAssetName  = String(format: "Onboarding%@%i", styleIdentifier, i+1)
             let imageView       = UIImageView(image: UIImage(named: imageAssetName))
             imageView.frame     = CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height)
             scrollView.addSubview(imageView)
