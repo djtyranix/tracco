@@ -42,6 +42,8 @@
 		3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101382854BC200048013A /* CurrentTransportationViewController.xib */; };
 		3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */; };
 		3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */; };
+		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
+		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -92,12 +94,19 @@
 		3FF101382854BC200048013A /* CurrentTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTransportationViewController.xib; sourceTree = "<group>"; };
 		3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationCostViewController.swift; sourceTree = "<group>"; };
 		3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportationCostViewController.xib; sourceTree = "<group>"; };
+		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
+		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
+		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
+		A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */; };
+		A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */; };
+		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* tracco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A87463CF2854596D009AB0DC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A87463D22854596D009AB0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A87463D52854596D009AB0DC /* carbonless.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carbonless.xcdatamodel; sourceTree = "<group>"; };
+		A87463D52854596D009AB0DC /* tracco.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tracco.xcdatamodel; sourceTree = "<group>"; };
 		A87463D728545970009AB0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87463DA28545970009AB0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A87463DC28545970009AB0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +115,12 @@
 		A87463EF28546D4F009AB0DC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		A87463F128546D72009AB0DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A87463F328546D97009AB0DC /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingOnboardingViewController.swift; sourceTree = "<group>"; };
+		A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeyStore.swift; sourceTree = "<group>"; };
+		A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowNotificationViewController.swift; sourceTree = "<group>"; };
+		A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tracco.entitlements; sourceTree = "<group>"; };
+		A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +177,7 @@
 			children = (
 				A87463CA2854596D009AB0DC /* tracco */,
 				A87463C92854596D009AB0DC /* Products */,
+				A8FB37C82856FEAF0057F6A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +197,7 @@
 				A87463E6285469B4009AB0DC /* Utils */,
 				A87463E5285469AE009AB0DC /* Data */,
 				3F94CCD0285858C400BD5176 /* ViewModel */,
+        A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */,
 				A87463E32854695C009AB0DC /* UI */,
 				A87463CB2854596D009AB0DC /* AppDelegate.swift */,
 				A87463CD2854596D009AB0DC /* SceneDelegate.swift */,
@@ -193,6 +211,7 @@
 		A87463E32854695C009AB0DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A8FB37BE2856D3670057F6A3 /* Onboarding */,
 				A87463EC28546CEC009AB0DC /* Profile */,
 				A87463E828546A06009AB0DC /* Dashboard */,
 				A87463EB28546CD8009AB0DC /* History */,
@@ -202,9 +221,17 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		A87463E4285469A7009AB0DC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A87463E5285469AE009AB0DC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -268,6 +295,24 @@
 				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A8FB37BE2856D3670057F6A3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */,
+				A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */,
+				A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A8FB37C82856FEAF0057F6A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +387,7 @@
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
+				A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */,
 				A87463F428546D97009AB0DC /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +431,15 @@
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,
+				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
+				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
+				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
+				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
+				A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */,
+				A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */,
+				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
+				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
+				A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,12 +584,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
+        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -547,7 +604,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.developeracademy.tracco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -561,12 +618,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
+        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -579,10 +638,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.developeracademy.tracco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -616,9 +674,9 @@
 		A87463D42854596D009AB0DC /* tracco.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A87463D52854596D009AB0DC /* carbonless.xcdatamodel */,
+				A87463D52854596D009AB0DC /* tracco.xcdatamodel */,
 			);
-			currentVersion = A87463D52854596D009AB0DC /* carbonless.xcdatamodel */;
+			currentVersion = A87463D52854596D009AB0DC /* tracco.xcdatamodel */;
 			path = tracco.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
