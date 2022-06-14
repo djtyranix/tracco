@@ -73,7 +73,7 @@ class DestinationPlanViewController: UIViewController
                 return
             }
             UIApplication.shared.open(directionURL)
-            moovitButton.setTitle("Continue Trip", for: .normal)
+            continueButton.setTitle("Continue Trip", for: .normal)
         }
         else
         {
