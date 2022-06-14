@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A87463C72854596D009AB0DC"
-               BuildableName = "carbonless.app"
-               BlueprintName = "carbonless"
-               ReferencedContainer = "container:carbonless.xcodeproj">
+               BuildableName = "tracco.app"
+               BlueprintName = "tracco"
+               ReferencedContainer = "container:tracco.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A87463C72854596D009AB0DC"
-            BuildableName = "carbonless.app"
-            BlueprintName = "carbonless"
-            ReferencedContainer = "container:carbonless.xcodeproj">
+            BuildableName = "tracco.app"
+            BlueprintName = "tracco"
+            ReferencedContainer = "container:tracco.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A87463C72854596D009AB0DC"
-            BuildableName = "carbonless.app"
-            BlueprintName = "carbonless"
-            ReferencedContainer = "container:carbonless.xcodeproj">
+            BuildableName = "tracco.app"
+            BlueprintName = "tracco"
+            ReferencedContainer = "container:tracco.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
