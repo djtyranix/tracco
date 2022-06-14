@@ -42,8 +42,6 @@
 		3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101382854BC200048013A /* CurrentTransportationViewController.xib */; };
 		3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */; };
 		3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */; };
-		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
-		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -56,6 +54,11 @@
 		A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463EF28546D4F009AB0DC /* HistoryViewController.swift */; };
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
+		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
+		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
+		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
+		A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */; };
+		A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,13 +97,6 @@
 		3FF101382854BC200048013A /* CurrentTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTransportationViewController.xib; sourceTree = "<group>"; };
 		3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationCostViewController.swift; sourceTree = "<group>"; };
 		3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportationCostViewController.xib; sourceTree = "<group>"; };
-		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
-		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
-		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
-		A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */; };
-		A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */; };
-		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
-		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* tracco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,12 +188,12 @@
 		A87463CA2854596D009AB0DC /* tracco */ = {
 			isa = PBXGroup;
 			children = (
+				A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */,
 				3F94CCCE2858589200BD5176 /* Model */,
 				3FF1012028548E3C0048013A /* Fonts */,
 				A87463E6285469B4009AB0DC /* Utils */,
 				A87463E5285469AE009AB0DC /* Data */,
 				3F94CCD0285858C400BD5176 /* ViewModel */,
-        A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */,
 				A87463E32854695C009AB0DC /* UI */,
 				A87463CB2854596D009AB0DC /* AppDelegate.swift */,
 				A87463CD2854596D009AB0DC /* SceneDelegate.swift */,
@@ -219,13 +215,6 @@
 				A87463D12854596D009AB0DC /* Main.storyboard */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		A87463E4285469A7009AB0DC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A87463E5285469AE009AB0DC /* Data */ = {
@@ -586,12 +575,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
-        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -620,12 +609,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
-        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
