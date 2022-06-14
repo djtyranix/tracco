@@ -41,24 +41,11 @@ class DestinationPlanViewController: UIViewController
     {
         super.viewDidLoad()
         
-        let viewModel = DestinationPlanVM(CLLocation(latitude: -6.3022, longitude: 106.6532))
-        self.viewModel = viewModel
-        
+        mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
-        
-        cancellables = [
-            viewModel.$titleText.sink(receiveValue: { [unowned self] in locationTitleLabel.text = $0 }),
-            viewModel.$regionText.sink(receiveValue: { [unowned self] in locationRegionLabel.text = $0 }),
-            viewModel.$coordinateText.sink(receiveValue: { [unowned self] in locationCoordinateLabel.text = $0 })
-        ]
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(true)
     }
     
     @IBAction func onCancelButton(_ sender: UIButton)
@@ -158,9 +145,21 @@ extension DestinationPlanViewController: MKMapViewDelegate
     {
         if (isUserLocationInitialized == false)
         {
+            let userCoord       = userLocation.coordinate
+            let targetLocation  = CLLocation(latitude: userCoord.latitude, longitude: userCoord.longitude)
+            let viewModel       = DestinationPlanVM(targetLocation)
+            self.viewModel      = viewModel
+            
+            cancellables = [
+                viewModel.$titleText.sink(receiveValue: { [unowned self] in locationTitleLabel.text = $0 }),
+                viewModel.$regionText.sink(receiveValue: { [unowned self] in locationRegionLabel.text = $0 }),
+                viewModel.$coordinateText.sink(receiveValue: { [unowned self] in locationCoordinateLabel.text = $0 })
+            ]
+            
             let span    = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region  = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             mapView.setRegion(region, animated: true)
+            
             isUserLocationInitialized = true
         }
     }

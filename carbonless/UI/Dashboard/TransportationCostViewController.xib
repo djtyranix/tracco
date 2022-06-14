@@ -16,8 +16,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransportationCostViewController" customModule="carbonless" customModuleProvider="target">
             <connections>
+                <outlet property="approxCostSwitch" destination="98m-cf-WTp" id="WH6-Mx-Zzj"/>
                 <outlet property="cancelButton" destination="5yv-wL-xhH" id="xFf-ne-oNH"/>
                 <outlet property="confirmButton" destination="WBC-7N-MOq" id="9cE-sc-5SL"/>
+                <outlet property="textField" destination="1gJ-UO-XCZ" id="2fa-El-Vnq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -60,13 +62,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-UO-XCZ">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input cost but can be Blank" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-UO-XCZ">
                     <rect key="frame" x="99" y="80" width="275" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="SWa-aI-yqO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartQuotesType="no"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="JmZ-KA-lXA"/>
                     </connections>
@@ -82,6 +84,9 @@
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98m-cf-WTp">
                             <rect key="frame" x="297" y="8.5" width="51" height="31"/>
+                            <connections>
+                                <action selector="onCostApproximationChanged:" destination="-1" eventType="valueChanged" id="CDV-U8-oqL"/>
+                            </connections>
                         </switch>
                     </subviews>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>

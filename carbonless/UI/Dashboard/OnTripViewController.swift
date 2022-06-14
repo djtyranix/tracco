@@ -37,6 +37,7 @@ class OnTripViewController: UIViewController
         let vc = TransportationCostViewController()
         vc.modalPresentationStyle = .custom
         layoutBottomSheet(vc.view)
+        vc.view.addDoneButton(textField: vc.textField, alignment: .right)
         return vc
     }()
     
@@ -52,6 +53,24 @@ class OnTripViewController: UIViewController
         return manager
     }()
     
+    private var isCostViewElevated = false { didSet {
+        if (isCostViewElevated == oldValue) { return }
+        let elevation: CGFloat = isCostViewElevated ? -210 : 210
+        costTransportationVC.view.frame.origin.y += elevation
+    }}
+    
+    private let trackingModeFollowImage: UIImage? = {
+        let image = "location.fill"
+        let config = UIImage.SymbolConfiguration(scale: .medium)
+        return UIImage(systemName: image, withConfiguration: config)
+    }()
+    
+    private let trackingModeNofollowImage: UIImage? = {
+        let image = "location"
+        let config = UIImage.SymbolConfiguration(scale: .medium)
+        return UIImage(systemName: image, withConfiguration: config)
+    }()
+    
     private var transits: [TransitPath] = []
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
@@ -59,6 +78,7 @@ class OnTripViewController: UIViewController
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var locationButton: UIButton!
     
     override func viewDidLoad()
     {
@@ -82,6 +102,20 @@ class OnTripViewController: UIViewController
         chooseTransportationVC.transitioningDelegate    = self
         costTransportationVC.transitioningDelegate      = self
         changeTransportationVC.transitioningDelegate    = self
+        
+        // add observer to handle keyboard covering cost view
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -101,8 +135,21 @@ class OnTripViewController: UIViewController
         }
     }
     
+    @IBAction func onBackButton(_ sender: UIButton)
+    {
+        self.view.window?.rootViewController?.dismiss(animated: true)
+    }
+    
+    @IBAction func onLocationButton(_ sender: UIButton)
+    {
+        mapView.setUserTrackingMode(.follow, animated: true)
+    }
+    
     @objc func onUpdate()
     {
+        let image = mapView?.userTrackingMode == .follow ? trackingModeFollowImage : trackingModeNofollowImage
+        locationButton.setImage(image, for: .normal)
+        
         viewModel?.currentLocation = mapView.userLocation.location!
         
         guard let currLocation = viewModel?.currentLocation
@@ -115,10 +162,10 @@ class OnTripViewController: UIViewController
         mapView.addOverlay(polyline, level: .aboveRoads)
     }
     
-    private func updateTransportation(_ selected: TransportRadioButton?)
+    private func updateTransportation(_ manager: RadioButtonManager<TransportRadioButton>)
     {
         let currCoordinate = mapView.userLocation.coordinate
-        let currentType = TransportType.allCases[chooseTransportationVC.radioButton!.selectedIndex]
+        let currentType = TransportType.allCases[manager.selectedIndex]
         
         let viewModel = OnTripVM(currentType, currentLocation: mapView.userLocation.location!)
         self.viewModel = viewModel
@@ -134,8 +181,9 @@ class OnTripViewController: UIViewController
         transits.append(transit)
         mapView.addAnnotation(annotation)
         
-        currentTransportationVC.imageView.image = selected?.image
-        currentTransportationVC.nameLabel.text = selected?.title
+        let selectedRadioButton = manager.selected
+        currentTransportationVC.imageView.image = selectedRadioButton?.image
+        currentTransportationVC.nameLabel.text = selectedRadioButton?.title
         
         if (timerUpdate == nil)
         {
@@ -144,6 +192,19 @@ class OnTripViewController: UIViewController
     }
 }
 
+extension OnTripViewController
+{
+    // this method can be called twice even though keyboard already showed up
+    @objc func keyboardWillShow(notification: NSNotification)
+    {
+        isCostViewElevated = true
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification)
+    {
+        isCostViewElevated = false
+    }
+}
 
 // MARK: MKMapViewDelegate
 extension OnTripViewController: MKMapViewDelegate
@@ -177,12 +238,25 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
 {
     func onChangeTransportationButton(_ sender: UIButton)
     {
+        costTransportationVC.viewModel = TransportationCostVM(
+            viewModel?.totalCostInIDR ?? 0,
+            useApproximation: true
+        )
         present(costTransportationVC, animated: true)
     }
     
     func onEndTripButton(_ sender: UIButton)
     {
-        self.view.window?.rootViewController?.dismiss(animated: true)
+        let alert = UIAlertController(
+            title: "Are you sure?",
+            message: "Confirm arrival at final destination? This action cannot be undone",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "I'm Arrived", style: .default) { _ in
+            self.view.window?.rootViewController?.dismiss(animated: true)
+        })
+        present(alert, animated: true)
     }
 }
 
@@ -191,7 +265,7 @@ extension OnTripViewController: ChooseTransportationViewControllerDelegate
 {
     func onConfirmChoose(_ selected: TransportRadioButton?)
     {
-        updateTransportation(selected)
+        updateTransportation(chooseTransportationVC.radioButton!)
     }
 }
 
@@ -200,15 +274,16 @@ extension OnTripViewController: ChangeTransportViewControllerDelegate
 {
     func onConfirmChange(_ selected: TransportRadioButton?)
     {
-        updateTransportation(selected)
+        updateTransportation(changeTransportationVC.radioButton!)
     }
 }
 
 // MARK: TransportationCostViewControllerDelegate
 extension OnTripViewController: TransportationCostViewControllerDelegate
 {
-    func onConfirmCost(_ cost: Int)
+    func onConfirmCost(_ cost: Double)
     {
+        print(cost)
         present(changeTransportationVC, animated: true)
     }
 }
