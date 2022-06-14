@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
+		3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */; };
+		3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */; };
+		3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */; };
+		3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */; };
+		3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCC02858581300BD5176 /* ChangeTransportViewController.swift */; };
+		3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCC12858581300BD5176 /* TransportAnnotation.swift */; };
+		3F94CCCB2858581300BD5176 /* MoovitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCC22858581300BD5176 /* MoovitAPI.swift */; };
+		3F94CCCC2858581300BD5176 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCC32858581300BD5176 /* ViewHelper.swift */; };
+		3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */; };
+		3F94CCD62858591C00BD5176 /* TransportRadioButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCD32858591C00BD5176 /* TransportRadioButtonVM.swift */; };
+		3F94CCD72858591C00BD5176 /* OnTripVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCD42858591C00BD5176 /* OnTripVM.swift */; };
+		3F94CCD82858591C00BD5176 /* DestinationPlanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCD52858591C00BD5176 /* DestinationPlanVM.swift */; };
+		3F94CCE22858599B00BD5176 /* RadioButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */; };
+		3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE02858599B00BD5176 /* SystemUnits.swift */; };
+		3F94CCE42858599B00BD5176 /* CO2E.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE12858599B00BD5176 /* CO2E.swift */; };
+		3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */; };
+		3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */; };
+		3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */; };
+		3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */; };
+		3FC825A22856177C0074B88D /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259E2856177C0074B88D /* TransitPath.swift */; };
+		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
+		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
+		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
+		3FF10126285490E10048013A /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10125285490E10048013A /* Trip.storyboard */; };
+		3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101272854913A0048013A /* DestinationPlanViewController.swift */; };
+		3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1012D2854B5680048013A /* OnTripViewController.swift */; };
+		3FF101302854B9F90048013A /* TransportRadioButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012F2854B9F90048013A /* TransportRadioButton.xib */; };
+		3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101312854BA190048013A /* TransportRadioButton.swift */; };
+		3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */; };
+		3FF101362854BC0D0048013A /* ChooseTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */; };
+		3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF101372854BC200048013A /* CurrentTransportationViewController.swift */; };
+		3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101382854BC200048013A /* CurrentTransportationViewController.xib */; };
+		3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */; };
+		3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */; };
 		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
 		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
@@ -21,14 +56,49 @@
 		A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463EF28546D4F009AB0DC /* HistoryViewController.swift */; };
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
+		3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
+		3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresentationController.swift; sourceTree = "<group>"; };
+		3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeTransportViewController.xib; sourceTree = "<group>"; };
+		3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
+		3F94CCC02858581300BD5176 /* ChangeTransportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTransportViewController.swift; sourceTree = "<group>"; };
+		3F94CCC12858581300BD5176 /* TransportAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportAnnotation.swift; sourceTree = "<group>"; };
+		3F94CCC22858581300BD5176 /* MoovitAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoovitAPI.swift; sourceTree = "<group>"; };
+		3F94CCC32858581300BD5176 /* ViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportAnnotationView.swift; sourceTree = "<group>"; };
+		3F94CCD32858591C00BD5176 /* TransportRadioButtonVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportRadioButtonVM.swift; sourceTree = "<group>"; };
+		3F94CCD42858591C00BD5176 /* OnTripVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTripVM.swift; sourceTree = "<group>"; };
+		3F94CCD52858591C00BD5176 /* DestinationPlanVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationPlanVM.swift; sourceTree = "<group>"; };
+		3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonManager.swift; sourceTree = "<group>"; };
+		3F94CCE02858599B00BD5176 /* SystemUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemUnits.swift; sourceTree = "<group>"; };
+		3F94CCE12858599B00BD5176 /* CO2E.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CO2E.swift; sourceTree = "<group>"; };
+		3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationCostVM.swift; sourceTree = "<group>"; };
+		3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAccessory.swift; sourceTree = "<group>"; };
+		3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateLocationViewController.swift; sourceTree = "<group>"; };
+		3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateLocationViewController.xib; sourceTree = "<group>"; };
+		3FC8259E2856177C0074B88D /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitPath.swift; path = tracco/Model/TransitPath.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Model/TransportType.swift; sourceTree = SOURCE_ROOT; };
+		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3FF10125285490E10048013A /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		3FF101272854913A0048013A /* DestinationPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPlanViewController.swift; sourceTree = "<group>"; };
+		3FF1012D2854B5680048013A /* OnTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTripViewController.swift; sourceTree = "<group>"; };
+		3FF1012F2854B9F90048013A /* TransportRadioButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportRadioButton.xib; sourceTree = "<group>"; };
+		3FF101312854BA190048013A /* TransportRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRadioButton.swift; sourceTree = "<group>"; };
+		3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTransportationViewController.swift; sourceTree = "<group>"; };
+		3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTransportationViewController.xib; sourceTree = "<group>"; };
+		3FF101372854BC200048013A /* CurrentTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTransportationViewController.swift; sourceTree = "<group>"; };
+		3FF101382854BC200048013A /* CurrentTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTransportationViewController.xib; sourceTree = "<group>"; };
+		3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationCostViewController.swift; sourceTree = "<group>"; };
+		3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportationCostViewController.xib; sourceTree = "<group>"; };
 		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
 		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
 		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
 		A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */; };
 		A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
 		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* tracco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracco.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +135,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F94CCCE2858589200BD5176 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FC8259E2856177C0074B88D /* TransitPath.swift */,
+				3FC8259F2856177C0074B88D /* TransportType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F94CCD0285858C400BD5176 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F94CCD2285858FF00BD5176 /* Dashboard */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3F94CCD2285858FF00BD5176 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3F94CCD52858591C00BD5176 /* DestinationPlanVM.swift */,
+				3F94CCD42858591C00BD5176 /* OnTripVM.swift */,
+				3F94CCD32858591C00BD5176 /* TransportRadioButtonVM.swift */,
+				3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		3FF1012028548E3C0048013A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,11 +192,12 @@
 		A87463CA2854596D009AB0DC /* tracco */ = {
 			isa = PBXGroup;
 			children = (
-				A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */,
+				3F94CCCE2858589200BD5176 /* Model */,
 				3FF1012028548E3C0048013A /* Fonts */,
 				A87463E6285469B4009AB0DC /* Utils */,
 				A87463E5285469AE009AB0DC /* Data */,
-				A87463E4285469A7009AB0DC /* ViewModel */,
+				3F94CCD0285858C400BD5176 /* ViewModel */,
+        A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */,
 				A87463E32854695C009AB0DC /* UI */,
 				A87463CB2854596D009AB0DC /* AppDelegate.swift */,
 				A87463CD2854596D009AB0DC /* SceneDelegate.swift */,
@@ -140,6 +239,15 @@
 		A87463E6285469B4009AB0DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3F94CCE12858599B00BD5176 /* CO2E.swift */,
+				3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */,
+				3F94CCE02858599B00BD5176 /* SystemUnits.swift */,
+				3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */,
+				3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */,
+				3F94CCC22858581300BD5176 /* MoovitAPI.swift */,
+				3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */,
+				3F94CCC32858581300BD5176 /* ViewHelper.swift */,
+				3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -149,6 +257,24 @@
 			children = (
 				A87463E928546B74009AB0DC /* Dashboard.storyboard */,
 				A87463CF2854596D009AB0DC /* DashboardViewController.swift */,
+				3FF10125285490E10048013A /* Trip.storyboard */,
+				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
+				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
+				3FF101312854BA190048013A /* TransportRadioButton.swift */,
+				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
+				3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */,
+				3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */,
+				3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */,
+				3F94CCC02858581300BD5176 /* ChangeTransportViewController.swift */,
+				3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */,
+				3FF101372854BC200048013A /* CurrentTransportationViewController.swift */,
+				3FF101382854BC200048013A /* CurrentTransportationViewController.xib */,
+				3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */,
+				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
+				3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */,
+				3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */,
+				3F94CCC12858581300BD5176 /* TransportAnnotation.swift */,
+				3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -249,12 +375,19 @@
 			files = (
 				3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */,
 				A87463DB28545970009AB0DC /* LaunchScreen.storyboard in Resources */,
+				3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */,
+				3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
+				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
+				3FF101362854BC0D0048013A /* ChooseTransportationViewController.xib in Resources */,
+				3FF101302854B9F90048013A /* TransportRadioButton.xib in Resources */,
+				3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
-				A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
+				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
+				A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */,
 				A87463F428546D97009AB0DC /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +399,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F94CCD62858591C00BD5176 /* TransportRadioButtonVM.swift in Sources */,
+				3FC825A22856177C0074B88D /* TransitPath.swift in Sources */,
+				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
+				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
+				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
+				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
+				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
+				3F94CCD72858591C00BD5176 /* OnTripVM.swift in Sources */,
+				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
+				3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */,
+				3F94CCCC2858581300BD5176 /* ViewHelper.swift in Sources */,
+				3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */,
+				3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */,
+				3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */,
+				3F94CCE22858599B00BD5176 /* RadioButtonManager.swift in Sources */,
+				A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */,
+				3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */,
+				3F94CCCB2858581300BD5176 /* MoovitAPI.swift in Sources */,
+				3F94CCD82858591C00BD5176 /* DestinationPlanVM.swift in Sources */,
+				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
+				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
+				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
+				3F94CCE42858599B00BD5176 /* CO2E.swift in Sources */,
+				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
+				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
+				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
+				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
+				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
+				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
+				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
+				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
+				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
@@ -350,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -404,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -426,12 +591,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
+        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,12 +625,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
+        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
