@@ -44,8 +44,7 @@ class AllowNotificationViewController: UIViewController {
             return
         }
         
-        UserKeyStore.sharedInstance.keyStore.set(true, forKey: "isOnboardingFinished")
-        UserKeyStore.sharedInstance.keyStore.synchronize()
+        UserDefaults.standard.set(true, forKey: "isOnboardingFinished")
         
         let mainMenu = self.storyboard?.instantiateViewController(withIdentifier: "mainmenu")
         self.view.window?.rootViewController = mainMenu
