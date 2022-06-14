@@ -55,8 +55,12 @@ class OnTripViewController: UIViewController
     
     private var isCostViewElevated = false { didSet {
         if (isCostViewElevated == oldValue) { return }
-        let elevation: CGFloat = isCostViewElevated ? -210 : 210
-        costTransportationVC.view.frame.origin.y += elevation
+        // height should be cover the button and should revert back to original state
+        // this will handle cases for simulator keyboard toggle (keyboard size not fixed)
+        let costViewFloatingHeight = view.frame.height - costTransportationVC.view.frame.maxY
+        let isCostViewFloating = costViewFloatingHeight != 0
+        let heightToMove: CGFloat = isCostViewFloating ? costViewFloatingHeight : -(keyboardHeight - 120)
+        costTransportationVC.view.frame.origin.y += heightToMove
     }}
     
     private let trackingModeFollowImage: UIImage? = {
@@ -70,6 +74,8 @@ class OnTripViewController: UIViewController
         let config = UIImage.SymbolConfiguration(scale: .medium)
         return UIImage(systemName: image, withConfiguration: config)
     }()
+    
+    private var keyboardHeight: CGFloat = 210
     
     private var transits: [TransitPath] = []
     private var viewModel: OnTripVM?
@@ -197,6 +203,11 @@ extension OnTripViewController
     // this method can be called twice even though keyboard already showed up
     @objc func keyboardWillShow(notification: NSNotification)
     {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyboardHeight = keyboardRectangle.height
+        }
         isCostViewElevated = true
     }
     
