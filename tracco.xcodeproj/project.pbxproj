@@ -54,6 +54,11 @@
 		A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463EF28546D4F009AB0DC /* HistoryViewController.swift */; };
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
+		A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */; };
+		A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D792859899500F30DBE /* HomeTripViewController.swift */; };
+		A8CC9D7C28598DD300F30DBE /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */; };
+		A8CC9D7F285A2D3200F30DBE /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7E285A2D3200F30DBE /* MiniCardView.swift */; };
+		A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D81285A307D00F30DBE /* Extensions.swift */; };
 		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
 		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
 		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
@@ -111,6 +116,11 @@
 		A87463EF28546D4F009AB0DC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		A87463F128546D72009AB0DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A87463F328546D97009AB0DC /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoTripViewController.swift; sourceTree = "<group>"; };
+		A8CC9D792859899500F30DBE /* HomeTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTripViewController.swift; sourceTree = "<group>"; };
+		A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		A8CC9D7E285A2D3200F30DBE /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
+		A8CC9D81285A307D00F30DBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingOnboardingViewController.swift; sourceTree = "<group>"; };
 		A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeyStore.swift; sourceTree = "<group>"; };
@@ -155,6 +165,7 @@
 				3F94CCD42858591C00BD5176 /* OnTripVM.swift */,
 				3F94CCD32858591C00BD5176 /* TransportRadioButtonVM.swift */,
 				3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */,
+				A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -228,13 +239,11 @@
 		A87463E6285469B4009AB0DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A8CC9D80285A2D6600F30DBE /* Helper */,
+				A8CC9D7D285A2CFF00F30DBE /* CustomClass */,
 				3F94CCE12858599B00BD5176 /* CO2E.swift */,
-				3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */,
 				3F94CCE02858599B00BD5176 /* SystemUnits.swift */,
-				3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */,
-				3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */,
 				3F94CCC22858581300BD5176 /* MoovitAPI.swift */,
-				3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */,
 				3F94CCC32858581300BD5176 /* ViewHelper.swift */,
 				3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */,
 			);
@@ -244,26 +253,11 @@
 		A87463E828546A06009AB0DC /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				A8CC9D76285988D000F30DBE /* Trip */,
 				A87463E928546B74009AB0DC /* Dashboard.storyboard */,
 				A87463CF2854596D009AB0DC /* DashboardViewController.swift */,
-				3FF10125285490E10048013A /* Trip.storyboard */,
-				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
-				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
-				3FF101312854BA190048013A /* TransportRadioButton.swift */,
-				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
-				3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */,
-				3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */,
-				3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */,
-				3F94CCC02858581300BD5176 /* ChangeTransportViewController.swift */,
-				3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */,
-				3FF101372854BC200048013A /* CurrentTransportationViewController.swift */,
-				3FF101382854BC200048013A /* CurrentTransportationViewController.xib */,
-				3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */,
-				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
-				3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */,
-				3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */,
-				3F94CCC12858581300BD5176 /* TransportAnnotation.swift */,
-				3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */,
+				A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */,
+				A8CC9D792859899500F30DBE /* HomeTripViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -284,6 +278,51 @@
 				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A8CC9D76285988D000F30DBE /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				3FF10125285490E10048013A /* Trip.storyboard */,
+				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
+				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
+				3FF101312854BA190048013A /* TransportRadioButton.swift */,
+				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
+				3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */,
+				3FF101332854BC0D0048013A /* ChooseTransportationViewController.swift */,
+				3FF101342854BC0D0048013A /* ChooseTransportationViewController.xib */,
+				3F94CCC02858581300BD5176 /* ChangeTransportViewController.swift */,
+				3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */,
+				3FF101372854BC200048013A /* CurrentTransportationViewController.swift */,
+				3FF101382854BC200048013A /* CurrentTransportationViewController.xib */,
+				3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */,
+				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
+				3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */,
+				3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */,
+				3F94CCC12858581300BD5176 /* TransportAnnotation.swift */,
+				3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		A8CC9D7D285A2CFF00F30DBE /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */,
+				3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */,
+				3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */,
+				A8CC9D7E285A2D3200F30DBE /* MiniCardView.swift */,
+			);
+			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		A8CC9D80285A2D6600F30DBE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */,
+				A8CC9D81285A307D00F30DBE /* Extensions.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		A8FB37BE2856D3670057F6A3 /* Onboarding */ = {
@@ -393,6 +432,7 @@
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
+				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
 				3F94CCD72858591C00BD5176 /* OnTripVM.swift in Sources */,
@@ -410,15 +450,19 @@
 				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
+				A8CC9D7C28598DD300F30DBE /* DashboardViewModel.swift in Sources */,
 				3F94CCE42858599B00BD5176 /* CO2E.swift in Sources */,
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
 				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
+				A8CC9D7F285A2D3200F30DBE /* MiniCardView.swift in Sources */,
 				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
+				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
 				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
+				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
 				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,
 				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
 				A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */,
@@ -569,7 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 78;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
@@ -603,7 +647,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 78;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
