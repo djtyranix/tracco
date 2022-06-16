@@ -82,7 +82,7 @@ class TripDetailView: UIView
             endContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             endContentView.heightAnchor.constraint(equalToConstant: 40)
         ])
-        endContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 24).isActive = true
+        endContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -24).isActive = true
         layoutPinLine(contents: contents)
         // update distance and time elapsed
         let totalDistanceInKm = model.reduce(0.0, { return $0 + $1.transitPath.distanceInKm })
