@@ -15,7 +15,6 @@ class SlidingOnboardingViewController: UIViewController
     @IBOutlet weak var upperLabel: UILabel!
     @IBOutlet weak var lowerLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var superScrollView: UIView!
     
     let allowNotificationSegueId = "allowNotificationSegue"
     let totalPage = 3
@@ -47,8 +46,8 @@ class SlidingOnboardingViewController: UIViewController
     
     private func setUpSlider()
     {
-        let width = superScrollView.frame.width
-        let height = superScrollView.frame.height
+        let width = scrollView.frame.width
+        let height = scrollView.frame.height
         
         scrollView.contentSize = CGSize(width: width * CGFloat(totalPage), height: height)
         scrollView.contentInsetAdjustmentBehavior = .never
@@ -68,8 +67,8 @@ class SlidingOnboardingViewController: UIViewController
     
     private func scrollToNextPage()
     {
-        let width = superScrollView.frame.width
-        let height = superScrollView.frame.height
+        let width = scrollView.frame.width
+        let height = scrollView.frame.height
         let nextPage = currentPage + 1
         scrollView.scrollRectToVisible(CGRect(x: CGFloat(nextPage) * width, y: 0, width: width, height: height) ,animated: true)
         currentPage = nextPage
