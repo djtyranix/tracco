@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransportRadioButton" customModule="carbonless" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransportRadioButton" customModule="tracco" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="8Kg-Up-kXB" id="P1b-3I-pFd"/>
                 <outlet property="imageView" destination="Ipx-8g-0c6" id="KIi-Jk-94y"/>

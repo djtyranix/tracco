@@ -19,6 +19,8 @@ fileprivate func layoutBottomSheet(_ view: UIView)
 
 class OnTripViewController: UIViewController
 {
+    enum Segue: String { case summary = "summarySegue" }
+    
     private let chooseTransportationVC: ChooseTransportationViewController = {
         let vc = ChooseTransportationViewController(TransportType.allCases)
         vc.modalPresentationStyle = .custom
@@ -71,10 +73,11 @@ class OnTripViewController: UIViewController
         return UIImage(systemName: image, withConfiguration: config)
     }()
     
-    private var transits: [TransitPath] = []
+    private var transits: [TransitModel] = []
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
     private var timerUpdate: Timer?
+    private var isRequestingEndTrip: Bool = false
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
@@ -121,6 +124,13 @@ class OnTripViewController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        
+        // this vc do a presentation fullscreen on summary vc
+        // when summary vc dismiss all of the stack from view hierarchy
+        // viewWillAppear(_ animated: Bool) will be called
+        if (isRequestingEndTrip) { return }
+        
+        // present choose transportation for the first time (this won't work in viewDidLoad())
         present(chooseTransportationVC, animated: true) { [unowned self] in
             // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
             UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
@@ -132,6 +142,14 @@ class OnTripViewController: UIViewController
                 containerView: self.view
             )
             self.view.addSubview(currentTransportationVC.view)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? SummaryViewController
+        {
+            vc.modelToDisplay = transits
         }
     }
     
@@ -150,15 +168,27 @@ class OnTripViewController: UIViewController
         let image = mapView?.userTrackingMode == .follow ? trackingModeFollowImage : trackingModeNofollowImage
         locationButton.setImage(image, for: .normal)
         
-        viewModel?.currentLocation = mapView.userLocation.location!
-        
-        guard let currLocation = viewModel?.currentLocation
+        guard let viewModel = viewModel
         else { return }
         
-        guard let prevLocation = viewModel?.previousLocation
+        guard let userCurrentLocation = mapView.userLocation.location
+        else { return }
+
+        viewModel.currentLocation = userCurrentLocation
+        
+        guard let prevLocation = viewModel.previousLocation
         else { return }
         
-        let polyline = MKPolyline(coordinates: [prevLocation.coordinate, currLocation.coordinate], count: 2)
+        if transits.isEmpty == false
+        {
+            let currIndex = transits.endIndex - 1
+            transits[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
+            transits[currIndex].costInIDR = viewModel.totalCostInIDR
+            transits[currIndex].transitPath.endDate = Date()
+            transits[currIndex].transitPath.distanceInKm = viewModel.distanceInKm
+        }
+        
+        let polyline = MKPolyline(coordinates: [prevLocation.coordinate, viewModel.currentLocation.coordinate], count: 2)
         mapView.addOverlay(polyline, level: .aboveRoads)
     }
     
@@ -176,9 +206,23 @@ class OnTripViewController: UIViewController
             viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
         ]
         
-        let transit = TransitPath(type: currentType, data: [mapView.userLocation.coordinate])
+        let transitPath = TransitPath(
+            type: currentType,
+            coords: [mapView.userLocation.coordinate],
+            distanceInKm: 0,
+            sampleRate: 1,
+            beginDate: Date(),
+            endDate: Date()
+        )
+        
+        let transitModel = TransitModel(
+            transitPath: transitPath,
+            carbonEmissionInKg: 0,
+            costInIDR: 0
+        )
+        
         let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
-        transits.append(transit)
+        transits.append(transitModel)
         mapView.addAnnotation(annotation)
         
         let selectedRadioButton = manager.selected
@@ -189,6 +233,16 @@ class OnTripViewController: UIViewController
         {
             timerUpdate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onUpdate), userInfo: nil, repeats: true)
         }
+    }
+    
+    private func presentCostVC()
+    {
+        // update view model (to show recommendation cost)
+        costTransportationVC.viewModel = TransportationCostVM(
+            viewModel?.totalCostInIDR ?? 0,
+            useApproximation: true
+        )
+        present(costTransportationVC, animated: true)
     }
 }
 
@@ -238,11 +292,7 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
 {
     func onChangeTransportationButton(_ sender: UIButton)
     {
-        costTransportationVC.viewModel = TransportationCostVM(
-            viewModel?.totalCostInIDR ?? 0,
-            useApproximation: true
-        )
-        present(costTransportationVC, animated: true)
+        presentCostVC()
     }
     
     func onEndTripButton(_ sender: UIButton)
@@ -253,8 +303,9 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        alert.addAction(UIAlertAction(title: "I'm Arrived", style: .default) { _ in
-            self.view.window?.rootViewController?.dismiss(animated: true)
+        alert.addAction(UIAlertAction(title: "I'm Arrived", style: .default) { [unowned self] _ in
+            isRequestingEndTrip = true
+            presentCostVC()
         })
         present(alert, animated: true)
     }
@@ -274,6 +325,7 @@ extension OnTripViewController: ChangeTransportViewControllerDelegate
 {
     func onConfirmChange(_ selected: TransportRadioButton?)
     {
+        // update current view model
         updateTransportation(changeTransportationVC.radioButton!)
     }
 }
@@ -283,8 +335,14 @@ extension OnTripViewController: TransportationCostViewControllerDelegate
 {
     func onConfirmCost(_ cost: Double)
     {
-        print(cost)
-        present(changeTransportationVC, animated: true)
+        isRequestingEndTrip ?
+            performSegue(withIdentifier: Segue.summary.rawValue, sender: self) :
+            present(changeTransportationVC, animated: true)
+    }
+    
+    func onCancelCost()
+    {
+        isRequestingEndTrip = false
     }
 }
 
