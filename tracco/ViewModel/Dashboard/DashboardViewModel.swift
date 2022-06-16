@@ -9,6 +9,6 @@ import UIKit
 
 class DashboardViewModel: NSObject {
     func isAlreadyHavingTrip() -> Bool {
-        return false
+        return true
     }
 }

@@ -7,9 +7,9 @@
 
 import UIKit
 
-@IBDesignable class MiniCardView: UIView {
-
-    var cornerRadius: CGFloat = 12
+@IBDesignable
+class MiniCardView: UIView
+{
     var offsetWidth: CGFloat = 0
     var offsetHeight: CGFloat = 1
     var blur: CGFloat = 10
@@ -17,8 +17,8 @@ import UIKit
     var offsetShadowOpacity: Float = 0.8
     var shadowColor = UIColor.init(hex: "#DDDDDDFF")
     
-    override func layoutSubviews() {
-        layer.cornerRadius = cornerRadius
+    override func layoutSubviews()
+    {
         layer.shadowColor = shadowColor?.cgColor
         layer.shadowOffset = CGSize(width: offsetWidth, height: offsetHeight)
         layer.shadowPath = nil
