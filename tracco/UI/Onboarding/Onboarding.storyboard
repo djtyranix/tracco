@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzc-UY-he7">
-                                <rect key="frame" x="20" y="807.5" width="374" height="34.5"/>
+                                <rect key="frame" x="20" y="797" width="374" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="92t-3I-AUh"/>
+                                </constraints>
                                 <color key="tintColor" name="Text50"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Skip"/>
@@ -34,7 +37,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-0J-2Vo">
-                                <rect key="frame" x="20" y="753.5" width="374" height="46"/>
+                                <rect key="frame" x="20" y="727" width="374" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="EY7-H0-fAe"/>
                                 </constraints>
@@ -48,64 +51,48 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AfM-LQ-h1L">
-                                <rect key="frame" x="20" y="719.5" width="374" height="26"/>
+                                <rect key="frame" x="20" y="683" width="374" height="26"/>
                                 <color key="pageIndicatorTintColor" name="MainLightGrey"/>
                                 <color key="currentPageIndicatorTintColor" name="MainGreen"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose what kind of transportations you take for each transit you use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-hp-P2m">
-                                <rect key="frame" x="20" y="670.5" width="374" height="41"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                                <rect key="frame" x="20" y="618.5" width="374" height="46.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Transportation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSJ-cA-hhC">
-                                <rect key="frame" x="20" y="629.5" width="374" height="33"/>
+                                <rect key="frame" x="20" y="577.5" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-mM-O0m">
-                                <rect key="frame" x="0.0" y="44" width="414" height="577.5"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85b-V8-KPl">
-                                        <rect key="frame" x="0.0" y="1" width="414" height="569"/>
-                                        <viewLayoutGuide key="contentLayoutGuide" id="X3T-bE-Uhl"/>
-                                        <viewLayoutGuide key="frameLayoutGuide" id="gYi-y9-CLr"/>
-                                    </scrollView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="85b-V8-KPl" firstAttribute="centerY" secondItem="2Hd-mM-O0m" secondAttribute="centerY" id="LvL-XY-N8v"/>
-                                    <constraint firstAttribute="trailing" secondItem="85b-V8-KPl" secondAttribute="trailing" id="NUy-lI-ELl"/>
-                                    <constraint firstAttribute="bottom" secondItem="85b-V8-KPl" secondAttribute="bottom" id="Wf5-R5-c1Y"/>
-                                    <constraint firstItem="85b-V8-KPl" firstAttribute="leading" secondItem="2Hd-mM-O0m" secondAttribute="leading" id="Zdz-zv-XVa"/>
-                                    <constraint firstItem="85b-V8-KPl" firstAttribute="centerX" secondItem="2Hd-mM-O0m" secondAttribute="centerX" id="jhP-y7-8KI"/>
-                                    <constraint firstItem="85b-V8-KPl" firstAttribute="top" secondItem="2Hd-mM-O0m" secondAttribute="top" id="u5e-Ud-Ak1"/>
-                                </constraints>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85b-V8-KPl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="545.5"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nzc-UY-he7" firstAttribute="top" secondItem="sPF-0J-2Vo" secondAttribute="bottom" constant="8" id="3CX-YY-oZs"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Hd-mM-O0m" secondAttribute="trailing" id="80U-8E-UXW"/>
+                            <constraint firstItem="Nzc-UY-he7" firstAttribute="top" secondItem="sPF-0J-2Vo" secondAttribute="bottom" constant="24" id="3CX-YY-oZs"/>
                             <constraint firstItem="sPF-0J-2Vo" firstAttribute="leading" secondItem="Nzc-UY-he7" secondAttribute="leading" id="8pu-To-adt"/>
-                            <constraint firstItem="zSJ-cA-hhC" firstAttribute="top" secondItem="2Hd-mM-O0m" secondAttribute="bottom" constant="8" id="Ayo-ve-jFv"/>
+                            <constraint firstItem="85b-V8-KPl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="A5e-yJ-2jc"/>
                             <constraint firstItem="AfM-LQ-h1L" firstAttribute="leading" secondItem="sPF-0J-2Vo" secondAttribute="leading" id="DK3-QJ-xtf"/>
                             <constraint firstItem="iPh-hp-P2m" firstAttribute="leading" secondItem="AfM-LQ-h1L" secondAttribute="leading" id="Fwk-lA-dF0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Nzc-UY-he7" secondAttribute="bottom" constant="20" id="Gkd-IO-RzM"/>
-                            <constraint firstItem="AfM-LQ-h1L" firstAttribute="top" secondItem="iPh-hp-P2m" secondAttribute="bottom" constant="8" id="JIy-OH-v2m"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Nzc-UY-he7" secondAttribute="bottom" constant="42" id="Gkd-IO-RzM"/>
+                            <constraint firstItem="AfM-LQ-h1L" firstAttribute="top" secondItem="iPh-hp-P2m" secondAttribute="bottom" constant="18" id="JIy-OH-v2m"/>
+                            <constraint firstItem="85b-V8-KPl" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="JUO-x4-Y5a"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nzc-UY-he7" secondAttribute="trailing" constant="20" id="L41-Y1-gjg"/>
+                            <constraint firstItem="zSJ-cA-hhC" firstAttribute="top" secondItem="85b-V8-KPl" secondAttribute="bottom" constant="32" id="OTV-5I-b5e"/>
                             <constraint firstItem="iPh-hp-P2m" firstAttribute="top" secondItem="zSJ-cA-hhC" secondAttribute="bottom" constant="8" id="SBO-nS-Vhu"/>
-                            <constraint firstItem="2Hd-mM-O0m" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Tfk-wl-FYL"/>
-                            <constraint firstItem="sPF-0J-2Vo" firstAttribute="top" secondItem="AfM-LQ-h1L" secondAttribute="bottom" constant="8" id="VKZ-hd-1k2"/>
+                            <constraint firstItem="sPF-0J-2Vo" firstAttribute="top" secondItem="AfM-LQ-h1L" secondAttribute="bottom" constant="18" id="VKZ-hd-1k2"/>
                             <constraint firstItem="AfM-LQ-h1L" firstAttribute="trailing" secondItem="sPF-0J-2Vo" secondAttribute="trailing" id="bWM-ub-Aal"/>
                             <constraint firstItem="iPh-hp-P2m" firstAttribute="trailing" secondItem="AfM-LQ-h1L" secondAttribute="trailing" id="fre-FS-HAH"/>
                             <constraint firstItem="zSJ-cA-hhC" firstAttribute="leading" secondItem="iPh-hp-P2m" secondAttribute="leading" id="gGv-C6-HHH"/>
-                            <constraint firstItem="2Hd-mM-O0m" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gj9-7w-Oj1"/>
                             <constraint firstItem="sPF-0J-2Vo" firstAttribute="trailing" secondItem="Nzc-UY-he7" secondAttribute="trailing" id="lNc-di-XdQ"/>
                             <constraint firstItem="Nzc-UY-he7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="t2g-io-JMR"/>
                             <constraint firstItem="zSJ-cA-hhC" firstAttribute="trailing" secondItem="iPh-hp-P2m" secondAttribute="trailing" id="y1m-Js-Xli"/>
+                            <constraint firstItem="85b-V8-KPl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zpS-Ln-rsZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HNL-K0-TBe"/>
@@ -114,7 +101,6 @@
                         <outlet property="pageControl" destination="AfM-LQ-h1L" id="a1n-9d-zGs"/>
                         <outlet property="scrollView" destination="85b-V8-KPl" id="XyE-UN-ipq"/>
                         <outlet property="skipButton" destination="Nzc-UY-he7" id="Qec-NT-F0U"/>
-                        <outlet property="superScrollView" destination="2Hd-mM-O0m" id="uWS-EP-zVD"/>
                         <outlet property="upperButton" destination="sPF-0J-2Vo" id="1ry-zV-PbS"/>
                         <outlet property="upperLabel" destination="zSJ-cA-hhC" id="7DI-rf-jAK"/>
                         <segue destination="yaj-k2-ug8" kind="presentation" identifier="allowNotificationSegue" id="CA3-OJ-qTE"/>
@@ -166,7 +152,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSF-B5-n9n">
-                                <rect key="frame" x="20" y="666" width="374" height="34.5"/>
+                                <rect key="frame" x="20" y="666" width="374" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Not Now"/>
@@ -222,7 +208,7 @@
             <color red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
