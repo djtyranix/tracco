@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B723AB6285AE3270070D04F /* TotalCarbonProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B723AB5285AE3270070D04F /* TotalCarbonProfileView.xib */; };
 		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
 		3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */; };
 		3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */; };
@@ -55,6 +54,7 @@
 		A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463EF28546D4F009AB0DC /* HistoryViewController.swift */; };
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
+		A8814440285C183400EE1FA2 /* TotalCarbonProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A881443F285C183400EE1FA2 /* TotalCarbonProfileView.xib */; };
 		A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */; };
 		A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D792859899500F30DBE /* HomeTripViewController.swift */; };
 		A8CC9D7C28598DD300F30DBE /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */; };
@@ -68,7 +68,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B723AB5285AE3270070D04F /* TotalCarbonProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCarbonProfileView.xib; sourceTree = "<group>"; };
 		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
 		3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
 		3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresentationController.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		A87463EF28546D4F009AB0DC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		A87463F128546D72009AB0DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A87463F328546D97009AB0DC /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		A881443F285C183400EE1FA2 /* TotalCarbonProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCarbonProfileView.xib; sourceTree = "<group>"; };
 		A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoTripViewController.swift; sourceTree = "<group>"; };
 		A8CC9D792859899500F30DBE /* HomeTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTripViewController.swift; sourceTree = "<group>"; };
 		A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -321,11 +321,9 @@
 		A8CC9D80285A2D6600F30DBE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A87463ED28546D09009AB0DC /* Profile.storyboard */,
-				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
-				3B723AB5285AE3270070D04F /* TotalCarbonProfileView.xib */,
 				3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */,
 				A8CC9D81285A307D00F30DBE /* Extensions.swift */,
+				A881443F285C183400EE1FA2 /* TotalCarbonProfileView.xib */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -417,7 +415,7 @@
 				3FF101302854B9F90048013A /* TransportRadioButton.xib in Resources */,
 				3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
-				3B723AB6285AE3270070D04F /* TotalCarbonProfileView.xib in Resources */,
+				A8814440285C183400EE1FA2 /* TotalCarbonProfileView.xib in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
