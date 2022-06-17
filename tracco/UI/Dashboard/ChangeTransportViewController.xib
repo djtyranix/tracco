@@ -14,8 +14,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeTransportViewController" customModule="carbonless" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeTransportViewController" customModule="tracco" customModuleProvider="target">
             <connections>
+                <outlet property="confirmButton" destination="aaA-yB-lKK" id="NrV-sv-pJa"/>
                 <outlet property="scrollView" destination="D35-ob-4G4" id="IfB-LY-vhc"/>
                 <outlet property="view" destination="Zns-6w-K92" id="nDV-Ci-5nA"/>
             </connections>

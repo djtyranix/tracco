@@ -17,11 +17,20 @@ class ChooseTransportationViewController: ChooseChangeTransportBase<ChooseTransp
     public weak var delegate: ChooseTransportationViewControllerDelegate?
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var confirmButton: UIButton!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         super.layoutScrollView(scrollView)
+        
+        confirmButton.isEnabled = radioButton?.selected != nil
+    }
+    
+    override func onRadioButtonSelected(_ sender: TransportRadioButton)
+    {
+        super.onRadioButtonSelected(sender)
+        confirmButton.isEnabled = true
     }
 
     @IBAction func onConfirmChanges(_ sender: UIButton)

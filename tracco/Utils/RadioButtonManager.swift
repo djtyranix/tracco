@@ -14,7 +14,7 @@ class RadioButtonManager<T: UIControl>
     public var onDeselect: (T) -> Void
     public var buttons: [T]
     
-    private let indexOfNoneSelected: Int = -1
+    public let indexOfNoneSelected: Int = -1
     
     public var selectedIndex: Int {
         didSet {
