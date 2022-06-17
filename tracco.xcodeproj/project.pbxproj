@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B723AB6285AE3270070D04F /* TotalCarbonProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B723AB5285AE3270070D04F /* TotalCarbonProfileView.xib */; };
 		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
 		3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */; };
 		3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B723AB5285AE3270070D04F /* TotalCarbonProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCarbonProfileView.xib; sourceTree = "<group>"; };
 		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
 		3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
 		3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresentationController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			children = (
 				A87463ED28546D09009AB0DC /* Profile.storyboard */,
 				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
+				3B723AB5285AE3270070D04F /* TotalCarbonProfileView.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				3FF101302854B9F90048013A /* TransportRadioButton.xib in Resources */,
 				3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
+				3B723AB6285AE3270070D04F /* TotalCarbonProfileView.xib in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
@@ -569,7 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 54;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
@@ -603,7 +607,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 54;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
