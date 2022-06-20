@@ -20,7 +20,7 @@
         <!--Destination Plan View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="DestinationPlanViewController" customModule="carbonless" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="DestinationPlanViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
         <!--On Trip View Controller-->
         <scene sceneID="HVs-md-6dd">
             <objects>
-                <viewController id="dIO-Fi-FqQ" customClass="OnTripViewController" customModule="carbonless" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dIO-Fi-FqQ" customClass="OnTripViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7zI-ux-lZ8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,11 +325,20 @@
                         <outlet property="locationButton" destination="p4j-T0-a63" id="Nq8-Xv-miU"/>
                         <outlet property="mapView" destination="K5u-3X-xEr" id="4Ma-YR-Rm7"/>
                         <outlet property="mapViewBottomConstraint" destination="p7D-4i-D2t" id="wIW-8x-pV4"/>
+                        <segue destination="43E-yD-ejZ" kind="presentation" identifier="summarySegue" modalPresentationStyle="fullScreen" id="vmh-1p-Dy4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lb-xA-EYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1333.8461538461538" y="91.706161137440759"/>
+        </scene>
+        <!--Summary-->
+        <scene sceneID="L5a-a7-bKB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Summary" id="43E-yD-ejZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffC-mn-tax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015" y="92"/>
         </scene>
     </scenes>
     <resources>

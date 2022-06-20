@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TripDetailContentView" customModule="tracco" customModuleProvider="target">
+            <connections>
+                <outlet property="carbonLabel" destination="Szf-ed-dYn" id="Ge4-db-QU0"/>
+                <outlet property="costLabel" destination="1K7-xc-8iY" id="Ubl-oT-mwN"/>
+                <outlet property="detailView" destination="alv-Cd-RDy" id="I5P-93-leI"/>
+                <outlet property="pinImageView" destination="9ta-GW-uj7" id="HPR-GL-co1"/>
+                <outlet property="timeLabel" destination="Sms-cd-mmE" id="S2U-q8-kzM"/>
+                <outlet property="titleLabel" destination="ZfY-Q6-n2l" id="ixl-Dy-fkc"/>
+                <outlet property="transportImageView" destination="fv0-Ga-VzB" id="ook-xe-w7z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fv0-Ga-VzB">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fv0-Ga-VzB" secondAttribute="height" multiplier="1:1" id="D66-7e-Noq"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ta-GW-uj7">
+                    <rect key="frame" x="48" y="12" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9ta-GW-uj7" secondAttribute="height" multiplier="1:1" id="4JD-At-gGL"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:40 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-cd-mmE">
+                    <rect key="frame" x="72" y="22.5" width="54" height="17"/>
+                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Breeze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfY-Q6-n2l">
+                    <rect key="frame" x="72" y="-0.5" width="76" height="21"/>
+                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alv-Cd-RDy">
+                    <rect key="frame" x="130" y="23" width="228" height="17"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 kg CO2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szf-ed-dYn">
+                            <rect key="frame" x="24" y="0.0" width="58" height="17"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree" translatesAutoresizingMaskIntoConstraints="NO" id="V0I-jQ-juV">
+                            <rect key="frame" x="8" y="2.5" width="12" height="12"/>
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="Wio-06-P2R"/>
+                                <constraint firstAttribute="width" constant="12" id="e2G-SY-wTo"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="80k IDR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1K7-xc-8iY">
+                            <rect key="frame" x="110" y="0.0" width="118" height="17"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-j0-JcX">
+                            <rect key="frame" x="0.0" y="6.5" width="4" height="4"/>
+                            <color key="backgroundColor" systemColor="labelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="E9r-AY-PKo"/>
+                                <constraint firstAttribute="width" constant="4" id="k3F-JO-32a"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Money" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-Mq-k1d">
+                            <rect key="frame" x="94" y="2.5" width="12" height="12"/>
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="1bG-hc-Shv"/>
+                                <constraint firstAttribute="width" constant="12" id="KGy-nR-YC4"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-6L-y3X">
+                            <rect key="frame" x="86" y="6.5" width="4" height="4"/>
+                            <color key="backgroundColor" systemColor="labelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="RE6-Co-fE1"/>
+                                <constraint firstAttribute="width" constant="4" id="syA-UZ-VaA"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="1K7-xc-8iY" firstAttribute="leading" secondItem="Kdx-Mq-k1d" secondAttribute="trailing" constant="4" id="0Ua-1C-kZY"/>
+                        <constraint firstItem="Fpz-6L-y3X" firstAttribute="centerY" secondItem="alv-Cd-RDy" secondAttribute="centerY" id="1BY-N8-3SO"/>
+                        <constraint firstItem="Szf-ed-dYn" firstAttribute="centerY" secondItem="alv-Cd-RDy" secondAttribute="centerY" id="Hhx-9f-1sH"/>
+                        <constraint firstAttribute="trailing" secondItem="1K7-xc-8iY" secondAttribute="trailing" id="Kvc-Mr-93R"/>
+                        <constraint firstItem="1K7-xc-8iY" firstAttribute="centerY" secondItem="alv-Cd-RDy" secondAttribute="centerY" id="UT2-rZ-DKw"/>
+                        <constraint firstItem="Szf-ed-dYn" firstAttribute="leading" secondItem="V0I-jQ-juV" secondAttribute="trailing" constant="4" id="bEG-dC-NEb"/>
+                        <constraint firstItem="V0I-jQ-juV" firstAttribute="centerY" secondItem="alv-Cd-RDy" secondAttribute="centerY" id="f33-kO-uib"/>
+                        <constraint firstItem="aJY-j0-JcX" firstAttribute="leading" secondItem="alv-Cd-RDy" secondAttribute="leading" id="hZO-wk-UOG"/>
+                        <constraint firstItem="Kdx-Mq-k1d" firstAttribute="leading" secondItem="Fpz-6L-y3X" secondAttribute="trailing" constant="4" id="iqt-92-OYf"/>
+                        <constraint firstItem="V0I-jQ-juV" firstAttribute="leading" secondItem="aJY-j0-JcX" secondAttribute="trailing" constant="4" id="jPQ-NN-eRo"/>
+                        <constraint firstItem="Kdx-Mq-k1d" firstAttribute="centerY" secondItem="alv-Cd-RDy" secondAttribute="centerY" id="qzx-kd-auX"/>
+                        <constraint firstItem="aJY-j0-JcX" firstAttribute="centerY" secondItem="alv-Cd-RDy" secondAttribute="centerY" id="tYB-ij-p42"/>
+                        <constraint firstItem="Fpz-6L-y3X" firstAttribute="leading" secondItem="Szf-ed-dYn" secondAttribute="trailing" constant="4" id="wLX-XF-AHB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Sms-cd-mmE" firstAttribute="top" secondItem="ZfY-Q6-n2l" secondAttribute="bottom" constant="2" id="D2x-DH-R3u"/>
+                <constraint firstItem="alv-Cd-RDy" firstAttribute="height" secondItem="Sms-cd-mmE" secondAttribute="height" id="DXg-a3-HRR"/>
+                <constraint firstItem="fv0-Ga-VzB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Dia-N9-f0w"/>
+                <constraint firstItem="fv0-Ga-VzB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JeP-vO-E51"/>
+                <constraint firstAttribute="bottom" secondItem="fv0-Ga-VzB" secondAttribute="bottom" id="M4G-XM-qkM"/>
+                <constraint firstItem="ZfY-Q6-n2l" firstAttribute="leading" secondItem="9ta-GW-uj7" secondAttribute="trailing" constant="8" id="OsG-ct-Za6"/>
+                <constraint firstAttribute="trailing" secondItem="alv-Cd-RDy" secondAttribute="trailing" id="Reh-d7-LjY"/>
+                <constraint firstAttribute="bottom" secondItem="alv-Cd-RDy" secondAttribute="bottom" id="Vls-Bk-3Fq"/>
+                <constraint firstItem="9ta-GW-uj7" firstAttribute="leading" secondItem="fv0-Ga-VzB" secondAttribute="trailing" constant="8" id="aqO-f7-BZz"/>
+                <constraint firstItem="ZfY-Q6-n2l" firstAttribute="centerY" secondItem="9ta-GW-uj7" secondAttribute="centerY" constant="-10" id="hQ9-DD-I0G"/>
+                <constraint firstItem="Sms-cd-mmE" firstAttribute="leading" secondItem="ZfY-Q6-n2l" secondAttribute="leading" id="mzy-kb-XBC"/>
+                <constraint firstItem="9ta-GW-uj7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="n5i-3T-2wR"/>
+                <constraint firstAttribute="bottom" secondItem="9ta-GW-uj7" secondAttribute="bottom" constant="12" id="vXF-At-P3b"/>
+                <constraint firstItem="alv-Cd-RDy" firstAttribute="leading" secondItem="Sms-cd-mmE" secondAttribute="trailing" constant="4" id="wOw-wA-G1d"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="105.79710144927537" y="61.607142857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Money" width="12" height="12"/>
+        <image name="Tree" width="12" height="12"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

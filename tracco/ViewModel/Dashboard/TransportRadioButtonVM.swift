@@ -12,7 +12,7 @@ class TransportRadioButtonVM
 {
     public var type: TransportType { didSet {
         name = "\(type)".capitalized
-        image = UIImage(systemName: "lanyardcard.fill")
+        image = type.image
     }}
     
     @Published

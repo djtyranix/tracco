@@ -15,6 +15,13 @@ struct CO2E
     }}
 
     var baseObject: CO2EBase { get { return CO2EBase(self) } }
+    
+    init(_ carbon: Double, massUnits: SystemUnits, distanceUnits: SystemUnits)
+    {
+        self.carbon = carbon
+        self.massUnits = massUnits
+        self.distanceUnits = distanceUnits
+    }
 
     init(_ base: CO2EBase)
     {
