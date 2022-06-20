@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Summary View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="tripSummary" id="Y6W-OH-hqX" customClass="SummaryViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-nj-jQ7">
+                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUJ-nx-15T" userLabel="Separator">
+                                        <rect key="frame" x="16" y="139" width="358" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="kTX-7E-yg4"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comparison" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pju-Hl-oda">
+                                        <rect key="frame" x="16" y="356.66666666666669" width="358" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="I6o-vd-BLh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRR-wJ-xGO">
+                                        <rect key="frame" x="16" y="48" width="358" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="P4q-dL-poo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay 😆 You have arrived at the destination." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jby-iR-i4F">
+                                        <rect key="frame" x="16" y="103" width="358" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="hvI-Pb-5b1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-5K-WsE" userLabel="Separator">
+                                        <rect key="frame" x="16" y="339.66666666666669" width="358" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="GO4-La-dwp"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNc-If-xDp">
+                                        <rect key="frame" x="16" y="384.66666666666669" width="358" height="53.333333333333314"/>
+                                        <string key="text">Here’s your total carbon emission and cost for this trip. you can save more cost 🤑 and reduce more carbon emission 😎 by using public transportation, view the comparison below.</string>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current Transports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzg-xa-rUb">
+                                        <rect key="frame" x="16" y="454" width="171" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Cx1-KW-9D8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Public Transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BT7-BF-KTB">
+                                        <rect key="frame" x="203" y="454" width="171" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="JIg-xn-yf8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5s-Uy-9PE" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="486" width="171" height="88"/>
+                                        <color key="backgroundColor" name="MainGreen90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="cCg-e4-lxQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Total Carbon Emission"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="90"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detail" value="kg CO2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q20-PU-IzH" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="590" width="171" height="88"/>
+                                        <color key="backgroundColor" name="MainGreen90"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Estimated Total Cost"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Money"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="500.2k"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detail" value="IDR"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kiw-hF-bGj" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
+                                        <rect key="frame" x="203" y="590" width="171" height="88"/>
+                                        <color key="backgroundColor" name="MainLightGreen"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Estimated Total Cost"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Money"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="50.2k"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detail" value="IDR"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                                <color key="value" name="MainGreen80"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goM-gK-C5f" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
+                                        <rect key="frame" x="203" y="486" width="171" height="88"/>
+                                        <color key="backgroundColor" name="MainLightGreen"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Total Carbon Emission"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="30"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detail" value="kg CO2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                                <color key="value" name="MainGreen80"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xei-oA-Ya8">
+                                        <rect key="frame" x="16" y="694" width="358" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="9u0-Tw-IVJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Check Transport Options in Moovit"/>
+                                        <connections>
+                                            <action selector="onCheckTransportMoovitButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sqs-pq-OPg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-BV-0Pn">
+                                        <rect key="frame" x="311.33333333333331" y="12" width="62.666666666666686" height="36"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Done">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Nunito-Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" name="MainGreen"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onDoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Wn-XO-fvq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfL-Xf-Ke6">
+                                        <rect key="frame" x="159.33333333333334" y="293" width="71.666666666666657" height="30.666666666666686"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="View All">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Nunito-SemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" name="MainGreen"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="QKm-0b-PTo" kind="showDetail" id="Q4T-Ci-nYE"/>
+                                        </connections>
+                                    </button>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-eo-Vxv">
+                                        <rect key="frame" x="16" y="156" width="358" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="obF-ky-DKu"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="gcS-nE-OYN" kind="embed" id="bjs-ej-bXe"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Jby-iR-i4F" secondAttribute="trailing" constant="16" id="0x0-Lf-vbo"/>
+                                    <constraint firstItem="Q20-PU-IzH" firstAttribute="height" secondItem="J5s-Uy-9PE" secondAttribute="height" id="3Bo-Kg-qgh"/>
+                                    <constraint firstAttribute="bottom" secondItem="xei-oA-Ya8" secondAttribute="bottom" constant="32" id="3Oh-yw-mWc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pju-Hl-oda" secondAttribute="trailing" constant="16" id="3xC-My-Iyq"/>
+                                    <constraint firstItem="Nzg-xa-rUb" firstAttribute="top" secondItem="qNc-If-xDp" secondAttribute="bottom" constant="16" id="5cP-Vc-1Lf"/>
+                                    <constraint firstAttribute="trailing" secondItem="NRI-BV-0Pn" secondAttribute="trailing" constant="16" id="Bnp-xU-UWm"/>
+                                    <constraint firstItem="qNc-If-xDp" firstAttribute="width" secondItem="NMA-nj-jQ7" secondAttribute="width" constant="-32" id="BsU-86-qOM"/>
+                                    <constraint firstItem="goM-gK-C5f" firstAttribute="height" secondItem="J5s-Uy-9PE" secondAttribute="height" id="C5E-Mu-dvf"/>
+                                    <constraint firstItem="Q20-PU-IzH" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="CFN-Fh-0MV"/>
+                                    <constraint firstItem="BT7-BF-KTB" firstAttribute="top" secondItem="qNc-If-xDp" secondAttribute="bottom" constant="16" id="D5l-3a-02R"/>
+                                    <constraint firstItem="qNc-If-xDp" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="Dzy-yw-AA4"/>
+                                    <constraint firstItem="WfL-Xf-Ke6" firstAttribute="centerX" secondItem="gEH-eo-Vxv" secondAttribute="centerX" id="EAi-Sr-nI9"/>
+                                    <constraint firstItem="Jby-iR-i4F" firstAttribute="top" secondItem="jRR-wJ-xGO" secondAttribute="bottom" constant="8" id="EYF-J6-LI8"/>
+                                    <constraint firstItem="BT7-BF-KTB" firstAttribute="width" secondItem="Nzg-xa-rUb" secondAttribute="width" id="FM1-Th-MPj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kiw-hF-bGj" secondAttribute="trailing" constant="16" id="GLq-Se-x6w"/>
+                                    <constraint firstItem="xei-oA-Ya8" firstAttribute="top" secondItem="Q20-PU-IzH" secondAttribute="bottom" constant="16" id="HFa-BS-l6V"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jby-iR-i4F" secondAttribute="trailing" constant="16" id="HH7-ln-TUF"/>
+                                    <constraint firstItem="YUJ-nx-15T" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="INI-S7-7G7"/>
+                                    <constraint firstItem="Jby-iR-i4F" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="Icr-Mq-oYK"/>
+                                    <constraint firstAttribute="trailing" secondItem="xei-oA-Ya8" secondAttribute="trailing" constant="16" id="JiG-fd-XC7"/>
+                                    <constraint firstAttribute="trailing" secondItem="gEH-eo-Vxv" secondAttribute="trailing" constant="16" id="Rgh-sm-KOG"/>
+                                    <constraint firstItem="Kiw-hF-bGj" firstAttribute="height" secondItem="J5s-Uy-9PE" secondAttribute="height" id="T5P-tW-crT"/>
+                                    <constraint firstItem="goM-gK-C5f" firstAttribute="top" secondItem="BT7-BF-KTB" secondAttribute="bottom" constant="8" id="UgC-Xz-N1D"/>
+                                    <constraint firstAttribute="trailing" secondItem="BT7-BF-KTB" secondAttribute="trailing" constant="16" id="Vjt-5y-hYg"/>
+                                    <constraint firstItem="NRI-BV-0Pn" firstAttribute="top" secondItem="NMA-nj-jQ7" secondAttribute="top" constant="12" id="XZu-8j-suI"/>
+                                    <constraint firstItem="Kiw-hF-bGj" firstAttribute="top" secondItem="goM-gK-C5f" secondAttribute="bottom" constant="16" id="Xt1-PD-igP"/>
+                                    <constraint firstAttribute="trailing" secondItem="goM-gK-C5f" secondAttribute="trailing" constant="16" id="YmT-pr-47N"/>
+                                    <constraint firstItem="Nzg-xa-rUb" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="Z9b-lq-B5u"/>
+                                    <constraint firstItem="Pju-Hl-oda" firstAttribute="top" secondItem="PH8-5K-WsE" secondAttribute="bottom" constant="16" id="a9A-zN-DUI"/>
+                                    <constraint firstAttribute="trailing" secondItem="qNc-If-xDp" secondAttribute="trailing" constant="16" id="ahM-Z6-jFA"/>
+                                    <constraint firstItem="BT7-BF-KTB" firstAttribute="leading" secondItem="Nzg-xa-rUb" secondAttribute="trailing" constant="16" id="bRV-Uq-q7o"/>
+                                    <constraint firstItem="WfL-Xf-Ke6" firstAttribute="bottom" secondItem="PH8-5K-WsE" secondAttribute="top" constant="-16" id="cqb-N8-646"/>
+                                    <constraint firstAttribute="trailing" secondItem="YUJ-nx-15T" secondAttribute="trailing" constant="16" id="dGZ-YF-G7r"/>
+                                    <constraint firstItem="J5s-Uy-9PE" firstAttribute="top" secondItem="Nzg-xa-rUb" secondAttribute="bottom" constant="8" id="ded-i5-wU4"/>
+                                    <constraint firstItem="PH8-5K-WsE" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="e4P-5U-e17"/>
+                                    <constraint firstItem="Pju-Hl-oda" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="fbq-RQ-8oR"/>
+                                    <constraint firstItem="J5s-Uy-9PE" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="hL4-wF-Vy1"/>
+                                    <constraint firstItem="YUJ-nx-15T" firstAttribute="top" secondItem="Jby-iR-i4F" secondAttribute="bottom" constant="16" id="j2i-WT-siT"/>
+                                    <constraint firstItem="gEH-eo-Vxv" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="j9y-MI-KZF"/>
+                                    <constraint firstItem="qNc-If-xDp" firstAttribute="top" secondItem="Pju-Hl-oda" secondAttribute="bottom" constant="4" id="jH8-2N-XGE"/>
+                                    <constraint firstItem="goM-gK-C5f" firstAttribute="leading" secondItem="J5s-Uy-9PE" secondAttribute="trailing" constant="16" id="leT-yT-Zbo"/>
+                                    <constraint firstItem="Q20-PU-IzH" firstAttribute="top" secondItem="J5s-Uy-9PE" secondAttribute="bottom" constant="16" id="lm5-tg-IaD"/>
+                                    <constraint firstItem="goM-gK-C5f" firstAttribute="width" secondItem="J5s-Uy-9PE" secondAttribute="width" id="nRc-ci-ndS"/>
+                                    <constraint firstItem="jRR-wJ-xGO" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="pQx-ti-RcD"/>
+                                    <constraint firstAttribute="trailing" secondItem="PH8-5K-WsE" secondAttribute="trailing" constant="16" id="poi-oa-Rh5"/>
+                                    <constraint firstItem="Kiw-hF-bGj" firstAttribute="width" secondItem="Q20-PU-IzH" secondAttribute="width" id="rFR-uZ-PSj"/>
+                                    <constraint firstItem="Kiw-hF-bGj" firstAttribute="leading" secondItem="Q20-PU-IzH" secondAttribute="trailing" constant="16" id="saA-gJ-TPp"/>
+                                    <constraint firstAttribute="trailing" secondItem="jRR-wJ-xGO" secondAttribute="trailing" constant="16" id="ssG-j9-Ifo"/>
+                                    <constraint firstItem="xei-oA-Ya8" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="toE-5k-acO"/>
+                                    <constraint firstItem="jRR-wJ-xGO" firstAttribute="top" secondItem="NMA-nj-jQ7" secondAttribute="top" constant="48" id="tu1-dd-NUu"/>
+                                    <constraint firstItem="gEH-eo-Vxv" firstAttribute="top" secondItem="YUJ-nx-15T" secondAttribute="bottom" constant="16" id="wWN-bK-HD1"/>
+                                    <constraint firstItem="WfL-Xf-Ke6" firstAttribute="top" secondItem="gEH-eo-Vxv" secondAttribute="bottom" constant="12" id="z1X-R2-Fpa"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NMA-nj-jQ7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7mN-H6-PUQ"/>
+                            <constraint firstAttribute="bottom" secondItem="NMA-nj-jQ7" secondAttribute="bottom" id="JJd-RS-60a"/>
+                            <constraint firstItem="NMA-nj-jQ7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eu6-yP-2Tb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NMA-nj-jQ7" secondAttribute="trailing" id="tVZ-vo-arc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkTransportMoovitButton" destination="xei-oA-Ya8" id="TS8-w5-GXT"/>
+                        <outlet property="comparisonLabel" destination="qNc-If-xDp" id="ARE-Lo-bBN"/>
+                        <outlet property="currentTransportCarbonCardView" destination="J5s-Uy-9PE" id="9cB-Av-qTs"/>
+                        <outlet property="currentTransportCostCardView" destination="Q20-PU-IzH" id="jB4-bj-Sea"/>
+                        <outlet property="otherTransportCarbonCardView" destination="goM-gK-C5f" id="HsW-6L-VmF"/>
+                        <outlet property="otherTransportCostCardView" destination="Kiw-hF-bGj" id="S8A-yM-AhN"/>
+                        <outlet property="otherTransportTitleLabel" destination="BT7-BF-KTB" id="EFw-PT-rjL"/>
+                        <outlet property="tripDetailBottomSeparator" destination="PH8-5K-WsE" id="Bu1-c1-JcF"/>
+                        <outlet property="tripDetailView" destination="gEH-eo-Vxv" id="XM6-Td-gHS"/>
+                        <outlet property="tripDetailViewAllButton" destination="WfL-Xf-Ke6" id="olZ-2i-zav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37" y="90"/>
+        </scene>
+        <!--Summary Detail View Controller-->
+        <scene sceneID="ec1-IN-1pa">
+            <objects>
+                <viewController id="QKm-0b-PTo" customClass="SummaryDetailViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oG3-sT-yde">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3J6-Zu-DlV">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                <items>
+                                    <navigationItem title="Trip Detail" id="PwV-Qj-8eM">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="fdj-Eb-eTg">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rEJ-A8-G1e">
+                                                <rect key="frame" x="16" y="11" width="131" height="34.333333333333336"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                                <connections>
+                                                    <action selector="onCloseButton:" destination="QKm-0b-PTo" eventType="touchUpInside" id="l9E-Tc-57J"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5a-8R-CVC">
+                                <rect key="frame" x="16" y="82" width="358" height="708"/>
+                                <connections>
+                                    <segue destination="gcS-nE-OYN" kind="embed" id="Yaa-rW-I34"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1zI-mk-XCs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3J6-Zu-DlV" secondAttribute="trailing" id="JNb-Ci-YOF"/>
+                            <constraint firstItem="3J6-Zu-DlV" firstAttribute="leading" secondItem="oG3-sT-yde" secondAttribute="leading" id="QOs-Na-bmf"/>
+                            <constraint firstItem="i5a-8R-CVC" firstAttribute="leading" secondItem="1zI-mk-XCs" secondAttribute="leading" constant="16" id="S47-iE-btj"/>
+                            <constraint firstItem="1zI-mk-XCs" firstAttribute="trailing" secondItem="i5a-8R-CVC" secondAttribute="trailing" constant="16" id="f3N-cd-N5p"/>
+                            <constraint firstItem="i5a-8R-CVC" firstAttribute="top" secondItem="3J6-Zu-DlV" secondAttribute="bottom" constant="26" id="ljM-4d-EaL"/>
+                            <constraint firstItem="3J6-Zu-DlV" firstAttribute="top" secondItem="oG3-sT-yde" secondAttribute="top" id="n6A-ln-Itc"/>
+                            <constraint firstAttribute="bottom" secondItem="i5a-8R-CVC" secondAttribute="bottom" id="vxl-bo-Xeb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvL-7g-kbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="90"/>
+        </scene>
+        <!--Trip Detail View Controller-->
+        <scene sceneID="3nG-Zs-cAR">
+            <objects>
+                <viewController id="gcS-nE-OYN" customClass="TripDetailViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rsX-gC-8BZ">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="125"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwn-tG-Jj0">
+                                <rect key="frame" x="215" y="3.6666666666666661" width="34" height="17"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZA-V4-Asc">
+                                <rect key="frame" x="253" y="10" width="4" height="4"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="4" id="KEE-TS-hnC"/>
+                                    <constraint firstAttribute="height" constant="4" id="LFL-bp-mGg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCd-11-oeo">
+                                <rect key="frame" x="0.0" y="36" width="358" height="89"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 hours 1 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-YZ-AUc">
+                                <rect key="frame" x="261" y="3.6666666666666661" width="97" height="17"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsZ-Fg-Prm">
+                                <rect key="frame" x="0.0" y="0.0" width="83" height="24"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NJ9-r9-qTU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zCd-11-oeo" secondAttribute="bottom" id="38t-eO-A3r"/>
+                            <constraint firstItem="zCd-11-oeo" firstAttribute="top" secondItem="wsZ-Fg-Prm" secondAttribute="bottom" constant="12" id="4Ph-gQ-pc1"/>
+                            <constraint firstItem="RdN-YZ-AUc" firstAttribute="centerY" secondItem="kwn-tG-Jj0" secondAttribute="centerY" id="E7g-yf-cgp"/>
+                            <constraint firstAttribute="trailing" secondItem="RdN-YZ-AUc" secondAttribute="trailing" id="Faw-VF-aDd"/>
+                            <constraint firstItem="wsZ-Fg-Prm" firstAttribute="leading" secondItem="rsX-gC-8BZ" secondAttribute="leading" id="Gj9-1N-qab"/>
+                            <constraint firstItem="HZA-V4-Asc" firstAttribute="leading" secondItem="kwn-tG-Jj0" secondAttribute="trailing" constant="4" id="N6I-K3-VZJ"/>
+                            <constraint firstItem="kwn-tG-Jj0" firstAttribute="centerY" secondItem="wsZ-Fg-Prm" secondAttribute="centerY" id="V0p-LL-bLM"/>
+                            <constraint firstItem="wsZ-Fg-Prm" firstAttribute="top" secondItem="rsX-gC-8BZ" secondAttribute="top" id="VFX-Vv-mLz"/>
+                            <constraint firstAttribute="trailing" secondItem="zCd-11-oeo" secondAttribute="trailing" id="bSW-Ld-5xe"/>
+                            <constraint firstItem="HZA-V4-Asc" firstAttribute="centerY" secondItem="kwn-tG-Jj0" secondAttribute="centerY" id="etX-fD-H3l"/>
+                            <constraint firstItem="zCd-11-oeo" firstAttribute="leading" secondItem="rsX-gC-8BZ" secondAttribute="leading" id="srF-Lb-muv"/>
+                            <constraint firstItem="RdN-YZ-AUc" firstAttribute="leading" secondItem="HZA-V4-Asc" secondAttribute="trailing" constant="4" id="yS3-Dl-b87"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="kwn-tG-Jj0" id="78x-YI-nrI"/>
+                        <outlet property="durationLabel" destination="RdN-YZ-AUc" id="vNG-7S-TeN"/>
+                        <outlet property="scrollView" destination="zCd-11-oeo" id="2Xr-cK-ltU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrO-4y-oDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="778"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bjs-ej-bXe"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Money" width="12" height="12"/>
+        <image name="Tree" width="12" height="12"/>
+        <namedColor name="MainGreen">
+            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainGreen80">
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainGreen90">
+            <color red="0.086000002920627594" green="0.3529999852180481" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="MainLightGreen">
+            <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

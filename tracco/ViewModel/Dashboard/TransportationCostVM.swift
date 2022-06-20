@@ -11,7 +11,8 @@ import UIKit
 class TransportationCostVM
 {
     public var totalCostInIDR: Double { didSet {
-        totalCostInIDRText = String(Int(totalCostInIDR))
+        // if using approximation, text displayed in text field should not be overriden
+        if isUsingCostApproximation { totalCostInIDRText = String(Int(totalCostInIDR)) }
     }}
     
     public var isUsingCostApproximation: Bool { didSet {
