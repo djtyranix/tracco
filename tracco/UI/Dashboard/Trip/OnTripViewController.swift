@@ -159,7 +159,7 @@ class OnTripViewController: UIViewController
     {
         if let vc = segue.destination as? SummaryViewController
         {
-            vc.modelToDisplay = transits
+            vc.viewModel = SummaryVM(transits)
         }
     }
     
@@ -193,10 +193,12 @@ class OnTripViewController: UIViewController
         {
             let currIndex = transits.endIndex - 1
             transits[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
-            transits[currIndex].costInIDR = viewModel.totalCostInIDR
             transits[currIndex].transitPath.endDate = Date()
             transits[currIndex].transitPath.distanceInKm = viewModel.distanceInKm
         }
+        
+        // update cost vc, user location may still move while adding a cost confirmation
+        costTransportationVC.viewModel?.totalCostInIDR = viewModel.totalCostInIDR
         
         let polyline = MKPolyline(coordinates: [prevLocation.coordinate, viewModel.currentLocation.coordinate], count: 2)
         mapView.addOverlay(polyline, level: .aboveRoads)
@@ -218,7 +220,7 @@ class OnTripViewController: UIViewController
         
         let transitPath = TransitPath(
             type: currentType,
-            coords: [mapView.userLocation.coordinate],
+            coords: [currCoordinate],
             distanceInKm: 0,
             sampleRate: 1,
             beginDate: Date(),
@@ -350,6 +352,9 @@ extension OnTripViewController: TransportationCostViewControllerDelegate
 {
     func onConfirmCost(_ cost: Double)
     {
+        // update cost in the model
+        transits[transits.endIndex - 1].costInIDR = cost
+        // perform next view
         isRequestingEndTrip ?
             performSegue(withIdentifier: Segue.summary.rawValue, sender: self) :
             present(changeTransportationVC, animated: true)
