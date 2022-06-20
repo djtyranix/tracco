@@ -13,11 +13,10 @@
 		3F0ADACC2859C23500A35D58 /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0ADAC72859C23500A35D58 /* Summary.storyboard */; };
 		3F0ADACD2859C23500A35D58 /* SummaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0ADAC82859C23500A35D58 /* SummaryDetailViewController.swift */; };
 		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
-		3F4923982859C34400731883 /* TripDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4923972859C34400731883 /* TripDetailView.xib */; };
-		3F49239A2859C35E00731883 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4923992859C35E00731883 /* TripDetailView.swift */; };
 		3F49239C2859C6F400731883 /* TripDetailContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F49239B2859C6F400731883 /* TripDetailContentView.xib */; };
 		3F49239E2859C6FE00731883 /* TripDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49239D2859C6FE00731883 /* TripDetailContentView.swift */; };
 		3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */; };
+		3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84CB67285E163500EFDD71 /* SummaryVM.swift */; };
 		3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */; };
 		3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */; };
 		3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */; };
@@ -40,6 +39,7 @@
 		3FC825A22856177C0074B88D /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259E2856177C0074B88D /* TransitPath.swift */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
+		3FCF3849285E4C31008EA9B9 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3848285E4C31008EA9B9 /* TripDetailViewController.swift */; };
 		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
 		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		3FF10126285490E10048013A /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10125285490E10048013A /* Trip.storyboard */; };
@@ -79,11 +79,10 @@
 		3F0ADAC72859C23500A35D58 /* Summary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
 		3F0ADAC82859C23500A35D58 /* SummaryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDetailViewController.swift; sourceTree = "<group>"; };
 		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
-		3F4923972859C34400731883 /* TripDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripDetailView.xib; sourceTree = "<group>"; };
-		3F4923992859C35E00731883 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		3F49239B2859C6F400731883 /* TripDetailContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripDetailContentView.xib; sourceTree = "<group>"; };
 		3F49239D2859C6FE00731883 /* TripDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailContentView.swift; sourceTree = "<group>"; };
 		3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDigit.swift; sourceTree = "<group>"; };
+		3F84CB67285E163500EFDD71 /* SummaryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVM.swift; sourceTree = "<group>"; };
 		3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
 		3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresentationController.swift; sourceTree = "<group>"; };
 		3F94CCBE2858581300BD5176 /* ChangeTransportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeTransportViewController.xib; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		3FC8259E2856177C0074B88D /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitPath.swift; path = tracco/Model/TransitPath.swift; sourceTree = SOURCE_ROOT; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Model/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
+		3FCF3848285E4C31008EA9B9 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF10125285490E10048013A /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
@@ -153,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F84CB66285E160E00EFDD71 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				3F84CB67285E163500EFDD71 /* SummaryVM.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		3F94CCCE2858589200BD5176 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +174,7 @@
 		3F94CCD0285858C400BD5176 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F84CB66285E160E00EFDD71 /* History */,
 				3F94CCD2285858FF00BD5176 /* Dashboard */,
 			);
 			path = ViewModel;
@@ -300,10 +309,9 @@
 				3F0ADAC72859C23500A35D58 /* Summary.storyboard */,
 				3F0ADAC82859C23500A35D58 /* SummaryDetailViewController.swift */,
 				3F0ADAC42859C23500A35D58 /* SummaryViewController.swift */,
+				3FCF3848285E4C31008EA9B9 /* TripDetailViewController.swift */,
 				A87463F328546D97009AB0DC /* History.storyboard */,
 				A87463EF28546D4F009AB0DC /* HistoryViewController.swift */,
-				3F4923972859C34400731883 /* TripDetailView.xib */,
-				3F4923992859C35E00731883 /* TripDetailView.swift */,
 				3F49239B2859C6F400731883 /* TripDetailContentView.xib */,
 				3F49239D2859C6FE00731883 /* TripDetailContentView.swift */,
 			);
@@ -402,7 +410,6 @@
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
 				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
-				3F4923982859C34400731883 /* TripDetailView.xib in Resources */,
 				3F0ADACC2859C23500A35D58 /* Summary.storyboard in Resources */,
 				3FF101362854BC0D0048013A /* ChooseTransportationViewController.xib in Resources */,
 				3F49239C2859C6F400731883 /* TripDetailContentView.xib in Resources */,
@@ -429,6 +436,7 @@
 				3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */,
 				3FC825A22856177C0074B88D /* TransitPath.swift in Sources */,
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
+				3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
@@ -450,6 +458,7 @@
 				3F0ADACD2859C23500A35D58 /* SummaryDetailViewController.swift in Sources */,
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
+				3FCF3849285E4C31008EA9B9 /* TripDetailViewController.swift in Sources */,
 				3F94CCE42858599B00BD5176 /* CO2E.swift in Sources */,
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
@@ -457,7 +466,6 @@
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
 				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
-				3F49239A2859C35E00731883 /* TripDetailView.swift in Sources */,
 				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
 				3F0ADACA2859C23500A35D58 /* CardInfoView.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
@@ -613,7 +621,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 208;
+				CURRENT_PROJECT_VERSION = 257;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
@@ -647,7 +655,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 208;
+				CURRENT_PROJECT_VERSION = 257;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
