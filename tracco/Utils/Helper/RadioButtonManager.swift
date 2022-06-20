@@ -18,6 +18,7 @@ class RadioButtonManager<T: UIControl>
     
     public var selectedIndex: Int {
         didSet {
+            if (selectedIndex == oldValue) { return }
             if (!isOutOfBounds(oldValue)) { onDeselect(buttons[oldValue]) }
             if (!isOutOfBounds(selectedIndex)) { onSelected(buttons[selectedIndex]) }
         }
