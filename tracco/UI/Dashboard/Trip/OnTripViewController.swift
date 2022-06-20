@@ -77,13 +77,8 @@ class OnTripViewController: UIViewController
         return UIImage(systemName: image, withConfiguration: config)
     }()
     
-<<<<<<< HEAD:tracco/UI/Dashboard/OnTripViewController.swift
     private var transits: [TransitModel] = []
-=======
     private var keyboardHeight: CGFloat = 210
-    
-    private var transits: [TransitPath] = []
->>>>>>> main:tracco/UI/Dashboard/Trip/OnTripViewController.swift
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
     private var timerUpdate: Timer?
