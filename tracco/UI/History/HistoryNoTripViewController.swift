@@ -1,19 +1,16 @@
 //
-//  HistoryViewController.swift
+//  HistoryNoTripViewController.swift
 //  tracco
 //
-//  Created by Michael Ricky on 11/06/22.
+//  Created by michael wijaya on 20/06/22.
 //
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryNoTripViewController: UIViewController {
 
-    @IBOutlet var ContainerViewHistoryNoTrip: UIView!
-    @IBOutlet var ContainerViewHistoryTrip: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        ContainerViewHistoryTrip.isHidden = true
 
         // Do any additional setup after loading the view.
     }

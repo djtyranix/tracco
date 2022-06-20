@@ -75,6 +75,8 @@
 		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
 		A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */; };
 		A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */; };
+		D9DF377E2860327B00CA9F9C /* HistoryNoTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF377D2860327B00CA9F9C /* HistoryNoTripViewController.swift */; };
+		D9DF37802860329400CA9F9C /* HistoryTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF377F2860329400CA9F9C /* HistoryTripViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +151,8 @@
 		A8FB37C52856FA430057F6A3 /* AllowNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowNotificationViewController.swift; sourceTree = "<group>"; };
 		A8FB37C72856FEAC0057F6A3 /* tracco.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tracco.entitlements; sourceTree = "<group>"; };
 		A8FB37C92856FEAF0057F6A3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D9DF377D2860327B00CA9F9C /* HistoryNoTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNoTripViewController.swift; sourceTree = "<group>"; };
+		D9DF377F2860329400CA9F9C /* HistoryTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +312,8 @@
 				A8AD59B028602D9A00104B58 /* CardInfoView.swift */,
 				A87463F328546D97009AB0DC /* History.storyboard */,
 				A87463EF28546D4F009AB0DC /* HistoryViewController.swift */,
+				D9DF377D2860327B00CA9F9C /* HistoryNoTripViewController.swift */,
+				D9DF377F2860329400CA9F9C /* HistoryTripViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				3F94CCD82858591C00BD5176 /* DestinationPlanVM.swift in Sources */,
 				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
+				D9DF37802860329400CA9F9C /* HistoryTripViewController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
 				A8AD59BD28602DAA00104B58 /* TripDetailContentView.swift in Sources */,
 				A8CC9D7C28598DD300F30DBE /* DashboardViewModel.swift in Sources */,
@@ -512,6 +519,7 @@
 				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
 				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
+				D9DF377E2860327B00CA9F9C /* HistoryNoTripViewController.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
