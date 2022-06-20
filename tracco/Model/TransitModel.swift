@@ -9,7 +9,10 @@ import Foundation
 
 struct TransitModel
 {
+    // transit path
     var transitPath: TransitPath
+    // carbon emission in kg
     var carbonEmissionInKg: Double
+    // cost of transportation in IDR
     var costInIDR: Double
 }

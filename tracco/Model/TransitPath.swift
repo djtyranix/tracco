@@ -10,7 +10,7 @@ import MapKit
 
 struct TransitPath
 {
-    // transportation used in the transirt
+    // transportation used in the transit
     var type: TransportType
     // the path traversed during the transit
     var coords: [CLLocationCoordinate2D]
