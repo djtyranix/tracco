@@ -84,49 +84,49 @@
         <scene sceneID="62f-mV-Spo">
             <objects>
                 <viewController id="Iz7-AL-XuK" customClass="HistoryNoTripViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MEg-E3-k4H">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEg-E3-k4H">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-bn-lsg">
-                                <rect key="frame" x="71" y="147.66666666666669" width="248" height="234.66666666666669"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="History" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-bn-lsg">
+                                <rect key="frame" x="55" y="191.66666666666663" width="280" height="265"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VPY-bn-lsg" secondAttribute="height" multiplier="280:265" id="Oig-JW-8O1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have trip history" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYJ-MP-sMZ">
-                                <rect key="frame" x="16" y="406.33333333333331" width="358" height="30"/>
+                                <rect key="frame" x="16" y="480.66666666666669" width="358" height="30"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce your carbon emission and save more cost by tracking your trip " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKi-jB-Ia8">
-                                <rect key="frame" x="44" y="444.33333333333331" width="302" height="46.666666666666686"/>
+                                <rect key="frame" x="44" y="518.66666666666663" width="302" height="46.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aae-4e-KIq">
-                                <rect key="frame" x="16" y="0.0" width="358" height="49.666666666666664"/>
+                                <rect key="frame" x="16" y="44" width="358" height="49.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="guj-3s-DWd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Aae-4e-KIq" secondAttribute="trailing" constant="16" id="4jV-fz-dUB"/>
+                            <constraint firstItem="Aae-4e-KIq" firstAttribute="top" secondItem="guj-3s-DWd" secondAttribute="top" id="1ja-Km-eB7"/>
+                            <constraint firstItem="Aae-4e-KIq" firstAttribute="leading" secondItem="guj-3s-DWd" secondAttribute="leading" constant="16" id="4Tk-R3-gm4"/>
                             <constraint firstAttribute="trailing" secondItem="XYJ-MP-sMZ" secondAttribute="trailing" constant="16" id="78g-mN-f5y"/>
+                            <constraint firstItem="guj-3s-DWd" firstAttribute="trailing" secondItem="VPY-bn-lsg" secondAttribute="trailing" constant="55" id="7wb-8r-XeF"/>
                             <constraint firstAttribute="bottomMargin" secondItem="BKi-jB-Ia8" secondAttribute="bottom" priority="250" constant="24" id="8WB-SM-xi3"/>
                             <constraint firstAttribute="trailing" secondItem="BKi-jB-Ia8" secondAttribute="trailing" constant="44" id="8gS-sn-ZZB"/>
-                            <constraint firstItem="Aae-4e-KIq" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="16" id="9c1-bt-RX5"/>
-                            <constraint firstItem="Aae-4e-KIq" firstAttribute="top" secondItem="MEg-E3-k4H" secondAttribute="top" id="cN3-Sv-rZa"/>
+                            <constraint firstItem="guj-3s-DWd" firstAttribute="trailing" secondItem="Aae-4e-KIq" secondAttribute="trailing" constant="16" id="ER4-bR-7W4"/>
+                            <constraint firstItem="VPY-bn-lsg" firstAttribute="leading" secondItem="guj-3s-DWd" secondAttribute="leading" constant="55" id="c3L-oG-kWq"/>
                             <constraint firstItem="XYJ-MP-sMZ" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="16" id="fZa-g9-TDG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VPY-bn-lsg" secondAttribute="trailing" constant="55" id="ggL-CY-wcl"/>
                             <constraint firstItem="VPY-bn-lsg" firstAttribute="top" secondItem="Aae-4e-KIq" secondAttribute="bottom" constant="98" id="lil-au-xXG"/>
                             <constraint firstItem="XYJ-MP-sMZ" firstAttribute="top" secondItem="VPY-bn-lsg" secondAttribute="bottom" constant="24" id="mMl-7h-agC"/>
                             <constraint firstItem="BKi-jB-Ia8" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="44" id="oVG-5l-TT1"/>
-                            <constraint firstItem="VPY-bn-lsg" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leadingMargin" constant="55" id="sph-ZP-rC9"/>
                             <constraint firstItem="BKi-jB-Ia8" firstAttribute="top" secondItem="XYJ-MP-sMZ" secondAttribute="bottom" constant="8" id="tD2-PJ-oA0"/>
                         </constraints>
                     </view>
@@ -236,6 +236,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Usj-a1-8xh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8or-kq-gpr" firstAttribute="leading" secondItem="7QL-cl-ylB" secondAttribute="leading" constant="16" id="2V2-ne-CCJ"/>
@@ -257,6 +258,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="History" width="280" height="265"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

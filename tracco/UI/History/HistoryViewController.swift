@@ -15,7 +15,7 @@ class HistoryViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        ContainerViewHistoryNoTrip.isHidden = true
+        ContainerViewHistoryTrip.isHidden = true
     }
     
 
