@@ -7,23 +7,39 @@
 
 import UIKit
 
-class HistoryTripViewController: UIViewController {
-
-    override func viewDidLoad() {
+class HistoryTripViewController: UIViewController
+{
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 72 + 16
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension HistoryTripViewController: UITableViewDelegate
+{
+    
+}
+
+extension HistoryTripViewController: UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 100
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
+        else { return UITableViewCell() }
+        
+        cell.dateLabel.text = String(indexPath.row)
+        cell.transportImageView.image = TransportType.bus.image
+        
+        return cell
     }
-    */
-
 }

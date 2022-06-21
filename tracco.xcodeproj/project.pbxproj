@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
 		3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */; };
+		3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */; };
 		3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84CB67285E163500EFDD71 /* SummaryVM.swift */; };
 		3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */; };
 		3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
 		3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDigit.swift; sourceTree = "<group>"; };
+		3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		3F84CB67285E163500EFDD71 /* SummaryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVM.swift; sourceTree = "<group>"; };
 		3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
 		3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusPresentationController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */,
 				A8AD59B028602D9A00104B58 /* CardInfoView.swift */,
 				A87463F328546D97009AB0DC /* History.storyboard */,
+				3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */,
 				A87463EF28546D4F009AB0DC /* HistoryViewController.swift */,
 				D9DF377D2860327B00CA9F9C /* HistoryNoTripViewController.swift */,
 				D9DF377F2860329400CA9F9C /* HistoryTripViewController.swift */,
@@ -486,6 +489,7 @@
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
+				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
