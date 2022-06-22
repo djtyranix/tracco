@@ -35,7 +35,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comparison" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pju-Hl-oda">
-                                        <rect key="frame" x="16" y="356.66666666666669" width="358" height="24"/>
+                                        <rect key="frame" x="16" y="354.33333333333331" width="358" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="I6o-vd-BLh"/>
                                         </constraints>
@@ -62,21 +62,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PH8-5K-WsE" userLabel="Separator">
-                                        <rect key="frame" x="16" y="339.66666666666669" width="358" height="1"/>
+                                        <rect key="frame" x="16" y="337.33333333333331" width="358" height="1"/>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="GO4-La-dwp"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNc-If-xDp">
-                                        <rect key="frame" x="16" y="384.66666666666669" width="358" height="53.333333333333314"/>
+                                        <rect key="frame" x="16" y="382.33333333333331" width="358" height="53.333333333333314"/>
                                         <string key="text">Here’s your total carbon emission and cost for this trip. you can save more cost 🤑 and reduce more carbon emission 😎 by using public transportation, view the comparison below.</string>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current Transports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzg-xa-rUb">
-                                        <rect key="frame" x="16" y="454" width="171" height="24"/>
+                                        <rect key="frame" x="16" y="451.66666666666669" width="171" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Cx1-KW-9D8"/>
                                         </constraints>
@@ -85,7 +85,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Public Transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BT7-BF-KTB">
-                                        <rect key="frame" x="203" y="454" width="171" height="24"/>
+                                        <rect key="frame" x="203" y="451.66666666666669" width="171" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="JIg-xn-yf8"/>
                                         </constraints>
@@ -94,7 +94,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5s-Uy-9PE" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="486" width="171" height="88"/>
+                                        <rect key="frame" x="16" y="483.66666666666663" width="171" height="88"/>
                                         <color key="backgroundColor" name="MainGreen90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="88" id="cCg-e4-lxQ"/>
@@ -113,7 +113,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q20-PU-IzH" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="590" width="171" height="88"/>
+                                        <rect key="frame" x="16" y="587.66666666666663" width="171" height="88"/>
                                         <color key="backgroundColor" name="MainGreen90"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -129,7 +129,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kiw-hF-bGj" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="203" y="590" width="171" height="88"/>
+                                        <rect key="frame" x="203" y="587.66666666666663" width="171" height="88"/>
                                         <color key="backgroundColor" name="MainLightGreen"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -145,7 +145,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goM-gK-C5f" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="203" y="486" width="171" height="88"/>
+                                        <rect key="frame" x="203" y="483.66666666666663" width="171" height="88"/>
                                         <color key="backgroundColor" name="MainLightGreen"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -161,7 +161,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xei-oA-Ya8">
-                                        <rect key="frame" x="16" y="694" width="358" height="46"/>
+                                        <rect key="frame" x="16" y="691.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="9u0-Tw-IVJ"/>
                                         </constraints>
@@ -172,13 +172,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-BV-0Pn">
-                                        <rect key="frame" x="311.33333333333331" y="12" width="62.666666666666686" height="36"/>
+                                        <rect key="frame" x="311.33333333333331" y="12" width="62.666666666666686" height="33.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Done">
                                                     <attributes>
-                                                        <font key="NSFont" size="16" name="Nunito-Medium"/>
+                                                        <font key="NSFont" metaFont="system" size="16"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -189,13 +189,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfL-Xf-Ke6">
-                                        <rect key="frame" x="159.33333333333334" y="293" width="71.666666666666657" height="30.666666666666686"/>
+                                        <rect key="frame" x="160.66666666666666" y="293" width="69" height="28.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="View All">
                                                     <attributes>
-                                                        <font key="NSFont" size="12" name="Nunito-SemiBold"/>
+                                                        <font key="NSFont" metaFont="cellTitle"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>

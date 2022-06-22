@@ -7,12 +7,15 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
-
-    override func viewDidLoad() {
+class HistoryViewController: UIViewController
+{
+    @IBOutlet var ContainerViewHistoryNoTrip: UIView!
+    @IBOutlet var ContainerViewHistoryTrip: UIView!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ContainerViewHistoryTrip.isHidden = true
     }
     
 
