@@ -117,6 +117,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value=" "/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uG5-YU-hKW" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
@@ -392,15 +393,7 @@ your profile statistic</string>
                                 <rect key="frame" x="55" y="110.00000000000001" width="265" height="253.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NCN-bz-GFZ" secondAttribute="height" multiplier="293:280" id="RKE-Bb-d9t"/>
-                                    <constraint firstAttribute="height" constant="280" id="ZrK-bd-NEv"/>
-                                    <constraint firstAttribute="width" constant="293" id="a2G-U3-Wvx"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ZrK-bd-NEv"/>
-                                        <exclude reference="a2G-U3-Wvx"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eXC-VR-MCT"/>
