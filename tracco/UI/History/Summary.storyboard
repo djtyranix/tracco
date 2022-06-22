@@ -110,6 +110,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="TreeFill"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q20-PU-IzH" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
@@ -119,13 +120,14 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Estimated Total Cost"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Total Cost"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Money"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="500.2k"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="detail" value="IDR"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="MoneyFill"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kiw-hF-bGj" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
@@ -142,6 +144,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
                                                 <color key="value" name="MainGreen80"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="MoneyFill"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goM-gK-C5f" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
@@ -158,6 +161,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
                                                 <color key="value" name="MainGreen80"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="TreeFill"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xei-oA-Ya8">
@@ -166,7 +170,20 @@
                                             <constraint firstAttribute="height" constant="46" id="9u0-Tw-IVJ"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Check Transport Options in Moovit"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="MoovitLogoButton" imagePadding="8">
+                                            <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="strokeColor" name="MainGreen80"/>
+                                            </backgroundConfiguration>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="See Transport Options in Moovit">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Nunito-SemiBold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" name="MainGreen80"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="onCheckTransportMoovitButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sqs-pq-OPg"/>
                                         </connections>
@@ -182,7 +199,7 @@
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
-                                            <color key="baseForegroundColor" name="MainGreen"/>
+                                            <color key="baseForegroundColor" name="MainGreen80"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="onDoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Wn-XO-fvq"/>
@@ -200,7 +217,7 @@
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
-                                            <color key="baseForegroundColor" name="MainGreen"/>
+                                            <color key="baseForegroundColor" name="MainGreen80"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="QKm-0b-PTo" kind="showDetail" id="Q4T-Ci-nYE"/>
@@ -219,7 +236,6 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Jby-iR-i4F" secondAttribute="trailing" constant="16" id="0x0-Lf-vbo"/>
                                     <constraint firstItem="Q20-PU-IzH" firstAttribute="height" secondItem="J5s-Uy-9PE" secondAttribute="height" id="3Bo-Kg-qgh"/>
-                                    <constraint firstAttribute="bottom" secondItem="xei-oA-Ya8" secondAttribute="bottom" constant="32" id="3Oh-yw-mWc"/>
                                     <constraint firstAttribute="trailing" secondItem="Pju-Hl-oda" secondAttribute="trailing" constant="16" id="3xC-My-Iyq"/>
                                     <constraint firstItem="Nzg-xa-rUb" firstAttribute="top" secondItem="qNc-If-xDp" secondAttribute="bottom" constant="16" id="5cP-Vc-1Lf"/>
                                     <constraint firstAttribute="trailing" secondItem="NRI-BV-0Pn" secondAttribute="trailing" constant="16" id="Bnp-xU-UWm"/>
@@ -232,12 +248,12 @@
                                     <constraint firstItem="Jby-iR-i4F" firstAttribute="top" secondItem="jRR-wJ-xGO" secondAttribute="bottom" constant="8" id="EYF-J6-LI8"/>
                                     <constraint firstItem="BT7-BF-KTB" firstAttribute="width" secondItem="Nzg-xa-rUb" secondAttribute="width" id="FM1-Th-MPj"/>
                                     <constraint firstAttribute="trailing" secondItem="Kiw-hF-bGj" secondAttribute="trailing" constant="16" id="GLq-Se-x6w"/>
-                                    <constraint firstItem="xei-oA-Ya8" firstAttribute="top" secondItem="Q20-PU-IzH" secondAttribute="bottom" constant="16" id="HFa-BS-l6V"/>
                                     <constraint firstAttribute="trailing" secondItem="Jby-iR-i4F" secondAttribute="trailing" constant="16" id="HH7-ln-TUF"/>
                                     <constraint firstItem="YUJ-nx-15T" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="INI-S7-7G7"/>
                                     <constraint firstItem="Jby-iR-i4F" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="Icr-Mq-oYK"/>
                                     <constraint firstAttribute="trailing" secondItem="xei-oA-Ya8" secondAttribute="trailing" constant="16" id="JiG-fd-XC7"/>
                                     <constraint firstAttribute="trailing" secondItem="gEH-eo-Vxv" secondAttribute="trailing" constant="16" id="Rgh-sm-KOG"/>
+                                    <constraint firstItem="xei-oA-Ya8" firstAttribute="top" secondItem="Q20-PU-IzH" secondAttribute="bottom" constant="16" id="RqD-Uv-r5j"/>
                                     <constraint firstItem="Kiw-hF-bGj" firstAttribute="height" secondItem="J5s-Uy-9PE" secondAttribute="height" id="T5P-tW-crT"/>
                                     <constraint firstItem="goM-gK-C5f" firstAttribute="top" secondItem="BT7-BF-KTB" secondAttribute="bottom" constant="8" id="UgC-Xz-N1D"/>
                                     <constraint firstAttribute="trailing" secondItem="BT7-BF-KTB" secondAttribute="trailing" constant="16" id="Vjt-5y-hYg"/>
@@ -257,6 +273,7 @@
                                     <constraint firstItem="YUJ-nx-15T" firstAttribute="top" secondItem="Jby-iR-i4F" secondAttribute="bottom" constant="16" id="j2i-WT-siT"/>
                                     <constraint firstItem="gEH-eo-Vxv" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="j9y-MI-KZF"/>
                                     <constraint firstItem="qNc-If-xDp" firstAttribute="top" secondItem="Pju-Hl-oda" secondAttribute="bottom" constant="4" id="jH8-2N-XGE"/>
+                                    <constraint firstAttribute="bottom" secondItem="xei-oA-Ya8" secondAttribute="bottom" id="ji6-5g-rzG"/>
                                     <constraint firstItem="goM-gK-C5f" firstAttribute="leading" secondItem="J5s-Uy-9PE" secondAttribute="trailing" constant="16" id="leT-yT-Zbo"/>
                                     <constraint firstItem="Q20-PU-IzH" firstAttribute="top" secondItem="J5s-Uy-9PE" secondAttribute="bottom" constant="16" id="lm5-tg-IaD"/>
                                     <constraint firstItem="goM-gK-C5f" firstAttribute="width" secondItem="J5s-Uy-9PE" secondAttribute="width" id="nRc-ci-ndS"/>
@@ -423,11 +440,11 @@
         <segue reference="bjs-ej-bXe"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Money" width="12" height="12"/>
-        <image name="Tree" width="12" height="12"/>
-        <namedColor name="MainGreen">
-            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="Money" width="16" height="17"/>
+        <image name="MoneyFill" width="40" height="40"/>
+        <image name="MoovitLogoButton" width="25" height="24"/>
+        <image name="Tree" width="16" height="17"/>
+        <image name="TreeFill" width="30" height="40"/>
         <namedColor name="MainGreen80">
             <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

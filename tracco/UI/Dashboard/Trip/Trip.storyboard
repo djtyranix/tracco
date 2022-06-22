@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,47 +56,77 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XR-O1-cNP">
-                                        <rect key="frame" x="0.0" y="505" width="358" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAX-CW-Vw5">
+                                        <rect key="frame" x="0.0" y="506" width="358" height="46"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="Grk-1N-Uv1"/>
+                                            <constraint firstAttribute="height" constant="46" id="jaO-Vy-bGw"/>
                                         </constraints>
+                                        <color key="tintColor" name="MainButtonForeground"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Continue Without Destination"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Tracking Logo" imagePlacement="trailing" imagePadding="8">
+                                            <backgroundConfiguration key="background" cornerRadius="8">
+                                                <color key="backgroundColor" name="MainButtonBackground"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Continue Without Destination">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Nunito-SemiBold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" name="MainButtonForeground"/>
+                                        </buttonConfiguration>
                                         <connections>
-                                            <action selector="onContinueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Z4K-1Q-B8w"/>
-                                            <segue destination="dIO-Fi-FqQ" kind="presentation" modalPresentationStyle="fullScreen" id="boq-hd-qCO"/>
+                                            <action selector="onContinueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R9X-2l-dnQ"/>
+                                            <segue destination="dIO-Fi-FqQ" kind="presentation" modalPresentationStyle="fullScreen" id="6ze-wC-xXR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ1-p4-mQR">
-                                        <rect key="frame" x="0.0" y="567" width="358" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-cR-Xmt">
+                                        <rect key="frame" x="0.0" y="568" width="358" height="46"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="y0e-kz-Wx5"/>
+                                            <constraint firstAttribute="height" constant="46" id="pSd-8q-KXV"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="See Options in Moovit"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="MoovitLogoButton" imagePlacement="leading" imagePadding="8">
+                                            <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="strokeColor" name="MainGreen80"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="See Options in Moovit">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Nunito-SemiBold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" name="MainGreen80"/>
+                                        </buttonConfiguration>
                                         <connections>
-                                            <action selector="onMoovitButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SGp-fA-1to"/>
+                                            <action selector="onMoovitButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b2C-xf-TEP"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-sB-0zU" userLabel="Show Recommendation">
-                                        <rect key="frame" x="0.0" y="629" width="358" height="46"/>
+                                        <rect key="frame" x="0.0" y="630" width="358" height="45"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-U0-tPT">
-                                                <rect key="frame" x="55" y="1.6666666666666643" width="20" height="19.000000000000004"/>
+                                                <rect key="frame" x="51" y="1.3333333333333304" width="24" height="21.666666666666671"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="0ss-Wj-xaA"/>
-                                                    <constraint firstAttribute="width" constant="20" id="flv-M6-RDJ"/>
+                                                    <constraint firstAttribute="height" constant="24" id="0ss-Wj-xaA"/>
+                                                    <constraint firstAttribute="width" constant="24" id="flv-M6-RDJ"/>
                                                 </constraints>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't show this recommendation again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-r3-IGR">
-                                                <rect key="frame" x="83" y="2" width="220" height="18"/>
+                                                <rect key="frame" x="83" y="3" width="220" height="18"/>
                                                 <fontDescription key="fontDescription" name="Nunito-ExtraLight" family="Nunito" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can change again in Settings later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-H1-ioG">
-                                                <rect key="frame" x="72" y="28" width="214" height="18"/>
+                                                <rect key="frame" x="72" y="27" width="214" height="18"/>
                                                 <fontDescription key="fontDescription" name="Nunito-ExtraLight" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -104,7 +135,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="6lE-r3-IGR" firstAttribute="leading" secondItem="wYS-U0-tPT" secondAttribute="trailing" constant="8" id="2To-VK-DKH"/>
-                                            <constraint firstItem="aeV-H1-ioG" firstAttribute="top" secondItem="6lE-r3-IGR" secondAttribute="bottom" constant="8" id="4q7-PZ-ngV"/>
+                                            <constraint firstItem="aeV-H1-ioG" firstAttribute="top" secondItem="6lE-r3-IGR" secondAttribute="bottom" constant="6" id="4q7-PZ-ngV"/>
                                             <constraint firstItem="wYS-U0-tPT" firstAttribute="top" secondItem="AEQ-sB-0zU" secondAttribute="top" id="6oo-cl-Eaw"/>
                                             <constraint firstAttribute="bottom" secondItem="aeV-H1-ioG" secondAttribute="bottom" id="m9H-Tv-ZIN"/>
                                             <constraint firstItem="6lE-r3-IGR" firstAttribute="centerY" secondItem="wYS-U0-tPT" secondAttribute="centerY" id="n8F-Aj-2Nw"/>
@@ -113,7 +144,7 @@
                                         </constraints>
                                     </view>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-UG-J1u">
-                                        <rect key="frame" x="0.0" y="46.666666666666657" width="358" height="442.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="46.666666666666657" width="358" height="443.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Gsd-hG-bkM"/>
                                         </constraints>
@@ -127,15 +158,15 @@
                                         </connections>
                                     </mapView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-4t-PNW">
-                                        <rect key="frame" x="159" y="230.33333333333334" width="40" height="39.333333333333314"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <rect key="frame" x="159" y="230.66666666666666" width="40" height="39.333333333333314"/>
+                                        <color key="tintColor" name="MainGreen10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="c6I-WE-yRY"/>
                                             <constraint firstAttribute="width" constant="40" id="gBA-8L-mbO"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPS-hK-eT9">
-                                        <rect key="frame" x="20" y="374" width="318" height="95"/>
+                                        <rect key="frame" x="20" y="375" width="318" height="95"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Breeze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOD-AK-CEI">
                                                 <rect key="frame" x="16" y="16" width="286" height="24"/>
@@ -179,23 +210,23 @@
                                 <constraints>
                                     <constraint firstItem="but-cA-kM0" firstAttribute="top" secondItem="uNo-Kr-dON" secondAttribute="top" id="1IA-NB-6VU"/>
                                     <constraint firstItem="TPS-hK-eT9" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" constant="20" id="4jJ-md-7SB"/>
-                                    <constraint firstItem="4XR-O1-cNP" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="53Z-vs-yIh"/>
                                     <constraint firstAttribute="trailing" secondItem="hZE-UG-J1u" secondAttribute="trailing" id="70b-cj-nHL"/>
+                                    <constraint firstItem="HAX-CW-Vw5" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="9qh-oi-dde"/>
                                     <constraint firstItem="hZE-UG-J1u" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="BKx-LA-LW6"/>
-                                    <constraint firstAttribute="trailing" secondItem="tZ1-p4-mQR" secondAttribute="trailing" id="FhJ-77-yzN"/>
+                                    <constraint firstItem="Ww2-cR-Xmt" firstAttribute="top" secondItem="HAX-CW-Vw5" secondAttribute="bottom" constant="16" id="GBr-QS-mde"/>
                                     <constraint firstItem="9qt-4t-PNW" firstAttribute="centerY" secondItem="hZE-UG-J1u" secondAttribute="centerY" constant="-18" id="GDi-9e-3YM"/>
+                                    <constraint firstItem="HAX-CW-Vw5" firstAttribute="top" secondItem="hZE-UG-J1u" secondAttribute="bottom" constant="16" id="GUG-Zh-IKo"/>
                                     <constraint firstItem="but-cA-kM0" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="JCN-XF-kqx"/>
-                                    <constraint firstItem="tZ1-p4-mQR" firstAttribute="top" secondItem="4XR-O1-cNP" secondAttribute="bottom" constant="16" id="NDl-Tr-eEs"/>
-                                    <constraint firstAttribute="trailing" secondItem="4XR-O1-cNP" secondAttribute="trailing" id="Pho-aM-xjB"/>
-                                    <constraint firstItem="AEQ-sB-0zU" firstAttribute="top" secondItem="tZ1-p4-mQR" secondAttribute="bottom" constant="16" id="T72-9q-sk7"/>
+                                    <constraint firstItem="Ww2-cR-Xmt" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="PvA-xH-I78"/>
                                     <constraint firstItem="9qt-4t-PNW" firstAttribute="centerX" secondItem="hZE-UG-J1u" secondAttribute="centerX" id="UxD-tD-hA7"/>
                                     <constraint firstAttribute="trailing" secondItem="AEQ-sB-0zU" secondAttribute="trailing" id="W3f-lv-Tjt"/>
                                     <constraint firstAttribute="bottom" secondItem="AEQ-sB-0zU" secondAttribute="bottom" constant="12" id="Y1o-WD-eOV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ww2-cR-Xmt" secondAttribute="trailing" id="Zba-MP-xj0"/>
                                     <constraint firstAttribute="trailing" secondItem="TPS-hK-eT9" secondAttribute="trailing" constant="20" id="e4f-18-c6T"/>
+                                    <constraint firstAttribute="trailing" secondItem="HAX-CW-Vw5" secondAttribute="trailing" id="euM-gi-fWe"/>
                                     <constraint firstItem="hZE-UG-J1u" firstAttribute="top" secondItem="but-cA-kM0" secondAttribute="bottom" constant="16" id="gmN-da-Uw7"/>
-                                    <constraint firstItem="tZ1-p4-mQR" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="jrO-Fy-IzH"/>
+                                    <constraint firstItem="AEQ-sB-0zU" firstAttribute="top" secondItem="Ww2-cR-Xmt" secondAttribute="bottom" constant="16" id="j77-jD-ADN"/>
                                     <constraint firstItem="AEQ-sB-0zU" firstAttribute="leading" secondItem="uNo-Kr-dON" secondAttribute="leading" id="rnd-EB-Q2s"/>
-                                    <constraint firstItem="4XR-O1-cNP" firstAttribute="top" secondItem="hZE-UG-J1u" secondAttribute="bottom" constant="16" id="y2l-AK-eEi"/>
                                     <constraint firstItem="TPS-hK-eT9" firstAttribute="bottom" secondItem="hZE-UG-J1u" secondAttribute="bottom" constant="-20" id="yDX-3L-WfG"/>
                                 </constraints>
                             </view>
@@ -213,14 +244,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="continueButton" destination="4XR-O1-cNP" id="TIL-mT-Tpl"/>
+                        <outlet property="continueButton" destination="HAX-CW-Vw5" id="4QJ-q6-o5C"/>
                         <outlet property="locationCoordinateLabel" destination="E2Q-5K-hiK" id="gww-4o-xUH"/>
                         <outlet property="locationDescView" destination="TPS-hK-eT9" id="Mk3-Ic-8fQ"/>
                         <outlet property="locationRegionLabel" destination="vcd-zF-chX" id="5r7-rh-dun"/>
                         <outlet property="locationTitleLabel" destination="JOD-AK-CEI" id="Gce-jw-g6R"/>
                         <outlet property="mapPinView" destination="9qt-4t-PNW" id="SWO-c4-vZw"/>
                         <outlet property="mapView" destination="hZE-UG-J1u" id="Up8-6w-yzO"/>
-                        <outlet property="moovitButton" destination="tZ1-p4-mQR" id="UVq-y1-DQH"/>
+                        <outlet property="moovitButton" destination="Ww2-cR-Xmt" id="mHk-fd-oLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -269,9 +300,13 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title=" " imagePadding="-3">
+                                <buttonConfiguration key="configuration" style="plain" title=" " imagePadding="-3">
                                     <imageReference key="image" image="location" catalog="system" symbolScale="medium"/>
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </backgroundConfiguration>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="medium"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -291,9 +326,13 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title=" " imagePadding="-5">
+                                <buttonConfiguration key="configuration" style="plain" title=" " imagePadding="-5">
                                     <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="medium"/>
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </backgroundConfiguration>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="medium"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -342,10 +381,24 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MoovitLogoButton" width="25" height="24"/>
+        <image name="Tracking Logo" width="16" height="16"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="location" catalog="system" width="128" height="118"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="rectangle" catalog="system" width="128" height="93"/>
+        <namedColor name="MainButtonBackground">
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonForeground">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainGreen10">
+            <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainGreen80">
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -23,7 +23,10 @@ class CardInfoView: UIView
     
     @IBInspectable var logo: UIImage! { didSet {
         logoImageView.image = logo
-        logoOverlayImageView.image = logo
+    }}
+    
+    @IBInspectable var logoOverlay: UIImage! { didSet {
+        logoOverlayImageView.image = logoOverlay
     }}
     
     @IBInspectable var value: String! { didSet {

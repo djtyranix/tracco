@@ -10,6 +10,7 @@ import UIKit
 @objc protocol ActivateLocationViewControllerDelegate: AnyObject
 {
     @objc optional func onGoToSettings()
+    @objc optional func onCancelLocation()
 }
 
 class ActivateLocationViewController: UIViewController
@@ -36,5 +37,11 @@ class ActivateLocationViewController: UIViewController
     @IBAction func onGoToSettingsButton(_ sender: UIButton)
     {
         delegate?.onGoToSettings?()
+    }
+    
+    @IBAction func onCancelButton(_ sender: UIButton)
+    {
+        self.dismiss(animated: true)
+        delegate?.onCancelLocation?()
     }
 }

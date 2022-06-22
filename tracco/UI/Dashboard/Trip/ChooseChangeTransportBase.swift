@@ -11,6 +11,8 @@ import UIKit
 class ChooseChangeTransportBase<T>: UIViewController
 {
     private(set) var radioButton: RadioButtonManager<TransportRadioButton>?
+    private let selectedBackgroundColor = UIColor(named: "MainGreen20")
+    private let selectedForegroundColor = UIColor(named: "MainGreen90")
     
     init(_ dataSource: [TransportType]?)
     {
@@ -89,9 +91,10 @@ class ChooseChangeTransportBase<T>: UIViewController
             buttons,
             onSelected: { button in
                 UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn)
-                {
+                { [unowned self] in
                     button.imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-                    button.backgroundView.backgroundColor = .systemGreen
+                    button.backgroundView.backgroundColor = selectedBackgroundColor
+                    button.titleLabel.textColor = selectedForegroundColor
                 }
             },
             onDeselect: { button in
@@ -99,6 +102,7 @@ class ChooseChangeTransportBase<T>: UIViewController
                 {
                     button.imageView.transform = CGAffineTransform.identity
                     button.backgroundView.backgroundColor = .secondarySystemBackground
+                    button.titleLabel.textColor = .label
                 }
             }
         )
