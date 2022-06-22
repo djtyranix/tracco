@@ -82,7 +82,7 @@
                                             <segue destination="dIO-Fi-FqQ" kind="presentation" modalPresentationStyle="fullScreen" id="6ze-wC-xXR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-cR-Xmt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-cR-Xmt" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="568" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="pSd-8q-KXV"/>
