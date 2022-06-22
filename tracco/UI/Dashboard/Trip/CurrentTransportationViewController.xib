@@ -162,9 +162,10 @@
                             <color key="backgroundColor" name="MainButtonBackground"/>
                         </backgroundConfiguration>
                         <attributedString key="attributedTitle">
-                            <fragment content="Change Transportation">
+                            <fragment content="Switch Transportation">
                                 <attributes>
                                     <font key="NSFont" size="16" name="Nunito-SemiBold"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>

@@ -28,12 +28,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Switch Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjh-WP-mSz">
-                    <rect key="frame" x="16" y="40" width="358" height="24"/>
+                    <rect key="frame" x="16" y="40.5" width="358" height="23.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEd-7f-PUL">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEd-7f-PUL" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                     <rect key="frame" x="203" y="259" width="171" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Vuf-QH-Kep"/>
@@ -108,6 +108,11 @@
             <point key="canvasLocation" x="592.75362318840587" y="49.21875"/>
         </view>
     </objects>
+    <designables>
+        <designable name="BEd-7f-PUL">
+            <size key="intrinsicContentSize" width="82" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="CancelButton">
             <color red="0.62000000476837158" green="0.62000000476837158" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
