@@ -1,20 +1,17 @@
 //
-//  ProfileViewController.swift
+//  SumProfileViewController.swift
 //  tracco
 //
-//  Created by Michael Ricky on 11/06/22.
+//  Created by Fannisa Rahmah on 20/06/22.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class SumProfileViewController: UIViewController {
 
-    @IBOutlet weak var emptySumProfileView: UIView!
-    @IBOutlet weak var sumProfileView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptySumProfileView.isHidden = true
+
         // Do any additional setup after loading the view.
     }
     
