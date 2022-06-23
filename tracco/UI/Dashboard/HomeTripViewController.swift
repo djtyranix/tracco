@@ -15,23 +15,29 @@ class HomeTripViewController: UIViewController
     @IBOutlet weak var tableView: UITableView!
     
     public var historyDataSource: [TripModel]?
-    private var dataSource: ArraySlice<TripModel>?
+    
+    // data max will adjust according to the device table view height
+    // this view will only contain just a few latest history
+    private var dataMaxSize: Int!
+    // last item in the array are the newest, first item are the oldest
+    private var dataSource: [TripModel]?
     private var selectedIndex: IndexPath?
+    private var isTableViewDataSourceInitialized = false
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        GlobalPublisher.addObserver(self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight
         tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
-        
-        setTrackingButtonFont()
     }
     
     override func viewDidLayoutSubviews()
     {
+        super.viewDidLayoutSubviews()
         limitLatestTripBasedOnDeviceHeight()
     }
     
@@ -51,26 +57,34 @@ class HomeTripViewController: UIViewController
     
     private func limitLatestTripBasedOnDeviceHeight()
     {
+        if isTableViewDataSourceInitialized { return }
         let tableViewHeight = tableView.bounds.size.height
         let contentSize = HistoryTableViewCell.cellDesiredHeight
-        let roomForRow = Int(ceil(tableViewHeight / contentSize))
+        dataMaxSize = Int(ceil(tableViewHeight / contentSize))
         // get the data from the back because the newest are push to the back
-        dataSource = historyDataSource?.suffix(roomForRow)
-    }
-    
-    private func setTrackingButtonFont() {
-        if #available(iOS 15.0, *) {
-            guard var config = trackButton.configuration else {
-                return
-            }
-            
-            config.attributedTitle = try! AttributedString( NSAttributedString(string: "Start Tracking", attributes: [
-                .font: UIFont(name: "Nunito-Bold", size: 17)!,
-            ]), including: AttributeScopes.UIKitAttributes.self
-            )
-            
-            trackButton.configuration = config
+        // reserve capacity to be equal with maximum size
+        var arr: [TripModel] = []
+        arr.reserveCapacity(dataMaxSize)
+        if let newest = historyDataSource?.suffix(dataMaxSize)
+        {
+            arr.append(contentsOf: newest)
         }
+        self.dataSource = arr
+        self.historyDataSource = nil
+        isTableViewDataSourceInitialized = true
+    }
+}
+
+extension HomeTripViewController: GlobalEvent
+{
+    func addTripModel(_ model: TripModel)
+    {
+        // if full, remove the oldest data
+        let isFull = dataSource?.count == dataMaxSize
+        if (isFull) { dataSource?.removeFirst() }
+        // append the newest data and reload table
+        dataSource?.append(model)
+        tableView.reloadData()
     }
 }
 
@@ -98,7 +112,7 @@ extension HomeTripViewController: UITableViewDataSource
               let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
         else { return UITableViewCell() }
         
-        let dataIndex = dataSource.endIndex - 1 - indexPath.row
+        let dataIndex = dataSource.count - 1 - indexPath.row
         let data = dataSource[dataIndex]
         
         cell.setupCell(data)

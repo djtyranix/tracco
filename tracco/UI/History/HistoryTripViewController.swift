@@ -19,6 +19,7 @@ class HistoryTripViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        GlobalPublisher.addObserver(self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight
@@ -37,6 +38,15 @@ class HistoryTripViewController: UIViewController
             vc.viewModelHistory = SummaryHistoryVM(model)
             vc.viewModelHistory?.headerOverviewText = "Trip from \(cell.descriptionLabel.text!)"
         }
+    }
+}
+
+extension HistoryTripViewController: GlobalEvent
+{
+    func addTripModel(_ model: TripModel)
+    {
+        dataSource?.append(model)
+        tableView.reloadData()
     }
 }
 

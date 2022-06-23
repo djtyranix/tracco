@@ -37,7 +37,7 @@ class DashboardViewController: UIViewController
         if let vc = segue.destination as? HomeTripViewController
         {
             vc.historyDataSource = historyDataSource
-            historyDataSource = []
+            historyDataSource = nil
         }
     }
 }

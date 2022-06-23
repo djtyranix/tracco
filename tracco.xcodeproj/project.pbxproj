@@ -46,6 +46,7 @@
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
 		3FEE071E2864109A00DAA5EB /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */; };
 		3FEE07212864234500DAA5EB /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE07202864234500DAA5EB /* ProfileVM.swift */; };
+		3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */; };
 		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
 		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		3FF10126285490E10048013A /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10125285490E10048013A /* Trip.storyboard */; };
@@ -134,6 +135,7 @@
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
 		3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		3FEE07202864234500DAA5EB /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPublisher.swift; sourceTree = "<group>"; };
 		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF10125285490E10048013A /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */,
 				3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */,
 				3F3131E428635D50005B7640 /* TimeFrequency.swift */,
+				3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
 				3F3131E728638806005B7640 /* SummaryHeaderHistoryViewController.swift in Sources */,
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
+				3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */,
 				3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */,
 				3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */,
 				A8CC9D7F285A2D3200F30DBE /* MiniCardView.swift in Sources */,

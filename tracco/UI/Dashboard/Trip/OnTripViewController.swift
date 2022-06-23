@@ -172,6 +172,7 @@ class OnTripViewController: UIViewController
                 )
             }
             
+            GlobalPublisher.shared.addTripModel(model)
             StoredModel.history?.append(model)
             model.forEach { StoredModel.profile?.add($0) }
             
