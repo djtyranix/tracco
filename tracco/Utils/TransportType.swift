@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // transportation and their average carbon emission
-enum TransportType: CO2EBase, CaseIterable
+enum TransportType: CO2EBase, Codable, CaseIterable
 {
     case car    = 0.27
     case motor  = 0.15
@@ -21,6 +21,14 @@ enum TransportType: CO2EBase, CaseIterable
         if (self == .motor)     { return .systemRed }
         if (self == .bus)       { return .systemGreen }
         if (self == .train)     { return .black }
+        return .white
+    }}
+    
+    public var backgroundColor: UIColor? { get {
+        if (self == .car)       { return UIColor(named: "CarBackground") }
+        if (self == .motor)     { return UIColor(named: "MotorBackground") }
+        if (self == .bus)       { return UIColor(named: "BusBackground") }
+        if (self == .train)     { return UIColor(named: "TrainBackground") }
         return .white
     }}
     

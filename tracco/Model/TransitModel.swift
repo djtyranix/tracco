@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransitModel
+struct TransitModel: Codable
 {
     // transit path
     var transitPath: TransitPath
@@ -16,3 +16,5 @@ struct TransitModel
     // cost of transportation in IDR
     var costInIDR: Double
 }
+
+typealias TripModel = [TransitModel]

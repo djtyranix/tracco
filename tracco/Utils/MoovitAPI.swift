@@ -38,7 +38,7 @@ extension MoovitAPI
             case date                   = "date"
         }
         
-        public static func getDirectionsFromCurrent(origName: String?, dest: CLLocationCoordinate2D, destName: String?, autoRun: Bool = true, date: Date = .init()) -> URL?
+        public static func getDirectionsFromCurrent(origName: String?, dest: LocationCoordinate2D, destName: String?, autoRun: Bool = true, date: Date = .init()) -> URL?
         {
             return parser(params: [
                 (.originName,           origName),
@@ -51,7 +51,7 @@ extension MoovitAPI
             ])
         }
         
-        public static func getDirectionsFrom(orig: CLLocationCoordinate2D, origName: String?, dest: CLLocationCoordinate2D, destName: String?, autoRun: Bool = true, date: Date = .init()) -> URL?
+        public static func getDirectionsFrom(orig: LocationCoordinate2D, origName: String?, dest: LocationCoordinate2D, destName: String?, autoRun: Bool = true, date: Date = .init()) -> URL?
         {
             return parser(params: [
                 (.originName,           origName),

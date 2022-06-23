@@ -10,6 +10,9 @@ import MapKit
 
 class SummaryViewController: UIViewController
 {
+    @IBOutlet weak var headerTripContainerView: UIView!
+    @IBOutlet weak var headerHistoryContainerView: UIView!
+    
     @IBOutlet weak var tripDetailView: UIView!
     @IBOutlet weak var tripDetailViewAllButton: UIButton!
     @IBOutlet weak var tripDetailBottomSeparator: UIView!
@@ -26,7 +29,17 @@ class SummaryViewController: UIViewController
     @IBOutlet weak var otherTransportCarbonCardView: CardInfoView!
     @IBOutlet weak var otherTransportCostCardView: CardInfoView!
     
-    public var viewModel: SummaryVM?
+    public var viewModel: SummaryVM? { didSet {
+        if (viewModelHistory == nil) { refViewModel = viewModel }
+    }}
+    public var viewModelHistory: SummaryHistoryVM? { didSet {
+        refViewModel = viewModelHistory
+    }}
+    
+    // either reference to viewModel (trip) or viewModelHistory
+    // this vc will favor history if both are set
+    private var refViewModel: SummaryVM?
+    
     
     required init?(coder: NSCoder)
     {
@@ -36,20 +49,25 @@ class SummaryViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        if (viewModelHistory != nil)
+        {
+            headerTripContainerView.isHidden = true
+            headerHistoryContainerView.isHidden = false
+        }
+        else
+        {
+            headerTripContainerView.isHidden = false
+            headerHistoryContainerView.isHidden = true
+        }
         layoutTripDetail()
         updateViewWithModel()
     }
     
-    @IBAction func onDoneButton(_ sender: UIButton)
-    {
-        self.view.window?.rootViewController?.dismiss(animated: true)
-    }
-    
     @IBAction func onCheckTransportMoovitButton(_ sender: UIButton)
     {
-        guard let firstModel    = viewModel?.tripDetailContents.first,
-              let lastModel     = viewModel?.tripDetailContents.last,
-              let transitDate   = viewModel?.tripDetailContents.first?.date
+        guard let firstModel    = refViewModel?.tripDetailContents.first,
+              let lastModel     = refViewModel?.tripDetailContents.last,
+              let transitDate   = refViewModel?.tripDetailContents.first?.date
         else { return }
         
         if (MoovitAPI.canLink)
@@ -78,15 +96,15 @@ class SummaryViewController: UIViewController
     
     private func updateViewWithModel()
     {
-        currentTransportCarbonCardView.value    = viewModel?.currentCarbonEmissionInKgText
-        currentTransportCostCardView.value      = viewModel?.currentCostInIDRText
-        otherTransportCostCardView.value        = viewModel?.otherCostInIDRText
-        otherTransportCarbonCardView.value      = viewModel?.otherCarbonEmissionInKgText
+        currentTransportCarbonCardView.value    = refViewModel?.currentCarbonEmissionInKgText
+        currentTransportCostCardView.value      = refViewModel?.currentCostInIDRText
+        otherTransportCostCardView.value        = refViewModel?.otherCostInIDRText
+        otherTransportCarbonCardView.value      = refViewModel?.otherCarbonEmissionInKgText
     }
     
     private func layoutTripDetail()
     {
-        let noTransit = viewModel?.tripDetailContents.count ?? 0 <= 2
+        let noTransit = refViewModel?.tripDetailContents.count ?? 0 <= 2
         if (noTransit)
         {
             tripDetailViewAllButton.isHidden = true
@@ -98,12 +116,16 @@ class SummaryViewController: UIViewController
     {
         if let vc = segue.destination as? TripDetailViewController
         {
-            vc.viewModel = viewModel
+            vc.viewModel = refViewModel
             vc.isScrollEnable = false
         }
         if let vc = segue.destination as? SummaryDetailViewController
         {
-            vc.viewModel = viewModel
+            vc.viewModel = refViewModel
+        }
+        if let vc = segue.destination as? SummaryHeaderHistoryViewController
+        {
+            vc.viewModel = viewModelHistory
         }
     }
 

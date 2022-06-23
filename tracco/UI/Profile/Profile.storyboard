@@ -320,6 +320,13 @@
                             <constraint firstItem="lT8-kJ-uD7" firstAttribute="trailing" secondItem="Suh-5M-Owa" secondAttribute="trailing" id="uKc-P8-ra9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distanceCard" destination="uG5-YU-hKW" id="egH-tO-Z3D"/>
+                        <outlet property="mostUsedTransportCard" destination="U3x-fB-1Cb" id="bPP-QO-5V1"/>
+                        <outlet property="spendCostCard" destination="vJ9-Xc-YX1" id="L0q-6L-vd2"/>
+                        <outlet property="totalCarbonCard" destination="jem-eO-XWG" id="Ep3-cJ-uBg"/>
+                        <outlet property="trackCountCard" destination="UX5-cH-cGa" id="0zZ-Ur-IN9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAY-Up-hnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

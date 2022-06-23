@@ -65,6 +65,16 @@
             </objects>
             <point key="canvasLocation" x="14" y="285"/>
         </scene>
+        <!--Summary-->
+        <scene sceneID="jU0-Xb-pQW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Summary" id="o94-WE-xZW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4N6-gV-4EP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8em-71-qNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="14"/>
+        </scene>
         <!--Trip-->
         <scene sceneID="QMk-4Y-ESb">
             <objects>
@@ -274,7 +284,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-3E-FN4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-3E-FN4">
                                 <rect key="frame" x="16" y="393" width="382" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -337,7 +347,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="oSf-3E-FN4" id="VJY-Gq-pwe"/>
                         <outlet property="trackButton" destination="6hw-l2-zA9" id="CaX-7z-lsU"/>
+                        <segue destination="o94-WE-xZW" kind="show" identifier="summarySegue" id="lYM-vY-J9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rt1-Ml-1Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,26 +7,29 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController
+{
     @IBOutlet weak var emptySumProfileView: UIView!
     @IBOutlet weak var sumProfileView: UIView!
     
-    override func viewDidLoad() {
+    private var model: ProfileModel? = StoredModel.profile
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        emptySumProfileView.isHidden = true
-        // Do any additional setup after loading the view.
+        self.model                      = StoredModel.profile
+        emptySumProfileView.isHidden    = model != nil
+        sumProfileView.isHidden         = model == nil
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? SumProfileViewController
+        {
+            guard let model = model
+            else { return }
+            vc.viewModel = ProfileVM(model)
+            self.model = nil
+        }
     }
-    */
-
 }

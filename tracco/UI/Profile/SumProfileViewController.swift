@@ -7,23 +7,24 @@
 
 import UIKit
 
-class SumProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class SumProfileViewController: UIViewController
+{
+    @IBOutlet weak var totalCarbonCard: TotalCarbonProfileCard!
+    @IBOutlet weak var distanceCard: CardInfoView!
+    @IBOutlet weak var mostUsedTransportCard: CardInfoView!
+    @IBOutlet weak var trackCountCard: CardInfoView!
+    @IBOutlet weak var spendCostCard: CardInfoView!
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    public var viewModel: ProfileVM?
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        totalCarbonCard.value       = viewModel?.totalCarbonEmissionText
+        distanceCard.value          = viewModel?.distanceInKmText
+        spendCostCard.value         = viewModel?.spendCostInIDRText
+        trackCountCard.value        = viewModel?.trackCountText
+        mostUsedTransportCard.value = viewModel?.mostUsedTransportText
     }
-    */
-
 }

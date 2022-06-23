@@ -12,21 +12,21 @@ class HistoryViewController: UIViewController
     @IBOutlet var ContainerViewHistoryNoTrip: UIView!
     @IBOutlet var ContainerViewHistoryTrip: UIView!
     
+    private var historyDataSource: [TripModel]? = StoredModel.history
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        ContainerViewHistoryTrip.isHidden = true
+        ContainerViewHistoryTrip.isHidden   = historyDataSource == nil
+        ContainerViewHistoryNoTrip.isHidden = historyDataSource != nil
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? HistoryTripViewController
+        {
+            vc.dataSource = historyDataSource
+            historyDataSource = []
+        }
     }
-    */
-
 }
