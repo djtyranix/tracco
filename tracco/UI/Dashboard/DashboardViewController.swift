@@ -14,16 +14,31 @@ class DashboardViewController: UIViewController
     
     let viewModel = DashboardViewModel()
     
+    private var historyDataSource: [TripModel]?
+    
+    private var isAlreadyHavingTrip: Bool!
+    
+    required init?(coder: NSCoder)
+    {
+        super.init(coder: coder)
+        historyDataSource = StoredModel.history
+        isAlreadyHavingTrip = historyDataSource != nil
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool)
-    {
-        let isAlreadyHavingTrip = viewModel.isAlreadyHavingTrip()
         noTripView.isHidden     = isAlreadyHavingTrip
         tripView.isHidden       = !isAlreadyHavingTrip
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? HomeTripViewController
+        {
+            vc.historyDataSource = historyDataSource
+            historyDataSource = nil
+        }
     }
 }
 

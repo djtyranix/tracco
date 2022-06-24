@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zqe-7u-CVl">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -22,17 +22,17 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="DashboardViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pef-hv-T05">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
                                 <connections>
                                     <segue destination="PBg-mK-IQk" kind="embed" id="XgJ-9w-qKt"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-51-r8I">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
                                 <connections>
                                     <segue destination="dQx-Ub-dxW" kind="embed" id="YuH-1R-eou"/>
                                 </connections>
@@ -65,6 +65,16 @@
             </objects>
             <point key="canvasLocation" x="14" y="285"/>
         </scene>
+        <!--Summary-->
+        <scene sceneID="jU0-Xb-pQW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Summary" id="o94-WE-xZW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4N6-gV-4EP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8em-71-qNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="14"/>
+        </scene>
         <!--Trip-->
         <scene sceneID="QMk-4Y-ESb">
             <objects>
@@ -78,35 +88,35 @@
             <objects>
                 <viewController storyboardIdentifier="homeNoTrip" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBg-mK-IQk" customClass="HomeNoTripViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5vI-AV-dpX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Morning 👋🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwe-BG-BJa">
-                                <rect key="frame" x="16" y="44" width="382" height="46.5"/>
+                                <rect key="frame" x="16" y="44" width="396" height="46.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="Jm6-hp-G2I">
-                                <rect key="frame" x="55" y="143.5" width="304" height="304"/>
+                                <rect key="frame" x="55" y="143.66666666666663" width="318" height="318"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jm6-hp-G2I" secondAttribute="height" multiplier="1:1" id="YN1-Hu-KOx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't tracked any trip 🥲" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-56-fY0">
-                                <rect key="frame" x="16" y="471.5" width="382" height="30.5"/>
+                                <rect key="frame" x="16" y="485.66666666666669" width="396" height="30.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See how well you safe the environment by simply start tapping the button below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-nu-wvz">
-                                <rect key="frame" x="16" y="510" width="382" height="46.5"/>
+                                <rect key="frame" x="16" y="524" width="396" height="46.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-2r-5tL">
-                                <rect key="frame" x="16" y="580.5" width="382" height="72"/>
+                                <rect key="frame" x="16" y="594.66666666666663" width="396" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="7CH-TF-tYd"/>
                                 </constraints>
@@ -162,7 +172,7 @@
                     <navigationItem key="navigationItem" id="lSx-5L-bXo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MgK-sF-kIX">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -179,17 +189,17 @@
             <objects>
                 <viewController storyboardIdentifier="homeTrip" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dQx-Ub-dxW" customClass="HomeTripViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="60r-Dn-TdR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Morning 👋🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHV-GK-8ut">
-                                <rect key="frame" x="16" y="44" width="382" height="46.5"/>
+                                <rect key="frame" x="16" y="44" width="396" height="46.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay 😆 You have reduced carbon emissions that is equal to planting 12 Trees 🌲👊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4p-nQ-ELL">
-                                <rect key="frame" x="16" y="98.5" width="382" height="44"/>
+                                <rect key="frame" x="16" y="98.666666666666671" width="396" height="43.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -197,6 +207,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-IH-j3R" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
                                 <rect key="frame" x="16" y="166.5" width="185" height="88"/>
                                 <color key="backgroundColor" name="CardMainBackground"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Carbon Emission" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lht-T5-AnZ">
+                                        <rect key="frame" x="16" y="15.999999999999998" width="160" height="16.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="24" id="e7L-or-r15"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29f-xc-qVm">
+                                        <rect key="frame" x="16" y="40.333333333333314" width="67" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="dDW-aJ-lcP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg CO₂ / km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFF-Mo-Oi9">
+                                        <rect key="frame" x="85" y="56.333333333333314" width="53" height="14"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="ZBu-lL-cOL"/>
                                 </constraints>
@@ -217,6 +253,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB1-2P-vvf" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
                                 <rect key="frame" x="213" y="166.5" width="185" height="88"/>
                                 <color key="backgroundColor" name="CardMainBackground"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Transport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGy-tq-8z5">
+                                        <rect key="frame" x="16.000000000000007" y="15.999999999999998" width="98.666666666666686" height="16.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="24" id="RrZ-Va-hro"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuT-f2-xFE">
+                                        <rect key="frame" x="16" y="40.333333333333314" width="86" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="UOF-9u-N3Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="DarkerGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="Uej-o5-4Ur"/>
                                 </constraints>
@@ -301,7 +358,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="oSf-3E-FN4" id="VJY-Gq-pwe"/>
                         <outlet property="trackButton" destination="6hw-l2-zA9" id="CaX-7z-lsU"/>
+                        <segue destination="o94-WE-xZW" kind="show" identifier="summarySegue" id="lYM-vY-J9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rt1-Ml-1Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

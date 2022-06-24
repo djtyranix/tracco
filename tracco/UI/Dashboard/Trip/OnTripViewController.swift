@@ -86,7 +86,7 @@ class OnTripViewController: UIViewController
         return UIImage(systemName: image, withConfiguration: config)
     }()
     
-    private var transits: [TransitModel] = []
+    private var model: TripModel = []
     private var keyboardHeight: CGFloat = 210
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
@@ -164,7 +164,29 @@ class OnTripViewController: UIViewController
     {
         if let vc = segue.destination as? SummaryViewController
         {
-            vc.viewModel = SummaryVM(transits)
+            if StoredModel.history == nil
+            {
+                StoredModel.history = []
+                StoredModel.profile = ProfileModel(
+                    distanceInCar: 0,
+                    distanceInMotor: 0,
+                    distanceInBus: 0,
+                    distanceInTrain: 0,
+                    costInCar: 0,
+                    costInMotor: 0,
+                    costInBus: 0,
+                    costInTrain: 0,
+                    tripTrackCount: 0,
+                    carbonEmissionInKgTotal: 0,
+                    carbonEmissionInKgReducedTotal: 0
+                )
+            }
+            
+            GlobalPublisher.shared.addTripModel(model)
+            StoredModel.history?.append(model)
+            model.forEach { StoredModel.profile?.add($0) }
+            
+            vc.viewModel = SummaryVM(model)
         }
     }
     
@@ -194,12 +216,12 @@ class OnTripViewController: UIViewController
         guard let prevLocation = viewModel.previousLocation
         else { return }
         
-        if transits.isEmpty == false
+        if model.isEmpty == false
         {
-            let currIndex = transits.endIndex - 1
-            transits[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
-            transits[currIndex].transitPath.endDate = Date()
-            transits[currIndex].transitPath.distanceInKm = viewModel.distanceInKm
+            let currIndex = model.endIndex - 1
+            model[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
+            model[currIndex].transitPath.endDate = Date()
+            model[currIndex].transitPath.distanceInKm = viewModel.distanceInKm
         }
         
         // update cost vc, user location may still move while adding a cost confirmation
@@ -225,7 +247,7 @@ class OnTripViewController: UIViewController
         
         let transitPath = TransitPath(
             type: currentType,
-            coords: [currCoordinate],
+            coords: [LocationCoordinate2D(currCoordinate)],
             distanceInKm: 0,
             sampleRate: 1,
             beginDate: Date(),
@@ -239,7 +261,7 @@ class OnTripViewController: UIViewController
         )
         
         let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
-        transits.append(transitModel)
+        model.append(transitModel)
         mapView.addAnnotation(annotation)
         
         let selectedRadioButton = manager.selected
@@ -358,7 +380,7 @@ extension OnTripViewController: TransportationCostViewControllerDelegate
     func onConfirmCost(_ cost: Double)
     {
         // update cost in the model
-        transits[transits.endIndex - 1].costInIDR = cost
+        model[model.endIndex - 1].costInIDR = cost
         // perform next view
         isRequestingEndTrip ?
             performSegue(withIdentifier: Segue.summary.rawValue, sender: self) :
