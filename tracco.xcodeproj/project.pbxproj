@@ -60,7 +60,8 @@
 		3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF101382854BC200048013A /* CurrentTransportationViewController.xib */; };
 		3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */; };
 		3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */; };
-		A8411BE02865562600C3B5E2 /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BDF2865562600C3B5E2 /* TransitPath.swift */; };
+		A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BE32865574A00C3B5E2 /* TripRepository.swift */; };
+		A8411BE6286561AF00C3B5E2 /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BE5286561AF00C3B5E2 /* TransitPath.swift */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -149,7 +150,8 @@
 		3FF101382854BC200048013A /* CurrentTransportationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTransportationViewController.xib; sourceTree = "<group>"; };
 		3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationCostViewController.swift; sourceTree = "<group>"; };
 		3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportationCostViewController.xib; sourceTree = "<group>"; };
-		A8411BDF2865562600C3B5E2 /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
+		A8411BE32865574A00C3B5E2 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
+		A8411BE5286561AF00C3B5E2 /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* tracco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,7 +213,7 @@
 		3F94CCCE2858589200BD5176 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8411BDF2865562600C3B5E2 /* TransitPath.swift */,
+				A8411BE5286561AF00C3B5E2 /* TransitPath.swift */,
 				3FC88A73285B24680022BA2C /* TransitModel.swift */,
 				3F3131E0286359AA005B7640 /* ProfileModel.swift */,
 			);
@@ -255,6 +257,14 @@
 				3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A8411BE12865570F00C3B5E2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A8411BE32865574A00C3B5E2 /* TripRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		A87463BF2854596D009AB0DC = {
@@ -308,6 +318,7 @@
 		A87463E5285469AE009AB0DC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A8411BE12865570F00C3B5E2 /* Repository */,
 				3F94CCCE2858589200BD5176 /* Model */,
 				A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */,
 				3F3131DC28635499005B7640 /* UserDefaults.swift */,
@@ -544,6 +555,7 @@
 				3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
+				A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */,
 				3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
@@ -589,7 +601,7 @@
 				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
 				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
-				A8411BE02865562600C3B5E2 /* TransitPath.swift in Sources */,
+				A8411BE6286561AF00C3B5E2 /* TransitPath.swift in Sources */,
 				D9DF377E2860327B00CA9F9C /* HistoryNoTripViewController.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
