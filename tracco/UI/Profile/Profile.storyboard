@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o5f-K1-fID">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,23 +9,29 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Profile View Controller-->
         <scene sceneID="a01-Ld-XBh">
             <objects>
                 <viewController id="sKZ-88-mZP" customClass="ProfileViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rIR-rp-Rn8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACp-Pn-bNs">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <connections>
                                     <segue destination="V7q-DC-GuP" kind="embed" id="Xqi-rE-DJt"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1R-53-Dnn">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <connections>
                                     <segue destination="kgA-F3-tlq" kind="embed" id="fVe-uQ-Wen"/>
                                 </connections>
@@ -62,7 +68,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LdD-Nd-dzO">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -79,17 +85,17 @@
             <objects>
                 <viewController id="V7q-DC-GuP" customClass="SumProfileViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mhT-30-pLn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-5M-Owa">
-                                <rect key="frame" x="0.0" y="44" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="629"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7r-C0-NCq">
-                                        <rect key="frame" x="16" y="246" width="343" height="192"/>
+                                        <rect key="frame" x="16" y="246" width="358" height="192"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UX5-cH-cGa" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="104" width="163.66666666666666" height="88"/>
+                                                <rect key="frame" x="0.0" y="104" width="171" height="88"/>
                                                 <color key="backgroundColor" name="MainGreen90"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Track trip up to..."/>
@@ -98,18 +104,19 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="detail" value="times"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="value" value="1"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Activity"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="ActivityFill"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3x-fB-1Cb" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                                <rect key="frame" x="179.66666666666663" y="0.0" width="163.33333333333337" height="88"/>
+                                                <rect key="frame" x="187" y="0.0" width="171" height="88"/>
                                                 <color key="backgroundColor" name="MainGreen90"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Most used transport.."/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="CarIcon"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
                                                         <color key="value" name="MainGreen10"/>
                                                     </userDefinedRuntimeAttribute>
@@ -118,10 +125,11 @@
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="detail" value=" "/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="CarIconFill"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uG5-YU-hKW" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="88"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171" height="88"/>
                                                 <color key="backgroundColor" name="MainGreen90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="171" id="00o-o9-x1f"/>
@@ -132,12 +140,13 @@
                                                         <color key="value" name="MainGreen10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Distance as far as..."/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="MapPin"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="detail" value="km"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="value" value="20"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="MapPinFill"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -146,11 +155,11 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJ9-Xc-YX1" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                                <rect key="frame" x="179.66666666666663" y="104" width="163.33333333333337" height="88"/>
+                                                <rect key="frame" x="187" y="104" width="171" height="88"/>
                                                 <color key="backgroundColor" name="MainGreen90"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Spend cost..."/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Money"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
                                                         <color key="value" name="MainGreen10"/>
                                                     </userDefinedRuntimeAttribute>
@@ -159,6 +168,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="MoneyFill"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -199,7 +209,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jem-eO-XWG" customClass="TotalCarbonProfileCard" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="86" width="343" height="144"/>
+                                        <rect key="frame" x="16" y="86" width="358" height="144"/>
                                         <color key="backgroundColor" name="MainGreen10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="144" id="yOq-9p-nNj"/>
@@ -216,41 +226,54 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="90"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Yay 😆 You have reduced carbon emission that is equal to planting 3 trees 🌲👊"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="Bus"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="Trees"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hi 👋 While using Tracco, you have done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6H-i7-gf2">
-                                        <rect key="frame" x="16" y="54" width="343" height="16"/>
+                                        <rect key="frame" x="16" y="54" width="358" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="aiL-ve-X0D"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="You can improve it to make it better ☺️ Try to use public transportation to balance your carbon emission 👍" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POF-l1-DH3">
-                                        <rect key="frame" x="16" y="454" width="343" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="16" y="454" width="358" height="69.666666666666629"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z9-2C-8TS">
-                                        <rect key="frame" x="16" y="531" width="343" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z9-2C-8TS">
+                                        <rect key="frame" x="16" y="539.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="UPX-YF-Nny"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Share">
-                                            <color key="baseForegroundColor" name="MainGreen10"/>
-                                            <color key="baseBackgroundColor" name="MainGreen"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" imagePlacement="trailing" imagePadding="8">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" name="MainButtonBackground"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12" weight="bold"/>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Share">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="Nunito-SemiBold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" name="MainButtonForeground"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onShareButton:" destination="V7q-DC-GuP" eventType="touchUpInside" id="wzK-Kp-s1O"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfw-pI-2WB">
-                                        <rect key="frame" x="16" y="0.0" width="343" height="46"/>
+                                        <rect key="frame" x="16" y="0.0" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="bPd-H5-UCo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -337,32 +360,23 @@
             <objects>
                 <viewController id="kgA-F3-tlq" customClass="EmptySumProfileViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KfH-4m-MvK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5G-x5-rcX">
-                                <rect key="frame" x="16" y="0.0" width="343" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="1rn-bz-EsW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-Z7-hys">
-                                <rect key="frame" x="16" y="387.33333333333331" width="343" height="121.66666666666669"/>
+                                <rect key="frame" x="16" y="401.66666666666669" width="358" height="138.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-dn-GLr">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="52.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-dn-GLr">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="60.333333333333336"/>
                                         <string key="text">Track your trip to view 
 your profile statistic</string>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can see how much your carbon emission and see how well you do to reduce it!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8m-fl-RLb">
-                                        <rect key="frame" x="28" y="60.666666666666686" width="287" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="28" y="68.333333333333314" width="302" height="69.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -396,23 +410,32 @@ your profile statistic</string>
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-bz-GFZ">
-                                <rect key="frame" x="55" y="110.00000000000001" width="265" height="253.33333333333337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-bz-GFZ">
+                                <rect key="frame" x="55" y="110" width="280" height="267.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NCN-bz-GFZ" secondAttribute="height" multiplier="293:280" id="RKE-Bb-d9t"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAu-2X-4Ny">
+                                <rect key="frame" x="16" y="0.0" width="358" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="cgb-5U-uV8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eXC-VR-MCT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="R5G-x5-rcX" secondAttribute="trailing" constant="16" id="2KK-df-cwI"/>
+                            <constraint firstItem="WAu-2X-4Ny" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="16" id="9Tx-Fy-Wlv"/>
                             <constraint firstItem="NCN-bz-GFZ" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="55" id="DY0-y3-QmK"/>
+                            <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="WAu-2X-4Ny" secondAttribute="trailing" constant="16" id="Dhm-dk-K2d"/>
+                            <constraint firstItem="NCN-bz-GFZ" firstAttribute="top" secondItem="WAu-2X-4Ny" secondAttribute="bottom" constant="64" id="Fz7-Al-vnP"/>
                             <constraint firstItem="jwf-Z7-hys" firstAttribute="top" secondItem="NCN-bz-GFZ" secondAttribute="bottom" constant="24" id="TJn-y9-g0B"/>
-                            <constraint firstItem="R5G-x5-rcX" firstAttribute="top" secondItem="KfH-4m-MvK" secondAttribute="top" id="WpZ-sd-mZj"/>
-                            <constraint firstItem="NCN-bz-GFZ" firstAttribute="top" secondItem="R5G-x5-rcX" secondAttribute="bottom" constant="64" id="YgO-BQ-Ag3"/>
+                            <constraint firstItem="WAu-2X-4Ny" firstAttribute="top" secondItem="KfH-4m-MvK" secondAttribute="top" id="XWx-TE-IXM"/>
                             <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="jwf-Z7-hys" secondAttribute="trailing" constant="16" id="bk9-cC-inq"/>
-                            <constraint firstItem="R5G-x5-rcX" firstAttribute="leading" secondItem="KfH-4m-MvK" secondAttribute="leading" constant="16" id="qAn-SG-eBZ"/>
                             <constraint firstItem="jwf-Z7-hys" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="16" id="xlL-KD-GoP"/>
                             <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="NCN-bz-GFZ" secondAttribute="trailing" constant="55" id="yYy-ld-2s3"/>
                         </constraints>
@@ -424,12 +447,24 @@ your profile statistic</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Bus" width="1024" height="1024"/>
-        <image name="Home" width="840" height="840"/>
-        <image name="Tree" width="12" height="12"/>
+        <image name="Activity" width="16" height="16"/>
+        <image name="ActivityFill" width="40" height="40"/>
+        <image name="CarIcon" width="16" height="16"/>
+        <image name="CarIconFill" width="40" height="40"/>
+        <image name="MapPin" width="16" height="17"/>
+        <image name="MapPinFill" width="16" height="16"/>
+        <image name="Money" width="16" height="17"/>
+        <image name="MoneyFill" width="40" height="40"/>
+        <image name="Profile" width="294" height="280"/>
+        <image name="Tree" width="16" height="17"/>
+        <image name="Trees" width="110" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <namedColor name="MainGreen">
-            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="MainButtonBackground">
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonForeground">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainGreen10">
             <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -143,9 +143,7 @@
                                 </constraints>
                                 <color key="tintColor" name="MainGreen"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Allow Notification">
-                                    <color key="baseBackgroundColor" name="MainGreen"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="filled" title="Allow Notification"/>
                                 <connections>
                                     <action selector="allowNotificationTapped:" destination="yaj-k2-ug8" eventType="touchUpInside" id="w80-wU-4KG"/>
                                     <action selector="upperButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YYa-Dt-TeC"/>
@@ -197,7 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Notification" width="840" height="840"/>
+        <image name="Notification" width="280" height="280"/>
         <namedColor name="MainGreen">
             <color red="0.12156862745098039" green="0.52156862745098043" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

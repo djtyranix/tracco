@@ -27,4 +27,10 @@ class SumProfileViewController: UIViewController
         trackCountCard.value        = viewModel?.trackCountText
         mostUsedTransportCard.value = viewModel?.mostUsedTransportText
     }
+    
+    @IBAction func onShareButton(_ sender: UIButton)
+    {
+        print("wow")
+    }
+    
 }

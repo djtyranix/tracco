@@ -205,34 +205,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-IH-j3R" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                <rect key="frame" x="16" y="166.5" width="185" height="88"/>
+                                <rect key="frame" x="16" y="166.33333333333334" width="192" height="88"/>
                                 <color key="backgroundColor" name="CardMainBackground"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Carbon Emission" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lht-T5-AnZ">
-                                        <rect key="frame" x="16" y="15.999999999999998" width="160" height="16.333333333333329"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="24" id="e7L-or-r15"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29f-xc-qVm">
-                                        <rect key="frame" x="16" y="40.333333333333314" width="67" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="dDW-aJ-lcP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="37"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg CO₂ / km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFF-Mo-Oi9">
-                                        <rect key="frame" x="85" y="56.333333333333314" width="53" height="14"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="ZBu-lL-cOL"/>
                                 </constraints>
@@ -251,29 +225,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB1-2P-vvf" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
-                                <rect key="frame" x="213" y="166.5" width="185" height="88"/>
+                                <rect key="frame" x="220" y="166.33333333333334" width="192" height="88"/>
                                 <color key="backgroundColor" name="CardMainBackground"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Transport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGy-tq-8z5">
-                                        <rect key="frame" x="16.000000000000007" y="15.999999999999998" width="98.666666666666686" height="16.333333333333329"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="24" id="RrZ-Va-hro"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuT-f2-xFE">
-                                        <rect key="frame" x="16" y="40.333333333333314" width="86" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="UOF-9u-N3Z"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="37"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="DarkerGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="Uej-o5-4Ur"/>
                                 </constraints>
@@ -292,11 +245,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-3E-FN4">
-                                <rect key="frame" x="16" y="403.5" width="382" height="289.5"/>
+                                <rect key="frame" x="16" y="403.33333333333326" width="396" height="319.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="6hw-l2-zA9">
-                                <rect key="frame" x="16" y="274.5" width="382" height="72"/>
+                                <rect key="frame" x="16" y="274.33333333333331" width="396" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="mKu-M0-v6m"/>
                                 </constraints>
@@ -314,13 +267,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k29-Fw-UjA">
-                                <rect key="frame" x="16" y="370.5" width="87.5" height="25"/>
+                                <rect key="frame" x="16" y="370.33333333333331" width="87.666666666666671" height="25"/>
                                 <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX5-KR-h0i">
-                                <rect key="frame" x="342" y="367.5" width="56" height="31"/>
+                                <rect key="frame" x="356" y="367.33333333333331" width="56" height="31"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="View All">
