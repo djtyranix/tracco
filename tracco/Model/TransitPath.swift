@@ -8,12 +8,12 @@
 import Foundation
 import MapKit
 
-struct TransitPath
+struct TransitPath: Codable
 {
     // transportation used in the transit
     var type: TransportType
     // the path traversed during the transit
-    var coords: [CLLocationCoordinate2D]
+    var coords: [LocationCoordinate2D]
     // the distance of the path traversed
     var distanceInKm: Double
     // how much the path traversed updated per seconds, measured in Hz

@@ -11,6 +11,14 @@
 		3B2BA0772860371C00104AAF /* EmptySumProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */; };
 		3B9293F02860B0CE005EF46E /* TotalCarbonProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9293EF2860B0CE005EF46E /* TotalCarbonProfileCard.swift */; };
 		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
+		3F3131DD28635499005B7640 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131DC28635499005B7640 /* UserDefaults.swift */; };
+		3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */; };
+		3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E0286359AA005B7640 /* ProfileModel.swift */; };
+		3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E228635C84005B7640 /* CO2ETimer.swift */; };
+		3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E428635D50005B7640 /* TimeFrequency.swift */; };
+		3F3131E728638806005B7640 /* SummaryHeaderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E628638806005B7640 /* SummaryHeaderHistoryViewController.swift */; };
+		3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */; };
+		3F3131EB28638924005B7640 /* SummaryHistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */; };
 		3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */; };
 		3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */; };
 		3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84CB67285E163500EFDD71 /* SummaryVM.swift */; };
@@ -36,6 +44,9 @@
 		3FC825A22856177C0074B88D /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259E2856177C0074B88D /* TransitPath.swift */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
+		3FEE071E2864109A00DAA5EB /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */; };
+		3FEE07212864234500DAA5EB /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE07202864234500DAA5EB /* ProfileVM.swift */; };
+		3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */; };
 		3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */; };
 		3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */; };
 		3FF10126285490E10048013A /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10125285490E10048013A /* Trip.storyboard */; };
@@ -89,6 +100,14 @@
 		3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySumProfileViewController.swift; sourceTree = "<group>"; };
 		3B9293EF2860B0CE005EF46E /* TotalCarbonProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCarbonProfileCard.swift; sourceTree = "<group>"; };
 		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
+		3F3131DC28635499005B7640 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinate2D.swift; sourceTree = "<group>"; };
+		3F3131E0286359AA005B7640 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		3F3131E228635C84005B7640 /* CO2ETimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2ETimer.swift; sourceTree = "<group>"; };
+		3F3131E428635D50005B7640 /* TimeFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrequency.swift; sourceTree = "<group>"; };
+		3F3131E628638806005B7640 /* SummaryHeaderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderHistoryViewController.swift; sourceTree = "<group>"; };
+		3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderTripViewController.swift; sourceTree = "<group>"; };
+		3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHistoryVM.swift; sourceTree = "<group>"; };
 		3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDigit.swift; sourceTree = "<group>"; };
 		3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		3F84CB67285E163500EFDD71 /* SummaryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVM.swift; sourceTree = "<group>"; };
@@ -112,8 +131,11 @@
 		3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateLocationViewController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateLocationViewController.xib; sourceTree = "<group>"; };
 		3FC8259E2856177C0074B88D /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitPath.swift; path = tracco/Model/TransitPath.swift; sourceTree = SOURCE_ROOT; };
-		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Model/TransportType.swift; sourceTree = SOURCE_ROOT; };
+		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
+		3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		3FEE07202864234500DAA5EB /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPublisher.swift; sourceTree = "<group>"; };
 		3FF1012128548E430048013A /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF1012228548E430048013A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FF10125285490E10048013A /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
@@ -181,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				3F84CB67285E163500EFDD71 /* SummaryVM.swift */,
+				3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -190,7 +213,7 @@
 			children = (
 				3FC8259E2856177C0074B88D /* TransitPath.swift */,
 				3FC88A73285B24680022BA2C /* TransitModel.swift */,
-				3FC8259F2856177C0074B88D /* TransportType.swift */,
+				3F3131E0286359AA005B7640 /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +221,7 @@
 		3F94CCD0285858C400BD5176 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3FEE071F2864232D00DAA5EB /* Profile */,
 				3F84CB66285E160E00EFDD71 /* History */,
 				3F94CCD2285858FF00BD5176 /* Dashboard */,
 			);
@@ -214,6 +238,14 @@
 				A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		3FEE071F2864232D00DAA5EB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3FEE07202864234500DAA5EB /* ProfileVM.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3FF1012028548E3C0048013A /* Fonts */ = {
@@ -278,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */,
+				3F3131DC28635499005B7640 /* UserDefaults.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -288,11 +321,16 @@
 				A8CC9D80285A2D6600F30DBE /* Helper */,
 				A8CC9D7D285A2CFF00F30DBE /* CustomClass */,
 				3F94CCE12858599B00BD5176 /* CO2E.swift */,
+				3F3131E228635C84005B7640 /* CO2ETimer.swift */,
+				3FC8259F2856177C0074B88D /* TransportType.swift */,
 				3F94CCE02858599B00BD5176 /* SystemUnits.swift */,
 				3F94CCC22858581300BD5176 /* MoovitAPI.swift */,
 				3F94CCC32858581300BD5176 /* ViewHelper.swift */,
 				3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */,
 				3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */,
+				3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */,
+				3F3131E428635D50005B7640 /* TimeFrequency.swift */,
+				3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -315,16 +353,19 @@
 				A8AD59B528602DAA00104B58 /* CardInfoView.xib */,
 				A8AD59B328602DAA00104B58 /* Summary.storyboard */,
 				A8AD59B728602DAA00104B58 /* SummaryDetailViewController.swift */,
+				3F3131E628638806005B7640 /* SummaryHeaderHistoryViewController.swift */,
+				3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */,
 				A8AD59B428602DAA00104B58 /* SummaryViewController.swift */,
 				A8AD59B628602DAA00104B58 /* TripDetailContentView.swift */,
 				A8AD59B828602DAA00104B58 /* TripDetailContentView.xib */,
 				A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */,
 				A8AD59B028602D9A00104B58 /* CardInfoView.swift */,
 				A87463F328546D97009AB0DC /* History.storyboard */,
-				3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */,
 				A87463EF28546D4F009AB0DC /* HistoryViewController.swift */,
 				D9DF377D2860327B00CA9F9C /* HistoryNoTripViewController.swift */,
 				D9DF377F2860329400CA9F9C /* HistoryTripViewController.swift */,
+				3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */,
+				3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -480,6 +521,7 @@
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
+				3FEE071E2864109A00DAA5EB /* HistoryTableViewCell.xib in Resources */,
 				A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */,
 				A87463F428546D97009AB0DC /* History.storyboard in Resources */,
 				A8AD59BA28602DAA00104B58 /* Summary.storyboard in Resources */,
@@ -503,8 +545,10 @@
 				3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
+				3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
+				3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
@@ -512,6 +556,7 @@
 				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
 				3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */,
 				3F94CCCC2858581300BD5176 /* ViewHelper.swift in Sources */,
+				3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */,
 				3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */,
 				3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */,
 				3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */,
@@ -528,11 +573,18 @@
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
 				A8AD59BD28602DAA00104B58 /* TripDetailContentView.swift in Sources */,
 				A8CC9D7C28598DD300F30DBE /* DashboardViewModel.swift in Sources */,
+				3F3131EB28638924005B7640 /* SummaryHistoryVM.swift in Sources */,
 				3F94CCE42858599B00BD5176 /* CO2E.swift in Sources */,
+				3FEE07212864234500DAA5EB /* ProfileVM.swift in Sources */,
+				3F3131DD28635499005B7640 /* UserDefaults.swift in Sources */,
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
 				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
+				3F3131E728638806005B7640 /* SummaryHeaderHistoryViewController.swift in Sources */,
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
+				3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */,
+				3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */,
+				3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */,
 				A8CC9D7F285A2D3200F30DBE /* MiniCardView.swift in Sources */,
 				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
 				3B2BA0752860369500104AAF /* SumProfileViewController.swift in Sources */,

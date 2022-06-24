@@ -12,7 +12,6 @@
         <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Bold</string>
             <string>Nunito-Regular</string>
-            <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -146,88 +145,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dm1-jF-4RB">
                                 <rect key="frame" x="16" y="65.666666666666686" width="358" height="607.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="16" indentationWidth="0.0" reuseIdentifier="historyCell" rowHeight="88" id="ppG-bT-SJq" customClass="HistoryTableViewCell" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="358" height="88"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ppG-bT-SJq" id="aiL-Id-tsr">
-                                            <rect key="frame" x="0.0" y="0.0" width="358" height="88"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91r-2X-KqD" userLabel="containerView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="72"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aks-ph-tAO">
-                                                            <rect key="frame" x="16" y="16" width="40" height="40"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="4"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                                                    <color key="value" systemColor="systemYellowColor"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iFs-Fm-grP">
-                                                            <rect key="frame" x="318" y="27.666666666666657" width="24" height="17.333333333333343"/>
-                                                            <color key="tintColor" systemColor="labelColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="g3w-jU-uoX"/>
-                                                                <constraint firstAttribute="width" constant="24" id="qdv-Hm-Pe3"/>
-                                                            </constraints>
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGB-Dk-SWt">
-                                                            <rect key="frame" x="68" y="16" width="238" height="15.333333333333336"/>
-                                                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="11"/>
-                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-bK-eih">
-                                                            <rect key="frame" x="68" y="33.333333333333336" width="238" height="23.333333333333336"/>
-                                                            <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="Aks-ph-tAO" firstAttribute="top" secondItem="91r-2X-KqD" secondAttribute="top" constant="16" id="3ka-yz-s5T"/>
-                                                        <constraint firstItem="JGB-Dk-SWt" firstAttribute="leading" secondItem="Aks-ph-tAO" secondAttribute="trailing" constant="12" id="5va-bn-bTF"/>
-                                                        <constraint firstItem="iFs-Fm-grP" firstAttribute="centerY" secondItem="91r-2X-KqD" secondAttribute="centerY" id="ETx-nC-bpv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Aks-ph-tAO" secondAttribute="bottom" constant="16" id="It2-XP-Vrs"/>
-                                                        <constraint firstItem="iFs-Fm-grP" firstAttribute="leading" secondItem="JGB-Dk-SWt" secondAttribute="trailing" constant="12" id="KLb-yp-eFg"/>
-                                                        <constraint firstItem="aP8-bK-eih" firstAttribute="top" secondItem="JGB-Dk-SWt" secondAttribute="bottom" constant="2" id="Q0b-Gz-WrM"/>
-                                                        <constraint firstAttribute="trailing" secondItem="iFs-Fm-grP" secondAttribute="trailing" constant="16" id="SlR-od-eFy"/>
-                                                        <constraint firstItem="aP8-bK-eih" firstAttribute="centerY" secondItem="91r-2X-KqD" secondAttribute="centerY" constant="9" id="WZE-bp-wN4"/>
-                                                        <constraint firstItem="Aks-ph-tAO" firstAttribute="width" secondItem="Aks-ph-tAO" secondAttribute="height" multiplier="1:1" id="hUL-Kf-XEp"/>
-                                                        <constraint firstItem="iFs-Fm-grP" firstAttribute="leading" secondItem="aP8-bK-eih" secondAttribute="trailing" constant="12" id="kdZ-AN-6gy"/>
-                                                        <constraint firstItem="Aks-ph-tAO" firstAttribute="centerY" secondItem="91r-2X-KqD" secondAttribute="centerY" id="lwX-rt-enk"/>
-                                                        <constraint firstItem="aP8-bK-eih" firstAttribute="leading" secondItem="Aks-ph-tAO" secondAttribute="trailing" constant="12" id="pqk-Xj-Y9b"/>
-                                                        <constraint firstItem="Aks-ph-tAO" firstAttribute="leading" secondItem="91r-2X-KqD" secondAttribute="leading" constant="16" id="zNK-1L-5RZ"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="91r-2X-KqD" firstAttribute="leading" secondItem="aiL-Id-tsr" secondAttribute="leading" id="D1D-aW-QTZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="91r-2X-KqD" secondAttribute="trailing" id="QkJ-wP-Ab4"/>
-                                                <constraint firstAttribute="bottom" secondItem="91r-2X-KqD" secondAttribute="bottom" constant="16" id="j2h-DJ-wd8"/>
-                                                <constraint firstItem="91r-2X-KqD" firstAttribute="top" secondItem="aiL-Id-tsr" secondAttribute="top" id="rs3-Of-H7r"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="containerView" destination="91r-2X-KqD" id="gZo-LS-8EE"/>
-                                            <outlet property="dateLabel" destination="JGB-Dk-SWt" id="7c9-vn-bih"/>
-                                            <outlet property="descriptionLabel" destination="aP8-bK-eih" id="8wo-1w-aZe"/>
-                                            <outlet property="transportImageView" destination="Aks-ph-tAO" id="f4s-ji-7uJ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8or-kq-gpr">
                                 <rect key="frame" x="16" y="0.0" width="358" height="49.666666666666664"/>
@@ -250,31 +167,29 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Dm1-jF-4RB" id="6Pf-Q5-Ay7"/>
+                        <segue destination="Wto-9j-UMN" kind="show" identifier="summarySegue" id="wdD-0q-ngC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ab7-qZ-Wu6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2040" y="383.53080568720378"/>
         </scene>
+        <!--Summary-->
+        <scene sceneID="c8q-2L-g1m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Summary" id="Wto-9j-UMN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zJf-F7-V2b"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCm-5X-pZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="64"/>
+        </scene>
     </scenes>
     <resources>
         <image name="History" width="280" height="265"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

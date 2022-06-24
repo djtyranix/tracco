@@ -19,7 +19,7 @@ class SummaryVM
         var costInIDR: Double
         var transportType: TransportType
         var date: Date
-        var coord: CLLocationCoordinate2D
+        var coord: LocationCoordinate2D
     }
     
     // this will contain all information of each transit (tranport change)
@@ -38,20 +38,20 @@ class SummaryVM
     public let currentCarbonEmissionInKgText: String
     public let currentCostInIDRText: String
     
-    public init(_ models: [TransitModel])
+    public init(_ model: TripModel)
     {
-        let currentCostInIDR            = models.reduce(0.0, { return $0 + $1.costInIDR })
-        let currentCarbonEmissionInKg   = models.reduce(0.0, { return $0 + $1.carbonEmissionInKg })
+        let currentCostInIDR            = model.reduce(0.0, { return $0 + $1.costInIDR })
+        let currentCarbonEmissionInKg   = model.reduce(0.0, { return $0 + $1.carbonEmissionInKg })
         
         currentCostInIDRText = RoundingDigit(currentCostInIDR, kind: .currency).getString(precision: 1)
         currentCarbonEmissionInKgText = RoundingDigit(currentCarbonEmissionInKg, kind: .number).getString(precision: 1)
         // trip distance
-        let tripDistance = models.reduce(0.0, { return $0 + $1.transitPath.distanceInKm })
+        let tripDistance = model.reduce(0.0, { return $0 + $1.transitPath.distanceInKm })
         tripDistanceText = String(format: "%.1f km", tripDistance)
         // trip duration
         let tripDuration: TimeInterval
-        if let departureDate = models.first?.transitPath.beginDate,
-           let arrivalDate = models.last?.transitPath.endDate
+        if let departureDate = model.first?.transitPath.beginDate,
+           let arrivalDate = model.last?.transitPath.endDate
         {
             tripDuration = arrivalDate.timeIntervalSince(departureDate)
         }
@@ -65,7 +65,7 @@ class SummaryVM
             String(format: "%d minutes", minutes) :
             String(format: "%d hours %d minutes", hours, minutes)
         // trip detail contents
-        var contents = models.map({
+        var contents = model.map({
             return TripDetailContent(
                 carbonEmissionInKg: $0.carbonEmissionInKg,
                 costInIDR: $0.costInIDR,
@@ -74,7 +74,7 @@ class SummaryVM
                 coord: $0.transitPath.coords.first!
             )
         })
-        if let lastModel = models.last
+        if let lastModel = model.last
         {
             let destinationTrip = TripDetailContent(
                 carbonEmissionInKg: 0,

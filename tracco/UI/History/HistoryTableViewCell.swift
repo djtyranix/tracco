@@ -14,11 +14,14 @@ class HistoryTableViewCell: UITableViewCell
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    public static let nib = UINib.init(nibName: "HistoryTableViewCell", bundle: nil)
+    public static let cellDesiredHeight: CGFloat = 72 + 16
+    
     private var identityBackgroundColor: UIColor?
     
-    override func layoutSubviews()
+    override func awakeFromNib()
     {
-        super.layoutSubviews()
+        super.awakeFromNib()
         // disable default gray style when clicked or long press
         self.selectionStyle = .none
     }
@@ -35,4 +38,50 @@ class HistoryTableViewCell: UITableViewCell
             })
         })
     }
+    
+    public func setupCell(_ model: TripModel)
+    {
+        let tripDate                        = model.first!.transitPath.beginDate
+        let longestTransport                = model.longestTransportUse!.transitPath.type
+        
+        var dateText = String()
+        let formatter = DateFormatter()
+        
+        if (Calendar.current.isDateInToday(tripDate))
+        {
+            formatter.dateFormat = ", d MMM yy, HH:mm"
+            dateText = "Today"
+        }
+        else if (Calendar.current.isDateInYesterday(tripDate))
+        {
+            formatter.dateFormat = ", d MMM yy, HH:mm"
+            dateText = "Yesterday"
+        }
+        else
+        {
+            formatter.dateFormat = "EEEE, d MMM yy, HH:mm"
+        }
+        
+        dateText += formatter.string(from: tripDate)
+        if let timeZoneAbbreviation = TimeZone.current.abbreviation()
+        {
+            dateText += " " + timeZoneAbbreviation
+        }
+        
+        descriptionLabel.text               = "Unknown to Unknown"
+        transportImageView.image            = longestTransport.image
+        transportImageView.backgroundColor  = longestTransport.backgroundColor
+        dateLabel.text                      = dateText
+    }
+}
+
+extension TripModel
+{
+    var shortestTransportUse: TransitModel? { get {
+        return self.min(by: { return $0.transitPath.distanceInKm < $1.transitPath.distanceInKm })
+    }}
+    
+    var longestTransportUse: TransitModel? { get {
+        return self.max(by: { return $0.transitPath.distanceInKm < $1.transitPath.distanceInKm })
+    }}
 }
