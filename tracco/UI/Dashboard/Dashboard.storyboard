@@ -121,9 +121,12 @@
                                     <constraint firstAttribute="height" constant="72" id="7CH-TF-tYd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="StartTrackingButtonIcon" imagePlacement="trailing" title="Start Tracking" imagePadding="10" buttonSize="large">
+                                <buttonConfiguration key="configuration" style="plain" image="Tracking Logo" imagePlacement="trailing" title="Start Tracking" imagePadding="10" buttonSize="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="MainButtonBackground"/>
+                                    </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
-                                    <color key="baseBackgroundColor" name="MainGreen"/>
+                                    <color key="baseForegroundColor" name="MainButtonForeground"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="JVo-Vi-BDU" kind="presentation" id="cSf-0R-g4k"/>
@@ -201,8 +204,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-IH-j3R" customClass="MiniCardView" customModule="tracco" customModuleProvider="target">
-                                <rect key="frame" x="16" y="158.33333333333334" width="192" height="85.333333333333343"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-IH-j3R" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
+                                <rect key="frame" x="16" y="166.5" width="185" height="88"/>
+                                <color key="backgroundColor" name="CardMainBackground"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Carbon Emission" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lht-T5-AnZ">
                                         <rect key="frame" x="16" y="15.999999999999998" width="160" height="16.333333333333329"/>
@@ -229,27 +233,26 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="DarkerGreen"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fFF-Mo-Oi9" secondAttribute="trailing" priority="250" constant="8" id="Bme-wC-XRb"/>
-                                    <constraint firstItem="Lht-T5-AnZ" firstAttribute="leading" secondItem="uYD-IH-j3R" secondAttribute="leading" constant="16" id="G0F-Cq-Pbs"/>
-                                    <constraint firstItem="Lht-T5-AnZ" firstAttribute="top" secondItem="uYD-IH-j3R" secondAttribute="top" constant="16" id="GL0-92-efN"/>
-                                    <constraint firstItem="fFF-Mo-Oi9" firstAttribute="leading" secondItem="29f-xc-qVm" secondAttribute="trailing" constant="2" id="Ho1-q8-OLJ"/>
-                                    <constraint firstItem="29f-xc-qVm" firstAttribute="top" secondItem="Lht-T5-AnZ" secondAttribute="bottom" constant="8" id="K3S-V7-3KG"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="LKO-Tx-cog"/>
-                                    <constraint firstItem="29f-xc-qVm" firstAttribute="leading" secondItem="Lht-T5-AnZ" secondAttribute="leading" id="Ta8-rh-LND"/>
-                                    <constraint firstAttribute="bottom" secondItem="29f-xc-qVm" secondAttribute="bottom" priority="250" constant="16" id="c5f-7I-d9n"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lht-T5-AnZ" secondAttribute="trailing" constant="16" id="iEy-dA-hig"/>
-                                    <constraint firstItem="fFF-Mo-Oi9" firstAttribute="bottom" secondItem="29f-xc-qVm" secondAttribute="bottom" id="rCy-sX-jgR"/>
+                                    <constraint firstAttribute="height" constant="88" id="ZBu-lL-cOL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Total Carbon Emission"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="Tree"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="90"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="kg CO2"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                        <color key="value" name="MainButtonForeground"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="TreeFill"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB1-2P-vvf" customClass="MiniCardView" customModule="tracco" customModuleProvider="target">
-                                <rect key="frame" x="220" y="158.33333333333334" width="192" height="85.333333333333343"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB1-2P-vvf" customClass="CardInfoView" customModule="tracco" customModuleProvider="target">
+                                <rect key="frame" x="213" y="166.5" width="185" height="88"/>
+                                <color key="backgroundColor" name="CardMainBackground"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Transport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGy-tq-8z5">
                                         <rect key="frame" x="16.000000000000007" y="15.999999999999998" width="98.666666666666686" height="16.333333333333329"/>
@@ -272,44 +275,52 @@
                                 </subviews>
                                 <color key="backgroundColor" name="DarkerGreen"/>
                                 <constraints>
-                                    <constraint firstItem="yGy-tq-8z5" firstAttribute="leading" secondItem="YB1-2P-vvf" secondAttribute="leading" constant="16" id="BpN-QG-rjf"/>
-                                    <constraint firstItem="OuT-f2-xFE" firstAttribute="leading" secondItem="yGy-tq-8z5" secondAttribute="leading" id="BsB-Xl-e9P"/>
-                                    <constraint firstItem="yGy-tq-8z5" firstAttribute="top" secondItem="YB1-2P-vvf" secondAttribute="top" constant="16" id="KRe-Yk-8Nc"/>
-                                    <constraint firstAttribute="bottom" secondItem="OuT-f2-xFE" secondAttribute="bottom" constant="15" id="uuW-Md-hQx"/>
-                                    <constraint firstItem="OuT-f2-xFE" firstAttribute="top" secondItem="yGy-tq-8z5" secondAttribute="bottom" constant="8" id="vwX-mX-NIe"/>
+                                    <constraint firstAttribute="height" constant="88" id="Uej-o5-4Ur"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Favorite Transport"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="CarIcon"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="Car"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                        <color key="value" name="CardMainForeground"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value=" "/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="logoOverlay" value="CarIconFill"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-3E-FN4">
-                                <rect key="frame" x="16" y="392.66666666666674" width="396" height="330.33333333333326"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-3E-FN4">
+                                <rect key="frame" x="16" y="403.5" width="382" height="289.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="6hw-l2-zA9">
-                                <rect key="frame" x="16" y="263.66666666666669" width="396" height="72"/>
+                                <rect key="frame" x="16" y="274.5" width="382" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="mKu-M0-v6m"/>
                                 </constraints>
+                                <color key="tintColor" name="MainButtonForeground"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="StartTrackingButtonIcon" imagePlacement="trailing" title="Start Tracking" imagePadding="10">
+                                <buttonConfiguration key="configuration" style="plain" image="Tracking Logo" imagePlacement="trailing" title="Start Tracking" imagePadding="10">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="MainButtonBackground"/>
+                                    </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
-                                    <color key="baseBackgroundColor" name="MainGreen"/>
+                                    <color key="baseForegroundColor" name="MainButtonForeground"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="JVo-Vi-BDU" kind="presentation" id="wEf-LZ-2xc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k29-Fw-UjA">
-                                <rect key="frame" x="16" y="359.66666666666669" width="87.666666666666671" height="25"/>
+                                <rect key="frame" x="16" y="370.5" width="87.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX5-KR-h0i">
-                                <rect key="frame" x="356" y="356.66666666666669" width="56" height="31"/>
+                                <rect key="frame" x="342" y="367.5" width="56" height="31"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="View All">
@@ -327,15 +338,14 @@
                             <constraint firstItem="k29-Fw-UjA" firstAttribute="leading" secondItem="tst-FB-hro" secondAttribute="leading" constant="16" id="AR8-3J-ZGI"/>
                             <constraint firstItem="6hw-l2-zA9" firstAttribute="leading" secondItem="tst-FB-hro" secondAttribute="leading" constant="16" id="Hq1-d1-yIv"/>
                             <constraint firstItem="YB1-2P-vvf" firstAttribute="leading" secondItem="uYD-IH-j3R" secondAttribute="trailing" constant="12" id="JF2-Nc-PvA"/>
-                            <constraint firstItem="YB1-2P-vvf" firstAttribute="top" secondItem="uYD-IH-j3R" secondAttribute="top" id="Kxd-0S-fjc"/>
-                            <constraint firstItem="uYD-IH-j3R" firstAttribute="top" secondItem="D4p-nQ-ELL" secondAttribute="bottom" constant="16" id="Slr-4K-dt4"/>
+                            <constraint firstItem="uYD-IH-j3R" firstAttribute="top" secondItem="D4p-nQ-ELL" secondAttribute="bottom" constant="24" id="Slr-4K-dt4"/>
                             <constraint firstItem="tst-FB-hro" firstAttribute="trailing" secondItem="YB1-2P-vvf" secondAttribute="trailing" constant="16" id="Vfb-KV-JIe"/>
                             <constraint firstItem="fHV-GK-8ut" firstAttribute="top" secondItem="tst-FB-hro" secondAttribute="top" id="Wf1-7H-X27"/>
-                            <constraint firstItem="YB1-2P-vvf" firstAttribute="height" secondItem="uYD-IH-j3R" secondAttribute="height" id="a3b-zQ-kzb"/>
                             <constraint firstItem="oSf-3E-FN4" firstAttribute="leading" secondItem="tst-FB-hro" secondAttribute="leading" constant="16" id="cdZ-6l-nYd"/>
                             <constraint firstItem="uYD-IH-j3R" firstAttribute="leading" secondItem="tst-FB-hro" secondAttribute="leading" constant="16" id="dus-F6-RC0"/>
                             <constraint firstItem="D4p-nQ-ELL" firstAttribute="top" secondItem="fHV-GK-8ut" secondAttribute="bottom" constant="8" id="h7u-8R-3W3"/>
                             <constraint firstItem="YB1-2P-vvf" firstAttribute="width" secondItem="uYD-IH-j3R" secondAttribute="width" id="i9w-2P-EKn"/>
+                            <constraint firstItem="YB1-2P-vvf" firstAttribute="centerY" secondItem="uYD-IH-j3R" secondAttribute="centerY" id="ipC-QH-nVN"/>
                             <constraint firstItem="tst-FB-hro" firstAttribute="bottom" secondItem="oSf-3E-FN4" secondAttribute="bottom" constant="32" id="qwt-WG-uGp"/>
                             <constraint firstItem="tst-FB-hro" firstAttribute="trailing" secondItem="6hw-l2-zA9" secondAttribute="trailing" constant="16" id="rzx-wa-D9X"/>
                             <constraint firstItem="oSf-3E-FN4" firstAttribute="top" secondItem="k29-Fw-UjA" secondAttribute="bottom" constant="8" id="sz8-63-iIJ"/>
@@ -343,6 +353,7 @@
                             <constraint firstItem="D4p-nQ-ELL" firstAttribute="leading" secondItem="fHV-GK-8ut" secondAttribute="leading" id="wT2-VJ-oK4"/>
                             <constraint firstItem="fHV-GK-8ut" firstAttribute="leading" secondItem="tst-FB-hro" secondAttribute="leading" constant="16" id="yGg-f2-PUd"/>
                             <constraint firstItem="tst-FB-hro" firstAttribute="trailing" secondItem="LX5-KR-h0i" secondAttribute="trailing" constant="16" id="yOW-z2-j4I"/>
+                            <constraint firstItem="YB1-2P-vvf" firstAttribute="height" secondItem="uYD-IH-j3R" secondAttribute="height" id="yYQ-SZ-Xmh"/>
                             <constraint firstItem="tst-FB-hro" firstAttribute="trailing" secondItem="fHV-GK-8ut" secondAttribute="trailing" constant="16" id="z7G-oQ-RdW"/>
                         </constraints>
                     </view>
@@ -361,15 +372,28 @@
         <segue reference="wEf-LZ-2xc"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Home" width="840" height="840"/>
-        <image name="StartTrackingButtonIcon" width="19" height="19"/>
+        <image name="CarIcon" width="16" height="16"/>
+        <image name="CarIconFill" width="40" height="40"/>
+        <image name="Home" width="279" height="270"/>
+        <image name="Tracking Logo" width="16" height="16"/>
+        <image name="Tree" width="16" height="17"/>
+        <image name="TreeFill" width="30" height="40"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <namedColor name="DarkerGreen">
-            <color red="0.086274509803921567" green="0.35294117647058826" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="CardMainBackground">
+            <color red="0.086000002920627594" green="0.3529999852180481" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CardMainForeground">
+            <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonBackground">
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonForeground">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainGreen">
-            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

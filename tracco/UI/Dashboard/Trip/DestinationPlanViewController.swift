@@ -102,6 +102,11 @@ extension DestinationPlanViewController: ActivateLocationViewControllerDelegate
             UIApplication.shared.open(locationSettingsURL)
         }
     }
+    
+    func onCancelLocation()
+    {
+        self.dismiss(animated: true)
+    }
 }
 
 extension DestinationPlanViewController: CLLocationManagerDelegate

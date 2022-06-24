@@ -15,10 +15,12 @@ class AlertPresentationController: FocusPresentationController
     
     public static func getFrameOfPresentedViewInContainerView(_ presentedView: UIView, containerView: UIView, inset: CGFloat) -> CGRect
     {
-        let targetWidth     = containerView.frame.width - 2 * inset
+        let relative        = UIScreen.main.bounds
+        
+        let targetWidth     = relative.width - 2 * inset
         let targetHeight    = presentedView.frame.height
         let originX         = inset
-        let originY         = containerView.center.y - targetWidth / 2
+        let originY         = relative.midY - targetHeight / 2
         
         return CGRect(x: originX, y: originY, width: targetWidth, height: targetHeight)
     }

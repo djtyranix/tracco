@@ -44,6 +44,7 @@
 		3FC825A22856177C0074B88D /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259E2856177C0074B88D /* TransitPath.swift */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
+		3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */; };
 		3FEE071E2864109A00DAA5EB /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */; };
 		3FEE07212864234500DAA5EB /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE07202864234500DAA5EB /* ProfileVM.swift */; };
 		3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */; };
@@ -84,7 +85,6 @@
 		A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */; };
 		A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D792859899500F30DBE /* HomeTripViewController.swift */; };
 		A8CC9D7C28598DD300F30DBE /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */; };
-		A8CC9D7F285A2D3200F30DBE /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7E285A2D3200F30DBE /* MiniCardView.swift */; };
 		A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D81285A307D00F30DBE /* Extensions.swift */; };
 		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
 		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
@@ -133,6 +133,7 @@
 		3FC8259E2856177C0074B88D /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitPath.swift; path = tracco/Model/TransitPath.swift; sourceTree = SOURCE_ROOT; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
+		3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBackgroundButton.swift; sourceTree = "<group>"; };
 		3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		3FEE07202864234500DAA5EB /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPublisher.swift; sourceTree = "<group>"; };
@@ -175,7 +176,6 @@
 		A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoTripViewController.swift; sourceTree = "<group>"; };
 		A8CC9D792859899500F30DBE /* HomeTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTripViewController.swift; sourceTree = "<group>"; };
 		A8CC9D7B28598DD300F30DBE /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		A8CC9D7E285A2D3200F30DBE /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
 		A8CC9D81285A307D00F30DBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 				3F94CCBC2858581300BD5176 /* AlertPresentationController.swift */,
 				3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */,
 				3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */,
-				A8CC9D7E285A2D3200F30DBE /* MiniCardView.swift */,
+				3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -596,6 +596,7 @@
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
 				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,
+				3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */,
 				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
 				A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */,
 				A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */,
@@ -743,6 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 257;
@@ -777,6 +779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 257;

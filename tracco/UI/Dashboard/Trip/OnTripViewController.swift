@@ -21,6 +21,9 @@ class OnTripViewController: UIViewController
 {
     enum Segue: String { case summary = "summarySegue" }
     
+    // first time vc elevation adjustment by SheetPresentationController
+    private var elevationAdjustments: Set<UIViewController> = []
+    
     private let chooseTransportationVC: ChooseTransportationViewController = {
         let vc = ChooseTransportationViewController(TransportType.allCases)
         vc.modalPresentationStyle = .custom
@@ -57,12 +60,18 @@ class OnTripViewController: UIViewController
     
     private var isCostViewElevated = false { didSet {
         if (isCostViewElevated == oldValue) { return }
+        let safeAreaBottomInset = self.view.safeAreaInsets.bottom
         // height should be cover the button and should revert back to original state
         // this will handle cases for simulator keyboard toggle (keyboard size not fixed)
         let costViewFloatingHeight = view.frame.height - costTransportationVC.view.frame.maxY
         let isCostViewFloating = costViewFloatingHeight != 0
-        let heightToMove: CGFloat = isCostViewFloating ? costViewFloatingHeight : -(keyboardHeight - 120)
+        let heightToMove: CGFloat = isCostViewFloating ? costViewFloatingHeight : -(keyboardHeight - safeAreaBottomInset - 85)
         costTransportationVC.view.frame.origin.y += heightToMove
+        // In order to adjust the extra height given by the SheetPresentationController (isElevated)
+        // When about to elevated, bottom safe area inset are no longer relevant.
+        // This will fix the issue where view height are kind of moving to the top
+        let bottomConstraint = costTransportationVC.view.constraints.first(where: { $0.firstAttribute == .bottom })
+        bottomConstraint?.constant += isCostViewFloating ? -safeAreaBottomInset : safeAreaBottomInset
     }}
     
     private let trackingModeFollowImage: UIImage? = {
@@ -144,7 +153,8 @@ class OnTripViewController: UIViewController
             // current transporation view always exists on the bottom of the container view
             currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
                 currentTransportationVC.view,
-                containerView: self.view
+                containerView: self.view,
+                elevated: true
             )
             self.view.addSubview(currentTransportationVC.view)
         }
@@ -388,9 +398,13 @@ extension OnTripViewController: UIViewControllerTransitioningDelegate
 {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?
     {
-        return SheetPresentationController(
+        let pc = SheetPresentationController(
             presentedViewController: presented,
             presenting: presenting
         )
+        let insertion = elevationAdjustments.insert(presented)
+        // only elevate when vc was previously not in the set
+        pc.isNeedElevation = insertion.inserted
+        return pc
     }
 }
