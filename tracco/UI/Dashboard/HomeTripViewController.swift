@@ -31,6 +31,7 @@ class HomeTripViewController: UIViewController
         GlobalPublisher.addObserver(self)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.delaysContentTouches = false
         tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight
         tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
     }
@@ -47,7 +48,7 @@ class HomeTripViewController: UIViewController
         {
             vc.title = "Latest Trip Detail"
             guard let selectedIndex = selectedIndex,
-                  let model = dataSource?[selectedIndex.row],
+                  let model = getData(at: selectedIndex),
                   let cell = tableView.cellForRow(at: selectedIndex) as? HistoryTableViewCell
             else { return }
             vc.viewModelHistory = SummaryHistoryVM(model)
@@ -72,6 +73,14 @@ class HomeTripViewController: UIViewController
         self.dataSource = arr
         self.historyDataSource = nil
         isTableViewDataSourceInitialized = true
+    }
+    
+    private func getData(at index: IndexPath) -> TripModel?
+    {
+        guard let dataSource = dataSource
+        else { return nil }
+        let dataIndex = dataSource.count - 1 - index.row
+        return dataSource[dataIndex]
     }
 }
 
@@ -108,12 +117,9 @@ extension HomeTripViewController: UITableViewDataSource
     // but it takes computational work, so let's think different
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        guard let dataSource = dataSource,
+        guard let data = getData(at: indexPath),
               let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
         else { return UITableViewCell() }
-        
-        let dataIndex = dataSource.count - 1 - indexPath.row
-        let data = dataSource[dataIndex]
         
         cell.setupCell(data)
         return cell
