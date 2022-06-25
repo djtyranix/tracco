@@ -36,8 +36,6 @@ class SumProfileViewController: UIViewController
         
         setupHeaderCardView(reduceCarbonCard)
         setupHeaderCardView(reduceCarbonFullCard)
-        
-        GlobalPublisher.addObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -45,13 +43,10 @@ class SumProfileViewController: UIViewController
         super.viewWillAppear(animated)
         
         headerView?.removeFromSuperview()
-    
+        
+        self.model = StoredModel.profile
         guard let model = model
-        else
-        {
-            carbonEmissionCard.topAnchor.constraint(equalTo: contentCardView.topAnchor).isActive = true
-            return
-        }
+        else { return }
         
         let viewModel               = ProfileVM(model)
         distanceCard.value          = viewModel.distanceInKmText
@@ -153,13 +148,5 @@ class SumProfileViewController: UIViewController
         view?.translatesAutoresizingMaskIntoConstraints = false
         view?.layer.cornerRadius = 4
         view?.backgroundColor = UIColor(named: "MainGreen10")
-    }
-}
-
-extension SumProfileViewController: GlobalEvent
-{
-    func addTripModel(_ model: TripModel)
-    {
-        model.forEach { self.model?.add($0) }
     }
 }

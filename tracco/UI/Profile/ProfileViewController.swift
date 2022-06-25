@@ -12,14 +12,24 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var emptySumProfileView: UIView!
     @IBOutlet weak var sumProfileView: UIView!
     
-    private var model: ProfileModel? = StoredModel.profile
+    private var model: ProfileModel?
+    private var isAlreadyHavingTrip: Bool
+    
+    required init?(coder: NSCoder)
+    {
+        model = StoredModel.profile
+        isAlreadyHavingTrip = model != nil
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.model                      = StoredModel.profile
-        emptySumProfileView.isHidden    = model != nil
-        sumProfileView.isHidden         = model == nil
+        
+        sumProfileView.isHidden         = !isAlreadyHavingTrip
+        emptySumProfileView.isHidden    = isAlreadyHavingTrip
+        
+        if (isAlreadyHavingTrip == false) { GlobalPublisher.addObserver(self) }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -31,5 +41,15 @@ class ProfileViewController: UIViewController
             vc.model = model
             self.model = nil
         }
+    }
+}
+
+extension ProfileViewController: GlobalEvent
+{
+    func addTripModel(_ model: TripModel)
+    {
+        sumProfileView.isHidden = false
+        emptySumProfileView.isHidden = true
+        GlobalPublisher.removeObserver(self)
     }
 }

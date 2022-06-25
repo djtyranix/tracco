@@ -15,21 +15,24 @@ class DashboardViewController: UIViewController
     let viewModel = DashboardViewModel()
     
     private var historyDataSource: [TripModel]?
-    
-    private var isAlreadyHavingTrip: Bool!
+    private var isAlreadyHavingTrip: Bool
     
     required init?(coder: NSCoder)
     {
-        super.init(coder: coder)
         historyDataSource = StoredModel.history
         isAlreadyHavingTrip = historyDataSource != nil
+        super.init(coder: coder)
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         noTripView.isHidden     = isAlreadyHavingTrip
         tripView.isHidden       = !isAlreadyHavingTrip
+        
+        // when trip model is added for the first time, we need to update container view
+        if (isAlreadyHavingTrip == false) { GlobalPublisher.addObserver(self) }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -42,3 +45,13 @@ class DashboardViewController: UIViewController
     }
 }
 
+extension DashboardViewController: GlobalEvent
+{
+    func addTripModel(_ model: TripModel)
+    {
+        tripView.isHidden = false
+        noTripView.isHidden = true
+        // after having a trip, doesn't need to update container view
+        GlobalPublisher.removeObserver(self)
+    }
+}

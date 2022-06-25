@@ -30,6 +30,12 @@ class GlobalPublisher: GlobalEvent
         observers.append(weak)
     }
     
+    static func removeObserver<T: AnyObject>(_ observer: T) where T: GlobalEvent
+    {
+        // refer to the same instance
+        observers.removeAll(where: { $0.value === observer })
+    }
+    
     func addTripModel(_ model: TripModel)
     {
         GlobalPublisher.observers.forEach {

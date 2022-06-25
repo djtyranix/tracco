@@ -54,6 +54,7 @@ extension HistoryTripViewController: GlobalEvent
 {
     func addTripModel(_ model: TripModel)
     {
+        if (dataSource == nil) { dataSource = [] }
         dataSource?.append(model)
         tableView.reloadData()
     }
