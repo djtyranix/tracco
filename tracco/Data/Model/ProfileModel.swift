@@ -44,7 +44,10 @@ struct ProfileModel: Codable
     {
         self.tripTrackCount += 1
         self.carbonEmissionInKgTotal += model.carbonEmissionInKg
-        self.carbonEmissionInKgReducedTotal += 0
+        
+        let carbonInCar = TransportType.car.rawValue.carbon * model.transitPath.distanceInKm
+        let carbonReduced = carbonInCar - model.carbonEmissionInKg
+        self.carbonEmissionInKgReducedTotal += carbonReduced
         
         switch model.transitPath.type
         {
@@ -62,8 +65,6 @@ struct ProfileModel: Codable
         case .train:
             self.distanceInTrain += model.transitPath.distanceInKm
             self.costInTrain += model.costInIDR
-            break
-        default:
             break
         }
     }

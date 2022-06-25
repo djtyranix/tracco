@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController
         {
             guard let model = model
             else { return }
-            vc.viewModel = ProfileVM(model)
+            vc.model = model
             self.model = nil
         }
     }

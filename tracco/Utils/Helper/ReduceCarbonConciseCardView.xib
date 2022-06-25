@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReduceCarbonConciseCardView" customModule="tracco" customModuleProvider="target">
+            <connections>
+                <outlet property="cardImageView" destination="3FQ-lY-gv7" id="NAG-Ny-vho"/>
+                <outlet property="detailLabel" destination="2kY-Jr-m5k" id="tX8-n9-mkC"/>
+                <outlet property="titleLabel" destination="Hwd-xG-29d" id="xVQ-wP-Jof"/>
+                <outlet property="valueLabel" destination="vRw-d3-s4o" id="5ue-Oh-5vG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="144"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5J-mw-tPr">
+                    <rect key="frame" x="16" y="16" width="326" height="112"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3FQ-lY-gv7">
+                            <rect key="frame" x="214" y="0.0" width="112" height="112"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3FQ-lY-gv7" secondAttribute="height" multiplier="1:1" id="o2d-xV-JZb"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg CO2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kY-Jr-m5k">
+                            <rect key="frame" x="78" y="77.5" width="41" height="17"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRw-d3-s4o">
+                            <rect key="frame" x="0.0" y="62.5" width="74" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="qnc-KS-1Zx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwd-xG-29d">
+                            <rect key="frame" x="0.0" y="17.5" width="143" height="33"/>
+                            <string key="text">Reduced transport carbon 
+emission by..</string>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                            <color key="highlightedColor" name="MainGreen"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xot-5g-FAr" userLabel="Spacer">
+                            <rect key="frame" x="0.0" y="94.5" width="10" height="17.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="gGW-OM-2HF"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsR-gq-yIh" userLabel="Spacer">
+                            <rect key="frame" x="0.0" y="0.0" width="10" height="17.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="FCd-l8-dL0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="xot-5g-FAr" secondAttribute="bottom" id="2um-Gz-HAK"/>
+                        <constraint firstItem="Hwd-xG-29d" firstAttribute="top" secondItem="nsR-gq-yIh" secondAttribute="bottom" id="3In-bY-u49"/>
+                        <constraint firstItem="nsR-gq-yIh" firstAttribute="top" secondItem="D5J-mw-tPr" secondAttribute="top" id="Dzu-4E-l4B"/>
+                        <constraint firstAttribute="bottom" secondItem="3FQ-lY-gv7" secondAttribute="bottom" id="JEj-qz-Tqg"/>
+                        <constraint firstItem="vRw-d3-s4o" firstAttribute="top" secondItem="Hwd-xG-29d" secondAttribute="bottom" constant="12" id="JPv-1p-Agx"/>
+                        <constraint firstAttribute="trailing" secondItem="3FQ-lY-gv7" secondAttribute="trailing" id="Rr0-dr-o4o"/>
+                        <constraint firstItem="xot-5g-FAr" firstAttribute="height" secondItem="nsR-gq-yIh" secondAttribute="height" id="V5X-84-h6p"/>
+                        <constraint firstItem="3FQ-lY-gv7" firstAttribute="top" secondItem="D5J-mw-tPr" secondAttribute="top" id="heX-FC-lgw"/>
+                        <constraint firstItem="2kY-Jr-m5k" firstAttribute="bottom" secondItem="vRw-d3-s4o" secondAttribute="bottom" id="j2D-Ed-q9i"/>
+                        <constraint firstItem="vRw-d3-s4o" firstAttribute="leading" secondItem="D5J-mw-tPr" secondAttribute="leading" id="kui-xU-LNb"/>
+                        <constraint firstAttribute="height" constant="112" id="lIq-TM-qEI"/>
+                        <constraint firstItem="2kY-Jr-m5k" firstAttribute="leading" secondItem="vRw-d3-s4o" secondAttribute="trailing" constant="4" id="lp5-3s-VVQ"/>
+                        <constraint firstItem="xot-5g-FAr" firstAttribute="top" secondItem="vRw-d3-s4o" secondAttribute="bottom" id="qaW-xy-ZvT"/>
+                        <constraint firstItem="xot-5g-FAr" firstAttribute="leading" secondItem="D5J-mw-tPr" secondAttribute="leading" id="s6q-Xp-HmM"/>
+                        <constraint firstItem="nsR-gq-yIh" firstAttribute="leading" secondItem="D5J-mw-tPr" secondAttribute="leading" id="sHe-n9-dUL"/>
+                        <constraint firstAttribute="bottom" secondItem="xot-5g-FAr" secondAttribute="bottom" id="utf-aZ-hJR"/>
+                        <constraint firstItem="Hwd-xG-29d" firstAttribute="leading" secondItem="D5J-mw-tPr" secondAttribute="leading" id="xfZ-09-6bO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="D5J-mw-tPr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KcL-jn-r1A"/>
+                <constraint firstItem="D5J-mw-tPr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Rud-Fw-tR7"/>
+                <constraint firstItem="D5J-mw-tPr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="d5K-3u-hmP"/>
+                <constraint firstItem="D5J-mw-tPr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="f7Q-nQ-GE1"/>
+                <constraint firstAttribute="trailing" secondItem="D5J-mw-tPr" secondAttribute="trailing" constant="16" id="orJ-lj-syq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="d5K-3u-hmP"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="MainGreen">
+            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
