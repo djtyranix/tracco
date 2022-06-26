@@ -38,6 +38,8 @@ class SummaryVM
     public let otherCardBackgroundColor: UIColor?
     public let otherCardForegroundColor: UIColor?
     
+    public let comparisonEncouragementText: String
+    
     public let currentCarbonEmissionInKgText: String
     public let currentCostInIDRText: String
     
@@ -108,6 +110,8 @@ class SummaryVM
             
             otherCardBackgroundColor = UIColor(named: "CardBadBackground")
             otherCardForegroundColor = UIColor(named: "CardBadForeground")
+            
+            comparisonEncouragementText = "Here’s your total carbon emission and cost for this trip. You have saved & reduced carbon emissions nicely 👍 Good job! View the comparison below if you use private transportation."
         }
         // if bad carbon emission, compare it with bus (good) transport
         else
@@ -119,6 +123,8 @@ class SummaryVM
             
             otherCardBackgroundColor = UIColor(named: "CardGoodBackground")
             otherCardForegroundColor = UIColor(named: "CardGoodForeground")
+            
+            comparisonEncouragementText = "Here’s your total carbon emission and cost for this trip. you can save more cost 🤑 and reduce carbon emission by using public transportation 😎, view the comparison below."
         }
     }
 }

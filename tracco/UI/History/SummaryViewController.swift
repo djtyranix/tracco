@@ -108,6 +108,8 @@ class SummaryViewController: UIViewController
         
         otherTransportCostCardView.labelColor = refViewModel?.otherCardForegroundColor
         otherTransportCarbonCardView.labelColor = refViewModel?.otherCardForegroundColor
+        
+        comparisonLabel.text = refViewModel?.comparisonEncouragementText
     }
     
     private func layoutTripDetail()
