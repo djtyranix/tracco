@@ -150,9 +150,9 @@ class SumProfileViewController: UIViewController
 
 extension SumProfileViewController: GlobalEvent
 {
-    func addTripModel(_ model: TripModel)
+    func profileModelUpdated(_ model: ProfileModel)
     {
-        model.forEach { self.model?.add($0) }
+        self.model = model
         updateViewWithModel()
     }
 }

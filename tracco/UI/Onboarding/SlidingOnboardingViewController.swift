@@ -9,6 +9,8 @@ import UIKit
 
 class SlidingOnboardingViewController: UIViewController
 {
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .darkContent }
+    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var upperButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
@@ -38,33 +40,6 @@ class SlidingOnboardingViewController: UIViewController
         scrollView.delegate = self
     }
     
-    override func viewDidLayoutSubviews()
-    {
-        super.viewDidLayoutSubviews()
-        setUpSlider()
-    }
-    
-    private func setUpSlider()
-    {
-        let width = scrollView.frame.width
-        let height = scrollView.frame.height
-        
-        scrollView.contentSize = CGSize(width: width * CGFloat(totalPage), height: height)
-        scrollView.contentInsetAdjustmentBehavior = .never
-        
-        let currentMode = traitCollection.userInterfaceStyle
-        let styleIdentifier = currentMode == .dark ? "Dark" : "Light"
-        
-        for i in 0..<totalPage
-        {
-            let imageAssetName  = String(format: "Onboarding%@%i", styleIdentifier, i+1)
-            let imageView       = UIImageView(image: UIImage(named: imageAssetName))
-            imageView.frame     = CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height)
-            scrollView.addSubview(imageView)
-            imageView.layoutIfNeeded()
-        }
-    }
-    
     private func scrollToNextPage()
     {
         let width = scrollView.frame.width
@@ -76,24 +51,34 @@ class SlidingOnboardingViewController: UIViewController
     
     private func updatePage()
     {
-        switch currentPage
+        let isLastPage = currentPage == 2
+        skipButton.isHidden = isLastPage
+        
+        if let attributedTitle = upperButton.attributedTitle(for: .normal)
         {
-        case 0:
+            let buttonText = isLastPage ? "Get Started" : "Next"
+            let mutableAttributedTitle = NSMutableAttributedString(attributedString: attributedTitle)
+            mutableAttributedTitle.replaceCharacters(
+                in: NSMakeRange(0, mutableAttributedTitle.length),
+                with: buttonText
+            )
+            upperButton.setAttributedTitle(mutableAttributedTitle, for: .normal)
+        }
+        
+        if (currentPage == 0)
+        {
             upperLabel.text = "Choose Your Transportation"
             lowerLabel.text = "Choose what kind of transportations you take for each transit you use"
-            upperButton.setTitle("Next", for: .normal)
-        case 1:
+        }
+        else if (currentPage == 1)
+        {
             upperLabel.text = "Track Your Emmission & Cost"
             lowerLabel.text = "Input your transportations and we’ll count the estimated cost and carbon emmission for you"
-            upperButton.setTitle("Next", for: .normal)
-        case 2:
+        }
+        else
+        {
             upperLabel.text = "See How Well You Do"
             lowerLabel.text = "Check your profile to see how much your carbon emission and how well you reduce it!"
-            upperButton.setTitle("Get Started", for: .normal)
-        default:
-            upperLabel.text = "Choose Your Transportation"
-            lowerLabel.text = "Choose what kind of transportations you take for each transit you use"
-            upperButton.setTitle("Next", for: .normal)
         }
     }
 }

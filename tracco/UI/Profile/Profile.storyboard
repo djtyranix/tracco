@@ -70,6 +70,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LdD-Nd-dzO">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -432,55 +435,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-Z7-hys">
-                                <rect key="frame" x="16" y="401.66666666666669" width="358" height="138.00000000000006"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-dn-GLr">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="60.333333333333336"/>
-                                        <string key="text">Track your trip to view 
-your profile statistic</string>
-                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can see how much your carbon emission and see how well you do to reduce it!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8m-fl-RLb">
-                                        <rect key="frame" x="28" y="68.333333333333314" width="302" height="69.666666666666686"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="C8m-fl-RLb" secondAttribute="trailing" constant="28" id="7VF-Qj-g3s"/>
-                                    <constraint firstItem="C8m-fl-RLb" firstAttribute="width" secondItem="jwf-Z7-hys" secondAttribute="width" id="Asu-cr-ziW"/>
-                                    <constraint firstItem="C8m-fl-RLb" firstAttribute="leading" secondItem="jwf-Z7-hys" secondAttribute="leading" constant="28" id="G3o-nh-MRj"/>
-                                    <constraint firstItem="EZG-dn-GLr" firstAttribute="leading" secondItem="jwf-Z7-hys" secondAttribute="leading" id="JvY-A8-jHZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="C8m-fl-RLb" secondAttribute="bottom" id="JyJ-D0-kJ1"/>
-                                    <constraint firstAttribute="trailing" secondItem="C8m-fl-RLb" secondAttribute="trailing" constant="28" id="LdY-Tc-NSp"/>
-                                    <constraint firstItem="EZG-dn-GLr" firstAttribute="leading" secondItem="jwf-Z7-hys" secondAttribute="leading" id="XUR-Tb-mFb"/>
-                                    <constraint firstItem="C8m-fl-RLb" firstAttribute="top" secondItem="EZG-dn-GLr" secondAttribute="bottom" constant="8" id="aIc-pj-kCq"/>
-                                    <constraint firstAttribute="trailing" secondItem="EZG-dn-GLr" secondAttribute="trailing" id="iHz-EX-NU9"/>
-                                    <constraint firstItem="C8m-fl-RLb" firstAttribute="leading" secondItem="jwf-Z7-hys" secondAttribute="leading" constant="28" id="l3r-3w-BsY"/>
-                                    <constraint firstItem="C8m-fl-RLb" firstAttribute="top" secondItem="EZG-dn-GLr" secondAttribute="bottom" constant="8" id="q9d-AW-IBW"/>
-                                    <constraint firstItem="EZG-dn-GLr" firstAttribute="top" secondItem="jwf-Z7-hys" secondAttribute="top" id="qQG-bw-DWF"/>
-                                    <constraint firstAttribute="trailing" secondItem="EZG-dn-GLr" secondAttribute="trailing" id="wTL-hj-mJH"/>
-                                    <constraint firstItem="EZG-dn-GLr" firstAttribute="top" secondItem="jwf-Z7-hys" secondAttribute="top" id="x2M-17-WQ8"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="XUR-Tb-mFb"/>
-                                        <exclude reference="iHz-EX-NU9"/>
-                                        <exclude reference="qQG-bw-DWF"/>
-                                        <exclude reference="7VF-Qj-g3s"/>
-                                        <exclude reference="Asu-cr-ziW"/>
-                                        <exclude reference="l3r-3w-BsY"/>
-                                        <exclude reference="q9d-AW-IBW"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-bz-GFZ">
-                                <rect key="frame" x="55" y="110" width="280" height="267.66666666666669"/>
+                                <rect key="frame" x="55" y="171.33333333333334" width="280" height="267.33333333333326"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NCN-bz-GFZ" secondAttribute="height" multiplier="293:280" id="RKE-Bb-d9t"/>
                                 </constraints>
@@ -494,25 +450,61 @@ your profile statistic</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dup-O5-XGd">
+                                <rect key="frame" x="145" y="547.66666666666663" width="100" height="125.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="rou-HG-MYI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOw-SH-9a5">
+                                <rect key="frame" x="145" y="45.999999999999993" width="100" height="125.33333333333331"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="asr-cl-ziw"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No profile statistic to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-dn-GLr">
+                                <rect key="frame" x="32" y="462.66666666666669" width="326" height="30.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can see how much carbon emission and how well you do to reduce it!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8m-fl-RLb">
+                                <rect key="frame" x="32" y="501.00000000000006" width="326" height="46.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eXC-VR-MCT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="C8m-fl-RLb" firstAttribute="top" secondItem="EZG-dn-GLr" secondAttribute="bottom" constant="8" id="5EV-xo-M3x"/>
                             <constraint firstItem="WAu-2X-4Ny" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="16" id="9Tx-Fy-Wlv"/>
+                            <constraint firstItem="EZG-dn-GLr" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="32" id="9zD-sE-vyA"/>
                             <constraint firstItem="NCN-bz-GFZ" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="55" id="DY0-y3-QmK"/>
                             <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="WAu-2X-4Ny" secondAttribute="trailing" constant="16" id="Dhm-dk-K2d"/>
-                            <constraint firstItem="NCN-bz-GFZ" firstAttribute="top" secondItem="WAu-2X-4Ny" secondAttribute="bottom" constant="64" id="Fz7-Al-vnP"/>
-                            <constraint firstItem="jwf-Z7-hys" firstAttribute="top" secondItem="NCN-bz-GFZ" secondAttribute="bottom" constant="24" id="TJn-y9-g0B"/>
+                            <constraint firstItem="NCN-bz-GFZ" firstAttribute="top" secondItem="IOw-SH-9a5" secondAttribute="bottom" id="FfG-Xx-XXq"/>
+                            <constraint firstItem="Dup-O5-XGd" firstAttribute="centerX" secondItem="KfH-4m-MvK" secondAttribute="centerX" id="GNg-rk-WWX"/>
+                            <constraint firstItem="IOw-SH-9a5" firstAttribute="height" secondItem="Dup-O5-XGd" secondAttribute="height" id="JVI-1P-CU6"/>
+                            <constraint firstItem="IOw-SH-9a5" firstAttribute="top" secondItem="WAu-2X-4Ny" secondAttribute="bottom" id="RbD-jW-gKf"/>
+                            <constraint firstItem="IOw-SH-9a5" firstAttribute="centerX" secondItem="KfH-4m-MvK" secondAttribute="centerX" id="WU0-2l-Jkw"/>
                             <constraint firstItem="WAu-2X-4Ny" firstAttribute="top" secondItem="KfH-4m-MvK" secondAttribute="top" id="XWx-TE-IXM"/>
-                            <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="jwf-Z7-hys" secondAttribute="trailing" constant="16" id="bk9-cC-inq"/>
-                            <constraint firstItem="jwf-Z7-hys" firstAttribute="leading" secondItem="eXC-VR-MCT" secondAttribute="leading" constant="16" id="xlL-KD-GoP"/>
+                            <constraint firstAttribute="bottom" secondItem="Dup-O5-XGd" secondAttribute="bottom" id="Y6g-ck-A1C"/>
+                            <constraint firstItem="C8m-fl-RLb" firstAttribute="leading" secondItem="EZG-dn-GLr" secondAttribute="leading" id="Zbq-CF-PTh"/>
+                            <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="EZG-dn-GLr" secondAttribute="trailing" constant="32" id="aLl-7f-UGR"/>
+                            <constraint firstItem="EZG-dn-GLr" firstAttribute="top" secondItem="NCN-bz-GFZ" secondAttribute="bottom" constant="24" id="jon-Fe-o3f"/>
+                            <constraint firstItem="C8m-fl-RLb" firstAttribute="trailing" secondItem="EZG-dn-GLr" secondAttribute="trailing" id="wH1-tG-yZ6"/>
+                            <constraint firstItem="Dup-O5-XGd" firstAttribute="top" secondItem="C8m-fl-RLb" secondAttribute="bottom" id="wIL-Sx-hNm"/>
                             <constraint firstItem="eXC-VR-MCT" firstAttribute="trailing" secondItem="NCN-bz-GFZ" secondAttribute="trailing" constant="55" id="yYy-ld-2s3"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjj-mj-JH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925" y="-609"/>
+            <point key="canvasLocation" x="1924.6153846153845" y="-609.59715639810429"/>
         </scene>
     </scenes>
     <designables>

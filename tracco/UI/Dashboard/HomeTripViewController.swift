@@ -118,14 +118,18 @@ extension HomeTripViewController: GlobalEvent
 {
     func addTripModel(_ model: TripModel)
     {
-        model.forEach { self.profileModel?.add($0) }
-        updateViewWithModel()
         // if full, remove the oldest data
         let isFull = dataSource?.count == dataMaxSize
         if (isFull) { dataSource?.removeFirst() }
         // append the newest data and reload table
         dataSource?.append(model)
         tableView.reloadData()
+    }
+    
+    func profileModelUpdated(_ model: ProfileModel)
+    {
+        self.profileModel = model
+        updateViewWithModel()
     }
 }
 

@@ -44,6 +44,23 @@ struct ProfileModel: Codable
         return Int(carbonEmissionInKgReducedTotal / OffsetEntity.tree.rawValue)
     }}
     
+    init()
+    {
+        self.distanceInBus = 0
+        self.distanceInCar = 0
+        self.distanceInMotor = 0
+        self.distanceInTrain = 0
+        
+        self.costInBus = 0
+        self.costInCar = 0
+        self.costInMotor = 0
+        self.costInTrain = 0
+        
+        self.tripTrackCount = 0
+        self.carbonEmissionInKgTotal = 0
+        self.carbonEmissionInKgReducedTotal = 0
+    }
+    
     mutating func add(_ model: TransitModel)
     {
         self.tripTrackCount += 1
