@@ -156,3 +156,20 @@ extension SumProfileViewController: GlobalEvent
         updateViewWithModel()
     }
 }
+
+extension SumProfileViewController: UIScrollViewDelegate
+{
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        if scrollView.contentOffset.y > 1
+        {
+            self.navigationController?.navigationBar.titleTextAttributes =
+            [.foregroundColor: UIColor.label]
+        }
+        else
+        {
+            self.navigationController?.navigationBar.titleTextAttributes =
+            [.foregroundColor: UIColor.clear]
+        }
+    }
+}

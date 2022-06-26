@@ -63,7 +63,7 @@
         <!--Profile-->
         <scene sceneID="1Qw-Nh-05o">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o5f-K1-fID" sceneMemberID="viewController">
+                <navigationController title="Profile" automaticallyAdjustsScrollViewInsets="NO" id="o5f-K1-fID" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="wL2-1R-kXm"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -84,12 +84,12 @@
         <scene sceneID="erl-so-s06">
             <objects>
                 <viewController id="V7q-DC-GuP" customClass="SumProfileViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mhT-30-pLn">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mhT-30-pLn">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-5M-Owa">
-                                <rect key="frame" x="0.0" y="44" width="390" height="629"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7r-C0-NCq">
                                         <rect key="frame" x="16" y="86" width="358" height="456"/>
@@ -298,16 +298,18 @@
                                     <constraint firstItem="nfw-pI-2WB" firstAttribute="leading" secondItem="Suh-5M-Owa" secondAttribute="leading" constant="16" id="wgd-6C-glN"/>
                                     <constraint firstItem="5Z9-2C-8TS" firstAttribute="trailing" secondItem="POF-l1-DH3" secondAttribute="trailing" id="yWW-e3-kyg"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="V7q-DC-GuP" id="QBk-jW-iAF"/>
+                                </connections>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="lT8-kJ-uD7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Suh-5M-Owa" firstAttribute="leading" secondItem="lT8-kJ-uD7" secondAttribute="leading" id="Nyd-fR-wAT"/>
+                            <constraint firstItem="Suh-5M-Owa" firstAttribute="leading" secondItem="mhT-30-pLn" secondAttribute="leading" id="Nyd-fR-wAT"/>
                             <constraint firstItem="nfw-pI-2WB" firstAttribute="centerX" secondItem="Suh-5M-Owa" secondAttribute="centerX" id="kVd-vv-r2k"/>
-                            <constraint firstItem="Suh-5M-Owa" firstAttribute="top" secondItem="lT8-kJ-uD7" secondAttribute="top" id="oRe-dl-Ad8"/>
-                            <constraint firstItem="lT8-kJ-uD7" firstAttribute="bottom" secondItem="Suh-5M-Owa" secondAttribute="bottom" id="sz3-GI-6Mw"/>
-                            <constraint firstItem="lT8-kJ-uD7" firstAttribute="trailing" secondItem="Suh-5M-Owa" secondAttribute="trailing" id="uKc-P8-ra9"/>
+                            <constraint firstItem="Suh-5M-Owa" firstAttribute="top" secondItem="mhT-30-pLn" secondAttribute="top" id="oRe-dl-Ad8"/>
+                            <constraint firstAttribute="bottom" secondItem="Suh-5M-Owa" secondAttribute="bottom" id="sz3-GI-6Mw"/>
+                            <constraint firstAttribute="trailing" secondItem="Suh-5M-Owa" secondAttribute="trailing" id="uKc-P8-ra9"/>
                         </constraints>
                     </view>
                     <connections>

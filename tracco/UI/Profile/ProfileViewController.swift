@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.title = "Profile"
         
         sumProfileView.isHidden         = !isAlreadyHavingTrip
         emptySumProfileView.isHidden    = isAlreadyHavingTrip
