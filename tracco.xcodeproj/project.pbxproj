@@ -43,6 +43,7 @@
 		3F94CCE42858599B00BD5176 /* CO2E.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE12858599B00BD5176 /* CO2E.swift */; };
 		3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */; };
 		3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */; };
+		3F9E56C4286844F100A566C6 /* PartsOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C3286844F100A566C6 /* PartsOfDay.swift */; };
 		3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */; };
 		3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
@@ -139,6 +140,7 @@
 		3F94CCE12858599B00BD5176 /* CO2E.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CO2E.swift; sourceTree = "<group>"; };
 		3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationCostVM.swift; sourceTree = "<group>"; };
 		3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAccessory.swift; sourceTree = "<group>"; };
+		3F9E56C3286844F100A566C6 /* PartsOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfDay.swift; sourceTree = "<group>"; };
 		3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateLocationViewController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateLocationViewController.xib; sourceTree = "<group>"; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
@@ -346,6 +348,7 @@
 				3F3131E428635D50005B7640 /* TimeFrequency.swift */,
 				3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */,
 				3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */,
+				3F9E56C3286844F100A566C6 /* PartsOfDay.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
 				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,
+				3F9E56C4286844F100A566C6 /* PartsOfDay.swift in Sources */,
 				3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */,
 				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
 				A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */,

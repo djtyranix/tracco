@@ -303,6 +303,7 @@
                                 </connections>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="htw-ND-KpP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Suh-5M-Owa" firstAttribute="leading" secondItem="mhT-30-pLn" secondAttribute="leading" id="Nyd-fR-wAT"/>

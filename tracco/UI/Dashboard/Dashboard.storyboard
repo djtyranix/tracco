@@ -155,6 +155,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dQ3-s0-Ic4"/>
                     <connections>
+                        <outlet property="titleLabel" destination="Kwe-BG-BJa" id="d01-MB-GME"/>
                         <outlet property="trackButton" destination="lbm-2r-5tL" id="0kb-EZ-t74"/>
                     </connections>
                 </viewController>
@@ -316,6 +317,7 @@
                         <outlet property="encouragementLabel" destination="D4p-nQ-ELL" id="2uY-RP-08M"/>
                         <outlet property="mostUsedTransportCard" destination="YB1-2P-vvf" id="wjX-nS-vok"/>
                         <outlet property="tableView" destination="oSf-3E-FN4" id="VJY-Gq-pwe"/>
+                        <outlet property="titleLabel" destination="fHV-GK-8ut" id="cLA-h5-513"/>
                         <outlet property="trackButton" destination="6hw-l2-zA9" id="CaX-7z-lsU"/>
                         <segue destination="o94-WE-xZW" kind="show" identifier="summarySegue" id="lYM-vY-J9k"/>
                     </connections>

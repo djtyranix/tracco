@@ -11,12 +11,14 @@ class HomeTripViewController: UIViewController
 {
     enum Segue: String { case summary = "summarySegue"}
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var encouragementLabel: UILabel!
     @IBOutlet weak var carbonEmissionCard: CardInfoView!
     @IBOutlet weak var mostUsedTransportCard: CardInfoView!
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    public var greetingTitleText: String?
     public var historyDataSource: [TripModel]?
     public var profileModel: ProfileModel?
     
@@ -40,6 +42,12 @@ class HomeTripViewController: UIViewController
         tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
         
         updateViewWithModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        titleLabel.text = PartsOfDay.greetingText(PartsOfDay.now())
     }
     
     override func viewDidLayoutSubviews()
