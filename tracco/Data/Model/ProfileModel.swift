@@ -40,6 +40,10 @@ struct ProfileModel: Codable
         return nil
     }}
     
+    var offsetTrees: Int { get {
+        return Int(carbonEmissionInKgReducedTotal / OffsetEntity.tree.rawValue)
+    }}
+    
     mutating func add(_ model: TransitModel)
     {
         self.tripTrackCount += 1

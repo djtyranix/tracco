@@ -20,12 +20,15 @@ class ProfileVM
     public let carbonEmissionReducedInKgText: String
     public let encouragementText: String
     public let performance: Performance
-    public let treesOffsetting: UInt
+    public let treesOffsettingText: String?
     
     public init(_ model: ProfileModel)
     {
         carbonEmissionReducedInKgText = RoundingDigit(model.carbonEmissionInKgReducedTotal, kind: .number).getString(precision: 2)
-        treesOffsetting = UInt(model.carbonEmissionInKgReducedTotal / OffsetEntity.tree.rawValue)
+        
+        let offsetTrees = model.offsetTrees
+        treesOffsettingText = offsetTrees > 0 ? String(offsetTrees) : nil
+        
         trackCountText = String(model.tripTrackCount)
         distanceInKmText = RoundingDigit(model.distanceTotal, kind: .number).getString(precision: 2)
         spendCostInIDRText = RoundingDigit(model.costTotal, kind: .currency).getString(precision: 2)

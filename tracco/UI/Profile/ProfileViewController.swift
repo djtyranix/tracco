@@ -36,8 +36,6 @@ class ProfileViewController: UIViewController
     {
         if let vc = segue.destination as? SumProfileViewController
         {
-            guard let model = model
-            else { return }
             vc.model = model
             self.model = nil
         }

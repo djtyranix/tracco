@@ -30,65 +30,12 @@ class SumProfileViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        GlobalPublisher.addObserver(self)
         reduceCarbonCard        = ReduceCarbonConciseCardView()
         reduceCarbonFullCard    = ReduceCarbonCardView()
-        
         setupHeaderCardView(reduceCarbonCard)
         setupHeaderCardView(reduceCarbonFullCard)
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        
-        headerView?.removeFromSuperview()
-        
-        self.model = StoredModel.profile
-        guard let model = model
-        else { return }
-        
-        let viewModel               = ProfileVM(model)
-        distanceCard.value          = viewModel.distanceInKmText
-        spendCostCard.value         = viewModel.spendCostInIDRText
-        trackCountCard.value        = viewModel.trackCountText
-        mostUsedTransportCard.value = viewModel.mostUsedTransportText
-        carbonEmissionCard.value    = viewModel.totalCarbonEmissionText
-        encouragementLabel.text     = viewModel.encouragementText
-        
-        let heightConstant: CGFloat
-        let headerView: UIView
-        
-        if (viewModel.treesOffsetting > 0)
-        {
-            reduceCarbonFullCard.carbonValue = viewModel.carbonEmissionReducedInKgText
-            reduceCarbonFullCard.treesValue = "\(viewModel.treesOffsetting)"
-            
-            heightConstant = 174
-            headerView = reduceCarbonFullCard
-            reduceCarbonCard.removeFromSuperview()
-        }
-        else
-        {
-            reduceCarbonCard.value = viewModel.carbonEmissionReducedInKgText
-            
-            heightConstant = 142
-            headerView = reduceCarbonCard
-            reduceCarbonFullCard.removeFromSuperview()
-        }
-        
-        let isHeaderAlreadyDisplayed = headerView.superview != nil
-        if (isHeaderAlreadyDisplayed) { return }
-        
-        contentCardView.addSubview(headerView)
-        
-        NSLayoutConstraint.activate([
-            headerView.heightAnchor.constraint(equalToConstant: heightConstant),
-            headerView.topAnchor.constraint(equalTo: contentCardView.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: contentCardView.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: contentCardView.trailingAnchor),
-            headerView.bottomAnchor.constraint(equalTo: carbonEmissionCard.topAnchor, constant: -16)
-        ])
+        updateViewWithModel()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -129,6 +76,56 @@ class SumProfileViewController: UIViewController
         present(vc, animated: true)
     }
     
+    private func updateViewWithModel()
+    {
+        headerView?.removeFromSuperview()
+        
+        guard let model = model
+        else { return }
+        
+        let viewModel               = ProfileVM(model)
+        distanceCard.value          = viewModel.distanceInKmText
+        spendCostCard.value         = viewModel.spendCostInIDRText
+        trackCountCard.value        = viewModel.trackCountText
+        mostUsedTransportCard.value = viewModel.mostUsedTransportText
+        carbonEmissionCard.value    = viewModel.totalCarbonEmissionText
+        encouragementLabel.text     = viewModel.encouragementText
+        
+        let heightConstant: CGFloat
+        let headerView: UIView
+        
+        if let treesOffsettingText = viewModel.treesOffsettingText
+        {
+            reduceCarbonFullCard.carbonValue = viewModel.carbonEmissionReducedInKgText
+            reduceCarbonFullCard.treesValue = treesOffsettingText
+            
+            heightConstant = 174
+            headerView = reduceCarbonFullCard
+            reduceCarbonCard.removeFromSuperview()
+        }
+        else
+        {
+            reduceCarbonCard.value = viewModel.carbonEmissionReducedInKgText
+            
+            heightConstant = 142
+            headerView = reduceCarbonCard
+            reduceCarbonFullCard.removeFromSuperview()
+        }
+        
+        let isHeaderAlreadyDisplayed = headerView.superview != nil
+        if (isHeaderAlreadyDisplayed) { return }
+        
+        contentCardView.addSubview(headerView)
+        
+        NSLayoutConstraint.activate([
+            headerView.heightAnchor.constraint(equalToConstant: heightConstant),
+            headerView.topAnchor.constraint(equalTo: contentCardView.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: contentCardView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: contentCardView.trailingAnchor),
+            headerView.bottomAnchor.constraint(equalTo: carbonEmissionCard.topAnchor, constant: -16)
+        ])
+    }
+    
     private func setupHeaderCardView(_ view: ReduceCarbonConciseCardView?)
     {
         view?.labelColor = UIColor(named: "MainGreen80")
@@ -148,5 +145,14 @@ class SumProfileViewController: UIViewController
         view?.translatesAutoresizingMaskIntoConstraints = false
         view?.layer.cornerRadius = 4
         view?.backgroundColor = UIColor(named: "MainGreen10")
+    }
+}
+
+extension SumProfileViewController: GlobalEvent
+{
+    func addTripModel(_ model: TripModel)
+    {
+        model.forEach { self.model?.add($0) }
+        updateViewWithModel()
     }
 }

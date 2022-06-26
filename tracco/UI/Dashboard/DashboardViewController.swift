@@ -12,14 +12,14 @@ class DashboardViewController: UIViewController
     @IBOutlet weak var noTripView: UIView!
     @IBOutlet weak var tripView: UIView!
     
-    let viewModel = DashboardViewModel()
-    
     private var historyDataSource: [TripModel]?
+    private var profileModel: ProfileModel?
     private var isAlreadyHavingTrip: Bool
     
     required init?(coder: NSCoder)
     {
         historyDataSource = StoredModel.history
+        profileModel = StoredModel.profile
         isAlreadyHavingTrip = historyDataSource != nil
         super.init(coder: coder)
     }
@@ -39,8 +39,10 @@ class DashboardViewController: UIViewController
     {
         if let vc = segue.destination as? HomeTripViewController
         {
+            vc.profileModel = profileModel
             vc.historyDataSource = historyDataSource
             historyDataSource = nil
+            profileModel = nil
         }
     }
 }

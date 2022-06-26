@@ -11,10 +11,14 @@ class HomeTripViewController: UIViewController
 {
     enum Segue: String { case summary = "summarySegue"}
     
+    @IBOutlet weak var encouragementLabel: UILabel!
+    @IBOutlet weak var carbonEmissionCard: CardInfoView!
+    @IBOutlet weak var mostUsedTransportCard: CardInfoView!
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     public var historyDataSource: [TripModel]?
+    public var profileModel: ProfileModel?
     
     // data max will adjust according to the device table view height
     // this view will only contain just a few latest history
@@ -34,6 +38,8 @@ class HomeTripViewController: UIViewController
         tableView.delaysContentTouches = false
         tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight
         tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
+        
+        updateViewWithModel()
     }
     
     override func viewDidLayoutSubviews()
@@ -54,6 +60,22 @@ class HomeTripViewController: UIViewController
             vc.viewModelHistory = SummaryHistoryVM(model)
             vc.viewModelHistory?.headerOverviewText = "Trip from \(cell.descriptionLabel.text!)"
         }
+    }
+    
+    @IBAction func onViewAllButton(_ sender: UIButton)
+    {
+        self.tabBarController?.selectedIndex = 1
+    }
+    
+    private func updateViewWithModel()
+    {
+        guard let model = profileModel
+        else { return }
+        
+        let viewModel = DashboardVM(model)
+        encouragementLabel.text = viewModel.encouragementText
+        carbonEmissionCard.value = viewModel.carbonEmissionValueText
+        mostUsedTransportCard.value = viewModel.mostUsedTransportText
     }
     
     private func limitLatestTripBasedOnDeviceHeight()
@@ -88,6 +110,8 @@ extension HomeTripViewController: GlobalEvent
 {
     func addTripModel(_ model: TripModel)
     {
+        model.forEach { self.profileModel?.add($0) }
+        updateViewWithModel()
         // if full, remove the oldest data
         let isFull = dataSource?.count == dataMaxSize
         if (isFull) { dataSource?.removeFirst() }
