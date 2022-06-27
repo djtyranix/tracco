@@ -98,6 +98,7 @@
 		A8CC9D7C28598DD300F30DBE /* DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7B28598DD300F30DBE /* DashboardVM.swift */; };
 		A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D81285A307D00F30DBE /* Extensions.swift */; };
 		A8D70B0228695DE1006AB7E1 /* LatestTripVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D70B0128695DE1006AB7E1 /* LatestTripVM.swift */; };
+		A8D70B0428696BC3006AB7E1 /* AnimTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D70B0328696BC3006AB7E1 /* AnimTabBarController.swift */; };
 		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
 		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
 		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
@@ -201,6 +202,7 @@
 		A8CC9D7B28598DD300F30DBE /* DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVM.swift; sourceTree = "<group>"; };
 		A8CC9D81285A307D00F30DBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A8D70B0128695DE1006AB7E1 /* LatestTripVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTripVM.swift; sourceTree = "<group>"; };
+		A8D70B0328696BC3006AB7E1 /* AnimTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimTabBarController.swift; sourceTree = "<group>"; };
 		A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingOnboardingViewController.swift; sourceTree = "<group>"; };
 		A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeyStore.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */,
 				3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */,
 				3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */,
+				A8D70B0328696BC3006AB7E1 /* AnimTabBarController.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
 				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
+				A8D70B0428696BC3006AB7E1 /* AnimTabBarController.swift in Sources */,
 				A8411BE6286561AF00C3B5E2 /* TransitPath.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
