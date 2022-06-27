@@ -42,8 +42,8 @@ class HistoryTableViewCell: UITableViewCell
     
     public func setupCell(_ model: TripModel)
     {
-        let tripDate                        = model.first!.transitPath.beginDate
-        let longestTransport                = model.longestTransportUse!.transitPath.type
+        let tripDate                        = model.first!.beginDate
+        let longestTransport                = model.longestTransportUse!.type
         
         var dateText = String()
         let formatter = DateFormatter()
@@ -79,10 +79,10 @@ class HistoryTableViewCell: UITableViewCell
 extension TripModel
 {
     var shortestTransportUse: TransitModel? { get {
-        return self.min(by: { return $0.transitPath.distanceInKm < $1.transitPath.distanceInKm })
+        return self.min(by: { return $0.distanceInKm < $1.distanceInKm })
     }}
     
     var longestTransportUse: TransitModel? { get {
-        return self.max(by: { return $0.transitPath.distanceInKm < $1.transitPath.distanceInKm })
+        return self.max(by: { return $0.distanceInKm < $1.distanceInKm })
     }}
 }

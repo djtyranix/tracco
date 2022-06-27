@@ -29,12 +29,16 @@ class HomeTripViewController: UIViewController
     private var dataSource: [TripModel]?
     private var selectedIndex: IndexPath?
     private var isTableViewDataSourceInitialized = false
+    private let viewModel = LatestTripVM()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         GlobalPublisher.addObserver(self)
+        
+        historyDataSource = viewModel.getAllTrip()
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.delaysContentTouches = false

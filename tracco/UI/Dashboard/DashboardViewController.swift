@@ -15,10 +15,11 @@ class DashboardViewController: UIViewController
     private var historyDataSource: [TripModel]?
     private var profileModel: ProfileModel?
     private var isAlreadyHavingTrip: Bool
+    private let viewModel = LatestTripVM()
     
     required init?(coder: NSCoder)
     {
-        historyDataSource = StoredModel.history
+        historyDataSource = viewModel.getAllTrip()
         profileModel = StoredModel.profile
         isAlreadyHavingTrip = historyDataSource != nil
         super.init(coder: coder)

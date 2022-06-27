@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 extension UIColor {
     public convenience init?(hex: String) {

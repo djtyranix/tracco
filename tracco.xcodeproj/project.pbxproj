@@ -75,7 +75,8 @@
 		3FF8DCA12866FA3500EEE490 /* ReduceCarbonCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF8DCA02866FA3500EEE490 /* ReduceCarbonCardView.xib */; };
 		3FF8DCA32866FA5500EEE490 /* ReduceCarbonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8DCA22866FA5500EEE490 /* ReduceCarbonCardView.swift */; };
 		3FF8DCA528670A4B00EEE490 /* OffsetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */; };
-		A8411BE02865562600C3B5E2 /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BDF2865562600C3B5E2 /* TransitPath.swift */; };
+		A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BE32865574A00C3B5E2 /* TripRepository.swift */; };
+		A8411BE6286561AF00C3B5E2 /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BE5286561AF00C3B5E2 /* TransitPath.swift */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -89,6 +90,7 @@
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
 		A8814440285C183400EE1FA2 /* ReduceCarbonConciseCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A881443F285C183400EE1FA2 /* ReduceCarbonConciseCardView.xib */; };
+		A894047F286949940080D5D5 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A894047E286949940080D5D5 /* HistoryViewModel.swift */; };
 		A8AD59B128602D9A00104B58 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD59B028602D9A00104B58 /* CardInfoView.swift */; };
 		A8AD59B928602DAA00104B58 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */; };
 		A8AD59BA28602DAA00104B58 /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AD59B328602DAA00104B58 /* Summary.storyboard */; };
@@ -101,6 +103,8 @@
 		A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D792859899500F30DBE /* HomeTripViewController.swift */; };
 		A8CC9D7C28598DD300F30DBE /* DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D7B28598DD300F30DBE /* DashboardVM.swift */; };
 		A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9D81285A307D00F30DBE /* Extensions.swift */; };
+		A8D70B0228695DE1006AB7E1 /* LatestTripVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D70B0128695DE1006AB7E1 /* LatestTripVM.swift */; };
+		A8D70B0428696BC3006AB7E1 /* AnimTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D70B0328696BC3006AB7E1 /* AnimTabBarController.swift */; };
 		A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */; };
 		A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */; };
 		A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */; };
@@ -179,6 +183,8 @@
 		3FF8DCA22866FA5500EEE490 /* ReduceCarbonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceCarbonCardView.swift; sourceTree = "<group>"; };
 		3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetEntity.swift; sourceTree = "<group>"; };
 		A8411BDF2865562600C3B5E2 /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
+		A8411BE32865574A00C3B5E2 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
+		A8411BE5286561AF00C3B5E2 /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* tracco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 		A87463F128546D72009AB0DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A87463F328546D97009AB0DC /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		A881443F285C183400EE1FA2 /* ReduceCarbonConciseCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReduceCarbonConciseCardView.xib; path = ../../Utils/Helper/ReduceCarbonConciseCardView.xib; sourceTree = "<group>"; };
+		A894047E286949940080D5D5 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		A8AD59B028602D9A00104B58 /* CardInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 		A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		A8AD59B328602DAA00104B58 /* Summary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
@@ -206,6 +213,8 @@
 		A8CC9D792859899500F30DBE /* HomeTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTripViewController.swift; sourceTree = "<group>"; };
 		A8CC9D7B28598DD300F30DBE /* DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVM.swift; sourceTree = "<group>"; };
 		A8CC9D81285A307D00F30DBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A8D70B0128695DE1006AB7E1 /* LatestTripVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTripVM.swift; sourceTree = "<group>"; };
+		A8D70B0328696BC3006AB7E1 /* AnimTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimTabBarController.swift; sourceTree = "<group>"; };
 		A8FB37BF2856D6150057F6A3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A8FB37C12856E0840057F6A3 /* SlidingOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingOnboardingViewController.swift; sourceTree = "<group>"; };
 		A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeyStore.swift; sourceTree = "<group>"; };
@@ -232,6 +241,7 @@
 			children = (
 				3F84CB67285E163500EFDD71 /* SummaryVM.swift */,
 				3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */,
+				A894047E286949940080D5D5 /* HistoryViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -239,7 +249,7 @@
 		3F94CCCE2858589200BD5176 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8411BDF2865562600C3B5E2 /* TransitPath.swift */,
+				A8411BE5286561AF00C3B5E2 /* TransitPath.swift */,
 				3FC88A73285B24680022BA2C /* TransitModel.swift */,
 				3F3131E0286359AA005B7640 /* ProfileModel.swift */,
 			);
@@ -264,6 +274,7 @@
 				3F94CCD32858591C00BD5176 /* TransportRadioButtonVM.swift */,
 				3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */,
 				A8CC9D7B28598DD300F30DBE /* DashboardVM.swift */,
+				A8D70B0128695DE1006AB7E1 /* LatestTripVM.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -285,12 +296,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A8411BE12865570F00C3B5E2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A8411BE32865574A00C3B5E2 /* TripRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		A87463BF2854596D009AB0DC = {
 			isa = PBXGroup;
 			children = (
 				A87463CA2854596D009AB0DC /* tracco */,
 				A87463C92854596D009AB0DC /* Products */,
 				A8FB37C82856FEAF0057F6A3 /* Frameworks */,
+				A8D70B0028695CE5006AB7E1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -336,6 +356,7 @@
 		A87463E5285469AE009AB0DC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A8411BE12865570F00C3B5E2 /* Repository */,
 				3F94CCCE2858589200BD5176 /* Model */,
 				A8FB37C32856E7240057F6A3 /* UserKeyStore.swift */,
 				3F3131DC28635499005B7640 /* UserDefaults.swift */,
@@ -457,6 +478,7 @@
 				3F94CCBD2858581300BD5176 /* FocusPresentationController.swift */,
 				3F94CCBF2858581300BD5176 /* SheetPresentationController.swift */,
 				3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */,
+				A8D70B0328696BC3006AB7E1 /* AnimTabBarController.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -468,6 +490,14 @@
 				A8CC9D81285A307D00F30DBE /* Extensions.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A8D70B0028695CE5006AB7E1 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A8411BDF2865562600C3B5E2 /* TransitPath.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		A8FB37BE2856D3670057F6A3 /* Onboarding */ = {
@@ -592,11 +622,13 @@
 				3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
+				A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */,
 				3FF8DC9F2866B6A400EEE490 /* ShareOptionViewController.swift in Sources */,
 				3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */,
 				3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
+				A894047F286949940080D5D5 /* HistoryViewModel.swift in Sources */,
 				3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
@@ -624,6 +656,7 @@
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
 				D9DF37802860329400CA9F9C /* HistoryTripViewController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
+				A8D70B0228695DE1006AB7E1 /* LatestTripVM.swift in Sources */,
 				A8AD59BD28602DAA00104B58 /* TripDetailContentView.swift in Sources */,
 				A8CC9D7C28598DD300F30DBE /* DashboardVM.swift in Sources */,
 				3FF8DCA528670A4B00EEE490 /* OffsetEntity.swift in Sources */,
@@ -643,6 +676,7 @@
 				3B2BA0752860369500104AAF /* SumProfileViewController.swift in Sources */,
 				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
+				A8D70B0428696BC3006AB7E1 /* AnimTabBarController.swift in Sources */,
 				3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */,
 				A8411BE02865562600C3B5E2 /* TransitPath.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
@@ -813,8 +847,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -848,8 +881,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -165,19 +165,19 @@ class OnTripViewController: UIViewController
         if let vc = segue.destination as? SummaryViewController
         {
             let isNoTrip = StoredModel.profile == nil
-            
+
             var profileModel: ProfileModel = isNoTrip ? ProfileModel() : StoredModel.profile!
             var historyModel: [TripModel] = isNoTrip ? [] : StoredModel.history!
-            
+
             historyModel.append(model)
             model.forEach { profileModel.add($0) }
-            
+
             StoredModel.profile = profileModel
             StoredModel.history = historyModel
-            
+
             GlobalPublisher.shared.addTripModel(model)
             GlobalPublisher.shared.profileModelUpdated(profileModel)
-            
+            self.viewModel?.saveTripData(tripData: model)
             vc.viewModel = SummaryVM(model)
         }
     }
@@ -208,12 +208,18 @@ class OnTripViewController: UIViewController
         guard let prevLocation = viewModel.previousLocation
         else { return }
         
-        if model.isEmpty == false
+        if !model.isEmpty
         {
+            // Edit last model
             let currIndex = model.endIndex - 1
             model[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
-            model[currIndex].transitPath.endDate = Date()
-            model[currIndex].transitPath.distanceInKm = viewModel.distanceInKm
+            model[currIndex].endDate = Date()
+            model[currIndex].distanceInKm = viewModel.distanceInKm
+            
+            // Adding endpoint
+            let coordinate = userCurrentLocation.coordinate
+            model[currIndex].transitPath.endLatitude = coordinate.latitude
+            model[currIndex].transitPath.endLongitude = coordinate.longitude
         }
         
         // update cost vc, user location may still move while adding a cost confirmation
@@ -238,18 +244,20 @@ class OnTripViewController: UIViewController
         ]
         
         let transitPath = TransitPath(
-            type: currentType,
-            coords: [LocationCoordinate2D(currCoordinate)],
-            distanceInKm: 0,
-            sampleRate: 1,
-            beginDate: Date(),
-            endDate: Date()
+            startLatitude: currCoordinate.latitude,
+            startLongitude: currCoordinate.longitude,
+            endLatitude: 0,
+            endLongitude: 0
         )
         
         let transitModel = TransitModel(
             transitPath: transitPath,
             carbonEmissionInKg: 0,
-            costInIDR: 0
+            costInIDR: 0,
+            type: currentType,
+            distanceInKm: 0,
+            beginDate: Date(),
+            endDate: Date()
         )
         
         let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)

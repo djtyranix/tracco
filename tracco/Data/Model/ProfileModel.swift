@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProfileModel: Codable
+struct ProfileModel : Codable
 {
     var distanceInCar: Double
     var distanceInMotor: Double
@@ -66,25 +66,25 @@ struct ProfileModel: Codable
         self.tripTrackCount += 1
         self.carbonEmissionInKgTotal += model.carbonEmissionInKg
         
-        let carbonInCar = TransportType.car.rawValue.carbon * model.transitPath.distanceInKm
+        let carbonInCar = TransportType.car.rawValue.carbon * model.distanceInKm
         let carbonReduced = carbonInCar - model.carbonEmissionInKg
         self.carbonEmissionInKgReducedTotal += carbonReduced
         
-        switch model.transitPath.type
+        switch model.type
         {
         case .car:
-            self.distanceInCar += model.transitPath.distanceInKm
+            self.distanceInCar += model.distanceInKm
             self.costInCar += model.costInIDR
             break
         case .bus:
-            self.distanceInBus += model.transitPath.distanceInKm
+            self.distanceInBus += model.distanceInKm
             self.costInBus += model.costInIDR
             break
         case .motor:
-            self.distanceInMotor += model.transitPath.distanceInKm
+            self.distanceInMotor += model.distanceInKm
             self.costInMotor += model.costInIDR
         case .train:
-            self.distanceInTrain += model.transitPath.distanceInKm
+            self.distanceInTrain += model.distanceInKm
             self.costInTrain += model.costInIDR
             break
         }

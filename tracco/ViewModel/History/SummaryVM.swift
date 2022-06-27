@@ -51,12 +51,12 @@ class SummaryVM
         currentCostInIDRText = RoundingDigit(currentCostInIDR, kind: .currency).getString(precision: 2)
         currentCarbonEmissionInKgText = String(format: "%.2f", currentCarbonEmissionInKg)
         // trip distance
-        let tripDistance = model.reduce(0.0, { return $0 + $1.transitPath.distanceInKm })
+        let tripDistance = model.reduce(0.0, { return $0 + $1.distanceInKm })
         tripDistanceText = String(format: "%.2f km", tripDistance)
         // trip duration
         let tripDuration: TimeInterval
-        if let departureDate = model.first?.transitPath.beginDate,
-           let arrivalDate = model.last?.transitPath.endDate
+        if let departureDate = model.first?.beginDate,
+           let arrivalDate = model.last?.endDate
         {
             tripDuration = arrivalDate.timeIntervalSince(departureDate)
         }
@@ -74,9 +74,9 @@ class SummaryVM
             return TripDetailContent(
                 carbonEmissionInKg: $0.carbonEmissionInKg,
                 costInIDR: $0.costInIDR,
-                transportType: $0.transitPath.type,
-                date: $0.transitPath.beginDate,
-                coord: $0.transitPath.coords.first!
+                transportType: $0.type,
+                date: $0.beginDate,
+                coord: LocationCoordinate2D(latitude: $0.transitPath.startLatitude, longitude: $0.transitPath.startLongitude)
             )
         })
         if let lastModel = model.last
@@ -84,9 +84,9 @@ class SummaryVM
             let destinationTrip = TripDetailContent(
                 carbonEmissionInKg: 0,
                 costInIDR: 0,
-                transportType:lastModel.transitPath.type,
-                date: lastModel.transitPath.endDate,
-                coord: lastModel.transitPath.coords.last!
+                transportType:lastModel.type,
+                date: lastModel.endDate,
+                coord: LocationCoordinate2D(latitude: lastModel.transitPath.endLatitude, longitude: lastModel.transitPath.endLongitude)
             )
             contents.append(destinationTrip)
         }

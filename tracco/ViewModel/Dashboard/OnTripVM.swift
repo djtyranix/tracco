@@ -11,6 +11,8 @@ import UIKit
 
 class OnTripVM
 {
+    private let repository = TripRepository.sharedInstance
+    
     public var transportType: TransportType { didSet {
         transportEmission = transportType.rawValue.convertibleObject
         transportEmission.distanceUnits = .kilo
@@ -57,5 +59,9 @@ class OnTripVM
         self.distanceInKm       = 0
         ({ self.transportType   = self.transportType })()
         ({ self.distanceInKm    = self.distanceInKm })()
+    }
+    
+    func saveTripData(tripData: TripModel) {
+        repository.saveData(trip: tripData)
     }
 }
