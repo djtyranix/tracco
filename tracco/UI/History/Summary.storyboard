@@ -308,7 +308,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <items>
                                     <navigationItem title="Trip Detail" id="PwV-Qj-8eM">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="fdj-Eb-eTg">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="fdj-Eb-eTg">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rEJ-A8-G1e">
                                                 <rect key="frame" x="16" y="11" width="131" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

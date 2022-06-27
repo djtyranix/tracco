@@ -18,7 +18,7 @@ class HistoryViewController: UIViewController
     
     required init?(coder: NSCoder)
     {
-        historyDataSource = viewModel.getAllTrip()
+        historyDataSource = StoredModel.history
         isAlreadyHavingTrip = historyDataSource != nil
         super.init(coder: coder)
     }

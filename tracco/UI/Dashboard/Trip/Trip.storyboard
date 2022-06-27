@@ -33,7 +33,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Start Trip" id="S3E-pk-V6m">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="qFl-Ec-b7E">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="qFl-Ec-b7E">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pbz-Vm-LHE">
                                                 <rect key="frame" x="16" y="4.6666666666666679" width="92" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,13 +51,13 @@
                                 <rect key="frame" x="16" y="111" width="358" height="687"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to add destination?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="but-cA-kM0">
-                                        <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="25.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="332.33333333333331" height="30.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAX-CW-Vw5">
-                                        <rect key="frame" x="0.0" y="510.66666666666663" width="358" height="46"/>
+                                        <rect key="frame" x="0.0" y="506.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="jaO-Vy-bGw"/>
                                         </constraints>
@@ -84,7 +84,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-cR-Xmt" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="572.66666666666663" width="358" height="46"/>
+                                        <rect key="frame" x="0.0" y="568.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="pSd-8q-KXV"/>
                                         </constraints>
@@ -109,10 +109,10 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-sB-0zU" userLabel="Show Recommendation">
-                                        <rect key="frame" x="0.0" y="634.66666666666663" width="358" height="40.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="630.66666666666663" width="358" height="44.333333333333371"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-U0-tPT">
-                                                <rect key="frame" x="100" y="1.3333333333333304" width="22" height="20.666666666666671"/>
+                                                <rect key="frame" x="102" y="1.3333333333333304" width="22" height="20.666666666666671"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="0ss-Wj-xaA"/>
@@ -121,13 +121,13 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't show this again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-r3-IGR">
-                                                <rect key="frame" x="130" y="3.6666666666667433" width="126" height="15.333333333333336"/>
+                                                <rect key="frame" x="132" y="2.3333333333333712" width="122.33333333333331" height="18"/>
                                                 <fontDescription key="fontDescription" name="Nunito-ExtraLight" family="Nunito" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can change again in Settings later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-H1-ioG">
-                                                <rect key="frame" x="68.000000000000014" y="24.999999999999996" width="222.33333333333337" height="15.333333333333332"/>
+                                                <rect key="frame" x="72.333333333333329" y="26.333333333333371" width="213.33333333333337" height="18"/>
                                                 <fontDescription key="fontDescription" name="Nunito-ExtraLight" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -145,7 +145,7 @@
                                         </constraints>
                                     </view>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-UG-J1u">
-                                        <rect key="frame" x="0.0" y="82.333333333333343" width="358" height="412.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="92.666666666666629" width="358" height="398"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="Gsd-hG-bkM"/>
                                         </constraints>
@@ -159,7 +159,7 @@
                                         </connections>
                                     </mapView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-4t-PNW">
-                                        <rect key="frame" x="159" y="250.66666666666666" width="40" height="39.333333333333314"/>
+                                        <rect key="frame" x="159" y="254.00000000000003" width="40" height="39.333333333333314"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="c6I-WE-yRY"/>
@@ -167,16 +167,16 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPS-hK-eT9">
-                                        <rect key="frame" x="20" y="406.66666666666663" width="318" height="68"/>
+                                        <rect key="frame" x="20" y="396.66666666666669" width="318" height="74"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Breeze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOD-AK-CEI">
-                                                <rect key="frame" x="16" y="16" width="286" height="20"/>
+                                                <rect key="frame" x="16" y="15.999999999999941" width="286" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banten, Tangerang, Cisauk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-zF-chX">
-                                                <rect key="frame" x="16" y="38" width="286" height="14"/>
+                                                <rect key="frame" x="16" y="41.333333333333314" width="286" height="16.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -199,13 +199,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you don’t want to add destination, you can still track your cost &amp; carbon emission " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4J-Ph-rKN">
-                                        <rect key="frame" x="0.0" y="33.666666666666657" width="358" height="32.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="38.333333333333343" width="358" height="38.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJk-pJ-NQf" customClass="SearchSpeechButton" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="98.333333333333343" width="326" height="36"/>
+                                        <rect key="frame" x="16" y="108.66666666666666" width="326" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="wIl-N1-I2y"/>
                                         </constraints>
@@ -602,7 +602,7 @@
     </scenes>
     <designables>
         <designable name="Ww2-cR-Xmt">
-            <size key="intrinsicContentSize" width="210" height="38"/>
+            <size key="intrinsicContentSize" width="210.66666666666666" height="38"/>
         </designable>
         <designable name="yJk-pJ-NQf">
             <size key="intrinsicContentSize" width="28" height="31"/>

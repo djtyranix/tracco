@@ -61,7 +61,8 @@ class OnTripVM
         ({ self.distanceInKm    = self.distanceInKm })()
     }
     
-    func saveTripData(tripData: TripModel) {
-        repository.saveData(trip: tripData)
+    func saveTripData(tripData: TripModel) -> Bool
+    {
+        return repository.saveData(trip: tripData)
     }
 }

@@ -13,16 +13,14 @@ class HistoryTripViewController: UIViewController
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var selectedIndex: IndexPath?
     public var dataSource: [TripModel]?
-    private let viewModel = HistoryViewModel()
+    
+    private var selectedIndex: IndexPath?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         GlobalPublisher.addObserver(self)
-        
-        dataSource = viewModel.getAllTrip()
         
         print("Test History")
         print("Data Source: \(dataSource as? TripModel ?? TripModel())")

@@ -52,6 +52,7 @@
 		3FA4A8552868BBD90094D8CD /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8542868BBD90094D8CD /* LocationTableViewCell.swift */; };
 		3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */; };
 		3FA4A859286952130094D8CD /* SpeechDictationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */; };
+		3FA4A85D28699FA70094D8CD /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A85C28699FA70094D8CD /* TransitPath.swift */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
 		3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */; };
@@ -76,7 +77,6 @@
 		3FF8DCA32866FA5500EEE490 /* ReduceCarbonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8DCA22866FA5500EEE490 /* ReduceCarbonCardView.swift */; };
 		3FF8DCA528670A4B00EEE490 /* OffsetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */; };
 		A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BE32865574A00C3B5E2 /* TripRepository.swift */; };
-		A8411BE6286561AF00C3B5E2 /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8411BE5286561AF00C3B5E2 /* TransitPath.swift */; };
 		A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CB2854596D009AB0DC /* AppDelegate.swift */; };
 		A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CD2854596D009AB0DC /* SceneDelegate.swift */; };
 		A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463CF2854596D009AB0DC /* DashboardViewController.swift */; };
@@ -159,6 +159,7 @@
 		3FA4A8542868BBD90094D8CD /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
 		3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechDictationViewController.xib; sourceTree = "<group>"; };
+		3FA4A85C28699FA70094D8CD /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
 		3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBackgroundButton.swift; sourceTree = "<group>"; };
@@ -184,7 +185,6 @@
 		3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetEntity.swift; sourceTree = "<group>"; };
 		A8411BDF2865562600C3B5E2 /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
 		A8411BE32865574A00C3B5E2 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
-		A8411BE5286561AF00C3B5E2 /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
 		A87463C82854596D009AB0DC /* tracco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87463CB2854596D009AB0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87463CD2854596D009AB0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		3F94CCCE2858589200BD5176 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8411BE5286561AF00C3B5E2 /* TransitPath.swift */,
+				3FA4A85C28699FA70094D8CD /* TransitPath.swift */,
 				3FC88A73285B24680022BA2C /* TransitModel.swift */,
 				3F3131E0286359AA005B7640 /* ProfileModel.swift */,
 			);
@@ -654,6 +654,7 @@
 				3FF8DCA32866FA5500EEE490 /* ReduceCarbonCardView.swift in Sources */,
 				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
+				3FA4A85D28699FA70094D8CD /* TransitPath.swift in Sources */,
 				D9DF37802860329400CA9F9C /* HistoryTripViewController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
 				A8D70B0228695DE1006AB7E1 /* LatestTripVM.swift in Sources */,
@@ -678,7 +679,6 @@
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
 				A8D70B0428696BC3006AB7E1 /* AnimTabBarController.swift in Sources */,
 				3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */,
-				A8411BE02865562600C3B5E2 /* TransitPath.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
@@ -764,7 +764,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -818,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -848,7 +848,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -882,7 +882,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
