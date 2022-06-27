@@ -18,7 +18,7 @@ class LatestTripVM: NSObject {
         }
     }
     
-    func getAllTrip() -> [TripModel] {
+    func getAllTrip() -> [TripModel]? {
         return repository.getAllData()
     }
 }

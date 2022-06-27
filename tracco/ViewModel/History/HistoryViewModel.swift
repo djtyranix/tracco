@@ -14,7 +14,7 @@ class HistoryViewModel: NSObject {
         return repository.getTripCount()
     }
     
-    func getAllTrip() -> [TripModel] {
+    func getAllTrip() -> [TripModel]? {
         return repository.getAllData()
     }
 }

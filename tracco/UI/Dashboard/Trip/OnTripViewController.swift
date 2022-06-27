@@ -164,19 +164,19 @@ class OnTripViewController: UIViewController
     {
         if let vc = segue.destination as? SummaryViewController
         {
-//            let isNoTrip = StoredModel.profile == nil
-//
-//            var profileModel: ProfileModel = isNoTrip ? ProfileModel() : StoredModel.profile!
-//            var historyModel: [TripModel] = isNoTrip ? [] : StoredModel.history!
-//
-//            historyModel.append(model)
-//            model.forEach { profileModel.add($0) }
-//
-//            StoredModel.profile = profileModel
-//            StoredModel.history = historyModel
-//
-//            GlobalPublisher.shared.addTripModel(model)
-//            GlobalPublisher.shared.profileModelUpdated(profileModel)
+            let isNoTrip = StoredModel.profile == nil
+
+            var profileModel: ProfileModel = isNoTrip ? ProfileModel() : StoredModel.profile!
+            var historyModel: [TripModel] = isNoTrip ? [] : StoredModel.history!
+
+            historyModel.append(model)
+            model.forEach { profileModel.add($0) }
+
+            StoredModel.profile = profileModel
+            StoredModel.history = historyModel
+
+            GlobalPublisher.shared.addTripModel(model)
+            GlobalPublisher.shared.profileModelUpdated(profileModel)
             self.viewModel?.saveTripData(tripData: model)
             vc.viewModel = SummaryVM(model)
         }

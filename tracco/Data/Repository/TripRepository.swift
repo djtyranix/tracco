@@ -144,7 +144,7 @@ class TripRepository : NSObject {
         }
     }
     
-    func getAllData() -> [TripModel] {
+    func getAllData() -> [TripModel]? {
         var tripArray = [TripModel]()
         var transitFetchArray = [NSManagedObject]()
         
@@ -195,10 +195,13 @@ class TripRepository : NSObject {
                 }
             }
             
+            if tripArray.count == 0 {
+                return nil
+            }
             return tripArray
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
-            return [TripModel]()
+            return nil
         }
     }
     
