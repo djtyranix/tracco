@@ -55,6 +55,7 @@ class OnTripViewController: UIViewController
     private let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.allowsBackgroundLocationUpdates = true
         return manager
     }()
     
@@ -85,6 +86,8 @@ class OnTripViewController: UIViewController
         let config = UIImage.SymbolConfiguration(scale: .medium)
         return UIImage(systemName: image, withConfiguration: config)
     }()
+    
+    private var pendingLocations: [CLLocationCoordinate2D] = []
     
     private var model = TripModel(id: 0, transits: [])
     private var keyboardHeight: CGFloat = 210
@@ -164,6 +167,14 @@ class OnTripViewController: UIViewController
     {
         if let vc = segue.destination as? SummaryViewController
         {
+            // stop updating location
+            locationManager.stopUpdatingLocation()
+            timerUpdate?.invalidate()
+            
+            // TODO: wait for all pendingLocations to be processed
+            // right now we force update by timerUpdate.invalidate()
+            // maybe we could wait using summarizing trip view
+            
             let isNoTrip = StoredModel.profile == nil || StoredModel.history == nil
 
             var profileModel: ProfileModel = isNoTrip ? ProfileModel() : StoredModel.profile!
@@ -203,12 +214,16 @@ class OnTripViewController: UIViewController
         guard let viewModel = viewModel
         else { return }
         
-        guard let userCurrentLocation = mapView.userLocation.location
-        else { return }
-
-        viewModel.currentLocation = userCurrentLocation
+        var coords = pendingLocations
+        pendingLocations = []
         
-        guard let prevLocation = viewModel.previousLocation
+        coords.forEach
+        {
+            let location = CLLocation(latitude: $0.latitude, longitude: $0.longitude)
+            viewModel.currentLocation = location
+        }
+        
+        guard let lastCoord = coords.last
         else { return }
         
         if model.transits.isEmpty == false
@@ -220,15 +235,18 @@ class OnTripViewController: UIViewController
             model[currIndex].distanceInKm = viewModel.distanceInKm
             
             // Adding endpoint
-            let coordinate = userCurrentLocation.coordinate
-            model[currIndex].transitPath.endLatitude = coordinate.latitude
-            model[currIndex].transitPath.endLongitude = coordinate.longitude
+            model[currIndex].transitPath.endLatitude = lastCoord.latitude
+            model[currIndex].transitPath.endLongitude = lastCoord.longitude
         }
         
         // update cost vc, user location may still move while adding a cost confirmation
         costTransportationVC.viewModel?.totalCostInIDR = viewModel.totalCostInIDR
         
-        let polyline = MKPolyline(coordinates: [prevLocation.coordinate, viewModel.currentLocation.coordinate], count: 2)
+        guard let prevLocation = viewModel.previousLocation
+        else { return }
+        
+        coords.insert(prevLocation.coordinate, at: 0)
+        let polyline = MKPolyline(coordinates: coords, count: coords.count)
         mapView.addOverlay(polyline, level: .aboveRoads)
     }
     
@@ -270,11 +288,6 @@ class OnTripViewController: UIViewController
         let selectedRadioButton = manager.selected
         currentTransportationVC.imageView.image = selectedRadioButton?.image
         currentTransportationVC.nameLabel.text = selectedRadioButton?.title
-        
-        if (timerUpdate == nil)
-        {
-            timerUpdate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onUpdate), userInfo: nil, repeats: true)
-        }
     }
     
     private func presentCostVC()
@@ -331,7 +344,12 @@ extension OnTripViewController: MKMapViewDelegate
 // MARK: CLLocationManagerDelegate
 extension OnTripViewController: CLLocationManagerDelegate
 {
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let coords = locations.map({ $0.coordinate })
+        pendingLocations.append(contentsOf: coords)
+        print(pendingLocations.count)
+    }
 }
 
 // MARK: CurrentTransportationViewControllerDelegate
@@ -363,7 +381,16 @@ extension OnTripViewController: ChooseTransportationViewControllerDelegate
 {
     func onConfirmChoose(_ selected: TransportRadioButton?)
     {
+        // start updating location after choose transport
+        // this will trigger CLLocationManagerDelegate when in background only
+        locationManager.startUpdatingLocation()
         updateTransportation(chooseTransportationVC.radioButton!)
+        timerUpdate = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(onUpdate),
+            userInfo: nil, repeats: true
+        )
     }
 }
 

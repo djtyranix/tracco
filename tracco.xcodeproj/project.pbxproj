@@ -847,6 +847,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We would like to write your progress in a photo library";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We would like to do speech recognition only when you search for location using microphone ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -881,6 +883,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We would like to write your progress in a photo library";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We would like to do speech recognition only when you search for location using microphone ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

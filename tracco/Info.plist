@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>We would like to do speech recognition only when you search for location using microphone </string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We would like to do speech recognition only when you search for location using microphone </string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We would like to write your progress in a photo library</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>moovit</string>
@@ -33,6 +27,7 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UIStatusBarStyle</key>
