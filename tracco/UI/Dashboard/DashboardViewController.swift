@@ -22,7 +22,7 @@ class DashboardViewController: UIViewController
     {
         super.init(coder: coder)
         historyDataSource = StoredModel.history
-        isAlreadyHavingTrip = historyDataSource != nil
+        isAlreadyHavingTrip = viewModel.isAlreadyHavingTrip()
     }
     
     override func viewDidLoad()
@@ -30,15 +30,6 @@ class DashboardViewController: UIViewController
         super.viewDidLoad()
         noTripView.isHidden     = isAlreadyHavingTrip
         tripView.isHidden       = !isAlreadyHavingTrip
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let vc = segue.destination as? HomeTripViewController
-        {
-            vc.historyDataSource = historyDataSource
-            historyDataSource = nil
-        }
     }
 }
 
