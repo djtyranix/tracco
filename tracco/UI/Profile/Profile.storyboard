@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o5f-K1-fID">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -242,13 +241,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="You can improve it to make it better ☺️ Try to use public transportation to balance your carbon emission 👍" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POF-l1-DH3">
-                                        <rect key="frame" x="16" y="558" width="358" height="69.666666666666629"/>
+                                        <rect key="frame" x="16" y="558" width="358" height="59.666666666666629"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z9-2C-8TS" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="643.66666666666663" width="358" height="46"/>
+                                        <rect key="frame" x="16" y="633.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="UPX-YF-Nny"/>
                                         </constraints>
@@ -261,7 +260,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Share">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
+                                                        <font key="NSFont" size="16" name="Nunito-SemiBold"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -363,7 +362,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Share">
                                             <attributes>
-                                                <font key="NSFont" metaFont="system" size="16"/>
+                                                <font key="NSFont" size="16" name="Nunito-SemiBold"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -388,7 +387,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Save as Image">
                                             <attributes>
-                                                <font key="NSFont" metaFont="system" size="16"/>
+                                                <font key="NSFont" size="16" name="Nunito-SemiBold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -509,10 +508,10 @@
     </scenes>
     <designables>
         <designable name="5Z9-2C-8TS">
-            <size key="intrinsicContentSize" width="93.333333333333329" height="33.333333333333336"/>
+            <size key="intrinsicContentSize" width="93" height="32.666666666666664"/>
         </designable>
         <designable name="mkd-oW-VnN">
-            <size key="intrinsicContentSize" width="154.33333333333334" height="33.333333333333336"/>
+            <size key="intrinsicContentSize" width="155.33333333333334" height="32.666666666666664"/>
         </designable>
     </designables>
     <resources>

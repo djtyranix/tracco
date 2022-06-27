@@ -21,6 +21,8 @@ class OnTripViewController: UIViewController
 {
     enum Segue: String { case summary = "summarySegue" }
     
+    public static var instanceOnPause: OnTripViewController?
+    
     // first time vc elevation adjustment by SheetPresentationController
     private var elevationAdjustments: Set<UIViewController> = []
     
@@ -140,12 +142,15 @@ class OnTripViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+        let isResumeFromPause = self === OnTripViewController.instanceOnPause
+        OnTripViewController.instanceOnPause = nil
+        
         super.viewWillAppear(animated)
         
         // this vc do a presentation fullscreen on summary vc
         // when summary vc dismiss all of the stack from view hierarchy
         // viewWillAppear(_ animated: Bool) will be called
-        if (isRequestingEndTrip) { return }
+        if (isRequestingEndTrip || isResumeFromPause) { return }
         
         // present choose transportation for the first time (this won't work in viewDidLoad())
         present(chooseTransportationVC, animated: true) { [unowned self] in
@@ -170,6 +175,8 @@ class OnTripViewController: UIViewController
             // stop updating location
             locationManager.stopUpdatingLocation()
             timerUpdate?.invalidate()
+            
+            GlobalPublisher.shared.onTripEnded()
             
             // TODO: wait for all pendingLocations to be processed
             // right now we force update by timerUpdate.invalidate()
@@ -198,6 +205,7 @@ class OnTripViewController: UIViewController
     
     @IBAction func onBackButton(_ sender: UIButton)
     {
+        OnTripViewController.instanceOnPause = self
         self.view.window?.rootViewController?.dismiss(animated: true)
     }
     
@@ -237,6 +245,8 @@ class OnTripViewController: UIViewController
             // Adding endpoint
             model[currIndex].transitPath.endLatitude = lastCoord.latitude
             model[currIndex].transitPath.endLongitude = lastCoord.longitude
+            
+            GlobalPublisher.shared.onTripTransitModelUpdated(model[currIndex])
         }
         
         // update cost vc, user location may still move while adding a cost confirmation
@@ -348,7 +358,6 @@ extension OnTripViewController: CLLocationManagerDelegate
     {
         let coords = locations.map({ $0.coordinate })
         pendingLocations.append(contentsOf: coords)
-        print(pendingLocations.count)
     }
 }
 
@@ -391,6 +400,7 @@ extension OnTripViewController: ChooseTransportationViewControllerDelegate
             selector: #selector(onUpdate),
             userInfo: nil, repeats: true
         )
+        GlobalPublisher.shared.onTripStarted()
     }
 }
 

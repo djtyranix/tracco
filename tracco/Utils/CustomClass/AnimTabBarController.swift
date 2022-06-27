@@ -7,12 +7,70 @@
 
 import UIKit
 
-class AnimTabBarController: UITabBarController {
-
-    override func viewDidLoad() {
+class AnimTabBarController: UITabBarController
+{
+    private let onGoingPendingDisplayed = false
+    
+    private let onGoingTripSheet: OnGoingTripSheet = {
+        
+        let view = OnGoingTripSheet()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius     = 8
+        view.backgroundColor        = UIColor(named: "OnGoingButtonBackground")
+        view.labelColor             = UIColor(named: "OnGoingButtonForeground")
+        
+        return view
+    }()
+    
+    override func viewDidLoad()
+    {
+        self.view.addSubview(onGoingTripSheet)
+        
+        GlobalPublisher.addObserver(self)
+        onGoingTripSheet.isUserInteractionEnabled = true
+        onGoingTripSheet.addTarget(self, action: #selector(onGoingTripButton(_:)), for: .touchUpInside)
+        
+        onGoingTripSheet.isHidden = true
+        
+        NSLayoutConstraint.activate([
+            onGoingTripSheet.bottomAnchor.constraint(equalTo: self.tabBar.topAnchor, constant: -20),
+            onGoingTripSheet.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            onGoingTripSheet.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            onGoingTripSheet.heightAnchor.constraint(equalToConstant: 76)
+        ])
+        
         super.viewDidLoad()
         delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func onGoingTripButton(_ sender: OnGoingTripSheet)
+    {
+        if let instanceOnPause = OnTripViewController.instanceOnPause
+        {
+            self.present(instanceOnPause, animated: true)
+        }
+    }
+}
+
+extension AnimTabBarController: GlobalEvent
+{
+    func onTripTransitModelUpdated(_ model: TransitModel)
+    {
+        onGoingTripSheet.type = model.type
+        onGoingTripSheet.distance = model.distanceInKm
+        onGoingTripSheet.durationInSeconds = model.endDate.timeIntervalSince(model.beginDate)
+    }
+    
+    func onTripStarted()
+    {
+        onGoingTripSheet.isHidden = false
+    }
+    
+    func onTripEnded()
+    {
+        onGoingTripSheet.isHidden = true
     }
 }
 

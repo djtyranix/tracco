@@ -46,6 +46,8 @@
 		3F9E56C62868A2C600A566C6 /* SearchSpeechButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */; };
 		3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */; };
 		3F9FE8942869D7C600784B2D /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE8932869D7C600784B2D /* TripTableViewController.swift */; };
+		3F9FE8962869FEB500784B2D /* OnGoingTripSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */; };
+		3F9FE898286A15BA00784B2D /* OnGoingTripSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */; };
 		3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */; };
 		3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */; };
 		3FA4A8532868AF7B0094D8CD /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */; };
@@ -154,6 +156,8 @@
 		3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpeechButton.xib; sourceTree = "<group>"; };
 		3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpeechButton.swift; sourceTree = "<group>"; };
 		3F9FE8932869D7C600784B2D /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
+		3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnGoingTripSheet.xib; sourceTree = "<group>"; };
+		3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingTripSheet.swift; sourceTree = "<group>"; };
 		3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationSecondaryPlanController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationSecondaryPlanController.xib; sourceTree = "<group>"; };
 		3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +412,8 @@
 				A87463CF2854596D009AB0DC /* DashboardViewController.swift */,
 				A8CC9D772859894E00F30DBE /* HomeNoTripViewController.swift */,
 				A8CC9D792859899500F30DBE /* HomeTripViewController.swift */,
+				3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */,
+				3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -585,6 +591,7 @@
 				3F0BD0C3286568770049925B /* ShareViewController.xib in Resources */,
 				A87463DB28545970009AB0DC /* LaunchScreen.storyboard in Resources */,
 				3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */,
+				3F9FE8962869FEB500784B2D /* OnGoingTripSheet.xib in Resources */,
 				3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
 				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
@@ -647,6 +654,7 @@
 				3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */,
 				3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */,
 				3F0BD0C7286604660049925B /* LongCardInfoView.swift in Sources */,
+				3F9FE898286A15BA00784B2D /* OnGoingTripSheet.swift in Sources */,
 				3FF101352854BC0D0048013A /* ChooseTransportationViewController.swift in Sources */,
 				3F94CCE22858599B00BD5176 /* RadioButtonManager.swift in Sources */,
 				A8AD59B928602DAA00104B58 /* TripDetailViewController.swift in Sources */,

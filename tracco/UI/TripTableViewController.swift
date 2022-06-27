@@ -35,7 +35,7 @@ class TripTableViewController: UIViewController
     {
         if let vc = segue.destination as? SummaryViewController
         {
-            vc.title = "Latest Trip Detail"
+            vc.title = "History Detail"
             
             guard let selectedIndex = selectedIndex,
                   let dataSource = dataSource,

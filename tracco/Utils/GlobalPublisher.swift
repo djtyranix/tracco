@@ -12,6 +12,10 @@ protocol GlobalEvent
     func tripModelAdded(_ model: TripModel)
     func tripModelUpdated(_ model: TripModel)
     func profileModelUpdated(_ model: ProfileModel)
+    
+    func onTripTransitModelUpdated(_ model: TransitModel)
+    func onTripEnded()
+    func onTripStarted()
 }
 
 // make the method optional without marking as an @objc protocol
@@ -20,6 +24,10 @@ extension GlobalEvent
     func tripModelAdded(_ model: TripModel) {}
     func tripModelUpdated(_ model: TripModel) {}
     func profileModelUpdated(_ model: ProfileModel) {}
+    
+    func onTripTransitModelUpdated(_ model: TransitModel) {}
+    func onTripEnded() {}
+    func onTripStarted() {}
 }
 
 class Weak<T: AnyObject>
@@ -59,6 +67,21 @@ class GlobalPublisher: GlobalEvent
     func tripModelUpdated(_ model: TripModel)
     {
         publish { $0.tripModelUpdated(model) }
+    }
+    
+    func onTripTransitModelUpdated(_ model: TransitModel)
+    {
+        publish { $0.onTripTransitModelUpdated(model) }
+    }
+    
+    func onTripStarted()
+    {
+        publish { $0.onTripStarted() }
+    }
+    
+    func onTripEnded()
+    {
+        publish { $0.onTripEnded() }
     }
     
     private func publish(_ callback: (GlobalEvent) -> Void)

@@ -37,8 +37,8 @@ class HomeTripViewController: TripTableViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
-        super.viewWillAppear(animated)
         titleLabel.text = PartsOfDay.greetingText(PartsOfDay.now())
+        super.viewWillAppear(animated)
     }
     
     override func viewDidLayoutSubviews()
@@ -93,6 +93,16 @@ extension HomeTripViewController: TripTableViewControllerProvider
 
 extension HomeTripViewController: GlobalEvent
 {
+    func onTripStarted()
+    {
+        trackButton.isEnabled = false
+    }
+    
+    func onTripEnded()
+    {
+        trackButton.isEnabled = true
+    }
+    
     func tripModelAdded(_ model: TripModel)
     {
         historyDataCount += 1
