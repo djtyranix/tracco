@@ -31,7 +31,7 @@ class TripDetailViewController: UIViewController
     private var geocoders: [GeocodingState] = []
     private var timerGeocoding: Timer?
 
-    public let unknownLocationName      = "Unknown Location"
+    public let unknownLocationName      = "Unknown"
     public let pendingGetLocationName   = "Getting Location Info..."
     public let pinProgressImage         = UIImage(named: "PinLine")
     
@@ -39,9 +39,9 @@ class TripDetailViewController: UIViewController
         let alert = UIAlertController(
             title: "Failed Getting Location Info",
             message: "Make sure you connected to the internet service in order to get location information",
-            preferredStyle: .alert
+            preferredStyle: .actionSheet
         )
-        alert.addAction(UIAlertAction(title: "I Understand", style: .default))
+        alert.addAction(UIAlertAction(title: "I Understand", style: .cancel))
         return alert
     }()
     
@@ -58,14 +58,25 @@ class TripDetailViewController: UIViewController
     // no internet connection for a long time can cause geocoding to stop
     @objc func geocoding()
     {
+        guard let viewModel = viewModel
+        else
+        {
+            timerGeocoding?.invalidate()
+            return
+        }
+
         if geocoders.allSatisfy({ $0.status == .completed })
         {
+            let indexHistory = viewModel.model.id
+            StoredModel.history?[indexHistory] = viewModel.model
+            GlobalPublisher.shared.tripModelUpdated(viewModel.model)
             timerGeocoding?.invalidate()
             return
         }
             
         for (i, status) in geocoders.enumerated()
         {
+            
             if status.status != .completed && status.geocoder.isGeocoding == false
             {
                 // obtain location name
@@ -81,10 +92,31 @@ class TripDetailViewController: UIViewController
                         }
                         return
                     }
+                    
                     self?.geocoders[i].status = .completed
                     let locationName = placemarks?.first?.name ?? self?.unknownLocationName
                     self?.viewModel?.tripDetailContents[i].locationName = locationName
                     DispatchQueue.main.async { self?.contents[i].title = locationName }
+                    
+                    if let vc = self
+                    {
+                        let isFirstIndex = i == 0
+                        let isLastIndex = i == vc.contents.endIndex - 1
+                        
+                        if (isFirstIndex)
+                        {
+                            viewModel.model[0].transitPath.startTitle = locationName
+                        }
+                        else if (isLastIndex)
+                        {
+                            viewModel.model[i - 1].transitPath.endTitle = locationName
+                        }
+                        else
+                        {
+                            viewModel.model[i].transitPath.startTitle = locationName
+                            viewModel.model[i - 1].transitPath.endTitle = locationName
+                        }
+                    }
                 }
             }
         }
@@ -105,8 +137,13 @@ class TripDetailViewController: UIViewController
         // create new subview
         let lastIndex = viewModel.tripDetailContents.endIndex - 1
         var prev: TripDetailContentView?
+        // for updating geolocation
+        var isExistsGeocoding = false
         for (i, content) in viewModel.tripDetailContents.enumerated()
         {
+            let isPendingLocation       = content.locationName == nil
+            if (isPendingLocation) { isExistsGeocoding = true }
+            
             let contentView             = TripDetailContentView()
             contentView.title           = content.locationName ?? pendingGetLocationName
             contentView.costInIDR       = content.costInIDR
@@ -121,7 +158,7 @@ class TripDetailViewController: UIViewController
             geocoders.append(GeocodingState(
                 geocoder: CLGeocoder(),
                 location: CLLocation(latitude: content.coord.latitude, longitude: content.coord.longitude),
-                status: .initiated
+                status: isPendingLocation ? .initiated : .completed
             ))
             // add constraint to support auto layout scroll view
             let boundTopAnchor = prev == nil ? scrollView.topAnchor : prev!.bottomAnchor
@@ -138,6 +175,7 @@ class TripDetailViewController: UIViewController
         }
         prev?.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -24).isActive = true
         // background job to get location name if not yet obtained
+        if (isExistsGeocoding == false) { return }
         timerGeocoding = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(geocoding), userInfo: nil, repeats: true)
     }
     

@@ -43,7 +43,7 @@ class TripRepository : NSObject {
         let managedContext = self.getManagedContext()
         let entity = NSEntityDescription.entity(forEntityName: "TripEntity", in: managedContext)!
         
-        for transit in trip {
+        for transit in trip.transits {
             let currentTripId = getLatestTripId() + 1
             let tripEntity = NSManagedObject(entity: entity, insertInto: managedContext)
             tripEntity.setValue(currentTripId, forKey: "trip_id")
@@ -155,7 +155,7 @@ class TripRepository : NSObject {
         
         do {
             transitFetchArray = try managedContext.fetch(fetchRequest)
-            var trip = TripModel()
+            var trip = TripModel(id: 0, transits: [])
             
             for transitFetch in transitFetchArray {
                 var currentId = 1
@@ -183,15 +183,15 @@ class TripRepository : NSObject {
                 
                 if currentId == fetchId {
                     // Current Trip
-                    trip.append(transitModel)
+                    trip.transits.append(transitModel)
                 } else if currentId > getLatestSummaryId() {
                     break
                 } else {
                     // Next Trip
                     currentId += 1
                     tripArray.append(trip)
-                    trip = []
-                    trip.append(transitModel)
+                    trip.transits = []
+                    trip.transits.append(transitModel)
                 }
             }
             

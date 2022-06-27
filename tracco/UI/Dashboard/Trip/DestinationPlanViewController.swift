@@ -112,7 +112,7 @@ class DestinationPlanViewController: UIViewController
 
 extension DestinationPlanViewController: AuthorizationSecondaryPlanDelegate
 {
-    func onCancelLocation()
+    func onCancel()
     {
         self.dismiss(animated: true)
     }

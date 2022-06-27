@@ -29,5 +29,3 @@ struct TransitModel : Codable
         set { endDate = Date(timeInterval: newValue, since: beginDate) }
     }
 }
-
-typealias TripModel = [TransitModel]

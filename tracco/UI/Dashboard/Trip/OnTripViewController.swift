@@ -86,7 +86,7 @@ class OnTripViewController: UIViewController
         return UIImage(systemName: image, withConfiguration: config)
     }()
     
-    private var model: TripModel = []
+    private var model = TripModel(id: 0, transits: [])
     private var keyboardHeight: CGFloat = 210
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
@@ -168,14 +168,17 @@ class OnTripViewController: UIViewController
 
             var profileModel: ProfileModel = isNoTrip ? ProfileModel() : StoredModel.profile!
             var historyModel: [TripModel] = isNoTrip ? [] : StoredModel.history!
-
+            
+            // set model id equal with index in history model
+            model.id = historyModel.count
+            
+            profileModel.add(model)
             historyModel.append(model)
-            model.forEach { profileModel.add($0) }
 
             StoredModel.profile = profileModel
             StoredModel.history = historyModel
 
-            GlobalPublisher.shared.addTripModel(model)
+            GlobalPublisher.shared.tripModelAdded(model)
             GlobalPublisher.shared.profileModelUpdated(profileModel)
             
             vc.viewModel = SummaryVM(model)
@@ -208,10 +211,10 @@ class OnTripViewController: UIViewController
         guard let prevLocation = viewModel.previousLocation
         else { return }
         
-        if !model.isEmpty
+        if model.transits.isEmpty == false
         {
             // Edit last model
-            let currIndex = model.endIndex - 1
+            let currIndex = model.transits.endIndex - 1
             model[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
             model[currIndex].endDate = Date()
             model[currIndex].distanceInKm = viewModel.distanceInKm
@@ -261,7 +264,7 @@ class OnTripViewController: UIViewController
         )
         
         let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
-        model.append(transitModel)
+        model.transits.append(transitModel)
         mapView.addAnnotation(annotation)
         
         let selectedRadioButton = manager.selected
@@ -380,7 +383,7 @@ extension OnTripViewController: TransportationCostViewControllerDelegate
     func onConfirmCost(_ cost: Double)
     {
         // update cost in the model
-        model[model.endIndex - 1].costInIDR = cost
+        model[model.transits.endIndex - 1].costInIDR = cost
         // perform next view
         isRequestingEndTrip ?
             performSegue(withIdentifier: Segue.summary.rawValue, sender: self) :

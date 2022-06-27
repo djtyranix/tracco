@@ -42,7 +42,7 @@ class HistoryTableViewCell: UITableViewCell
     
     public func setupCell(_ model: TripModel)
     {
-        let tripDate                        = model.first!.beginDate
+        let tripDate                        = model.transits.first!.beginDate
         let longestTransport                = model.longestTransportUse!.type
         
         var dateText = String()
@@ -69,20 +69,15 @@ class HistoryTableViewCell: UITableViewCell
             dateText += " " + timeZoneAbbreviation
         }
         
-        descriptionLabel.text               = "Unknown to Unknown"
+        let descriptionText = String(
+            format: "%@ to %@",
+            model.transits.first?.transitPath.startTitle ?? "Unknown",
+            model.transits.last?.transitPath.endTitle ?? "Unknown"
+        )
+        
+        descriptionLabel.text               = descriptionText
         transportImageView.image            = longestTransport.image
         transportImageView.backgroundColor  = longestTransport.backgroundColor
         dateLabel.text                      = dateText
     }
-}
-
-extension TripModel
-{
-    var shortestTransportUse: TransitModel? { get {
-        return self.min(by: { return $0.distanceInKm < $1.distanceInKm })
-    }}
-    
-    var longestTransportUse: TransitModel? { get {
-        return self.max(by: { return $0.distanceInKm < $1.distanceInKm })
-    }}
 }

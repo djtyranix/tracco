@@ -22,6 +22,9 @@ class SummaryVM
         var coord: LocationCoordinate2D
     }
     
+    // for updating geolocation in summary vc
+    public var model: TripModel
+    
     // this will contain all information of each transit (tranport change)
     // including the arrival destination information
     // example:
@@ -45,18 +48,20 @@ class SummaryVM
     
     public init(_ model: TripModel)
     {
-        let currentCostInIDR            = model.reduce(0.0, { return $0 + $1.costInIDR })
-        let currentCarbonEmissionInKg   = model.reduce(0.0, { return $0 + $1.carbonEmissionInKg })
+        self.model = model
+        
+        let currentCostInIDR            = model.transits.reduce(0.0, { return $0 + $1.costInIDR })
+        let currentCarbonEmissionInKg   = model.transits.reduce(0.0, { return $0 + $1.carbonEmissionInKg })
         
         currentCostInIDRText = RoundingDigit(currentCostInIDR, kind: .currency).getString(precision: 2)
         currentCarbonEmissionInKgText = String(format: "%.2f", currentCarbonEmissionInKg)
         // trip distance
-        let tripDistance = model.reduce(0.0, { return $0 + $1.distanceInKm })
+        let tripDistance = model.transits.reduce(0.0, { return $0 + $1.distanceInKm })
         tripDistanceText = String(format: "%.2f km", tripDistance)
         // trip duration
         let tripDuration: TimeInterval
-        if let departureDate = model.first?.beginDate,
-           let arrivalDate = model.last?.endDate
+        if let departureDate = model.transits.first?.beginDate,
+           let arrivalDate = model.transits.last?.endDate
         {
             tripDuration = arrivalDate.timeIntervalSince(departureDate)
         }
@@ -70,23 +75,31 @@ class SummaryVM
             String(format: "%d minutes", minutes) :
             String(format: "%d hours %d minutes", hours, minutes)
         // trip detail contents
-        var contents = model.map({
+        var contents = model.transits.map({
             return TripDetailContent(
+                locationName: $0.transitPath.startTitle,
                 carbonEmissionInKg: $0.carbonEmissionInKg,
                 costInIDR: $0.costInIDR,
                 transportType: $0.type,
                 date: $0.beginDate,
-                coord: LocationCoordinate2D(latitude: $0.transitPath.startLatitude, longitude: $0.transitPath.startLongitude)
+                coord: LocationCoordinate2D(
+                    latitude: $0.transitPath.startLatitude,
+                    longitude: $0.transitPath.startLongitude
+                )
             )
         })
-        if let lastModel = model.last
+        if let lastModel = model.transits.last
         {
             let destinationTrip = TripDetailContent(
+                locationName: lastModel.transitPath.endTitle,
                 carbonEmissionInKg: 0,
                 costInIDR: 0,
                 transportType:lastModel.type,
                 date: lastModel.endDate,
-                coord: LocationCoordinate2D(latitude: lastModel.transitPath.endLatitude, longitude: lastModel.transitPath.endLongitude)
+                coord: LocationCoordinate2D(
+                    latitude: lastModel.transitPath.endLatitude,
+                    longitude: lastModel.transitPath.endLongitude
+                )
             )
             contents.append(destinationTrip)
         }

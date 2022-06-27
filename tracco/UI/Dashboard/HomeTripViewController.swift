@@ -7,10 +7,8 @@
 
 import UIKit
 
-class HomeTripViewController: UIViewController
+class HomeTripViewController: TripTableViewController
 {
-    enum Segue: String { case summary = "summarySegue"}
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var encouragementLabel: UILabel!
     @IBOutlet weak var carbonEmissionCard: CardInfoView!
@@ -19,29 +17,21 @@ class HomeTripViewController: UIViewController
     @IBOutlet weak var tableView: UITableView!
     
     public var greetingTitleText: String?
-    public var historyDataSource: [TripModel]?
     public var profileModel: ProfileModel?
+    public var historyDataCount: Int = 0
+    public var historyDataSource: [TripModel]?
     
     // data max will adjust according to the device table view height
     // this view will only contain just a few latest history
     private var dataMaxSize: Int!
     // last item in the array are the newest, first item are the oldest
-    private var dataSource: [TripModel]?
-    private var selectedIndex: IndexPath?
     private var isTableViewDataSourceInitialized = false
     
     override func viewDidLoad()
     {
+        super.provider = self
         super.viewDidLoad()
-        
         GlobalPublisher.addObserver(self)
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.delaysContentTouches = false
-        tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight
-        tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
-        
         updateViewWithModel()
     }
     
@@ -55,20 +45,6 @@ class HomeTripViewController: UIViewController
     {
         super.viewDidLayoutSubviews()
         limitLatestTripBasedOnDeviceHeight()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let vc = segue.destination as? SummaryViewController
-        {
-            vc.title = "Latest Trip Detail"
-            guard let selectedIndex = selectedIndex,
-                  let model = getData(at: selectedIndex),
-                  let cell = tableView.cellForRow(at: selectedIndex) as? HistoryTableViewCell
-            else { return }
-            vc.viewModelHistory = SummaryHistoryVM(model)
-            vc.viewModelHistory?.headerOverviewText = "Trip from \(cell.descriptionLabel.text!)"
-        }
     }
     
     @IBAction func onViewAllButton(_ sender: UIButton)
@@ -102,23 +78,24 @@ class HomeTripViewController: UIViewController
             arr.append(contentsOf: newest)
         }
         self.dataSource = arr
+        self.historyDataCount = historyDataSource?.count ?? 0
         self.historyDataSource = nil
         isTableViewDataSourceInitialized = true
     }
+}
+
+extension HomeTripViewController: TripTableViewControllerProvider
+{
+    func getTableView() -> UITableView { return tableView }
     
-    private func getData(at index: IndexPath) -> TripModel?
-    {
-        guard let dataSource = dataSource
-        else { return nil }
-        let dataIndex = dataSource.count - 1 - index.row
-        return dataSource[dataIndex]
-    }
+    func summarySegueIdentifier() -> String { return "summarySegue" }
 }
 
 extension HomeTripViewController: GlobalEvent
 {
-    func addTripModel(_ model: TripModel)
+    func tripModelAdded(_ model: TripModel)
     {
+        historyDataCount += 1
         // if full, remove the oldest data
         let isFull = dataSource?.count == dataMaxSize
         if (isFull) { dataSource?.removeFirst() }
@@ -132,33 +109,16 @@ extension HomeTripViewController: GlobalEvent
         self.profileModel = model
         updateViewWithModel()
     }
-}
-
-extension HomeTripViewController: UITableViewDelegate
-{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        selectedIndex = indexPath
-        performSegue(withIdentifier: Segue.summary.rawValue, sender: self)
-    }
-}
-
-extension HomeTripViewController: UITableViewDataSource
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return dataSource?.count ?? 0
-    }
     
-    // display from the end -> begin (because we want newest to oldest), we can sort the array
-    // but it takes computational work, so let's think different
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tripModelUpdated(_ model: TripModel)
     {
-        guard let data = getData(at: indexPath),
-              let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
-        else { return UITableViewCell() }
-        
-        cell.setupCell(data)
-        return cell
+        if let dataSource = dataSource,
+           let dataIndex = dataSource.firstIndex(where: { $0.id == model.id })
+        {
+            self.dataSource?[dataIndex] = model
+            let tableIndex = getTableIndex(dataIndex, data: dataSource)
+            let tableIndexPath = IndexPath(row: tableIndex, section: 0)
+            tableView.reloadRows(at: [tableIndexPath], with: .automatic)
+        }
     }
 }

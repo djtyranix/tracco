@@ -125,6 +125,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9wR-XE-eGd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Aae-4e-KIq" firstAttribute="top" secondItem="MEg-E3-k4H" secondAttribute="top" id="1ja-Km-eB7"/>

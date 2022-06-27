@@ -11,8 +11,10 @@ import MapKit
 class SummaryViewController: UIViewController
 {
     @IBOutlet weak var headerTripContainerView: UIView!
-    @IBOutlet weak var headerHistoryContainerView: UIView!
+    @IBOutlet weak var headerHistoryView: UIView!
+    @IBOutlet weak var headerHistoryTitleLabel: UILabel!
     
+    @IBOutlet weak var headerSeparator: UIView!
     @IBOutlet weak var tripDetailView: UIView!
     @IBOutlet weak var tripDetailViewAllButton: UIButton!
     @IBOutlet weak var tripDetailBottomSeparator: UIView!
@@ -49,16 +51,6 @@ class SummaryViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        if (viewModelHistory != nil)
-        {
-            headerTripContainerView.isHidden = true
-            headerHistoryContainerView.isHidden = false
-        }
-        else
-        {
-            headerTripContainerView.isHidden = false
-            headerHistoryContainerView.isHidden = true
-        }
         layoutTripDetail()
         updateViewWithModel()
     }
@@ -96,6 +88,16 @@ class SummaryViewController: UIViewController
     
     private func updateViewWithModel()
     {
+        if (viewModelHistory != nil)
+        {
+            headerTripContainerView.removeFromSuperview()
+            headerHistoryTitleLabel.text = viewModelHistory?.headerOverviewText
+        }
+        else
+        {
+            headerHistoryView.removeFromSuperview()
+        }
+        
         currentTransportCarbonCardView.value    = refViewModel?.currentCarbonEmissionInKgText
         currentTransportCostCardView.value      = refViewModel?.currentCostInIDRText
         
@@ -132,10 +134,6 @@ class SummaryViewController: UIViewController
         if let vc = segue.destination as? SummaryDetailViewController
         {
             vc.viewModel = refViewModel
-        }
-        if let vc = segue.destination as? SummaryHeaderHistoryViewController
-        {
-            vc.viewModel = viewModelHistory
         }
     }
 

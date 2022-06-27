@@ -20,7 +20,6 @@
 		3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E0286359AA005B7640 /* ProfileModel.swift */; };
 		3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E228635C84005B7640 /* CO2ETimer.swift */; };
 		3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E428635D50005B7640 /* TimeFrequency.swift */; };
-		3F3131E728638806005B7640 /* SummaryHeaderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E628638806005B7640 /* SummaryHeaderHistoryViewController.swift */; };
 		3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */; };
 		3F3131EB28638924005B7640 /* SummaryHistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */; };
 		3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */; };
@@ -46,6 +45,7 @@
 		3F9E56C4286844F100A566C6 /* PartsOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C3286844F100A566C6 /* PartsOfDay.swift */; };
 		3F9E56C62868A2C600A566C6 /* SearchSpeechButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */; };
 		3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */; };
+		3F9FE8942869D7C600784B2D /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE8932869D7C600784B2D /* TripTableViewController.swift */; };
 		3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */; };
 		3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */; };
 		3FA4A8532868AF7B0094D8CD /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */; };
@@ -53,6 +53,7 @@
 		3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */; };
 		3FA4A859286952130094D8CD /* SpeechDictationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */; };
 		3FA4A85D28699FA70094D8CD /* TransitPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A85C28699FA70094D8CD /* TransitPath.swift */; };
+		3FA4A85F2869BAB50094D8CD /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A85E2869BAB50094D8CD /* TripModel.swift */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
 		3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */; };
@@ -127,7 +128,6 @@
 		3F3131E0286359AA005B7640 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		3F3131E228635C84005B7640 /* CO2ETimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2ETimer.swift; sourceTree = "<group>"; };
 		3F3131E428635D50005B7640 /* TimeFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrequency.swift; sourceTree = "<group>"; };
-		3F3131E628638806005B7640 /* SummaryHeaderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderHistoryViewController.swift; sourceTree = "<group>"; };
 		3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderTripViewController.swift; sourceTree = "<group>"; };
 		3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHistoryVM.swift; sourceTree = "<group>"; };
 		3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDigit.swift; sourceTree = "<group>"; };
@@ -153,6 +153,7 @@
 		3F9E56C3286844F100A566C6 /* PartsOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfDay.swift; sourceTree = "<group>"; };
 		3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpeechButton.xib; sourceTree = "<group>"; };
 		3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpeechButton.swift; sourceTree = "<group>"; };
+		3F9FE8932869D7C600784B2D /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationSecondaryPlanController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationSecondaryPlanController.xib; sourceTree = "<group>"; };
 		3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 		3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
 		3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechDictationViewController.xib; sourceTree = "<group>"; };
 		3FA4A85C28699FA70094D8CD /* TransitPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitPath.swift; sourceTree = "<group>"; };
+		3FA4A85E2869BAB50094D8CD /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
 		3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBackgroundButton.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				3FA4A85C28699FA70094D8CD /* TransitPath.swift */,
 				3FC88A73285B24680022BA2C /* TransitModel.swift */,
 				3F3131E0286359AA005B7640 /* ProfileModel.swift */,
+				3FA4A85E2869BAB50094D8CD /* TripModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +346,17 @@
 		A87463E32854695C009AB0DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3F9FE8932869D7C600784B2D /* TripTableViewController.swift */,
+				A8AD59B528602DAA00104B58 /* CardInfoView.xib */,
+				A8AD59B028602D9A00104B58 /* CardInfoView.swift */,
+				3F0BD0C4286604590049925B /* LongCardInfoView.xib */,
+				3F0BD0C6286604660049925B /* LongCardInfoView.swift */,
+				3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */,
+				3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */,
+				3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */,
+				3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */,
+				3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */,
+				3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */,
 				A8FB37BE2856D3670057F6A3 /* Onboarding */,
 				A87463EC28546CEC009AB0DC /* Profile */,
 				A87463E828546A06009AB0DC /* Dashboard */,
@@ -401,11 +415,8 @@
 		A87463EB28546CD8009AB0DC /* History */ = {
 			isa = PBXGroup;
 			children = (
-				A8AD59B528602DAA00104B58 /* CardInfoView.xib */,
-				A8AD59B028602D9A00104B58 /* CardInfoView.swift */,
 				A8AD59B328602DAA00104B58 /* Summary.storyboard */,
 				A8AD59B728602DAA00104B58 /* SummaryDetailViewController.swift */,
-				3F3131E628638806005B7640 /* SummaryHeaderHistoryViewController.swift */,
 				3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */,
 				A8AD59B428602DAA00104B58 /* SummaryViewController.swift */,
 				A8AD59B628602DAA00104B58 /* TripDetailContentView.swift */,
@@ -434,8 +445,6 @@
 				3FF8DC9E2866B6A400EEE490 /* ShareOptionViewController.swift */,
 				3F0BD0C1286568770049925B /* ShareViewController.xib */,
 				3F0BD0C0286568770049925B /* ShareViewController.swift */,
-				3F0BD0C4286604590049925B /* LongCardInfoView.xib */,
-				3F0BD0C6286604660049925B /* LongCardInfoView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -448,8 +457,6 @@
 				3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */,
 				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
 				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
-				3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */,
-				3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */,
 				3FF101312854BA190048013A /* TransportRadioButton.swift */,
 				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
 				3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */,
@@ -461,12 +468,8 @@
 				3FF101382854BC200048013A /* CurrentTransportationViewController.xib */,
 				3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */,
 				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
-				3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */,
-				3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */,
 				3F94CCC12858581300BD5176 /* TransportAnnotation.swift */,
 				3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */,
-				3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */,
-				3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
+				3FA4A85F2869BAB50094D8CD /* TripModel.swift in Sources */,
 				A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */,
 				3FF8DC9F2866B6A400EEE490 /* ShareOptionViewController.swift in Sources */,
 				3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */,
@@ -637,6 +641,7 @@
 				3F0BD0C2286568770049925B /* ShareViewController.swift in Sources */,
 				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
 				3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */,
+				3F9FE8942869D7C600784B2D /* TripTableViewController.swift in Sources */,
 				3F94CCCC2858581300BD5176 /* ViewHelper.swift in Sources */,
 				3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */,
 				3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */,
@@ -668,7 +673,6 @@
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
 				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
-				3F3131E728638806005B7640 /* SummaryHeaderHistoryViewController.swift in Sources */,
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
 				3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */,
 				3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */,

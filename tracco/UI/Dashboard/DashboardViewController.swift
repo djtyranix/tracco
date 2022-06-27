@@ -14,15 +14,7 @@ class DashboardViewController: UIViewController
     
     private var historyDataSource: [TripModel]?
     private var profileModel: ProfileModel?
-    private var isAlreadyHavingTrip: Bool
-    
-    required init?(coder: NSCoder)
-    {
-        historyDataSource = StoredModel.history
-        profileModel = StoredModel.profile
-        isAlreadyHavingTrip = historyDataSource != nil
-        super.init(coder: coder)
-    }
+    private var isAlreadyHavingTrip: Bool = false
     
     override func viewDidLoad()
     {
@@ -37,8 +29,15 @@ class DashboardViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        // embedded view controller will be called before viewDidLoad
         if let vc = segue.destination as? HomeTripViewController
         {
+            // initialize data here, this will handle if this current view
+            // is not loaded but already initialized (init)
+            historyDataSource = StoredModel.history
+            profileModel = StoredModel.profile
+            isAlreadyHavingTrip = historyDataSource != nil
+            
             vc.profileModel = profileModel
             vc.historyDataSource = historyDataSource
             historyDataSource = nil
@@ -49,7 +48,7 @@ class DashboardViewController: UIViewController
 
 extension DashboardViewController: GlobalEvent
 {
-    func addTripModel(_ model: TripModel)
+    func tripModelAdded(_ model: TripModel)
     {
         tripView.isHidden = false
         noTripView.isHidden = true

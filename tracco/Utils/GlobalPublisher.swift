@@ -9,14 +9,16 @@ import Foundation
 
 protocol GlobalEvent
 {
-    func addTripModel(_ model: TripModel)
+    func tripModelAdded(_ model: TripModel)
+    func tripModelUpdated(_ model: TripModel)
     func profileModelUpdated(_ model: ProfileModel)
 }
 
 // make the method optional without marking as an @objc protocol
 extension GlobalEvent
 {
-    func addTripModel(_ model: TripModel) {}
+    func tripModelAdded(_ model: TripModel) {}
+    func tripModelUpdated(_ model: TripModel) {}
     func profileModelUpdated(_ model: ProfileModel) {}
 }
 
@@ -44,19 +46,26 @@ class GlobalPublisher: GlobalEvent
         observers.removeAll(where: { $0.value === observer })
     }
     
-    func addTripModel(_ model: TripModel)
+    func tripModelAdded(_ model: TripModel)
     {
-        GlobalPublisher.observers.forEach {
-            let globalEvent = $0.value as? GlobalEvent
-            globalEvent?.addTripModel(model)
-        }
+        publish { $0.tripModelAdded(model) }
     }
     
     func profileModelUpdated(_ model: ProfileModel)
     {
+        publish { $0.profileModelUpdated(model) }
+    }
+    
+    func tripModelUpdated(_ model: TripModel)
+    {
+        publish { $0.tripModelUpdated(model) }
+    }
+    
+    private func publish(_ callback: (GlobalEvent) -> Void)
+    {
         GlobalPublisher.observers.forEach {
-            let globalEvent = $0.value as? GlobalEvent
-            globalEvent?.profileModelUpdated(model)
+            let globalEvent = $0.value as! GlobalEvent
+            callback(globalEvent)
         }
     }
 }

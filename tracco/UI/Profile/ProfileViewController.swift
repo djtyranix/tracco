@@ -13,14 +13,7 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var sumProfileView: UIView!
     
     private var model: ProfileModel?
-    private var isAlreadyHavingTrip: Bool
-    
-    required init?(coder: NSCoder)
-    {
-        model = StoredModel.profile
-        isAlreadyHavingTrip = model != nil
-        super.init(coder: coder)
-    }
+    private var isAlreadyHavingTrip: Bool = false
     
     override func viewDidLoad()
     {
@@ -35,8 +28,14 @@ class ProfileViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        // embedded view controller will be called before viewDidLoad
         if let vc = segue.destination as? SumProfileViewController
         {
+            // initialize data here, this will handle if this current view
+            // is not loaded but already initialized (init)
+            model = StoredModel.profile
+            isAlreadyHavingTrip = model != nil
+            
             vc.model = model
             self.model = nil
         }
@@ -45,7 +44,7 @@ class ProfileViewController: UIViewController
 
 extension ProfileViewController: GlobalEvent
 {
-    func addTripModel(_ model: TripModel)
+    func tripModelAdded(_ model: TripModel)
     {
         sumProfileView.isHidden = false
         emptySumProfileView.isHidden = true

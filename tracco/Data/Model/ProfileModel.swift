@@ -61,32 +61,36 @@ struct ProfileModel : Codable
         self.carbonEmissionInKgReducedTotal = 0
     }
     
-    mutating func add(_ model: TransitModel)
+    mutating func add(_ model: TripModel)
     {
         self.tripTrackCount += 1
-        self.carbonEmissionInKgTotal += model.carbonEmissionInKg
         
-        let carbonInCar = TransportType.car.rawValue.carbon * model.distanceInKm
-        let carbonReduced = carbonInCar - model.carbonEmissionInKg
-        self.carbonEmissionInKgReducedTotal += carbonReduced
-        
-        switch model.type
+        for transit in model.transits
         {
-        case .car:
-            self.distanceInCar += model.distanceInKm
-            self.costInCar += model.costInIDR
-            break
-        case .bus:
-            self.distanceInBus += model.distanceInKm
-            self.costInBus += model.costInIDR
-            break
-        case .motor:
-            self.distanceInMotor += model.distanceInKm
-            self.costInMotor += model.costInIDR
-        case .train:
-            self.distanceInTrain += model.distanceInKm
-            self.costInTrain += model.costInIDR
-            break
+            let carbonInCar = TransportType.car.rawValue.carbon * transit.distanceInKm
+            let carbonReduced = carbonInCar - transit.carbonEmissionInKg
+            
+            self.carbonEmissionInKgTotal += transit.carbonEmissionInKg
+            self.carbonEmissionInKgReducedTotal += carbonReduced
+            
+            switch transit.type
+            {
+            case .car:
+                self.distanceInCar += transit.distanceInKm
+                self.costInCar += transit.costInIDR
+                break
+            case .bus:
+                self.distanceInBus += transit.distanceInKm
+                self.costInBus += transit.costInIDR
+                break
+            case .motor:
+                self.distanceInMotor += transit.distanceInKm
+                self.costInMotor += transit.costInIDR
+            case .train:
+                self.distanceInTrain += transit.distanceInKm
+                self.costInTrain += transit.costInIDR
+                break
+            }
         }
     }
 }

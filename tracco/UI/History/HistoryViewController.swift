@@ -12,20 +12,13 @@ class HistoryViewController: UIViewController
     @IBOutlet var ContainerViewHistoryNoTrip: UIView!
     @IBOutlet var ContainerViewHistoryTrip: UIView!
     
-    private let viewModel = HistoryViewModel()
     private var historyDataSource: [TripModel]?
-    private var isAlreadyHavingTrip: Bool
-    
-    required init?(coder: NSCoder)
-    {
-        historyDataSource = StoredModel.history
-        isAlreadyHavingTrip = historyDataSource != nil
-        super.init(coder: coder)
-    }
+    private var isAlreadyHavingTrip: Bool = false
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         ContainerViewHistoryTrip.isHidden   = !isAlreadyHavingTrip
         ContainerViewHistoryNoTrip.isHidden = isAlreadyHavingTrip
         
@@ -34,8 +27,14 @@ class HistoryViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        // embedded segue will be called first before viewDidLoad
         if let vc = segue.destination as? HistoryTripViewController
         {
+            // initialize data here, this will handle if this current view
+            // is not loaded but already initialized (init)
+            historyDataSource = StoredModel.history
+            isAlreadyHavingTrip = historyDataSource != nil
+            
             vc.dataSource = historyDataSource
             historyDataSource = nil
         }
@@ -44,7 +43,7 @@ class HistoryViewController: UIViewController
 
 extension HistoryViewController: GlobalEvent
 {
-    func addTripModel(_ model: TripModel)
+    func tripModelAdded(_ model: TripModel)
     {
         ContainerViewHistoryTrip.isHidden = false
         ContainerViewHistoryNoTrip.isHidden = true
