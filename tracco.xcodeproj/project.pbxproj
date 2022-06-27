@@ -44,8 +44,14 @@
 		3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */; };
 		3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */; };
 		3F9E56C4286844F100A566C6 /* PartsOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C3286844F100A566C6 /* PartsOfDay.swift */; };
-		3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */; };
-		3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */; };
+		3F9E56C62868A2C600A566C6 /* SearchSpeechButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */; };
+		3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */; };
+		3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */; };
+		3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */; };
+		3FA4A8532868AF7B0094D8CD /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */; };
+		3FA4A8552868BBD90094D8CD /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8542868BBD90094D8CD /* LocationTableViewCell.swift */; };
+		3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */; };
+		3FA4A859286952130094D8CD /* SpeechDictationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
 		3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */; };
@@ -141,8 +147,14 @@
 		3F94CCE5285859D200BD5176 /* TransportationCostVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationCostVM.swift; sourceTree = "<group>"; };
 		3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAccessory.swift; sourceTree = "<group>"; };
 		3F9E56C3286844F100A566C6 /* PartsOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfDay.swift; sourceTree = "<group>"; };
-		3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateLocationViewController.swift; sourceTree = "<group>"; };
-		3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateLocationViewController.xib; sourceTree = "<group>"; };
+		3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpeechButton.xib; sourceTree = "<group>"; };
+		3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpeechButton.swift; sourceTree = "<group>"; };
+		3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationSecondaryPlanController.swift; sourceTree = "<group>"; };
+		3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationSecondaryPlanController.xib; sourceTree = "<group>"; };
+		3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		3FA4A8542868BBD90094D8CD /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDictationViewController.swift; sourceTree = "<group>"; };
+		3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechDictationViewController.xib; sourceTree = "<group>"; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
 		3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBackgroundButton.swift; sourceTree = "<group>"; };
@@ -411,8 +423,12 @@
 			isa = PBXGroup;
 			children = (
 				3FF10125285490E10048013A /* Trip.storyboard */,
+				3FA4A8542868BBD90094D8CD /* LocationTableViewCell.swift */,
+				3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */,
 				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
 				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
+				3FA4A856286952130094D8CD /* SpeechDictationViewController.swift */,
+				3FA4A857286952130094D8CD /* SpeechDictationViewController.xib */,
 				3FF101312854BA190048013A /* TransportRadioButton.swift */,
 				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
 				3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */,
@@ -424,10 +440,12 @@
 				3FF101382854BC200048013A /* CurrentTransportationViewController.xib */,
 				3FF1013B2854BC2F0048013A /* TransportationCostViewController.swift */,
 				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
-				3FA3E8922855AD1D006DCE5D /* ActivateLocationViewController.swift */,
-				3FA3E8932855AD1D006DCE5D /* ActivateLocationViewController.xib */,
+				3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */,
+				3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */,
 				3F94CCC12858581300BD5176 /* TransportAnnotation.swift */,
 				3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */,
+				3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */,
+				3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -528,12 +546,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9E56C62868A2C600A566C6 /* SearchSpeechButton.xib in Resources */,
 				A8AD59BF28602DAA00104B58 /* TripDetailContentView.xib in Resources */,
 				3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */,
 				3F0BD0C3286568770049925B /* ShareViewController.xib in Resources */,
 				A87463DB28545970009AB0DC /* LaunchScreen.storyboard in Resources */,
 				3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */,
-				3FA3E8952855AD1D006DCE5D /* ActivateLocationViewController.xib in Resources */,
+				3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
 				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
@@ -543,6 +562,7 @@
 				3FF1013E2854BC2F0048013A /* TransportationCostViewController.xib in Resources */,
 				A87463D32854596D009AB0DC /* Main.storyboard in Resources */,
 				A8814440285C183400EE1FA2 /* ReduceCarbonConciseCardView.xib in Resources */,
+				3FA4A859286952130094D8CD /* SpeechDictationViewController.xib in Resources */,
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
@@ -569,9 +589,11 @@
 				A8AD59B128602D9A00104B58 /* CardInfoView.swift in Sources */,
 				3B9293F02860B0CE005EF46E /* ReduceCarbonConciseCardView.swift in Sources */,
 				3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */,
+				3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */,
 				3F94CCCD2858581300BD5176 /* TransportAnnotationView.swift in Sources */,
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
 				3FF8DC9F2866B6A400EEE490 /* ShareOptionViewController.swift in Sources */,
+				3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */,
 				3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
@@ -593,6 +615,7 @@
 				A8AD59B928602DAA00104B58 /* TripDetailViewController.swift in Sources */,
 				A87463CE2854596D009AB0DC /* SceneDelegate.swift in Sources */,
 				3F94CCC52858581300BD5176 /* AlertPresentationController.swift in Sources */,
+				3FA4A8532868AF7B0094D8CD /* SearchLocationViewController.swift in Sources */,
 				A8AD59BB28602DAA00104B58 /* SummaryViewController.swift in Sources */,
 				3F94CCCB2858581300BD5176 /* MoovitAPI.swift in Sources */,
 				3F94CCD82858591C00BD5176 /* DestinationPlanVM.swift in Sources */,
@@ -620,12 +643,13 @@
 				3B2BA0752860369500104AAF /* SumProfileViewController.swift in Sources */,
 				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
-				3FA3E8942855AD1D006DCE5D /* ActivateLocationViewController.swift in Sources */,
+				3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */,
 				A8411BE02865562600C3B5E2 /* TransitPath.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
 				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,
+				3FA4A8552868BBD90094D8CD /* LocationTableViewCell.swift in Sources */,
 				3F9E56C4286844F100A566C6 /* PartsOfDay.swift in Sources */,
 				3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */,
 				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,

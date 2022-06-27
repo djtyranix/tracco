@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Combine
 
-fileprivate func layoutBottomSheet(_ view: UIView)
+func layoutBottomSheet(_ view: UIView)
 {
     view.backgroundColor        = .systemBackground
     view.layer.cornerRadius     = 25

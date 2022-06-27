@@ -21,14 +21,21 @@ class DestinationPlanViewController: UIViewController
     @IBOutlet weak var locationDescView: UIView!
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var locationRegionLabel: UILabel!
-    @IBOutlet weak var locationCoordinateLabel: UILabel!
     
-    var activateLocationVC: ActivateLocationViewController?
+    var activateLocationVC: AuthorizationSecondaryPlanController?
     
     private var viewModel: DestinationPlanVM?
     private var cancellables: [AnyCancellable]?
     
     private var isUserLocationInitialized = false
+    private var isRequestingSpeechDictation = false
+    
+    private var isSpeechDictationNeedElevation = true
+    private var speechDictationVC: SpeechDictationViewController = {
+        let vc = SpeechDictationViewController()
+        layoutBottomSheet(vc.view)
+        return vc
+    }()
     
     let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -45,6 +52,7 @@ class DestinationPlanViewController: UIViewController
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = false
     }
     
     @IBAction func onCancelButton(_ sender: UIButton)
@@ -55,6 +63,11 @@ class DestinationPlanViewController: UIViewController
     @IBAction func onContinueButton(_ sender: UIButton)
     {
         
+    }
+    
+    @IBAction func onSearchButton(_ sender: SearchSpeechButton, forEvent event: UIEvent)
+    {
+        isRequestingSpeechDictation = sender.isMicPressed(event: event)
     }
     
     @IBAction func onMoovitButton(_ sender: UIButton)
@@ -68,11 +81,16 @@ class DestinationPlanViewController: UIViewController
             )
             else
             {
-                print("url moovit not valid")
+                let alert = UIAlertController(
+                    title: "Moovit Invalid URL",
+                    message: "App failed to redirect with moovit service",
+                    preferredStyle: .actionSheet
+                )
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+                present(alert, animated: true)
                 return
             }
             UIApplication.shared.open(directionURL)
-            continueButton.setTitle("Continue Trip", for: .normal)
         }
         else
         {
@@ -82,27 +100,18 @@ class DestinationPlanViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        super.prepare(for: segue, sender: sender)
+        if let vc = segue.destination as? SearchLocationViewController
+        {
+            vc.delegate = self
+            vc.baseRegion = mapView.region
+            vc.baseLocation = mapView.userLocation.location
+            vc.isRequestingSpeechDictation = isRequestingSpeechDictation
+        }
     }
 }
 
-extension DestinationPlanViewController: ActivateLocationViewControllerDelegate
+extension DestinationPlanViewController: AuthorizationSecondaryPlanDelegate
 {
-    func onGoToSettings()
-    {
-        if let bundleIdentifier = Bundle.main.bundleIdentifier
-        {
-            let path = UIApplication.openSettingsURLString + bundleIdentifier
-            let url = URL(string: path)!
-            UIApplication.shared.open(url)
-        }
-        else
-        {
-            let url = URL(string: UIApplication.openSettingsURLString)!
-            UIApplication.shared.open(url)
-        }
-    }
-    
     func onCancelLocation()
     {
         self.dismiss(animated: true)
@@ -128,10 +137,13 @@ extension DestinationPlanViewController: CLLocationManagerDelegate
         if (status == .denied)
         {
             if let vc = activateLocationVC, vc.isBeingPresented { return }
-            
-            let vc = ActivateLocationViewController()
+    
+            let vc = AuthorizationSecondaryPlanController(
+                message: "Please allow location access in settings to proceed",
+                image: UIImage(named: "Location")
+            )
             vc.delegate                 = self
-            vc.transitioningDelegate    = self
+            vc.transitioningDelegate    = AlertPresentationTransitioningManager.shared
             vc.modalPresentationStyle   = .custom
             vc.view.layer.cornerRadius  = 12
             present(vc, animated: true)
@@ -157,8 +169,7 @@ extension DestinationPlanViewController: MKMapViewDelegate
             
             cancellables = [
                 viewModel.$titleText.sink(receiveValue: { [unowned self] in locationTitleLabel.text = $0 }),
-                viewModel.$regionText.sink(receiveValue: { [unowned self] in locationRegionLabel.text = $0 }),
-                viewModel.$coordinateText.sink(receiveValue: { [unowned self] in locationCoordinateLabel.text = $0 })
+                viewModel.$regionText.sink(receiveValue: { [unowned self] in locationRegionLabel.text = $0 })
             ]
             
             let span    = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
@@ -189,22 +200,16 @@ extension DestinationPlanViewController: MKMapViewDelegate
         // animation
         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn) { [unowned self] in
             mapPinView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            locationDescView.backgroundColor = .darkGray
-            locationDescView.alpha = 0.4
+            locationDescView.alpha = 0.3
             moovitButton.isEnabled = false
         }
     }
 }
 
-extension DestinationPlanViewController: UIViewControllerTransitioningDelegate
+extension DestinationPlanViewController: SearchLocationDelegate
 {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?
+    func didSelectLocation(_ map: MKMapItem)
     {
-        let presentation = AlertPresentationController(
-            presentedViewController: presented,
-            presenting: presenting
-        )
-        presentation.inset = 20.0
-        return presentation
+        mapView.setCenter(map.placemark.coordinate, animated: true)
     }
 }
