@@ -14,9 +14,10 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivateLocationViewController" customModule="tracco" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationSecondaryPlanController" customModule="tracco" customModuleProvider="target">
             <connections>
                 <outlet property="alertLabel" destination="67T-ib-TwR" id="SlM-ct-YCL"/>
+                <outlet property="imageView" destination="Qp9-29-3Ld" id="36S-Wc-ySP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

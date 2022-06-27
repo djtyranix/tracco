@@ -33,3 +33,25 @@ class AlertPresentationController: FocusPresentationController
         return AlertPresentationController.getFrameOfPresentedViewInContainerView(presentedView, containerView: containerView, inset: inset)
     }
 }
+
+class AlertPresentationTransitioningManager: NSObject, UIViewControllerTransitioningDelegate
+{
+    static let shared = AlertPresentationTransitioningManager(20.0)
+    
+    public var inset: CGFloat
+    
+    public init(_ inset: CGFloat)
+    {
+        self.inset = inset
+    }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?
+    {
+        let presentation = AlertPresentationController(
+            presentedViewController: presented,
+            presenting: presenting
+        )
+        presentation.inset = self.inset
+        return presentation
+    }
+}
