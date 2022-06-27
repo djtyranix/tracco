@@ -15,11 +15,18 @@ class HistoryTripViewController: UIViewController
     
     private var selectedIndex: IndexPath?
     public var dataSource: [TripModel]?
+    private let viewModel = HistoryViewModel()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         GlobalPublisher.addObserver(self)
+        
+        dataSource = viewModel.getAllTrip()
+        
+        print("Test History")
+        print("Data Source: \(dataSource as? TripModel ?? TripModel())")
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight

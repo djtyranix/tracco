@@ -75,6 +75,7 @@
 		A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87463F128546D72009AB0DC /* ProfileViewController.swift */; };
 		A87463F428546D97009AB0DC /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87463F328546D97009AB0DC /* History.storyboard */; };
 		A8814440285C183400EE1FA2 /* TotalCarbonProfileCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = A881443F285C183400EE1FA2 /* TotalCarbonProfileCard.xib */; };
+		A894047F286949940080D5D5 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A894047E286949940080D5D5 /* HistoryViewModel.swift */; };
 		A8AD59B128602D9A00104B58 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD59B028602D9A00104B58 /* CardInfoView.swift */; };
 		A8AD59B928602DAA00104B58 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */; };
 		A8AD59BA28602DAA00104B58 /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AD59B328602DAA00104B58 /* Summary.storyboard */; };
@@ -167,6 +168,7 @@
 		A87463F128546D72009AB0DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A87463F328546D97009AB0DC /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		A881443F285C183400EE1FA2 /* TotalCarbonProfileCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TotalCarbonProfileCard.xib; path = ../../Utils/Helper/TotalCarbonProfileCard.xib; sourceTree = "<group>"; };
+		A894047E286949940080D5D5 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		A8AD59B028602D9A00104B58 /* CardInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 		A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		A8AD59B328602DAA00104B58 /* Summary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				3F84CB67285E163500EFDD71 /* SummaryVM.swift */,
 				3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */,
+				A894047E286949940080D5D5 /* HistoryViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
+				A894047F286949940080D5D5 /* HistoryViewModel.swift in Sources */,
 				3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,

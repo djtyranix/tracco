@@ -12,21 +12,23 @@ class HistoryViewController: UIViewController
     @IBOutlet var ContainerViewHistoryNoTrip: UIView!
     @IBOutlet var ContainerViewHistoryTrip: UIView!
     
-    private var historyDataSource: [TripModel]? = StoredModel.history
+    private var historyDataSource: [TripModel]? = nil
+    private let viewModel = HistoryViewModel()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        ContainerViewHistoryTrip.isHidden   = historyDataSource == nil
-        ContainerViewHistoryNoTrip.isHidden = historyDataSource != nil
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let vc = segue.destination as? HistoryTripViewController
-        {
-            vc.dataSource = historyDataSource
-            historyDataSource = []
+        let count = viewModel.getTripCount()
+        
+        if count == 0 {
+            ContainerViewHistoryTrip.isHidden = true
+            ContainerViewHistoryNoTrip.isHidden = false
+        } else if count == -1 {
+            print("Error fetch")
+        } else {
+            // There is some trip
+            ContainerViewHistoryTrip.isHidden = false
+            ContainerViewHistoryNoTrip.isHidden = true
         }
     }
 }

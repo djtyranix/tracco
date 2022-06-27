@@ -127,6 +127,81 @@ class TripRepository : NSObject {
         }
     }
     
+    func getTripCount() -> Int {
+        var transitFetchArray = [NSManagedObject]()
+        
+        let managedContext = self.getManagedContext()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TripEntity")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "trip_id", ascending: false)]
+        
+        do {
+            transitFetchArray = try managedContext.fetch(fetchRequest)
+            print("Count is \(transitFetchArray.count)")
+            return transitFetchArray.count
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return -1
+        }
+    }
+    
+    func getAllData() -> [TripModel] {
+        var tripArray = [TripModel]()
+        var transitFetchArray = [NSManagedObject]()
+        
+        let managedContext = self.getManagedContext()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TripEntity")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "trip_summary_id", ascending: true)]
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            transitFetchArray = try managedContext.fetch(fetchRequest)
+            var trip = TripModel()
+            
+            for transitFetch in transitFetchArray {
+                var currentId = 1
+                print("Current Id is: \(currentId)")
+                let fetchId = transitFetch.value(forKey: "trip_summary_id") as! Int
+                
+                let transitPath = TransitPath(
+                    startLatitude: transitFetch.value(forKey: "trip_lat_start") as! Double,
+                    startLongitude: transitFetch.value(forKey: "trip_long_start") as! Double,
+                    startTitle: transitFetch.value(forKey: "trip_name_start") as! String?,
+                    endLatitude: transitFetch.value(forKey: "trip_lat_end") as! Double,
+                    endLongitude: transitFetch.value(forKey: "trip_long_end") as! Double,
+                    endTitle: transitFetch.value(forKey: "trip_name_end") as! String?
+                )
+                
+                let transitModel = TransitModel(
+                    transitPath: transitPath,
+                    carbonEmissionInKg: transitFetch.value(forKey: "trip_carbon_emission") as! Double,
+                    costInIDR: transitFetch.value(forKey: "trip_cost") as! Double,
+                    type: getTransportType(type: transitFetch.value(forKey: "trip_transport_type") as! Int),
+                    distanceInKm: transitFetch.value(forKey: "trip_distance") as! Double,
+                    beginDate: transitFetch.value(forKey: "trip_date_start") as! Date,
+                    endDate: transitFetch.value(forKey: "trip_date_end") as! Date
+                )
+                
+                if currentId == fetchId {
+                    // Current Trip
+                    trip.append(transitModel)
+                } else if currentId > getLatestSummaryId() {
+                    break
+                } else {
+                    // Next Trip
+                    currentId += 1
+                    tripArray.append(trip)
+                    trip = []
+                    trip.append(transitModel)
+                }
+            }
+            
+            return tripArray
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return [TripModel]()
+        }
+    }
+    
     func getTransportType(type: TransportType) -> Int {
         switch type {
         case .car:
@@ -137,6 +212,21 @@ class TripRepository : NSObject {
             return 2
         case .train:
             return 3
+        }
+    }
+    
+    func getTransportType(type: Int) -> TransportType {
+        switch type {
+        case 0:
+            return .car
+        case 1:
+            return .motor
+        case 2:
+            return .bus
+        case 3:
+            return .train
+        default:
+            return .car
         }
     }
 }
