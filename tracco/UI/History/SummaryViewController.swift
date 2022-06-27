@@ -98,8 +98,18 @@ class SummaryViewController: UIViewController
     {
         currentTransportCarbonCardView.value    = refViewModel?.currentCarbonEmissionInKgText
         currentTransportCostCardView.value      = refViewModel?.currentCostInIDRText
+        
         otherTransportCostCardView.value        = refViewModel?.otherCostInIDRText
         otherTransportCarbonCardView.value      = refViewModel?.otherCarbonEmissionInKgText
+        otherTransportTitleLabel.text           = refViewModel?.otherTitleText
+        
+        otherTransportCostCardView.backgroundColor = refViewModel?.otherCardBackgroundColor
+        otherTransportCarbonCardView.backgroundColor = refViewModel?.otherCardBackgroundColor
+        
+        otherTransportCostCardView.labelColor = refViewModel?.otherCardForegroundColor
+        otherTransportCarbonCardView.labelColor = refViewModel?.otherCardForegroundColor
+        
+        comparisonLabel.text = refViewModel?.comparisonEncouragementText
     }
     
     private func layoutTripDetail()

@@ -17,6 +17,7 @@ class HistoryTableViewCell: UITableViewCell
     public static let nib = UINib.init(nibName: "HistoryTableViewCell", bundle: nil)
     public static let cellDesiredHeight: CGFloat = 72 + 16
     
+    private var selectedCellColor = UIColor(named: "MainGreen80")
     private var identityBackgroundColor: UIColor?
     
     override func awakeFromNib()
@@ -30,10 +31,10 @@ class HistoryTableViewCell: UITableViewCell
     {
         if (selected == false) { return }
         if (identityBackgroundColor == nil) { identityBackgroundColor = containerView.backgroundColor }
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: { [unowned self] in
-            containerView.backgroundColor = .green
+        UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseIn, animations: { [unowned self] in
+            containerView.backgroundColor = selectedCellColor
         }, completion: { _ in
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: { [unowned self] in
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: { [unowned self] in
                 containerView.backgroundColor = identityBackgroundColor
             })
         })

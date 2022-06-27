@@ -11,10 +11,16 @@ class HomeTripViewController: UIViewController
 {
     enum Segue: String { case summary = "summarySegue"}
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var encouragementLabel: UILabel!
+    @IBOutlet weak var carbonEmissionCard: CardInfoView!
+    @IBOutlet weak var mostUsedTransportCard: CardInfoView!
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    public var greetingTitleText: String?
     public var historyDataSource: [TripModel]?
+    public var profileModel: ProfileModel?
     
     // data max will adjust according to the device table view height
     // this view will only contain just a few latest history
@@ -23,7 +29,7 @@ class HomeTripViewController: UIViewController
     private var dataSource: [TripModel]?
     private var selectedIndex: IndexPath?
     private var isTableViewDataSourceInitialized = false
-    private let viewModel = DashboardViewModel()
+    private let viewModel = LatestTripVM()
     
     override func viewDidLoad()
     {
@@ -35,8 +41,17 @@ class HomeTripViewController: UIViewController
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.delaysContentTouches = false
         tableView.rowHeight = HistoryTableViewCell.cellDesiredHeight
         tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
+        
+        updateViewWithModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        titleLabel.text = PartsOfDay.greetingText(PartsOfDay.now())
     }
     
     override func viewDidLayoutSubviews()
@@ -51,12 +66,28 @@ class HomeTripViewController: UIViewController
         {
             vc.title = "Latest Trip Detail"
             guard let selectedIndex = selectedIndex,
-                  let model = dataSource?[selectedIndex.row],
+                  let model = getData(at: selectedIndex),
                   let cell = tableView.cellForRow(at: selectedIndex) as? HistoryTableViewCell
             else { return }
             vc.viewModelHistory = SummaryHistoryVM(model)
             vc.viewModelHistory?.headerOverviewText = "Trip from \(cell.descriptionLabel.text!)"
         }
+    }
+    
+    @IBAction func onViewAllButton(_ sender: UIButton)
+    {
+        self.tabBarController?.selectedIndex = 1
+    }
+    
+    private func updateViewWithModel()
+    {
+        guard let model = profileModel
+        else { return }
+        
+        let viewModel = DashboardVM(model)
+        encouragementLabel.text = viewModel.encouragementText
+        carbonEmissionCard.value = viewModel.carbonEmissionValueText
+        mostUsedTransportCard.value = viewModel.mostUsedTransportText
     }
     
     private func limitLatestTripBasedOnDeviceHeight()
@@ -77,6 +108,14 @@ class HomeTripViewController: UIViewController
         self.historyDataSource = nil
         isTableViewDataSourceInitialized = true
     }
+    
+    private func getData(at index: IndexPath) -> TripModel?
+    {
+        guard let dataSource = dataSource
+        else { return nil }
+        let dataIndex = dataSource.count - 1 - index.row
+        return dataSource[dataIndex]
+    }
 }
 
 extension HomeTripViewController: GlobalEvent
@@ -89,6 +128,12 @@ extension HomeTripViewController: GlobalEvent
         // append the newest data and reload table
         dataSource?.append(model)
         tableView.reloadData()
+    }
+    
+    func profileModelUpdated(_ model: ProfileModel)
+    {
+        self.profileModel = model
+        updateViewWithModel()
     }
 }
 
@@ -112,12 +157,9 @@ extension HomeTripViewController: UITableViewDataSource
     // but it takes computational work, so let's think different
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        guard let dataSource = dataSource,
+        guard let data = getData(at: indexPath),
               let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
         else { return UITableViewCell() }
-        
-        let dataIndex = dataSource.count - 1 - indexPath.row
-        let data = dataSource[dataIndex]
         
         cell.setupCell(data)
         return cell

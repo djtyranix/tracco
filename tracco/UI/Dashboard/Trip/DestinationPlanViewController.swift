@@ -29,7 +29,6 @@ class DestinationPlanViewController: UIViewController
     private var cancellables: [AnyCancellable]?
     
     private var isUserLocationInitialized = false
-    private let locationSettingsURL = URL(string: "App-Prefs:root=Privacy&path=LOCATION")!
     
     let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -93,13 +92,14 @@ extension DestinationPlanViewController: ActivateLocationViewControllerDelegate
     {
         if let bundleIdentifier = Bundle.main.bundleIdentifier
         {
-            let url = locationSettingsURL.appendingPathComponent(bundleIdentifier, isDirectory: true)
-            print(url)
+            let path = UIApplication.openSettingsURLString + bundleIdentifier
+            let url = URL(string: path)!
             UIApplication.shared.open(url)
         }
         else
         {
-            UIApplication.shared.open(locationSettingsURL)
+            let url = URL(string: UIApplication.openSettingsURLString)!
+            UIApplication.shared.open(url)
         }
     }
     

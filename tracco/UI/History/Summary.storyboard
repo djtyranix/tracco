@@ -170,23 +170,6 @@
                                             <action selector="onCheckTransportMoovitButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sqs-pq-OPg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-BV-0Pn">
-                                        <rect key="frame" x="311.33333333333331" y="12" width="62.666666666666686" height="36"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Done">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name="Nunito-Medium"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseForegroundColor" name="MainGreen80"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="onDoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Wn-XO-fvq"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfL-Xf-Ke6">
                                         <rect key="frame" x="160.66666666666666" y="280" width="69" height="28.333333333333314"/>
                                         <state key="normal" title="Button"/>
@@ -217,7 +200,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fx3-XN-hkf" userLabel="After Trip">
                                         <rect key="frame" x="16" y="0.0" width="358" height="110"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="YT3-gQ-4je"/>
+                                            <constraint firstAttribute="height" constant="110" id="TFe-gf-Wpg"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="QWW-Gj-Aam" kind="embed" id="QhO-Hl-Hzy"/>
@@ -231,6 +214,7 @@
                                     </containerView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Kiw-hF-bGj" secondAttribute="trailing" constant="16" id="0Gx-d0-ALc"/>
                                     <constraint firstItem="Q20-PU-IzH" firstAttribute="height" secondItem="J5s-Uy-9PE" secondAttribute="height" id="3Bo-Kg-qgh"/>
                                     <constraint firstAttribute="trailing" secondItem="Pju-Hl-oda" secondAttribute="trailing" constant="16" id="3xC-My-Iyq"/>
                                     <constraint firstItem="Nzg-xa-rUb" firstAttribute="top" secondItem="qNc-If-xDp" secondAttribute="bottom" constant="16" id="5cP-Vc-1Lf"/>
@@ -243,8 +227,6 @@
                                     <constraint firstItem="WfL-Xf-Ke6" firstAttribute="centerX" secondItem="gEH-eo-Vxv" secondAttribute="centerX" id="EAi-Sr-nI9"/>
                                     <constraint firstItem="BT7-BF-KTB" firstAttribute="width" secondItem="Nzg-xa-rUb" secondAttribute="width" id="FM1-Th-MPj"/>
                                     <constraint firstItem="Fx3-XN-hkf" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="FzA-zn-U4H"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jby-iR-i4F" secondAttribute="trailing" constant="16" id="HH7-ln-TUF"/>
-                                    <constraint firstItem="xei-oA-Ya8" firstAttribute="top" secondItem="Q20-PU-IzH" secondAttribute="bottom" constant="16" id="HFa-BS-l6V"/>
                                     <constraint firstItem="YUJ-nx-15T" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="INI-S7-7G7"/>
                                     <constraint firstAttribute="trailing" secondItem="xei-oA-Ya8" secondAttribute="trailing" constant="16" id="JiG-fd-XC7"/>
                                     <constraint firstItem="e0e-tV-kbo" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="PNW-TT-hy8"/>
@@ -270,7 +252,7 @@
                                     <constraint firstItem="J5s-Uy-9PE" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="hL4-wF-Vy1"/>
                                     <constraint firstItem="gEH-eo-Vxv" firstAttribute="leading" secondItem="NMA-nj-jQ7" secondAttribute="leading" constant="16" id="j9y-MI-KZF"/>
                                     <constraint firstItem="qNc-If-xDp" firstAttribute="top" secondItem="Pju-Hl-oda" secondAttribute="bottom" constant="4" id="jH8-2N-XGE"/>
-                                    <constraint firstAttribute="bottom" secondItem="xei-oA-Ya8" secondAttribute="bottom" id="ji6-5g-rzG"/>
+                                    <constraint firstAttribute="bottom" secondItem="xei-oA-Ya8" secondAttribute="bottom" constant="24" id="ji6-5g-rzG"/>
                                     <constraint firstItem="goM-gK-C5f" firstAttribute="leading" secondItem="J5s-Uy-9PE" secondAttribute="trailing" constant="16" id="leT-yT-Zbo"/>
                                     <constraint firstItem="Q20-PU-IzH" firstAttribute="top" secondItem="J5s-Uy-9PE" secondAttribute="bottom" constant="16" id="lm5-tg-IaD"/>
                                     <constraint firstItem="goM-gK-C5f" firstAttribute="width" secondItem="J5s-Uy-9PE" secondAttribute="width" id="nRc-ci-ndS"/>
@@ -474,7 +456,7 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" name="MainGreen"/>
+                                    <color key="baseForegroundColor" name="MainGreen80"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onDoneButton:" destination="QWW-Gj-Aam" eventType="touchUpInside" id="3dE-zk-s1Y"/>

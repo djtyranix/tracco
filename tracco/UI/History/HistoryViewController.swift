@@ -12,23 +12,42 @@ class HistoryViewController: UIViewController
     @IBOutlet var ContainerViewHistoryNoTrip: UIView!
     @IBOutlet var ContainerViewHistoryTrip: UIView!
     
-    private var historyDataSource: [TripModel]? = nil
     private let viewModel = HistoryViewModel()
+    private var historyDataSource: [TripModel]?
+    private var isAlreadyHavingTrip: Bool
+    
+    required init?(coder: NSCoder)
+    {
+        historyDataSource = viewModel.getAllTrip()
+        isAlreadyHavingTrip = historyDataSource != nil
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let count = viewModel.getTripCount()
+        ContainerViewHistoryTrip.isHidden   = !isAlreadyHavingTrip
+        ContainerViewHistoryNoTrip.isHidden = isAlreadyHavingTrip
         
-        if count == 0 {
-            ContainerViewHistoryTrip.isHidden = true
-            ContainerViewHistoryNoTrip.isHidden = false
-        } else if count == -1 {
-            print("Error fetch")
-        } else {
-            // There is some trip
-            ContainerViewHistoryTrip.isHidden = false
-            ContainerViewHistoryNoTrip.isHidden = true
+        if (isAlreadyHavingTrip == false) { GlobalPublisher.addObserver(self) }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? HistoryTripViewController
+        {
+            vc.dataSource = historyDataSource
+            historyDataSource = nil
         }
+    }
+}
+
+extension HistoryViewController: GlobalEvent
+{
+    func addTripModel(_ model: TripModel)
+    {
+        ContainerViewHistoryTrip.isHidden = false
+        ContainerViewHistoryNoTrip.isHidden = true
+        GlobalPublisher.removeObserver(self)
     }
 }

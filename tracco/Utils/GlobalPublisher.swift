@@ -10,6 +10,14 @@ import Foundation
 protocol GlobalEvent
 {
     func addTripModel(_ model: TripModel)
+    func profileModelUpdated(_ model: ProfileModel)
+}
+
+// make the method optional without marking as an @objc protocol
+extension GlobalEvent
+{
+    func addTripModel(_ model: TripModel) {}
+    func profileModelUpdated(_ model: ProfileModel) {}
 }
 
 class Weak<T: AnyObject>
@@ -30,11 +38,25 @@ class GlobalPublisher: GlobalEvent
         observers.append(weak)
     }
     
+    static func removeObserver<T: AnyObject>(_ observer: T) where T: GlobalEvent
+    {
+        // refer to the same instance
+        observers.removeAll(where: { $0.value === observer })
+    }
+    
     func addTripModel(_ model: TripModel)
     {
         GlobalPublisher.observers.forEach {
             let globalEvent = $0.value as? GlobalEvent
             globalEvent?.addTripModel(model)
+        }
+    }
+    
+    func profileModelUpdated(_ model: ProfileModel)
+    {
+        GlobalPublisher.observers.forEach {
+            let globalEvent = $0.value as? GlobalEvent
+            globalEvent?.profileModelUpdated(model)
         }
     }
 }

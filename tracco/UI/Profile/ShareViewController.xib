@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController" customModule="tracco" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstraintView" destination="Lem-Ur-SEq" id="cn4-on-Bc2"/>
+                <outlet property="scrollView" destination="CGA-m8-tlV" id="wkQ-hR-Qvd"/>
+                <outlet property="topConstraintView" destination="rbn-9t-G6Y" id="sW8-ti-7JV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="693"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGA-m8-tlV">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="693"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Only" translatesAutoresizingMaskIntoConstraints="NO" id="hlC-Gb-vi0" userLabel="LogoOverlay">
+                            <rect key="frame" x="170" y="120" width="450" height="369"/>
+                            <color key="tintColor" name="TraccoLogoOverlay"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="450" id="BCE-Zb-Cvv"/>
+                                <constraint firstAttribute="width" secondItem="hlC-Gb-vi0" secondAttribute="height" multiplier="511:419" id="P0Q-Hd-v7z"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                    <real key="value" value="0.10000000000000001"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.rotation.z">
+                                    <real key="value" value="-0.52400000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Only" translatesAutoresizingMaskIntoConstraints="NO" id="Zsl-kj-F3W" userLabel="LogoOverlay">
+                            <rect key="frame" x="-90" y="-180" width="450" height="369"/>
+                            <color key="tintColor" name="TraccoLogoOverlay"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="450" id="8ol-c0-EqK"/>
+                                <constraint firstAttribute="width" secondItem="Zsl-kj-F3W" secondAttribute="height" multiplier="511:419" id="X2u-OH-GkV"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                    <real key="value" value="0.10000000000000001"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.rotation.z">
+                                    <real key="value" value="-0.52400000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Only" translatesAutoresizingMaskIntoConstraints="NO" id="A3I-KW-p7j" userLabel="LogoOverlay">
+                            <rect key="frame" x="-90" y="420" width="450" height="369"/>
+                            <color key="tintColor" name="TraccoLogoOverlay"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="450" id="MZL-4x-k7R"/>
+                                <constraint firstAttribute="width" secondItem="A3I-KW-p7j" secondAttribute="height" multiplier="511:419" id="TWn-zw-k8o"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                    <real key="value" value="0.10000000000000001"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.rotation.z">
+                                    <real key="value" value="0.34899999999999998"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIO-S7-sVC">
+                            <rect key="frame" x="16" y="16" width="40" height="40"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Only" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-U2-he7">
+                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                    <color key="tintColor" name="MainGreen10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="3ot-gD-bAV"/>
+                                        <constraint firstAttribute="height" constant="20" id="Dp0-Mp-VOk"/>
+                                    </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" name="MainGreen80"/>
+                            <constraints>
+                                <constraint firstItem="LQl-U2-he7" firstAttribute="centerX" secondItem="SIO-S7-sVC" secondAttribute="centerX" id="1tr-ak-UAt"/>
+                                <constraint firstAttribute="width" constant="40" id="5QO-Nk-1Rd"/>
+                                <constraint firstItem="LQl-U2-he7" firstAttribute="centerY" secondItem="SIO-S7-sVC" secondAttribute="centerY" id="SRi-St-AXF"/>
+                                <constraint firstAttribute="height" constant="40" id="nNf-mH-f57"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-3r-Ka1">
+                            <rect key="frame" x="72" y="22.5" width="60" height="27.5"/>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi 👋 While using Tracco, I have done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbn-9t-G6Y">
+                            <rect key="frame" x="16" y="72" width="348.5" height="27.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27.5" id="GMb-Ub-doI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="I challenge you to reduce your carbon emission through transportation by using Tracco 👊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lem-Ur-SEq">
+                            <rect key="frame" x="16" y="551.5" width="358" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="358" id="tJR-HC-iMk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Download on App Store" translatesAutoresizingMaskIntoConstraints="NO" id="Tff-8w-qra">
+                            <rect key="frame" x="16" y="608.5" width="120" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="CvE-dw-UBG"/>
+                                <constraint firstAttribute="width" secondItem="Tff-8w-qra" secondAttribute="height" multiplier="119:40" id="nE1-4T-auu"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" name="MainGreen10"/>
+                    <constraints>
+                        <constraint firstItem="Tff-8w-qra" firstAttribute="leading" secondItem="Lem-Ur-SEq" secondAttribute="leading" id="1CD-SI-GGM"/>
+                        <constraint firstItem="A3I-KW-p7j" firstAttribute="width" secondItem="A3I-KW-p7j" secondAttribute="height" multiplier="511:419" id="86w-KL-cAC"/>
+                        <constraint firstAttribute="bottom" secondItem="Tff-8w-qra" secondAttribute="bottom" constant="16" id="C08-Th-oK2"/>
+                        <constraint firstItem="6bk-3r-Ka1" firstAttribute="centerY" secondItem="SIO-S7-sVC" secondAttribute="centerY" id="JX1-rO-PmB"/>
+                        <constraint firstItem="Tff-8w-qra" firstAttribute="top" secondItem="Lem-Ur-SEq" secondAttribute="bottom" constant="16" id="K9h-HT-7ab"/>
+                        <constraint firstItem="SIO-S7-sVC" firstAttribute="leading" secondItem="CGA-m8-tlV" secondAttribute="leading" constant="16" id="KYg-lS-z3K"/>
+                        <constraint firstItem="Zsl-kj-F3W" firstAttribute="leading" secondItem="CGA-m8-tlV" secondAttribute="leading" constant="-90" id="N8g-fI-zBd"/>
+                        <constraint firstItem="Zsl-kj-F3W" firstAttribute="width" secondItem="Zsl-kj-F3W" secondAttribute="height" multiplier="511:419" id="ODb-KB-24r"/>
+                        <constraint firstItem="6bk-3r-Ka1" firstAttribute="leading" secondItem="SIO-S7-sVC" secondAttribute="trailing" constant="16" id="QeG-8E-4vA"/>
+                        <constraint firstItem="hlC-Gb-vi0" firstAttribute="top" secondItem="Zsl-kj-F3W" secondAttribute="top" constant="300" id="QvB-FY-TEs"/>
+                        <constraint firstItem="Lem-Ur-SEq" firstAttribute="leading" secondItem="CGA-m8-tlV" secondAttribute="leading" constant="16" id="YDL-s7-h7Z"/>
+                        <constraint firstItem="rbn-9t-G6Y" firstAttribute="leading" secondItem="SIO-S7-sVC" secondAttribute="leading" id="avr-EL-XvW"/>
+                        <constraint firstItem="rbn-9t-G6Y" firstAttribute="top" secondItem="SIO-S7-sVC" secondAttribute="bottom" constant="16" id="bT2-oY-LN3"/>
+                        <constraint firstItem="SIO-S7-sVC" firstAttribute="top" secondItem="CGA-m8-tlV" secondAttribute="top" constant="16" id="bxh-s6-pN9"/>
+                        <constraint firstItem="hlC-Gb-vi0" firstAttribute="width" secondItem="hlC-Gb-vi0" secondAttribute="height" multiplier="511:419" id="ion-mj-Z8U"/>
+                        <constraint firstItem="A3I-KW-p7j" firstAttribute="top" secondItem="hlC-Gb-vi0" secondAttribute="top" constant="300" id="jdb-fl-pcQ"/>
+                        <constraint firstItem="hlC-Gb-vi0" firstAttribute="leading" secondItem="Zsl-kj-F3W" secondAttribute="leading" constant="260" id="mni-wy-5rE"/>
+                        <constraint firstItem="A3I-KW-p7j" firstAttribute="leading" secondItem="Zsl-kj-F3W" secondAttribute="leading" id="rEn-Q1-M3h"/>
+                        <constraint firstItem="Zsl-kj-F3W" firstAttribute="top" secondItem="CGA-m8-tlV" secondAttribute="top" constant="-180" id="yOd-3f-fLS"/>
+                    </constraints>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-Da-D1E">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="693"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFf-mI-CQ2">
+                            <rect key="frame" x="150.5" y="336" width="89" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="lFf-mI-CQ2" firstAttribute="centerY" secondItem="EQ7-Da-D1E" secondAttribute="centerY" id="oRR-pw-E8c"/>
+                        <constraint firstItem="lFf-mI-CQ2" firstAttribute="centerX" secondItem="EQ7-Da-D1E" secondAttribute="centerX" id="tWj-2H-GpW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="MainGreen10"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="EQ7-Da-D1E" secondAttribute="bottom" id="2Bo-mb-8aH"/>
+                <constraint firstAttribute="trailing" secondItem="EQ7-Da-D1E" secondAttribute="trailing" id="OP3-KY-pfD"/>
+                <constraint firstItem="CGA-m8-tlV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P2t-be-CBY"/>
+                <constraint firstItem="EQ7-Da-D1E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RXV-Sh-cpa"/>
+                <constraint firstItem="EQ7-Da-D1E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wrp-6D-zx8"/>
+                <constraint firstAttribute="trailing" secondItem="CGA-m8-tlV" secondAttribute="trailing" id="XCL-Jf-n6v"/>
+                <constraint firstItem="CGA-m8-tlV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eBD-iv-ctm"/>
+                <constraint firstAttribute="bottom" secondItem="CGA-m8-tlV" secondAttribute="bottom" id="wte-fB-AXn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="66.629464285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Download on App Store" width="119.66407012939453" height="40"/>
+        <image name="Logo Only" width="78" height="60"/>
+        <namedColor name="MainGreen10">
+            <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainGreen80">
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TraccoLogoOverlay">
+            <color red="0.44699999690055847" green="0.68199998140335083" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

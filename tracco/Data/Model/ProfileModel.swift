@@ -40,11 +40,35 @@ struct ProfileModel : Codable
         return nil
     }}
     
+    var offsetTrees: Int { get {
+        return Int(carbonEmissionInKgReducedTotal / OffsetEntity.tree.rawValue)
+    }}
+    
+    init()
+    {
+        self.distanceInBus = 0
+        self.distanceInCar = 0
+        self.distanceInMotor = 0
+        self.distanceInTrain = 0
+        
+        self.costInBus = 0
+        self.costInCar = 0
+        self.costInMotor = 0
+        self.costInTrain = 0
+        
+        self.tripTrackCount = 0
+        self.carbonEmissionInKgTotal = 0
+        self.carbonEmissionInKgReducedTotal = 0
+    }
+    
     mutating func add(_ model: TransitModel)
     {
         self.tripTrackCount += 1
         self.carbonEmissionInKgTotal += model.carbonEmissionInKg
-        self.carbonEmissionInKgReducedTotal += 0
+        
+        let carbonInCar = TransportType.car.rawValue.carbon * model.distanceInKm
+        let carbonReduced = carbonInCar - model.carbonEmissionInKg
+        self.carbonEmissionInKgReducedTotal += carbonReduced
         
         switch model.type
         {
