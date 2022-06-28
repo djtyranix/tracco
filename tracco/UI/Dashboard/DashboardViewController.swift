@@ -27,6 +27,11 @@ class DashboardViewController: UIViewController
         if (isAlreadyHavingTrip == false) { GlobalPublisher.addObserver(self) }
     }
     
+    @IBAction func onSettingsButton(_ sender: UIBarButtonItem)
+    {
+        self.onGoToSettings()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         // embedded view controller will be called before viewDidLoad
@@ -56,3 +61,6 @@ extension DashboardViewController: GlobalEvent
         GlobalPublisher.removeObserver(self)
     }
 }
+
+extension DashboardViewController: AuthorizationSecondaryPlanDelegate
+{}
