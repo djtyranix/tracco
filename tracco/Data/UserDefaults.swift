@@ -29,11 +29,22 @@ struct UserDefault<T: Codable>
         {
             do
             {
-                let encoded = try PropertyListEncoder().encode(newValue)
+                let encoded = try PropertyListEncoder().encode(newValue!)
                 UserDefaults.standard.set(encoded, forKey: key)
             }
             catch { print("UserDefault set err: \(error)") }
         }
+    }
+}
+
+@propertyWrapper
+struct UserDefaultObject<T: Any>
+{
+    let key: String
+    var wrappedValue: T
+    {
+        get { return UserDefaults.standard.object(forKey: key) as! T }
+        set { UserDefaults.standard.set(newValue as Any, forKey: key) }
     }
 }
 
@@ -44,4 +55,7 @@ class StoredModel
     
     @UserDefault<ProfileModel>(key: "profile_model")
     static var profile
+    
+    @UserDefaultObject<Bool?>(key: "show_route_recommendation")
+    static var showRouteRecommendation
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class HomeNoTripViewController: UIViewController
 {
+    enum Segue: String { case onPlanTrip = "onPlanTripSegue", onTrip = "onTripSegue" }
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var trackButton: UIButton!
     
@@ -22,6 +24,13 @@ class HomeNoTripViewController: UIViewController
     {
         titleLabel.text = PartsOfDay.greetingText(PartsOfDay.now())
         super.viewWillAppear(animated)
+    }
+    
+    @IBAction func onStartTripButton(_ sender: UIButton)
+    {
+        let showPlanTrip = StoredModel.showRouteRecommendation ?? true
+        let segueTrip: Segue = showPlanTrip ? .onPlanTrip : .onTrip
+        performSegue(withIdentifier: segueTrip.rawValue, sender: self)
     }
 }
 

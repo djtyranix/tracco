@@ -21,6 +21,7 @@ class DestinationPlanViewController: UIViewController
     @IBOutlet weak var locationDescView: UIView!
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var locationRegionLabel: UILabel!
+    @IBOutlet weak var checkboxImageView: UIImageView!
     
     var activateLocationVC: AuthorizationSecondaryPlanController?
     
@@ -29,6 +30,8 @@ class DestinationPlanViewController: UIViewController
     
     private var isUserLocationInitialized = false
     private var isRequestingSpeechDictation = false
+    
+    private var isDontShowRecommendationAgain = false
     
     private var isSpeechDictationNeedElevation = true
     private var speechDictationVC: SpeechDictationViewController = {
@@ -53,6 +56,10 @@ class DestinationPlanViewController: UIViewController
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         locationManager.allowsBackgroundLocationUpdates = false
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCheckboxPressed(_:)))
+        checkboxImageView.addGestureRecognizer(tapGesture)
+        checkboxImageView.isUserInteractionEnabled = true
     }
     
     @IBAction func onCancelButton(_ sender: UIButton)
@@ -62,7 +69,7 @@ class DestinationPlanViewController: UIViewController
     
     @IBAction func onContinueButton(_ sender: UIButton)
     {
-        
+        StoredModel.showRouteRecommendation = !isDontShowRecommendationAgain
     }
     
     @IBAction func onSearchButton(_ sender: SearchSpeechButton, forEvent event: UIEvent)
@@ -96,6 +103,13 @@ class DestinationPlanViewController: UIViewController
         {
             UIApplication.shared.open(MoovitAPI.moovitAppDownloadURL)
         }
+    }
+    
+    @objc func onCheckboxPressed(_ recognizer: UITapGestureRecognizer)
+    {
+        isDontShowRecommendationAgain = !isDontShowRecommendationAgain
+        let assetName = isDontShowRecommendationAgain ? "checkmark.square" : "square"
+        checkboxImageView.image = UIImage(systemName: assetName)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

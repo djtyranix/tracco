@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Switch Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjh-WP-mSz">
-                    <rect key="frame" x="16" y="48" width="358" height="20"/>
+                    <rect key="frame" x="16" y="39" width="358" height="23.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can switch the transportation later, if you want to ride using other vehicle. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ0-2C-MH6">
-                    <rect key="frame" x="16" y="76" width="358" height="33"/>
+                    <rect key="frame" x="16" y="70.5" width="358" height="38.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -123,7 +123,7 @@
     </objects>
     <designables>
         <designable name="BEd-7f-PUL">
-            <size key="intrinsicContentSize" width="81" height="33"/>
+            <size key="intrinsicContentSize" width="82" height="36"/>
         </designable>
     </designables>
     <resources>

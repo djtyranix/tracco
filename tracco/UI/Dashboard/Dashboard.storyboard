@@ -75,7 +75,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8em-71-qNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="14"/>
+            <point key="canvasLocation" x="1905" y="-158"/>
         </scene>
         <!--Trip-->
         <scene sceneID="QMk-4Y-ESb">
@@ -84,6 +84,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzo-fQ-AWG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1748" y="233"/>
+        </scene>
+        <!--onTripID-->
+        <scene sceneID="hFg-yH-pRX">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="onTripID" storyboardName="Trip" referencedIdentifier="onTripID" id="rjv-qa-sBb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eav-2u-AK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2307" y="233"/>
         </scene>
         <!--Home No Trip View Controller-->
         <scene sceneID="v8y-fC-mHB">
@@ -145,7 +153,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="JVo-Vi-BDU" kind="presentation" id="cSf-0R-g4k"/>
+                                    <action selector="onStartTripButton:" destination="PBg-mK-IQk" eventType="touchUpInside" id="led-Gj-Ord"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0r-tu-NKd">
@@ -195,6 +203,8 @@
                     <connections>
                         <outlet property="titleLabel" destination="Kwe-BG-BJa" id="d01-MB-GME"/>
                         <outlet property="trackButton" destination="lbm-2r-5tL" id="0kb-EZ-t74"/>
+                        <segue destination="rjv-qa-sBb" kind="presentation" identifier="onTripSegue" modalPresentationStyle="fullScreen" id="vlN-bs-3Te"/>
+                        <segue destination="JVo-Vi-BDU" kind="presentation" identifier="onPlanTripSegue" id="vcE-AG-bM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8X-Mp-82Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -320,7 +330,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="JVo-Vi-BDU" kind="presentation" id="wEf-LZ-2xc"/>
+                                    <action selector="onStartTripButton:" destination="dQx-Ub-dxW" eventType="touchUpInside" id="Tq5-3G-Sbp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k29-Fw-UjA">
@@ -378,6 +388,8 @@
                         <outlet property="titleLabel" destination="fHV-GK-8ut" id="cLA-h5-513"/>
                         <outlet property="trackButton" destination="6hw-l2-zA9" id="CaX-7z-lsU"/>
                         <segue destination="o94-WE-xZW" kind="show" identifier="summarySegue" id="lYM-vY-J9k"/>
+                        <segue destination="rjv-qa-sBb" kind="presentation" identifier="onTripSegue" modalPresentationStyle="fullScreen" id="7Ei-Mi-gKS"/>
+                        <segue destination="JVo-Vi-BDU" kind="presentation" identifier="onPlanTripSegue" id="g4h-Cy-v8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rt1-Ml-1Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,7 +406,8 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="cSf-0R-g4k"/>
+        <segue reference="7Ei-Mi-gKS"/>
+        <segue reference="g4h-Cy-v8Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CarIcon" width="16" height="16"/>

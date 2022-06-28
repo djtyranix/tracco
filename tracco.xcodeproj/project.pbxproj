@@ -10,6 +10,7 @@
 		3B2BA0752860369500104AAF /* SumProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA0742860369500104AAF /* SumProfileViewController.swift */; };
 		3B2BA0772860371C00104AAF /* EmptySumProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */; };
 		3B9293F02860B0CE005EF46E /* ReduceCarbonConciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9293EF2860B0CE005EF46E /* ReduceCarbonConciseCardView.swift */; };
+		3F08353B286B6A8F006F3C99 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F08353A286B6A8F006F3C99 /* Settings.bundle */; };
 		3F0BD0C2286568770049925B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BD0C0286568770049925B /* ShareViewController.swift */; };
 		3F0BD0C3286568770049925B /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD0C1286568770049925B /* ShareViewController.xib */; };
 		3F0BD0C5286604590049925B /* LongCardInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD0C4286604590049925B /* LongCardInfoView.xib */; };
@@ -126,6 +127,7 @@
 		3B2BA0742860369500104AAF /* SumProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumProfileViewController.swift; sourceTree = "<group>"; };
 		3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySumProfileViewController.swift; sourceTree = "<group>"; };
 		3B9293EF2860B0CE005EF46E /* ReduceCarbonConciseCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReduceCarbonConciseCardView.swift; sourceTree = "<group>"; };
+		3F08353A286B6A8F006F3C99 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3F0BD0C0286568770049925B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		3F0BD0C1286568770049925B /* ShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
 		3F0BD0C4286604590049925B /* LongCardInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongCardInfoView.xib; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 		A87463BF2854596D009AB0DC = {
 			isa = PBXGroup;
 			children = (
+				3F08353A286B6A8F006F3C99 /* Settings.bundle */,
 				A87463CA2854596D009AB0DC /* tracco */,
 				A87463C92854596D009AB0DC /* Products */,
 				A8FB37C82856FEAF0057F6A3 /* Frameworks */,
@@ -618,6 +621,7 @@
 				3F9FE8962869FEB500784B2D /* OnGoingTripSheet.xib in Resources */,
 				3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
+				3F08353B286B6A8F006F3C99 /* Settings.bundle in Resources */,
 				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
 				A87463EE28546D09009AB0DC /* Profile.storyboard in Resources */,
 				3FF101362854BC0D0048013A /* ChooseTransportationViewController.xib in Resources */,

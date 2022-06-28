@@ -9,6 +9,8 @@ import UIKit
 
 class HomeTripViewController: TripTableViewController
 {
+    enum Segue: String { case onPlanTrip = "onPlanTripSegue", onTrip = "onTripSegue" }
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var encouragementLabel: UILabel!
     @IBOutlet weak var carbonEmissionCard: CardInfoView!
@@ -45,6 +47,13 @@ class HomeTripViewController: TripTableViewController
     {
         super.viewDidLayoutSubviews()
         limitLatestTripBasedOnDeviceHeight()
+    }
+    
+    @IBAction func onStartTripButton(_ sender: UIButton)
+    {
+        let showPlanTrip = StoredModel.showRouteRecommendation ?? true
+        let segueTrip: Segue = showPlanTrip ? .onPlanTrip : .onTrip
+        performSegue(withIdentifier: segueTrip.rawValue, sender: self)
     }
     
     @IBAction func onViewAllButton(_ sender: UIButton)
