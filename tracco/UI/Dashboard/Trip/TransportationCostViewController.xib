@@ -26,17 +26,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="327"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="366"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transportation Cost (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfC-jk-Z4K">
-                    <rect key="frame" x="16" y="41" width="358" height="23.5"/>
+                    <rect key="frame" x="16" y="40" width="358" height="23.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw2-AB-4Vj">
-                    <rect key="frame" x="16" y="86.5" width="60" height="40"/>
+                    <rect key="frame" x="16" y="94.5" width="60" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mj-63-6vJ">
                             <rect key="frame" x="16" y="8.5" width="28.5" height="23.5"/>
@@ -59,7 +59,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input cost but can be Blank" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-UO-XCZ">
-                    <rect key="frame" x="92" y="86.5" width="282" height="40"/>
+                    <rect key="frame" x="92" y="94.5" width="282" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="SWa-aI-yqO"/>
                     </constraints>
@@ -70,16 +70,16 @@
                     </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soz-Cp-oNn">
-                    <rect key="frame" x="16" y="142.5" width="358" height="47.5"/>
+                    <rect key="frame" x="16" y="165.5" width="358" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use cost estimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcw-ef-1ER">
-                            <rect key="frame" x="12" y="12" width="149.5" height="23.5"/>
+                            <rect key="frame" x="12" y="12" width="149.5" height="31"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98m-cf-WTp">
-                            <rect key="frame" x="297" y="8.5" width="51" height="31"/>
+                            <rect key="frame" x="297" y="12" width="51" height="31"/>
                             <connections>
                                 <action selector="onCostApproximationChanged:" destination="-1" eventType="valueChanged" id="CDV-U8-oqL"/>
                             </connections>
@@ -93,6 +93,7 @@
                         <constraint firstAttribute="trailing" secondItem="98m-cf-WTp" secondAttribute="trailing" constant="12" id="HSw-cE-mYQ"/>
                         <constraint firstItem="98m-cf-WTp" firstAttribute="centerY" secondItem="Soz-Cp-oNn" secondAttribute="centerY" id="O8h-nA-hyB"/>
                         <constraint firstAttribute="bottom" secondItem="Jcw-ef-1ER" secondAttribute="bottom" constant="12" id="chG-3f-ANW"/>
+                        <constraint firstAttribute="height" constant="55" id="sGd-P9-vUF"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -100,14 +101,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculate estimated costs based on your kilometers. Note that this feature only available in certain region." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7We-dk-c4w">
-                    <rect key="frame" x="28" y="198" width="334" height="33"/>
-                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This cost estimation feature was based on average transport fare in Jabodetabek" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7We-dk-c4w">
+                    <rect key="frame" x="28" y="228.5" width="334" height="38.5"/>
+                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-t9-HdM" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
-                    <rect key="frame" x="203" y="259" width="171" height="46"/>
+                    <rect key="frame" x="203" y="298" width="171" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="lR8-Ll-5iQ"/>
                     </constraints>
@@ -146,7 +147,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-sU-Vcf">
-                    <rect key="frame" x="16" y="259" width="171" height="46"/>
+                    <rect key="frame" x="16" y="298" width="171" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Phf-61-Qiq"/>
                         <constraint firstAttribute="height" constant="46" id="qRK-vJ-ceb"/>
@@ -164,11 +165,32 @@
                         <action selector="onCancelButton:" destination="-1" eventType="touchUpInside" id="0KO-7g-DGZ"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brF-2W-f4F">
+                    <rect key="frame" x="145" y="63.5" width="100" height="31"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="1vH-Eo-EF4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On2-YN-VpO">
+                    <rect key="frame" x="145" y="134.5" width="100" height="31"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="nt2-jf-hj2"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-9w-kLl">
+                    <rect key="frame" x="145" y="267" width="100" height="31"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="zOX-UD-ZKJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Y5f-Oh-FXc"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="1gJ-UO-XCZ" firstAttribute="top" secondItem="dfC-jk-Z4K" secondAttribute="bottom" constant="22" id="1ZP-y9-aaL"/>
+                <constraint firstItem="dfC-jk-Z4K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="1Yb-be-Vc2"/>
                 <constraint firstItem="h1H-sU-Vcf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="1gf-Vc-MM3"/>
                 <constraint firstItem="Y5f-Oh-FXc" firstAttribute="bottom" secondItem="h1H-sU-Vcf" secondAttribute="bottom" constant="22" id="1rh-uw-Tz2"/>
                 <constraint firstAttribute="trailing" secondItem="Soz-Cp-oNn" secondAttribute="trailing" constant="16" id="6iy-FR-f1m"/>
@@ -177,21 +199,29 @@
                 <constraint firstItem="Vw2-AB-4Vj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="CXV-KQ-RE5"/>
                 <constraint firstItem="FaN-t9-HdM" firstAttribute="leading" secondItem="h1H-sU-Vcf" secondAttribute="trailing" constant="16" id="D5g-d3-OAp"/>
                 <constraint firstItem="Soz-Cp-oNn" firstAttribute="trailing" secondItem="7We-dk-c4w" secondAttribute="trailing" constant="12" id="DAf-Fy-40E"/>
-                <constraint firstItem="Vw2-AB-4Vj" firstAttribute="top" secondItem="dfC-jk-Z4K" secondAttribute="bottom" constant="22" id="GDM-Pp-G42"/>
+                <constraint firstItem="1gJ-UO-XCZ" firstAttribute="top" secondItem="brF-2W-f4F" secondAttribute="bottom" id="EHy-f2-tso"/>
                 <constraint firstItem="1gJ-UO-XCZ" firstAttribute="leading" secondItem="Vw2-AB-4Vj" secondAttribute="trailing" constant="16" id="Glg-kg-Uk9"/>
-                <constraint firstItem="FaN-t9-HdM" firstAttribute="top" secondItem="7We-dk-c4w" secondAttribute="bottom" constant="28" id="LfD-3X-vST"/>
                 <constraint firstItem="7We-dk-c4w" firstAttribute="top" secondItem="Soz-Cp-oNn" secondAttribute="bottom" constant="8" id="LgE-4X-amg"/>
-                <constraint firstItem="h1H-sU-Vcf" firstAttribute="top" secondItem="7We-dk-c4w" secondAttribute="bottom" constant="28" id="Q68-ql-qfY"/>
+                <constraint firstItem="Vw2-AB-4Vj" firstAttribute="centerY" secondItem="1gJ-UO-XCZ" secondAttribute="centerY" id="Ma5-8Z-fGY"/>
+                <constraint firstItem="On2-YN-VpO" firstAttribute="top" secondItem="1gJ-UO-XCZ" secondAttribute="bottom" id="OT9-p8-uN5"/>
+                <constraint firstItem="H2y-9w-kLl" firstAttribute="height" secondItem="On2-YN-VpO" secondAttribute="height" id="OXN-Mk-QtU"/>
+                <constraint firstItem="brF-2W-f4F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qax-Je-Cff"/>
                 <constraint firstAttribute="trailing" secondItem="dfC-jk-Z4K" secondAttribute="trailing" constant="16" id="RP4-xb-55L"/>
+                <constraint firstItem="H2y-9w-kLl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uv5-Id-8IP"/>
+                <constraint firstItem="Soz-Cp-oNn" firstAttribute="top" secondItem="On2-YN-VpO" secondAttribute="bottom" id="Ytl-5R-fNc"/>
                 <constraint firstItem="7We-dk-c4w" firstAttribute="leading" secondItem="Soz-Cp-oNn" secondAttribute="leading" constant="12" id="bfR-Ek-3bB"/>
+                <constraint firstItem="On2-YN-VpO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c9T-w2-iS3"/>
                 <constraint firstItem="dfC-jk-Z4K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="dKe-Ed-afs"/>
+                <constraint firstItem="brF-2W-f4F" firstAttribute="top" secondItem="dfC-jk-Z4K" secondAttribute="bottom" id="e3X-iF-fcM"/>
                 <constraint firstItem="FaN-t9-HdM" firstAttribute="centerY" secondItem="h1H-sU-Vcf" secondAttribute="centerY" id="eUE-t9-uOc"/>
+                <constraint firstItem="H2y-9w-kLl" firstAttribute="top" secondItem="7We-dk-c4w" secondAttribute="bottom" id="i7v-9a-TYE"/>
                 <constraint firstItem="Soz-Cp-oNn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="nKc-Uq-cPQ"/>
-                <constraint firstItem="Soz-Cp-oNn" firstAttribute="top" secondItem="Vw2-AB-4Vj" secondAttribute="bottom" constant="16" id="omq-tu-EEg"/>
                 <constraint firstAttribute="trailing" secondItem="1gJ-UO-XCZ" secondAttribute="trailing" constant="16" id="sxE-CX-gTJ"/>
+                <constraint firstItem="On2-YN-VpO" firstAttribute="height" secondItem="brF-2W-f4F" secondAttribute="height" id="x0Y-WB-qPl"/>
+                <constraint firstItem="FaN-t9-HdM" firstAttribute="top" secondItem="H2y-9w-kLl" secondAttribute="bottom" id="yo9-U0-DJJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+            <point key="canvasLocation" x="107" y="108"/>
         </view>
     </objects>
     <designables>
@@ -204,16 +234,16 @@
             <color red="0.62000000476837158" green="0.62000000476837158" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonBackground">
-            <color red="0.1220000014" green="0.52200001480000002" blue="0.3840000033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonBackgroundDisabled">
-            <color red="0.92199999089999995" green="0.92199999089999995" blue="0.92199999089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92199999094009399" green="0.92199999094009399" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonForeground">
-            <color red="0.98000001910000001" green="0.98000001910000001" blue="0.98000001910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonForegroundDisabled">
-            <color red="0.72200000289999999" green="0.72200000289999999" blue="0.72200000289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.72200000286102295" green="0.72200000286102295" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

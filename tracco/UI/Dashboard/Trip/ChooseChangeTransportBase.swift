@@ -63,7 +63,7 @@ class ChooseChangeTransportBase<T>: UIViewController
             NSLayoutConstraint.activate([
                 button.topAnchor.constraint(equalTo: scrollView.topAnchor),
                 button.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-                button.heightAnchor.constraint(equalToConstant: 135.0),
+                button.heightAnchor.constraint(equalToConstant: 115.0),
                 button.widthAnchor.constraint(equalToConstant: 120.0)
             ])
             prev = button

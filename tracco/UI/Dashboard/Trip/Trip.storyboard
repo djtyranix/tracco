@@ -316,7 +316,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4j-T0-a63">
-                                <rect key="frame" x="334" y="428" width="40" height="40"/>
+                                <rect key="frame" x="334" y="854" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IVs-Ql-z8Q"/>
                                     <constraint firstAttribute="width" constant="40" id="Nac-WE-Gdr"/>
@@ -372,11 +372,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="okw-Fd-RZN" firstAttribute="top" secondItem="lSz-xa-kZ7" secondAttribute="top" constant="2" id="1qn-Wy-Dcq"/>
-                            <constraint firstItem="p4j-T0-a63" firstAttribute="bottom" secondItem="7zI-ux-lZ8" secondAttribute="bottom" constant="-376" id="33o-m3-uqc"/>
                             <constraint firstItem="p4j-T0-a63" firstAttribute="trailing" secondItem="K5u-3X-xEr" secondAttribute="trailing" constant="-16" id="K5t-rW-y5e"/>
                             <constraint firstItem="a3m-8X-fxW" firstAttribute="leading" secondItem="K5u-3X-xEr" secondAttribute="leading" constant="16" id="TPO-IR-FWZ"/>
                             <constraint firstItem="a3m-8X-fxW" firstAttribute="centerY" secondItem="okw-Fd-RZN" secondAttribute="centerY" id="YSd-Y3-z8e"/>
                             <constraint firstAttribute="bottom" secondItem="K5u-3X-xEr" secondAttribute="bottom" id="p7D-4i-D2t"/>
+                            <constraint firstAttribute="bottom" secondItem="p4j-T0-a63" secondAttribute="bottom" constant="-50" id="rOA-zT-yQO"/>
                             <constraint firstItem="okw-Fd-RZN" firstAttribute="centerX" secondItem="7zI-ux-lZ8" secondAttribute="centerX" id="rPi-gj-bum"/>
                             <constraint firstItem="K5u-3X-xEr" firstAttribute="top" secondItem="7zI-ux-lZ8" secondAttribute="top" id="sNo-Jx-Sh2"/>
                             <constraint firstAttribute="trailing" secondItem="K5u-3X-xEr" secondAttribute="trailing" id="xXe-e7-csx"/>
@@ -385,6 +385,7 @@
                     </view>
                     <connections>
                         <outlet property="locationButton" destination="p4j-T0-a63" id="Nq8-Xv-miU"/>
+                        <outlet property="locationButtonYConstraint" destination="rOA-zT-yQO" id="Bso-Gb-oMG"/>
                         <outlet property="mapView" destination="K5u-3X-xEr" id="4Ma-YR-Rm7"/>
                         <outlet property="mapViewBottomConstraint" destination="p7D-4i-D2t" id="wIW-8x-pV4"/>
                         <segue destination="43E-yD-ejZ" kind="presentation" identifier="summarySegue" modalPresentationStyle="fullScreen" id="vmh-1p-Dy4"/>

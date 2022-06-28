@@ -101,6 +101,7 @@ class OnTripViewController: UIViewController
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var locationButtonYConstraint: NSLayoutConstraint!
     
     override func viewDidLoad()
     {
@@ -165,6 +166,9 @@ class OnTripViewController: UIViewController
                 elevated: true
             )
             self.view.addSubview(currentTransportationVC.view)
+            // follow user location button must be on top of currentTransportationVC
+            let yFromBottom = currentTransportationVC.view.frame.height + 16
+            locationButtonYConstraint.constant = yFromBottom
         }
     }
     
