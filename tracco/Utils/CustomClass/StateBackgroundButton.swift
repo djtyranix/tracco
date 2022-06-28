@@ -6,7 +6,15 @@
 //
 
 import UIKit
- 
+
+// MARK: BUG
+// foreground (title color) for state .disabled cannot be changed
+// this will only happen if "style: plain" was set in the interface builder
+//
+// foreground (title color) for all kind of state works fine if
+// in interface builder, button "style: default"
+// but with button style default, we cannot configure image alignment and point size
+
 @IBDesignable
 class StateBackgroundButton: UIButton
 {

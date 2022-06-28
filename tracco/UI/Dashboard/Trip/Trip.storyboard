@@ -56,7 +56,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAX-CW-Vw5" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAX-CW-Vw5" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="506.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="jaO-Vy-bGw"/>
@@ -64,7 +64,7 @@
                                         <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                         <state key="normal" title="Start Tracking" image="Tracking Logo">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="14" scale="default"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <buttonConfiguration key="configuration" style="plain" image="Tracking Logo" imagePlacement="trailing" title="Start Tracking" imagePadding="8">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
@@ -607,9 +607,6 @@
     <designables>
         <designable name="HAX-CW-Vw5">
             <size key="intrinsicContentSize" width="150.33333333333334" height="36"/>
-        </designable>
-        <designable name="Ww2-cR-Xmt">
-            <size key="intrinsicContentSize" width="210.66666666666666" height="38"/>
         </designable>
         <designable name="yJk-pJ-NQf">
             <size key="intrinsicContentSize" width="28" height="31"/>
