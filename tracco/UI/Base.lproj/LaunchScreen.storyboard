@@ -2,17 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Nunito-VariableFont_wght.ttf">
-            <string>Nunito-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,30 +15,12 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="NjT-FA-471">
-                                <rect key="frame" x="143" y="373" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="76Y-uH-kLN"/>
-                                    <constraint firstAttribute="height" constant="128" id="H7F-I1-y26"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pw-ca-ixL">
-                                <rect key="frame" x="154" y="473" width="106" height="50"/>
-                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="36"/>
-                                <color key="textColor" name="MainGreen10"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="MainGreen80"/>
-                        <constraints>
-                            <constraint firstItem="0pw-ca-ixL" firstAttribute="centerX" secondItem="NjT-FA-471" secondAttribute="centerX" id="GgQ-PJ-NbL"/>
-                            <constraint firstItem="NjT-FA-471" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SPx-KW-f09"/>
-                            <constraint firstItem="0pw-ca-ixL" firstAttribute="top" secondItem="NjT-FA-471" secondAttribute="bottom" constant="-28" id="dmI-Bh-YRT"/>
-                            <constraint firstItem="NjT-FA-471" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-11" id="eev-FP-gnD"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="Ze5-6b-2t3" id="kXA-P7-OvA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,10 +28,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppLogo" width="1024" height="1024"/>
-        <namedColor name="MainGreen10">
-            <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="MainGreen80">
             <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

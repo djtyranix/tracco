@@ -48,6 +48,12 @@
 		3F9FE8942869D7C600784B2D /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE8932869D7C600784B2D /* TripTableViewController.swift */; };
 		3F9FE8962869FEB500784B2D /* OnGoingTripSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */; };
 		3F9FE898286A15BA00784B2D /* OnGoingTripSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */; };
+		3FA0FE79286B04D60002D514 /* SummarizingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE78286B04D60002D514 /* SummarizingViewController.swift */; };
+		3FA0FE7C286B07570002D514 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3FA0FE7B286B07570002D514 /* Lottie */; };
+		3FA0FE7E286B10900002D514 /* LottieFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE7D286B10900002D514 /* LottieFactory.swift */; };
+		3FA0FE85286B23FC0002D514 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE83286B23FC0002D514 /* SplashViewController.swift */; };
+		3FA0FE86286B23FC0002D514 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA0FE84286B23FC0002D514 /* SplashViewController.xib */; };
+		3FA0FE88286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE87286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift */; };
 		3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */; };
 		3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */; };
 		3FA4A8532868AF7B0094D8CD /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */; };
@@ -158,6 +164,11 @@
 		3F9FE8932869D7C600784B2D /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnGoingTripSheet.xib; sourceTree = "<group>"; };
 		3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingTripSheet.swift; sourceTree = "<group>"; };
+		3FA0FE78286B04D60002D514 /* SummarizingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizingViewController.swift; sourceTree = "<group>"; };
+		3FA0FE7D286B10900002D514 /* LottieFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFactory.swift; sourceTree = "<group>"; };
+		3FA0FE83286B23FC0002D514 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3FA0FE84286B23FC0002D514 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		3FA0FE87286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AnimationCompletionBlock.swift"; sourceTree = "<group>"; };
 		3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationSecondaryPlanController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationSecondaryPlanController.xib; sourceTree = "<group>"; };
 		3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8FB37CA2856FEAF0057F6A3 /* CloudKit.framework in Frameworks */,
+				3FA0FE7C286B07570002D514 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +379,8 @@
 				A87463EB28546CD8009AB0DC /* History */,
 				A87463D928545970009AB0DC /* LaunchScreen.storyboard */,
 				A87463D12854596D009AB0DC /* Main.storyboard */,
+				3FA0FE84286B23FC0002D514 /* SplashViewController.xib */,
+				3FA0FE83286B23FC0002D514 /* SplashViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -463,6 +477,7 @@
 				3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */,
 				3FF101272854913A0048013A /* DestinationPlanViewController.swift */,
 				3FF1012D2854B5680048013A /* OnTripViewController.swift */,
+				3FA0FE78286B04D60002D514 /* SummarizingViewController.swift */,
 				3FF101312854BA190048013A /* TransportRadioButton.swift */,
 				3FF1012F2854B9F90048013A /* TransportRadioButton.xib */,
 				3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */,
@@ -497,6 +512,8 @@
 			children = (
 				3F94CCDF2858599B00BD5176 /* RadioButtonManager.swift */,
 				A8CC9D81285A307D00F30DBE /* Extensions.swift */,
+				3FA0FE7D286B10900002D514 /* LottieFactory.swift */,
+				3FA0FE87286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -543,6 +560,9 @@
 			dependencies = (
 			);
 			name = tracco;
+			packageProductDependencies = (
+				3FA0FE7B286B07570002D514 /* Lottie */,
+			);
 			productName = carbonless;
 			productReference = A87463C82854596D009AB0DC /* tracco.app */;
 			productType = "com.apple.product-type.application";
@@ -571,6 +591,9 @@
 				Base,
 			);
 			mainGroup = A87463BF2854596D009AB0DC;
+			packageReferences = (
+				3FA0FE7A286B07570002D514 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = A87463C92854596D009AB0DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -588,6 +611,7 @@
 				3F9E56C62868A2C600A566C6 /* SearchSpeechButton.xib in Resources */,
 				A8AD59BF28602DAA00104B58 /* TripDetailContentView.xib in Resources */,
 				3FF1012428548E470048013A /* Nunito-VariableFont_wght.ttf in Resources */,
+				3FA0FE86286B23FC0002D514 /* SplashViewController.xib in Resources */,
 				3F0BD0C3286568770049925B /* ShareViewController.xib in Resources */,
 				A87463DB28545970009AB0DC /* LaunchScreen.storyboard in Resources */,
 				3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */,
@@ -669,6 +693,7 @@
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
 				3FA4A85D28699FA70094D8CD /* TransitPath.swift in Sources */,
 				D9DF37802860329400CA9F9C /* HistoryTripViewController.swift in Sources */,
+				3FA0FE79286B04D60002D514 /* SummarizingViewController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
 				A8D70B0228695DE1006AB7E1 /* LatestTripVM.swift in Sources */,
 				A8AD59BD28602DAA00104B58 /* TripDetailContentView.swift in Sources */,
@@ -681,6 +706,7 @@
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
 				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
+				3FA0FE88286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift in Sources */,
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
 				3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */,
 				3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */,
@@ -690,6 +716,7 @@
 				A8CC9D7A2859899500F30DBE /* HomeTripViewController.swift in Sources */,
 				A87463D62854596D009AB0DC /* tracco.xcdatamodeld in Sources */,
 				A8D70B0428696BC3006AB7E1 /* AnimTabBarController.swift in Sources */,
+				3FA0FE85286B23FC0002D514 /* SplashViewController.swift in Sources */,
 				3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
@@ -701,6 +728,7 @@
 				A8FB37C42856E7240057F6A3 /* UserKeyStore.swift in Sources */,
 				A8FB37C22856E0840057F6A3 /* SlidingOnboardingViewController.swift in Sources */,
 				A8FB37C62856FA430057F6A3 /* AllowNotificationViewController.swift in Sources */,
+				3FA0FE7E286B10900002D514 /* LottieFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,6 +962,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3FA0FE7A286B07570002D514 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3FA0FE7B286B07570002D514 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FA0FE7A286B07570002D514 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A87463D42854596D009AB0DC /* tracco.xcdatamodeld */ = {

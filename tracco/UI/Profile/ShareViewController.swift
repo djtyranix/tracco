@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import Lottie
 
 class ShareViewController: UIViewController
 {
+    @IBOutlet weak var animationContentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topConstraintView: UILabel!
     @IBOutlet weak var bottomConstraintView: UILabel!
     
     public var imageContent: UIImage?
     public var imageContentSize: CGSize?
-    public var onViewDidAppear: (() -> Void)?
     
     override func viewDidLoad()
     {
@@ -40,16 +41,15 @@ class ShareViewController: UIViewController
                 imageView.heightAnchor.constraint(equalToConstant: imageContentSize.height)
             ])
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        onViewDidAppear?()
+        
+        LottieFactory.makeIndefiniteLoadingView(on: animationContentView).play()
     }
     
     func snapshot() -> UIImage?
     {
+        // scroll view needs to be removed to be able to capture offscreen
+        scrollView.removeFromSuperview()
+        
         UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, false, 0.0)
 
         let savedContentOffset = scrollView.contentOffset

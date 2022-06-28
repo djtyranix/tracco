@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController" customModule="tracco" customModuleProvider="target">
             <connections>
+                <outlet property="animationContentView" destination="9jy-TV-pW3" id="ae8-8P-gIg"/>
                 <outlet property="bottomConstraintView" destination="Lem-Ur-SEq" id="cn4-on-Bc2"/>
                 <outlet property="scrollView" destination="CGA-m8-tlV" id="wkQ-hR-Qvd"/>
                 <outlet property="topConstraintView" destination="rbn-9t-G6Y" id="sW8-ti-7JV"/>
@@ -161,17 +162,47 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-Da-D1E">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="693"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFf-mI-CQ2">
-                            <rect key="frame" x="150.5" y="336" width="89" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rendering your image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwz-Qi-hmu">
+                            <rect key="frame" x="108" y="379.5" width="174" height="24"/>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jy-TV-pW3">
+                            <rect key="frame" x="85" y="289.5" width="220" height="90"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="220" id="85J-4O-sT9"/>
+                                <constraint firstAttribute="height" constant="90" id="RJb-4a-vzU"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFw-sO-GjS">
+                            <rect key="frame" x="145" y="0.0" width="100" height="289.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="yYs-ls-skO"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTb-y1-rOd">
+                            <rect key="frame" x="145" y="403.5" width="100" height="289.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="M9f-f5-2pg"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="lFf-mI-CQ2" firstAttribute="centerY" secondItem="EQ7-Da-D1E" secondAttribute="centerY" id="oRR-pw-E8c"/>
-                        <constraint firstItem="lFf-mI-CQ2" firstAttribute="centerX" secondItem="EQ7-Da-D1E" secondAttribute="centerX" id="tWj-2H-GpW"/>
+                        <constraint firstItem="Gwz-Qi-hmu" firstAttribute="centerX" secondItem="EQ7-Da-D1E" secondAttribute="centerX" id="3fy-Ht-7WU"/>
+                        <constraint firstItem="9jy-TV-pW3" firstAttribute="top" secondItem="HFw-sO-GjS" secondAttribute="bottom" id="Tlj-of-mrP"/>
+                        <constraint firstItem="MTb-y1-rOd" firstAttribute="top" secondItem="Gwz-Qi-hmu" secondAttribute="bottom" id="TpC-Kp-j8x"/>
+                        <constraint firstAttribute="bottom" secondItem="MTb-y1-rOd" secondAttribute="bottom" id="Wse-BU-Zwg"/>
+                        <constraint firstItem="9jy-TV-pW3" firstAttribute="centerX" secondItem="EQ7-Da-D1E" secondAttribute="centerX" id="Zin-ER-Wot"/>
+                        <constraint firstItem="Gwz-Qi-hmu" firstAttribute="top" secondItem="9jy-TV-pW3" secondAttribute="bottom" id="b4j-FN-Smm"/>
+                        <constraint firstItem="HFw-sO-GjS" firstAttribute="centerX" secondItem="EQ7-Da-D1E" secondAttribute="centerX" id="bSO-4u-Lcu"/>
+                        <constraint firstItem="MTb-y1-rOd" firstAttribute="centerX" secondItem="EQ7-Da-D1E" secondAttribute="centerX" id="jy1-AS-o3c"/>
+                        <constraint firstItem="HFw-sO-GjS" firstAttribute="height" secondItem="MTb-y1-rOd" secondAttribute="height" id="mW3-ZH-045"/>
+                        <constraint firstItem="HFw-sO-GjS" firstAttribute="top" secondItem="EQ7-Da-D1E" secondAttribute="top" id="nji-gG-i6f"/>
                     </constraints>
                 </view>
             </subviews>
