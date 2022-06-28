@@ -12,6 +12,7 @@
         <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Bold</string>
             <string>Nunito-Regular</string>
+            <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -241,31 +242,42 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="You can improve it to make it better ☺️ Try to use public transportation to balance your carbon emission 👍" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POF-l1-DH3">
-                                        <rect key="frame" x="16" y="558" width="358" height="59.666666666666629"/>
+                                        <rect key="frame" x="16" y="558" width="358" height="69.666666666666629"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z9-2C-8TS" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="633.66666666666663" width="358" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z9-2C-8TS" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="643.66666666666663" width="358" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="UPX-YF-Nny"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system" imagePlacement="trailing" imagePadding="8">
-                                            <backgroundConfiguration key="background" cornerRadius="8">
-                                                <color key="backgroundColor" name="MainButtonBackground"/>
-                                            </backgroundConfiguration>
+                                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <state key="normal" title="Share" image="paperplane" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="12" weight="bold"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system" title="Share" imagePadding="8">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12" weight="bold"/>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Share">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name="Nunito-SemiBold"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseForegroundColor" name="MainButtonForeground"/>
+                                            <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                                <color key="value" name="MainButtonBackground"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundDisabledColor">
+                                                <color key="value" name="MainButtonBackgroundDisabled"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundNormalColor">
+                                                <color key="value" name="MainButtonForeground"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
+                                                <color key="value" name="MainButtonForegroundDisabled"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onShareButton:" destination="V7q-DC-GuP" eventType="touchUpInside" id="wzK-Kp-s1O"/>
                                         </connections>
@@ -323,6 +335,7 @@
                         <outlet property="encouragementLabel" destination="POF-l1-DH3" id="aju-JM-vxm"/>
                         <outlet property="headerView" destination="kLs-cs-78y" id="ipb-Z5-Ncm"/>
                         <outlet property="mostUsedTransportCard" destination="U3x-fB-1Cb" id="bPP-QO-5V1"/>
+                        <outlet property="scrollView" destination="Suh-5M-Owa" id="nud-qe-MQr"/>
                         <outlet property="spendCostCard" destination="vJ9-Xc-YX1" id="L0q-6L-vd2"/>
                         <outlet property="trackCountCard" destination="UX5-cH-cGa" id="0zZ-Ur-IN9"/>
                         <segue destination="qP9-Ds-WxQ" kind="show" identifier="shareOptionSegue" id="bLW-gy-Agp"/>
@@ -373,27 +386,37 @@
                                     <action selector="onShareButton:" destination="qP9-Ds-WxQ" eventType="touchUpInside" id="cbr-iq-yz9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkd-oW-VnN" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkd-oW-VnN" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                                 <rect key="frame" x="203" y="539" width="171" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="eA5-7X-ew3"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down" catalog="system" imagePlacement="trailing" imagePadding="8">
-                                    <backgroundConfiguration key="background" cornerRadius="8">
-                                        <color key="backgroundColor" name="MainButtonBackground"/>
-                                    </backgroundConfiguration>
+                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="Save as Image" image="square.and.arrow.down" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="12" weight="bold"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down" catalog="system" title="Save as Image" imagePadding="8">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12" weight="bold"/>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Save as Image">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Nunito-SemiBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" name="MainButtonForeground"/>
+                                    <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                        <color key="value" name="MainButtonBackground"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundDisabledColor">
+                                        <color key="value" name="MainButtonBackgroundDisabled"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="foregroundNormalColor">
+                                        <color key="value" name="MainButtonForeground"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
+                                        <color key="value" name="MainButtonForegroundDisabled"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onSaveAsImageButton:" destination="qP9-Ds-WxQ" eventType="touchUpInside" id="LA8-Ki-H2S"/>
                                     <action selector="onShareButton:" destination="V7q-DC-GuP" eventType="touchUpInside" id="22f-kh-jJD"/>
@@ -508,10 +531,10 @@
     </scenes>
     <designables>
         <designable name="5Z9-2C-8TS">
-            <size key="intrinsicContentSize" width="93" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="93.666666666666671" height="36"/>
         </designable>
         <designable name="mkd-oW-VnN">
-            <size key="intrinsicContentSize" width="155.33333333333334" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="155" height="36"/>
         </designable>
     </designables>
     <resources>
@@ -538,8 +561,14 @@
         <namedColor name="MainButtonBackground">
             <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="MainButtonBackgroundDisabled">
+            <color red="0.92199999089999995" green="0.92199999089999995" blue="0.92199999089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainButtonForeground">
-            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98000001910000001" green="0.98000001910000001" blue="0.98000001910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonForegroundDisabled">
+            <color red="0.72200000289999999" green="0.72200000289999999" blue="0.72200000289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

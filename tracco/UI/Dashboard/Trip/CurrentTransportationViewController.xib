@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -77,7 +76,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxS-jb-7M8">
-                            <rect key="frame" x="120" y="98.5" width="92" height="18"/>
+                            <rect key="frame" x="120" y="98.5" width="91.5" height="18"/>
                             <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -95,7 +94,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="IDR 3,000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydo-ef-R7Y">
-                            <rect key="frame" x="228" y="98.5" width="118" height="18"/>
+                            <rect key="frame" x="227.5" y="98.5" width="118.5" height="18"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -151,41 +150,53 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzj-fC-U2H">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzj-fC-U2H" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                     <rect key="frame" x="16" y="259" width="222" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="HBs-ro-TrR"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <backgroundConfiguration key="background" cornerRadius="8">
-                            <color key="backgroundColor" name="MainButtonBackground"/>
-                        </backgroundConfiguration>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
                         <attributedString key="attributedTitle">
                             <fragment content="Switch Transportation">
                                 <attributes>
                                     <font key="NSFont" size="16" name="Nunito-SemiBold"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <color key="baseForegroundColor" name="MainButtonForeground"/>
+                    </state>
+                    <buttonConfiguration key="configuration" style="plain" title="Switch Transportation">
+                        <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                     </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                            <color key="value" name="MainButtonBackground"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundDisabledColor">
+                            <color key="value" name="MainButtonBackgroundDisabled"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="foregroundNormalColor">
+                            <color key="value" name="MainButtonForeground"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
+                            <color key="value" name="MainButtonForegroundDisabled"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onChangeTransportationButton:" destination="-1" eventType="touchUpInside" id="6ZA-jR-MeH"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="destructive" translatesAutoresizingMaskIntoConstraints="NO" id="Udt-oA-izT">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="destructive" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Udt-oA-izT" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                     <rect key="frame" x="254" y="259" width="120" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="LzH-En-WIr"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="mtA-AM-r0f"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <backgroundConfiguration key="background" cornerRadius="8">
-                            <color key="backgroundColor" name="MainRed50"/>
-                        </backgroundConfiguration>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button">
                         <attributedString key="attributedTitle">
                             <fragment content="End Trip">
                                 <attributes>
@@ -193,8 +204,27 @@
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <buttonConfiguration key="configuration" style="plain" title="End Trip">
+                        <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                     </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                            <color key="value" name="MainRed50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundDisabledColor">
+                            <color key="value" name="MainRed50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="foregroundNormalColor">
+                            <color key="value" name="MainButtonForeground"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
+                            <color key="value" name="MainButtonForegroundDisabled"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onEndTripButton:" destination="-1" eventType="touchUpInside" id="jpf-KU-61p"/>
                     </connections>
@@ -221,16 +251,30 @@
             <point key="canvasLocation" x="-1.4492753623188408" y="130.24553571428572"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Udt-oA-izT">
+            <size key="intrinsicContentSize" width="84.5" height="36"/>
+        </designable>
+        <designable name="wzj-fC-U2H">
+            <size key="intrinsicContentSize" width="185.5" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Car" width="1024" height="1024"/>
         <image name="MapPin" width="16" height="17"/>
         <image name="Money" width="16" height="17"/>
         <image name="Tree" width="16" height="17"/>
         <namedColor name="MainButtonBackground">
-            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1220000014" green="0.52200001480000002" blue="0.3840000033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonBackgroundDisabled">
+            <color red="0.92199999089999995" green="0.92199999089999995" blue="0.92199999089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonForeground">
-            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98000001910000001" green="0.98000001910000001" blue="0.98000001910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonForegroundDisabled">
+            <color red="0.72200000289999999" green="0.72200000289999999" blue="0.72200000289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainRed50">
             <color red="0.79600000381469727" green="0.36100000143051147" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

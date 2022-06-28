@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transportation Cost (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfC-jk-Z4K">
-                    <rect key="frame" x="16" y="40.5" width="358" height="24"/>
+                    <rect key="frame" x="16" y="41" width="358" height="23.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -107,16 +106,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-t9-HdM">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-t9-HdM" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
                     <rect key="frame" x="203" y="259" width="171" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="lR8-Ll-5iQ"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <backgroundConfiguration key="background" cornerRadius="8">
-                            <color key="backgroundColor" name="MainButtonBackground"/>
-                        </backgroundConfiguration>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
                         <attributedString key="attributedTitle">
                             <fragment content="Confirm">
                                 <attributes>
@@ -124,31 +120,44 @@
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <color key="baseForegroundColor" name="MainButtonForeground"/>
+                    </state>
+                    <buttonConfiguration key="configuration" style="plain" title="Confirm">
+                        <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                     </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                            <color key="value" name="MainButtonBackground"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundDisabledColor">
+                            <color key="value" name="MainButtonBackgroundDisabled"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="foregroundNormalColor">
+                            <color key="value" name="MainButtonForeground"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
+                            <color key="value" name="MainButtonForegroundDisabled"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onConfirmButton:" destination="-1" eventType="touchUpInside" id="rKB-r1-azU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-sU-Vcf">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-sU-Vcf">
                     <rect key="frame" x="16" y="259" width="171" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Phf-61-Qiq"/>
                         <constraint firstAttribute="height" constant="46" id="qRK-vJ-ceb"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel">
                         <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <color key="strokeColor" name="CancelButton"/>
                         </backgroundConfiguration>
-                        <attributedString key="attributedTitle">
-                            <fragment content="Cancel">
-                                <attributes>
-                                    <font key="NSFont" size="16" name="Nunito-SemiBold"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
+                        <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                         <color key="baseForegroundColor" name="CancelButton"/>
                     </buttonConfiguration>
                     <connections>
@@ -185,15 +194,26 @@
             <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
         </view>
     </objects>
+    <designables>
+        <designable name="FaN-t9-HdM">
+            <size key="intrinsicContentSize" width="82" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="CancelButton">
             <color red="0.62000000476837158" green="0.62000000476837158" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonBackground">
-            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1220000014" green="0.52200001480000002" blue="0.3840000033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonBackgroundDisabled">
+            <color red="0.92199999089999995" green="0.92199999089999995" blue="0.92199999089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonForeground">
-            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98000001910000001" green="0.98000001910000001" blue="0.98000001910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainButtonForegroundDisabled">
+            <color red="0.72200000289999999" green="0.72200000289999999" blue="0.72200000289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

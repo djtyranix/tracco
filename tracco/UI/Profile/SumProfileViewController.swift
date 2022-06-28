@@ -11,6 +11,7 @@ class SumProfileViewController: UIViewController
 {
     enum Segue: String { case share = "shareOptionSegue" }
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var distanceCard: CardInfoView!
     @IBOutlet weak var mostUsedTransportCard: CardInfoView!
@@ -30,6 +31,10 @@ class SumProfileViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        // button on a scroll view will delay touches
+        // cons: scrolling when touches initiated from the button are unavaialble
+        // pros: responsive button no delay animation
+        scrollView.delaysContentTouches = false
         GlobalPublisher.addObserver(self)
         reduceCarbonCard        = ReduceCarbonConciseCardView()
         reduceCarbonFullCard    = ReduceCarbonCardView()
