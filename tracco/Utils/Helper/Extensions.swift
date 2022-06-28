@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import MapKit
 
 extension UIColor {
     public convenience init?(hex: String) {
@@ -47,4 +48,29 @@ extension UIView
         UIGraphicsEndImageContext()
         return image
     }
+}
+
+extension CLPlacemark
+{
+    public var regionText: String { get {
+        
+        let details: [String?] = [
+            self.thoroughfare,
+            self.subLocality,
+            self.locality,
+            self.administrativeArea
+        ]
+        
+        var buffer = ""
+        
+        for (i, detail) in details.enumerated()
+        {
+            if let string = detail
+                { buffer += string }
+            if buffer.isEmpty == false && i != details.count - 1 && details[i + 1] != nil
+                { buffer += ", " }
+        }
+        
+        return buffer.isEmpty ? "Unknown Administrative Region" : buffer
+    }}
 }

@@ -137,7 +137,7 @@ extension SearchLocationViewController: UITableViewDataSource
         }
         
         cell.titleLabel.text = data.placemark.name
-        cell.descriptionLabel.text = data.placemark.thoroughfare
+        cell.descriptionLabel.text = data.placemark.regionText
         
         return cell
     }

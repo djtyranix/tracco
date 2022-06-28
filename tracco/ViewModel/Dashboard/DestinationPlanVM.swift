@@ -26,7 +26,7 @@ class DestinationPlanVM
             {
                 let mainPlacemark   = placemarks[0]
                 titleText           = mainPlacemark.name
-                regionText          = getRegionName(mainPlacemark)
+                regionText          = mainPlacemark.regionText
             }
         }
     }}
@@ -48,26 +48,5 @@ class DestinationPlanVM
         // setter via closure to invoke didSet
         self.targetLocation = targetLocation
         ({ self.targetLocation = self.targetLocation })()
-    }
-    
-    func getRegionName(_ placemark: CLPlacemark) -> String
-    {
-        let details: [String?] = [
-            placemark.administrativeArea,
-            placemark.locality,
-            placemark.subLocality
-        ]
-        
-        var buffer = ""
-        
-        for (i, detail) in details.enumerated()
-        {
-            if let string = detail
-                { buffer += string }
-            if buffer.isEmpty == false && i != details.count - 1 && details[i + 1] != nil
-                { buffer += ", " }
-        }
-        
-        return buffer.isEmpty ? "[Undefined Administrative Region]" : buffer
     }
 }
