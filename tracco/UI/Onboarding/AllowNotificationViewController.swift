@@ -46,8 +46,9 @@ class AllowNotificationViewController: UIViewController {
         
         UserDefaults.standard.set(true, forKey: "isOnboardingFinished")
         
-        let mainMenu = self.storyboard?.instantiateViewController(withIdentifier: "mainmenu")
-        self.view.window?.rootViewController = mainMenu
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryBoard.instantiateInitialViewController()
+        self.view.window?.rootViewController = vc
         
         // A mask of options indicating how you want to perform the animations.
         let options: UIView.AnimationOptions = .transitionCrossDissolve

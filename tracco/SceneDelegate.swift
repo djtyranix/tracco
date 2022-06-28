@@ -19,16 +19,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
 
         let isOnboardingFinished = UserDefaults.standard.bool(forKey: "isOnboardingFinished")
+        let initialStoryboard = isOnboardingFinished ? "Main" : "Onboarding"
         
-        if isOnboardingFinished {
-            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier: "mainmenu") as! UITabBarController
-            self.window?.rootViewController = homePage
-        } else {
-            let onboardingStoryBoard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let onboarding = onboardingStoryBoard.instantiateViewController(withIdentifier: "onboarding")
-            self.window?.rootViewController = onboarding
+        let launchAnimation = SplashViewController(
+            nibName: "SplashViewController",
+            bundle: nil
+        )
+        
+        launchAnimation.completion = { [unowned self] in
+            let mainStoryBoard = UIStoryboard(name: initialStoryboard, bundle: nil)
+            let vc = mainStoryBoard.instantiateInitialViewController()
+            self.window?.rootViewController = vc
+            
+            guard let window = window
+            else { return }
+
+            UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve) {}
         }
+        
+        self.window?.rootViewController = launchAnimation
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

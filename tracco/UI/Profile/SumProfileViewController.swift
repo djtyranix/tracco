@@ -70,15 +70,12 @@ class SumProfileViewController: UIViewController
         // revert back to original
         contentCardTrailingConstraint.constant -= adjustmentWidth
         self.overrideUserInterfaceStyle = .unspecified
-        // start capturing the screen after view did appear to wait for scroll view
-        vc.onViewDidAppear = { [unowned self] in
-            // scroll view needs to be removed to be able to capture offscreen
-            vc.scrollView.removeFromSuperview()
+        present(vc, animated: true)
+        {
             self.snapshot = vc.snapshot()
             self.performSegue(withIdentifier: Segue.share.rawValue, sender: self)
             vc.dismiss(animated: true)
         }
-        present(vc, animated: true)
     }
     
     private func updateViewWithModel()

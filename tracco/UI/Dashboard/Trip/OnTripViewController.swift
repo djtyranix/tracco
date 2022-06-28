@@ -19,7 +19,7 @@ func layoutBottomSheet(_ view: UIView)
 
 class OnTripViewController: UIViewController
 {
-    enum Segue: String { case summary = "summarySegue" }
+    enum Segue: String { case summarizing = "summarizingSegue" }
     
     public static var instanceOnPause: OnTripViewController?
     
@@ -91,7 +91,7 @@ class OnTripViewController: UIViewController
     
     private var pendingLocations: [CLLocationCoordinate2D] = []
     
-    private var model = TripModel(id: 0, transits: [])
+    private var model: TripModel?
     private var keyboardHeight: CGFloat = 210
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
@@ -174,7 +174,7 @@ class OnTripViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let vc = segue.destination as? SummaryViewController
+        if let vc = segue.destination as? SummarizingViewController
         {
             // stop updating location
             locationManager.stopUpdatingLocation()
@@ -182,28 +182,12 @@ class OnTripViewController: UIViewController
             
             GlobalPublisher.shared.onTripEnded()
             
+            vc.modelToSummarize = self.model
+            self.model = nil
+            
             // TODO: wait for all pendingLocations to be processed
             // right now we force update by timerUpdate.invalidate()
             // maybe we could wait using summarizing trip view
-            
-            let isNoTrip = StoredModel.profile == nil || StoredModel.history == nil
-
-            var profileModel: ProfileModel = isNoTrip ? ProfileModel() : StoredModel.profile!
-            var historyModel: [TripModel] = isNoTrip ? [] : StoredModel.history!
-            
-            // set model id equal with index in history model
-            model.id = historyModel.count
-            
-            profileModel.add(model)
-            historyModel.append(model)
-
-            StoredModel.profile = profileModel
-            StoredModel.history = historyModel
-
-            GlobalPublisher.shared.tripModelAdded(model)
-            GlobalPublisher.shared.profileModelUpdated(profileModel)
-            
-            vc.viewModel = SummaryVM(model)
         }
     }
     
@@ -238,19 +222,19 @@ class OnTripViewController: UIViewController
         guard let lastCoord = coords.last
         else { return }
         
-        if model.transits.isEmpty == false
+        if model != nil && model!.transits.isEmpty == false
         {
             // Edit last model
-            let currIndex = model.transits.endIndex - 1
-            model[currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
-            model[currIndex].endDate = Date()
-            model[currIndex].distanceInKm = viewModel.distanceInKm
+            let currIndex = model!.transits.endIndex - 1
+            model![currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
+            model![currIndex].endDate = Date()
+            model![currIndex].distanceInKm = viewModel.distanceInKm
             
             // Adding endpoint
-            model[currIndex].transitPath.endLatitude = lastCoord.latitude
-            model[currIndex].transitPath.endLongitude = lastCoord.longitude
+            model![currIndex].transitPath.endLatitude = lastCoord.latitude
+            model![currIndex].transitPath.endLongitude = lastCoord.longitude
             
-            GlobalPublisher.shared.onTripTransitModelUpdated(model[currIndex])
+            GlobalPublisher.shared.onTripTransitModelUpdated(model![currIndex])
         }
         
         // update cost vc, user location may still move while adding a cost confirmation
@@ -295,8 +279,10 @@ class OnTripViewController: UIViewController
             endDate: Date()
         )
         
+        if model == nil { model = TripModel(id: -1, transits: [transitModel]) }
+        else { model!.transits.append(transitModel) }
+        
         let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
-        model.transits.append(transitModel)
         mapView.addAnnotation(annotation)
         
         let selectedRadioButton = manager.selected
@@ -424,10 +410,10 @@ extension OnTripViewController: TransportationCostViewControllerDelegate
     func onConfirmCost(_ cost: Double)
     {
         // update cost in the model
-        model[model.transits.endIndex - 1].costInIDR = cost
+        model![model!.transits.endIndex - 1].costInIDR = cost
         // perform next view
         isRequestingEndTrip ?
-            performSegue(withIdentifier: Segue.summary.rawValue, sender: self) :
+            performSegue(withIdentifier: Segue.summarizing.rawValue, sender: self) :
             present(changeTransportationVC, animated: true)
     }
     
