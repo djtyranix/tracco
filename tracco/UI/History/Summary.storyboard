@@ -374,13 +374,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwn-tG-Jj0">
-                                <rect key="frame" x="215" y="3.6666666666666661" width="34" height="17"/>
+                                <rect key="frame" x="215" y="3.3333333333333339" width="34" height="16.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZA-V4-Asc">
-                                <rect key="frame" x="253" y="10" width="4" height="4"/>
+                                <rect key="frame" x="253" y="9.6666666666666661" width="4" height="4"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="4" id="KEE-TS-hnC"/>
@@ -393,16 +393,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCd-11-oeo">
-                                <rect key="frame" x="0.0" y="36" width="358" height="89"/>
+                                <rect key="frame" x="0.0" y="35.333333333333336" width="358" height="89.666666666666657"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 hours 1 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-YZ-AUc">
-                                <rect key="frame" x="261" y="3.6666666666666661" width="97" height="17"/>
+                                <rect key="frame" x="261" y="3.3333333333333339" width="97" height="16.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsZ-Fg-Prm">
-                                <rect key="frame" x="0.0" y="0.0" width="83" height="24"/>
+                                <rect key="frame" x="0.0" y="0.0" width="83" height="23.333333333333332"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

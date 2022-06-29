@@ -60,7 +60,7 @@ class ProfileVM
             text = "You are on the right track to help reduce carbon emission ☺️ Please continue using public transportation 👍"
             break
         case .good:
-            text = "Your performance is truly outstanding to help shaping a greener earth ❤️ Please maintain it chief 😆👍"
+            text = "Your performance is truly outstanding to shaping a greener earth ❤️ Please maintain it chief 😆👍"
             break
         }
         
