@@ -98,12 +98,11 @@
                                             <constraint firstAttribute="height" constant="46" id="pSd-8q-KXV"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="MoovitLogoButton" imagePlacement="leading" title="See Routes in Moovit" imagePadding="8">
+                                        <buttonConfiguration key="configuration" style="plain" image="Moovit Logo Button" title="See Routes in Moovit" imagePadding="8">
                                             <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="strokeColor" name="MainGreen80"/>
                                             </backgroundConfiguration>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                             <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                                             <color key="baseForegroundColor" name="MainGreen80"/>
                                         </buttonConfiguration>
@@ -676,7 +675,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="MoovitLogoButton" width="25" height="24"/>
+        <image name="Moovit Logo Button" width="25" height="24"/>
         <image name="Tracking Logo" width="16" height="16"/>
         <image name="arrow.up.backward" catalog="system" width="128" height="112"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
