@@ -151,6 +151,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
                                         <color key="value" name="MainButtonForegroundDisabled"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="impactFeedbackStyle">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onStartTripButton:" destination="PBg-mK-IQk" eventType="touchUpInside" id="led-Gj-Ord"/>
@@ -327,6 +330,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
                                         <color key="value" name="MainButtonForegroundDisabled"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="impactFeedbackStyle">
+                                        <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>

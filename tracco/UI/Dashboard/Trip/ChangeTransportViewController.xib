@@ -61,6 +61,9 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
                             <color key="value" name="MainButtonForegroundDisabled"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="impactFeedbackStyle">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onConfirmButton:" destination="-1" eventType="touchUpInside" id="0GK-Zq-9VH"/>

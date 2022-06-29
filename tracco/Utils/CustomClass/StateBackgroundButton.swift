@@ -18,6 +18,18 @@ import UIKit
 @IBDesignable
 class StateBackgroundButton: UIButton
 {
+    var buttonFeedbackGenerator: UIImpactFeedbackGenerator?
+    
+    @IBInspectable var impactFeedbackStyle: Int = 0 { didSet {
+        var style: UIImpactFeedbackGenerator.FeedbackStyle?
+        if (impactFeedbackStyle <= 0) { style = nil }
+        if (impactFeedbackStyle == 1) { style = .light }
+        if (impactFeedbackStyle == 2) { style = .medium }
+        if (impactFeedbackStyle >= 3) { style = .heavy }
+        if (style == nil) { return }
+        buttonFeedbackGenerator = UIImpactFeedbackGenerator(style: style!)
+    }}
+    
     @IBInspectable var cornerRadius: CGFloat = 8 { didSet {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = cornerRadius > 0
@@ -47,4 +59,15 @@ class StateBackgroundButton: UIButton
     override var isHighlighted: Bool { didSet {
         self.alpha = isHighlighted ? 0.7 : 1.0
     }}
+    
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        self.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func buttonPressed()
+    {
+        buttonFeedbackGenerator?.impactOccurred()
+    }
 }

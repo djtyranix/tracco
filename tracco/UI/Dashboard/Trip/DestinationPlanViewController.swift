@@ -118,9 +118,14 @@ class DestinationPlanViewController: UIViewController
     
     @objc func onCheckboxPressed(_ recognizer: UITapGestureRecognizer)
     {
+        let haptic = UIImpactFeedbackGenerator(style: .medium)
+        haptic.prepare()
+        
         isDontShowRecommendationAgain = !isDontShowRecommendationAgain
         let assetName = isDontShowRecommendationAgain ? "checkmark.square.fill" : "square"
         checkboxImageView.image = UIImage(systemName: assetName)
+        
+        haptic.impactOccurred()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

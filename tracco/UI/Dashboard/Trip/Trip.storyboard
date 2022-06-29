@@ -88,6 +88,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="foregroundDisabledColor">
                                                 <color key="value" name="MainButtonForegroundDisabled"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="impactFeedbackStyle">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onContinueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R9X-2l-dnQ"/>
