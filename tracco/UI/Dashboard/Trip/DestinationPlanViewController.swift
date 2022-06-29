@@ -22,6 +22,7 @@ class DestinationPlanViewController: UIViewController
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var locationRegionLabel: UILabel!
     @IBOutlet weak var checkboxImageView: UIImageView!
+    @IBOutlet weak var dontShowAgainLabel: UILabel!
     
     var activateLocationVC: AuthorizationSecondaryPlanController?
     
@@ -57,9 +58,19 @@ class DestinationPlanViewController: UIViewController
         locationManager.requestWhenInUseAuthorization()
         locationManager.allowsBackgroundLocationUpdates = false
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCheckboxPressed(_:)))
-        checkboxImageView.addGestureRecognizer(tapGesture)
-        checkboxImageView.isUserInteractionEnabled = true
+        // not only the checkbox image, the description label for checkbox
+        // will handle also listen for gesture. this increase accessibility because
+        // checkbox image is so small in the view layout
+        [dontShowAgainLabel, checkboxImageView].forEach {
+            let tapGesture = UITapGestureRecognizer(
+                target: self,
+                action: #selector(onCheckboxPressed(_:))
+            )
+            // each instance of view should have different tap gesture
+            // otherwise tap gesture will surrender to the last view
+            $0?.addGestureRecognizer(tapGesture)
+            $0?.isUserInteractionEnabled = true
+        }
     }
     
     @IBAction func onCancelButton(_ sender: UIButton)
@@ -108,7 +119,7 @@ class DestinationPlanViewController: UIViewController
     @objc func onCheckboxPressed(_ recognizer: UITapGestureRecognizer)
     {
         isDontShowRecommendationAgain = !isDontShowRecommendationAgain
-        let assetName = isDontShowRecommendationAgain ? "checkmark.square" : "square"
+        let assetName = isDontShowRecommendationAgain ? "checkmark.square.fill" : "square"
         checkboxImageView.image = UIImage(systemName: assetName)
     }
     
