@@ -30,16 +30,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transportation Cost (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfC-jk-Z4K">
-                    <rect key="frame" x="16" y="40" width="358" height="20"/>
+                    <rect key="frame" x="16" y="40" width="358" height="23.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw2-AB-4Vj">
-                    <rect key="frame" x="16" y="94" width="60" height="40"/>
+                    <rect key="frame" x="16" y="94.5" width="60" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mj-63-6vJ">
-                            <rect key="frame" x="16" y="10" width="28.5" height="20"/>
+                            <rect key="frame" x="16" y="8.5" width="28.5" height="23.5"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input cost but can be Blank" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-UO-XCZ">
-                    <rect key="frame" x="92" y="94" width="282" height="40"/>
+                    <rect key="frame" x="92" y="94.5" width="282" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="SWa-aI-yqO"/>
                     </constraints>
@@ -70,10 +70,10 @@
                     </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soz-Cp-oNn">
-                    <rect key="frame" x="16" y="168" width="358" height="55"/>
+                    <rect key="frame" x="16" y="165.5" width="358" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use cost estimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcw-ef-1ER">
-                            <rect key="frame" x="12" y="12" width="151" height="31"/>
+                            <rect key="frame" x="12" y="12" width="149.5" height="31"/>
                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -102,7 +102,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This cost estimation feature was based on average transport fare in Jabodetabek" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7We-dk-c4w">
-                    <rect key="frame" x="28" y="231" width="334" height="33"/>
+                    <rect key="frame" x="28" y="228.5" width="334" height="38.5"/>
                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -166,21 +166,21 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brF-2W-f4F">
-                    <rect key="frame" x="145" y="60" width="100" height="34"/>
+                    <rect key="frame" x="145" y="63.5" width="100" height="31"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="1vH-Eo-EF4"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On2-YN-VpO">
-                    <rect key="frame" x="145" y="134" width="100" height="34"/>
+                    <rect key="frame" x="145" y="134.5" width="100" height="31"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="nt2-jf-hj2"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-9w-kLl">
-                    <rect key="frame" x="145" y="264" width="100" height="34"/>
+                    <rect key="frame" x="145" y="267" width="100" height="31"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="zOX-UD-ZKJ"/>
@@ -226,7 +226,7 @@
     </objects>
     <designables>
         <designable name="FaN-t9-HdM">
-            <size key="intrinsicContentSize" width="81" height="33"/>
+            <size key="intrinsicContentSize" width="82" height="36"/>
         </designable>
     </designables>
     <resources>

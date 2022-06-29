@@ -203,9 +203,13 @@
             <point key="canvasLocation" x="2838" y="64"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="LinkButton"/>
     <resources>
         <image name="History" width="280" height="265"/>
         <image name="clock" catalog="system" width="128" height="121"/>
+        <namedColor name="LinkButton">
+            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
