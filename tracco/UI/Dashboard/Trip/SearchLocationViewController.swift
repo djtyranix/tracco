@@ -60,6 +60,10 @@ class SearchLocationViewController: UIViewController
         if isRequestingSpeechDictation
         {
             tryPresentSpeechDictation()
+            // if this view controller is a modal, it will trigger this method when
+            // user "cancel" dismiss by swipe action. because of that, we should not
+            // try to present or in another terms "start" the speech dictation again.
+            isRequestingSpeechDictation = false
         }
         else
         {
