@@ -40,6 +40,14 @@ enum TransportType: CO2EBase, Codable, CaseIterable
         return UIImage(systemName: "questionmark.square")
     }}
     
+    public var annotationImage: UIImage? { get {
+        if (self == .car)       { return UIImage(named: "MapCarPin") }
+        if (self == .motor)     { return UIImage(named: "MapMotorPin") }
+        if (self == .bus)       { return UIImage(named: "MapBusPin") }
+        if (self == .train)     { return UIImage(named: "MapTrainPin") }
+        return nil
+    }}
+    
     public func cost(_ kilometers: Double) -> Double
     {
         if (self == .car)       { return 1550 * kilometers }

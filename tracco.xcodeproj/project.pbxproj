@@ -46,7 +46,6 @@
 		3F9E56C4286844F100A566C6 /* PartsOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C3286844F100A566C6 /* PartsOfDay.swift */; };
 		3F9E56C62868A2C600A566C6 /* SearchSpeechButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */; };
 		3F9E56C82868A5E400A566C6 /* SearchSpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */; };
-		3F9FE8942869D7C600784B2D /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE8932869D7C600784B2D /* TripTableViewController.swift */; };
 		3F9FE8962869FEB500784B2D /* OnGoingTripSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */; };
 		3F9FE898286A15BA00784B2D /* OnGoingTripSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */; };
 		3FA0FE79286B04D60002D514 /* SummarizingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE78286B04D60002D514 /* SummarizingViewController.swift */; };
@@ -65,6 +64,11 @@
 		3FA4A85F2869BAB50094D8CD /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A85E2869BAB50094D8CD /* TripModel.swift */; };
 		3FC825A32856177C0074B88D /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8259F2856177C0074B88D /* TransportType.swift */; };
 		3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC88A73285B24680022BA2C /* TransitModel.swift */; };
+		3FCB1226286D6B4F00E9A348 /* TransportCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB1225286D6B4F00E9A348 /* TransportCalloutView.xib */; };
+		3FCB1228286D6E9D00E9A348 /* TransportCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB1227286D6E9D00E9A348 /* TransportCalloutView.swift */; };
+		3FCB122A286D89AD00E9A348 /* TransportCalloutOngoingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB1229286D89AD00E9A348 /* TransportCalloutOngoingView.xib */; };
+		3FCB122C286D8B1100E9A348 /* TransportCalloutOngoingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB122B286D8B1100E9A348 /* TransportCalloutOngoingView.swift */; };
+		3FCB122E286D8FA500E9A348 /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB122D286D8FA500E9A348 /* TripTableViewController.swift */; };
 		3FECBAF928622DA900444E5D /* StateBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */; };
 		3FEE071E2864109A00DAA5EB /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */; };
 		3FEE07212864234500DAA5EB /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE07202864234500DAA5EB /* ProfileVM.swift */; };
@@ -163,7 +167,6 @@
 		3F9E56C3286844F100A566C6 /* PartsOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfDay.swift; sourceTree = "<group>"; };
 		3F9E56C52868A2C600A566C6 /* SearchSpeechButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpeechButton.xib; sourceTree = "<group>"; };
 		3F9E56C72868A5E400A566C6 /* SearchSpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpeechButton.swift; sourceTree = "<group>"; };
-		3F9FE8932869D7C600784B2D /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		3F9FE8952869FEB500784B2D /* OnGoingTripSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnGoingTripSheet.xib; sourceTree = "<group>"; };
 		3F9FE897286A15BA00784B2D /* OnGoingTripSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingTripSheet.swift; sourceTree = "<group>"; };
 		3FA0FE78286B04D60002D514 /* SummarizingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizingViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +184,11 @@
 		3FA4A85E2869BAB50094D8CD /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		3FC8259F2856177C0074B88D /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = tracco/Utils/TransportType.swift; sourceTree = SOURCE_ROOT; };
 		3FC88A73285B24680022BA2C /* TransitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModel.swift; sourceTree = "<group>"; };
+		3FCB1225286D6B4F00E9A348 /* TransportCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportCalloutView.xib; sourceTree = "<group>"; };
+		3FCB1227286D6E9D00E9A348 /* TransportCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportCalloutView.swift; sourceTree = "<group>"; };
+		3FCB1229286D89AD00E9A348 /* TransportCalloutOngoingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportCalloutOngoingView.xib; sourceTree = "<group>"; };
+		3FCB122B286D8B1100E9A348 /* TransportCalloutOngoingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportCalloutOngoingView.swift; sourceTree = "<group>"; };
+		3FCB122D286D8FA500E9A348 /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		3FECBAF828622DA900444E5D /* StateBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBackgroundButton.swift; sourceTree = "<group>"; };
 		3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		3FEE07202864234500DAA5EB /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
@@ -365,7 +373,7 @@
 		A87463E32854695C009AB0DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3F9FE8932869D7C600784B2D /* TripTableViewController.swift */,
+				3FCB122D286D8FA500E9A348 /* TripTableViewController.swift */,
 				A8AD59B528602DAA00104B58 /* CardInfoView.xib */,
 				A8AD59B028602D9A00104B58 /* CardInfoView.swift */,
 				3F0BD0C4286604590049925B /* LongCardInfoView.xib */,
@@ -494,6 +502,10 @@
 				3FF1013C2854BC2F0048013A /* TransportationCostViewController.xib */,
 				3F94CCC12858581300BD5176 /* TransportAnnotation.swift */,
 				3F94CCC42858581300BD5176 /* TransportAnnotationView.swift */,
+				3FCB1225286D6B4F00E9A348 /* TransportCalloutView.xib */,
+				3FCB1227286D6E9D00E9A348 /* TransportCalloutView.swift */,
+				3FCB1229286D89AD00E9A348 /* TransportCalloutOngoingView.xib */,
+				3FCB122B286D8B1100E9A348 /* TransportCalloutOngoingView.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -620,6 +632,7 @@
 				3F94CCC72858581300BD5176 /* ChangeTransportViewController.xib in Resources */,
 				3F9FE8962869FEB500784B2D /* OnGoingTripSheet.xib in Resources */,
 				3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */,
+				3FCB122A286D89AD00E9A348 /* TransportCalloutOngoingView.xib in Resources */,
 				A87463D828545970009AB0DC /* Assets.xcassets in Resources */,
 				3F08353B286B6A8F006F3C99 /* Settings.bundle in Resources */,
 				3FF10126285490E10048013A /* Trip.storyboard in Resources */,
@@ -634,6 +647,7 @@
 				A87463EA28546B74009AB0DC /* Dashboard.storyboard in Resources */,
 				3FF1012328548E450048013A /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				3FF1013A2854BC200048013A /* CurrentTransportationViewController.xib in Resources */,
+				3FCB1226286D6B4F00E9A348 /* TransportCalloutView.xib in Resources */,
 				3FEE071E2864109A00DAA5EB /* HistoryTableViewCell.xib in Resources */,
 				3FF8DCA12866FA3500EEE490 /* ReduceCarbonCardView.xib in Resources */,
 				A8FB37C02856D6150057F6A3 /* Onboarding.storyboard in Resources */,
@@ -671,12 +685,12 @@
 				3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
+				3FCB1228286D6E9D00E9A348 /* TransportCalloutView.swift in Sources */,
 				3FF1012E2854B5680048013A /* OnTripViewController.swift in Sources */,
 				3F94CCD72858591C00BD5176 /* OnTripVM.swift in Sources */,
 				3F0BD0C2286568770049925B /* ShareViewController.swift in Sources */,
 				A87463CC2854596D009AB0DC /* AppDelegate.swift in Sources */,
 				3FF101322854BA190048013A /* TransportRadioButton.swift in Sources */,
-				3F9FE8942869D7C600784B2D /* TripTableViewController.swift in Sources */,
 				3F94CCCC2858581300BD5176 /* ViewHelper.swift in Sources */,
 				3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */,
 				3F94CCE6285859D200BD5176 /* TransportationCostVM.swift in Sources */,
@@ -696,9 +710,11 @@
 				3FF101282854913A0048013A /* DestinationPlanViewController.swift in Sources */,
 				3F94CCC62858581300BD5176 /* FocusPresentationController.swift in Sources */,
 				3FA4A85D28699FA70094D8CD /* TransitPath.swift in Sources */,
+				3FCB122C286D8B1100E9A348 /* TransportCalloutOngoingView.swift in Sources */,
 				D9DF37802860329400CA9F9C /* HistoryTripViewController.swift in Sources */,
 				3FA0FE79286B04D60002D514 /* SummarizingViewController.swift in Sources */,
 				3F94CCE8285859DB00BD5176 /* ViewAccessory.swift in Sources */,
+				3FCB122E286D8FA500E9A348 /* TripTableViewController.swift in Sources */,
 				A8D70B0228695DE1006AB7E1 /* LatestTripVM.swift in Sources */,
 				A8AD59BD28602DAA00104B58 /* TripDetailContentView.swift in Sources */,
 				A8CC9D7C28598DD300F30DBE /* DashboardVM.swift in Sources */,
@@ -880,16 +896,16 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 270;
+				CURRENT_PROJECT_VERSION = 280;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone usage to use speech recognition";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We would like to write your progress in a photo library";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We would like to do speech recognition only when you search for location using microphone ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We would like to do speech recognition only when you search for location using microphone";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We would like to save your profile result image in a photo library";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We would like to do speech recognition only when you search for location using microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -900,7 +916,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.developeracademy.tracco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -917,16 +933,16 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 270;
+				CURRENT_PROJECT_VERSION = 280;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tracco;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "track user trip";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "track user trip";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone usage to use speech recognition";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We would like to write your progress in a photo library";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We would like to do speech recognition only when you search for location using microphone ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We would like to do speech recognition only when you search for location using microphone";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We would like to save your profile result image in a photo library";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We would like to do speech recognition only when you search for location using microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -937,7 +953,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.developeracademy.tracco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -250,6 +250,16 @@ class OnTripViewController: UIViewController
     
     private func updateTransportation(_ manager: RadioButtonManager<TransportRadioButton>)
     {
+        // update annotation in the map
+        if let model = model,
+           let prevAnnotation = mapView.annotations.first(where: {
+               ($0 as? TransportAnnotation)?.indexInModel == model.transits.count - 1
+        }) as? TransportAnnotation
+        {
+            let transitModel = model[prevAnnotation.indexInModel]
+            updateAnnotation(prevAnnotation, model: transitModel)
+        }
+        
         let currCoordinate = mapView.userLocation.coordinate
         let currentType = TransportType.allCases[manager.selectedIndex]
         
@@ -261,6 +271,8 @@ class OnTripViewController: UIViewController
             viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
             viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
         ]
+        
+        let nowDate = Date()
         
         let transitPath = TransitPath(
             startLatitude: currCoordinate.latitude,
@@ -275,14 +287,19 @@ class OnTripViewController: UIViewController
             costInIDR: 0,
             type: currentType,
             distanceInKm: 0,
-            beginDate: Date(),
-            endDate: Date()
+            beginDate: nowDate,
+            endDate: nowDate
         )
         
         if model == nil { model = TripModel(id: -1, transits: [transitModel]) }
         else { model!.transits.append(transitModel) }
         
-        let annotation = TransportAnnotation(coordinate: currCoordinate, subtitle: "...", type: currentType)
+        let annotation = TransportAnnotation.initOngoing(
+            coordinate: currCoordinate,
+            indexInModel: model!.transits.count - 1,
+            type: currentType,
+            beginDate: nowDate
+        )
         mapView.addAnnotation(annotation)
         
         let selectedRadioButton = manager.selected
@@ -338,6 +355,45 @@ extension OnTripViewController: MKMapViewDelegate
             return renderer
         }
         return MKOverlayRenderer()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        // map view will use default annotation view if returns nil (ex: user location as blue indicator)
+        guard let annotation = annotation as? TransportAnnotation
+        else { return nil }
+        
+        let identifier = "\(annotation.type)"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil
+        {
+            annotationView = TransportAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        }
+        else
+        {
+            annotationView?.annotation = annotation
+        }
+        
+        (annotationView as? TransportAnnotationView)?.configureCalloutView()
+        return annotationView
+    }
+    
+    func updateAnnotation(_ annotation: TransportAnnotation, model: TransitModel)
+    {
+        let updatedAnnotation = TransportAnnotation.initDone(
+            coordinate: annotation.coordinate,
+            indexInModel: annotation.indexInModel,
+            type: model.type,
+            beginDate: model.beginDate,
+            endDate: model.endDate,
+            carbonEmissionInKg: model.carbonEmissionInKg,
+            distanceInKm: model.distanceInKm,
+            costInIDR: model.costInIDR
+        )
+    
+        mapView.removeAnnotation(annotation)
+        mapView.addAnnotation(updatedAnnotation)
     }
 }
 
