@@ -82,11 +82,11 @@
                             <rect key="frame" x="16" y="16" width="40" height="40"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Only" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-U2-he7">
-                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                    <rect key="frame" x="9" y="9" width="22" height="22"/>
                                     <color key="tintColor" name="MainGreen10"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="20" id="3ot-gD-bAV"/>
-                                        <constraint firstAttribute="height" constant="20" id="Dp0-Mp-VOk"/>
+                                        <constraint firstAttribute="width" constant="22" id="3ot-gD-bAV"/>
+                                        <constraint firstAttribute="height" constant="22" id="Dp0-Mp-VOk"/>
                                     </constraints>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default"/>
                                 </imageView>
@@ -159,7 +159,7 @@
                         <constraint firstItem="Zsl-kj-F3W" firstAttribute="top" secondItem="CGA-m8-tlV" secondAttribute="top" constant="-180" id="yOd-3f-fLS"/>
                     </constraints>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-Da-D1E">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-Da-D1E" userLabel="Curtain">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="693"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rendering your image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwz-Qi-hmu">

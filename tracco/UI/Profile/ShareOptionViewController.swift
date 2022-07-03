@@ -49,14 +49,15 @@ class ShareOptionViewController: UIViewController
     
     @objc func completionSaveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer)
     {
-        if let error = error
-        {
-            showAlertWith(title: "Save Error", message: error.localizedDescription)
-        }
-        else
-        {
-            showAlertWith(title: "Saved", message: "Your image has been saved to your photo library")
-        }
+        error != nil ?
+            showAlertWith(
+                title: "Save Error",
+                message: error!.localizedDescription
+            ) :
+            showAlertWith(
+                title: "Saved",
+                message: "Your image has been saved to your photo library"
+            )
     }
     
     func showAlertWith(title: String, message: String)

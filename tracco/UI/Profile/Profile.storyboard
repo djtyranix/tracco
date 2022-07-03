@@ -450,10 +450,10 @@
             </objects>
             <point key="canvasLocation" x="2789.2307692307691" y="-1173.341232227488"/>
         </scene>
-        <!--Empty Sum Profile View Controller-->
+        <!--View Controller-->
         <scene sceneID="l07-Fu-8xw">
             <objects>
-                <viewController id="kgA-F3-tlq" customClass="EmptySumProfileViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kgA-F3-tlq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KfH-4m-MvK">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,7 +561,7 @@
             <color red="0.96899998188018799" green="0.99199998378753662" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LinkButton">
-            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainButtonBackground">
             <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -576,7 +576,7 @@
             <color red="0.72200000286102295" green="0.72200000286102295" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryButtonBorder">
-            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryButtonForeground">
             <color red="0.12156862745098039" green="0.52156862745098043" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
