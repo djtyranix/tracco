@@ -19,7 +19,7 @@ class SummaryVM
         var costInIDR: Double
         var transportType: TransportType
         var date: Date
-        var coord: LocationCoordinate2D
+        var coord: CLLocationCoordinate2D
     }
     
     // for updating geolocation in summary vc
@@ -82,7 +82,7 @@ class SummaryVM
                 costInIDR: $0.costInIDR,
                 transportType: $0.type,
                 date: $0.beginDate,
-                coord: LocationCoordinate2D(
+                coord: CLLocationCoordinate2D(
                     latitude: $0.transitPath.startLatitude,
                     longitude: $0.transitPath.startLongitude
                 )
@@ -96,7 +96,7 @@ class SummaryVM
                 costInIDR: 0,
                 transportType:lastModel.type,
                 date: lastModel.endDate,
-                coord: LocationCoordinate2D(
+                coord: CLLocationCoordinate2D(
                     latitude: lastModel.transitPath.endLatitude,
                     longitude: lastModel.transitPath.endLongitude
                 )

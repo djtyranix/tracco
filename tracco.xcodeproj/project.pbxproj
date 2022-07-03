@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B2BA0752860369500104AAF /* SumProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA0742860369500104AAF /* SumProfileViewController.swift */; };
-		3B2BA0772860371C00104AAF /* EmptySumProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */; };
 		3B9293F02860B0CE005EF46E /* ReduceCarbonConciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9293EF2860B0CE005EF46E /* ReduceCarbonConciseCardView.swift */; };
 		3F08353B286B6A8F006F3C99 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F08353A286B6A8F006F3C99 /* Settings.bundle */; };
 		3F0BD0C2286568770049925B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BD0C0286568770049925B /* ShareViewController.swift */; };
@@ -17,7 +16,6 @@
 		3F0BD0C7286604660049925B /* LongCardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BD0C6286604660049925B /* LongCardInfoView.swift */; };
 		3F0E2CBC285856A100E7160C /* ChooseChangeTransportBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */; };
 		3F3131DD28635499005B7640 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131DC28635499005B7640 /* UserDefaults.swift */; };
-		3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */; };
 		3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E0286359AA005B7640 /* ProfileModel.swift */; };
 		3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E228635C84005B7640 /* CO2ETimer.swift */; };
 		3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E428635D50005B7640 /* TimeFrequency.swift */; };
@@ -129,7 +127,6 @@
 
 /* Begin PBXFileReference section */
 		3B2BA0742860369500104AAF /* SumProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumProfileViewController.swift; sourceTree = "<group>"; };
-		3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySumProfileViewController.swift; sourceTree = "<group>"; };
 		3B9293EF2860B0CE005EF46E /* ReduceCarbonConciseCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReduceCarbonConciseCardView.swift; sourceTree = "<group>"; };
 		3F08353A286B6A8F006F3C99 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3F0BD0C0286568770049925B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +135,6 @@
 		3F0BD0C6286604660049925B /* LongCardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongCardInfoView.swift; sourceTree = "<group>"; };
 		3F0E2CBB285856A100E7160C /* ChooseChangeTransportBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChangeTransportBase.swift; sourceTree = "<group>"; };
 		3F3131DC28635499005B7640 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinate2D.swift; sourceTree = "<group>"; };
 		3F3131E0286359AA005B7640 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		3F3131E228635C84005B7640 /* CO2ETimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2ETimer.swift; sourceTree = "<group>"; };
 		3F3131E428635D50005B7640 /* TimeFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrequency.swift; sourceTree = "<group>"; };
@@ -420,7 +416,6 @@
 				3F94CCC32858581300BD5176 /* ViewHelper.swift */,
 				3F94CCE7285859DB00BD5176 /* ViewAccessory.swift */,
 				3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */,
-				3F3131DE2863586B005B7640 /* LocationCoordinate2D.swift */,
 				3F3131E428635D50005B7640 /* TimeFrequency.swift */,
 				3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */,
 				3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */,
@@ -472,7 +467,6 @@
 				A87463ED28546D09009AB0DC /* Profile.storyboard */,
 				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
 				3B2BA0742860369500104AAF /* SumProfileViewController.swift */,
-				3B2BA0762860371C00104AAF /* EmptySumProfileViewController.swift */,
 				3FF8DC9E2866B6A400EEE490 /* ShareOptionViewController.swift */,
 				3F0BD0C1286568770049925B /* ShareViewController.xib */,
 				3F0BD0C0286568770049925B /* ShareViewController.swift */,
@@ -666,7 +660,6 @@
 			files = (
 				3F94CCD62858591C00BD5176 /* TransportRadioButtonVM.swift in Sources */,
 				3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */,
-				3B2BA0772860371C00104AAF /* EmptySumProfileViewController.swift in Sources */,
 				A87463F228546D72009AB0DC /* ProfileViewController.swift in Sources */,
 				A8AD59B128602D9A00104B58 /* CardInfoView.swift in Sources */,
 				3B9293F02860B0CE005EF46E /* ReduceCarbonConciseCardView.swift in Sources */,
@@ -682,7 +675,6 @@
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
 				A894047F286949940080D5D5 /* HistoryViewModel.swift in Sources */,
-				3F3131DF2863586B005B7640 /* LocationCoordinate2D.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				3FCB1228286D6E9D00E9A348 /* TransportCalloutView.swift in Sources */,

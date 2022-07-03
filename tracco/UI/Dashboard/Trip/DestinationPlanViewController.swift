@@ -94,7 +94,7 @@ class DestinationPlanViewController: UIViewController
         {
             guard let directionURL = MoovitAPI.Direction.getDirectionsFromCurrent(
                 origName: "Current Location",
-                dest: LocationCoordinate2D(mapView.centerCoordinate),
+                dest: mapView.centerCoordinate,
                 destName: viewModel?.titleText
             )
             else

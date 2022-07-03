@@ -17,10 +17,10 @@ enum TransportType: CO2EBase, Codable, CaseIterable
     case train  = 0.04
     
     public var color: UIColor { get {
-        if (self == .car)       { return .systemBlue }
-        if (self == .motor)     { return .systemRed }
-        if (self == .bus)       { return .systemGreen }
-        if (self == .train)     { return .black }
+        if (self == .car)       { return .green }
+        if (self == .motor)     { return .yellow }
+        if (self == .bus)       { return .blue }
+        if (self == .train)     { return .red }
         return .white
     }}
     

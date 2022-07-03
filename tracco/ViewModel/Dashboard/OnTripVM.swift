@@ -19,13 +19,21 @@ class OnTripVM
         transportEmission.massUnits = .kilo
     }}
     
-    public var currentLocation: CLLocation { didSet {
-        previousLocation = oldValue
-        let meters = currentLocation.distance(from: oldValue)
-        distanceInKm += meters * SystemUnits.kilo.rawValue
+    public var currLocation: CLLocation? { didSet {
+        
+        guard let currLocation = currLocation
+        else { return }
+        
+        if let prevLocaton = prevValidLocation
+        {
+            let meters = currLocation.distance(from: prevLocaton)
+            distanceInKm += meters * SystemUnits.kilo.rawValue
+        }
+        
+        prevValidLocation = oldValue
     }}
     
-    private(set) var previousLocation: CLLocation?
+    private(set) var prevValidLocation: CLLocation?
     
     private(set) var distanceInKm: Double { didSet {
         distanceInKmText = String(format: "%.2f km", distanceInKm)
@@ -52,10 +60,10 @@ class OnTripVM
     
     private var transportEmission: CO2E!
     
-    public init(_ type: TransportType, currentLocation: CLLocation)
+    public init(_ type: TransportType, currentLocation: CLLocation?)
     {
         self.transportType      = type
-        self.currentLocation    = currentLocation
+        self.currLocation       = currentLocation
         self.distanceInKm       = 0
         ({ self.transportType   = self.transportType })()
         ({ self.distanceInKm    = self.distanceInKm })()

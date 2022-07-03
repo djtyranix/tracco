@@ -54,6 +54,17 @@ class OnTripViewController: UIViewController
         return vc
     }()
     
+    private let locationLostAlert: AuthorizationSecondaryPlanController = {
+        let alert = AuthorizationSecondaryPlanController(
+            message: "Tracking is paused because we were unable to obtain user location",
+            image: UIImage(named: "Location")
+        )
+        alert.view.layer.cornerRadius = 12
+        alert.modalPresentationStyle = .custom
+        alert.transitioningDelegate = AlertPresentationTransitioningManager.shared
+        return alert
+    }()
+    
     private let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -91,12 +102,22 @@ class OnTripViewController: UIViewController
     
     private var pendingLocations: [CLLocationCoordinate2D] = []
     
-    private var model: TripModel?
     private var keyboardHeight: CGFloat = 210
+    private var isRequestingEndTrip: Bool = false
+    private var isTripInitiated = false
+    private var isRequestingLocationLostAlert = false
+    private var isInForeground = true
+    
+    private var model: TripModel?
     private var viewModel: OnTripVM?
     private var cancellables: [AnyCancellable]?
     private var timerUpdate: Timer?
-    private var isRequestingEndTrip: Bool = false
+    private var timerLocationAvailability: Timer?
+    private var currAnnotation: TransportAnnotation?
+    
+    
+    // this should not be empty while choosing / switching transport
+    private var updateTransportLocation: CLLocation!
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
@@ -109,9 +130,6 @@ class OnTripViewController: UIViewController
         
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
-        
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
         
         // delegation (event handler)
         mapView.delegate                    = self
@@ -126,49 +144,53 @@ class OnTripViewController: UIViewController
         costTransportationVC.transitioningDelegate      = self
         changeTransportationVC.transitioningDelegate    = self
         
+        // start updating location after choose transport
+        // this will trigger CLLocationManagerDelegate when in background only
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        // start the timer
+        timerLocationAvailability = Timer.scheduledTimer(
+            timeInterval: 0.5,
+            target: self,
+            selector: #selector(taskLocationAvailability),
+            userInfo: nil,
+            repeats: true
+        )
+        timerUpdate = Timer.scheduledTimer(
+            timeInterval: 0.5,
+            target: self,
+            selector: #selector(taskDrawAndModelUpdate),
+            userInfo: nil, repeats: true
+        )
+        
         // add observer to handle keyboard covering cost view
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide(notification:)),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow(notification:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        let isResumeFromPause = self === OnTripViewController.instanceOnPause
-        OnTripViewController.instanceOnPause = nil
-        
-        super.viewWillAppear(animated)
-        
-        // this vc do a presentation fullscreen on summary vc
-        // when summary vc dismiss all of the stack from view hierarchy
-        // viewWillAppear(_ animated: Bool) will be called
-        if (isRequestingEndTrip || isResumeFromPause) { return }
-        
-        // present choose transportation for the first time (this won't work in viewDidLoad())
-        present(chooseTransportationVC, animated: true) { [unowned self] in
-            // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
-            UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
-                mapViewBottomConstraint.constant = 330
-            }
-            // current transporation view always exists on the bottom of the container view
-            currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
-                currentTransportationVC.view,
-                containerView: self.view,
-                elevated: true
+        let keyboardListeningStates = [
+            UIResponder.keyboardWillHideNotification,
+            UIResponder.keyboardWillShowNotification
+        ]
+        keyboardListeningStates.forEach {
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(keyboardStateChanged(_:)),
+                name: $0,
+                object: nil
             )
-            self.view.addSubview(currentTransportationVC.view)
-            // follow user location button must be on top of currentTransportationVC
-            let yFromBottom = currentTransportationVC.view.frame.height + 16
-            locationButtonYConstraint.constant = yFromBottom
+        }
+        
+        // add observer to handle app background & foreground state
+        let applicationListeningStates = [
+            UIApplication.didBecomeActiveNotification,
+            UIApplication.willResignActiveNotification
+        ]
+        applicationListeningStates.forEach {
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(applicationStateChanged(_:)),
+                name: $0,
+                object: nil
+            )
         }
     }
     
@@ -179,6 +201,7 @@ class OnTripViewController: UIViewController
             // stop updating location
             locationManager.stopUpdatingLocation()
             timerUpdate?.invalidate()
+            timerLocationAvailability?.invalidate()
             
             GlobalPublisher.shared.onTripEnded()
             
@@ -202,83 +225,19 @@ class OnTripViewController: UIViewController
         mapView.setUserTrackingMode(.follow, animated: true)
     }
     
-    @objc func onUpdate()
-    {
-        let image = mapView?.userTrackingMode == .follow ? trackingModeFollowImage : trackingModeNofollowImage
-        locationButton.setImage(image, for: .normal)
-        
-        guard let viewModel = viewModel
-        else { return }
-        
-        var coords = pendingLocations
-        pendingLocations = []
-        
-        coords.forEach
-        {
-            let location = CLLocation(latitude: $0.latitude, longitude: $0.longitude)
-            viewModel.currentLocation = location
-        }
-        
-        guard let lastCoord = coords.last
-        else { return }
-        
-        if model != nil && model!.transits.isEmpty == false
-        {
-            // Edit last model
-            let currIndex = model!.transits.endIndex - 1
-            model![currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
-            model![currIndex].endDate = Date()
-            model![currIndex].distanceInKm = viewModel.distanceInKm
-            
-            // Adding endpoint
-            model![currIndex].transitPath.endLatitude = lastCoord.latitude
-            model![currIndex].transitPath.endLongitude = lastCoord.longitude
-            
-            GlobalPublisher.shared.onTripTransitModelUpdated(model![currIndex])
-        }
-        
-        // update cost vc, user location may still move while adding a cost confirmation
-        costTransportationVC.viewModel?.totalCostInIDR = viewModel.totalCostInIDR
-        
-        guard let prevLocation = viewModel.previousLocation
-        else { return }
-        
-        coords.insert(prevLocation.coordinate, at: 0)
-        let polyline = MKPolyline(coordinates: coords, count: coords.count)
-        mapView.addOverlay(polyline, level: .aboveRoads)
-    }
-    
     private func updateTransportation(_ manager: RadioButtonManager<TransportRadioButton>)
     {
-        // update annotation in the map
-        if let model = model,
-           let prevAnnotation = mapView.annotations.first(where: {
-               ($0 as? TransportAnnotation)?.indexInModel == model.transits.count - 1
-        }) as? TransportAnnotation
-        {
-            let transitModel = model[prevAnnotation.indexInModel]
-            updateAnnotation(prevAnnotation, model: transitModel)
-        }
-        
-        let currCoordinate = mapView.userLocation.coordinate
+        let nowDate     = Date()
         let currentType = TransportType.allCases[manager.selectedIndex]
+        let location    = updateTransportLocation!
         
-        let viewModel = OnTripVM(currentType, currentLocation: mapView.userLocation.location!)
-        self.viewModel = viewModel
-        
-        cancellables = [
-            viewModel.$distanceInKmText.sink(receiveValue: { [unowned self] in currentTransportationVC.distanceLabel.text = $0 }),
-            viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
-            viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
-        ]
-        
-        let nowDate = Date()
+        // update model
         
         let transitPath = TransitPath(
-            startLatitude: currCoordinate.latitude,
-            startLongitude: currCoordinate.longitude,
-            endLatitude: 0,
-            endLongitude: 0
+            startLatitude: location.coordinate.latitude,
+            startLongitude: location.coordinate.longitude,
+            endLatitude: location.coordinate.latitude,
+            endLongitude: location.coordinate.longitude
         )
         
         let transitModel = TransitModel(
@@ -291,16 +250,42 @@ class OnTripViewController: UIViewController
             endDate: nowDate
         )
         
-        if model == nil { model = TripModel(id: -1, transits: [transitModel]) }
+        let isFirstTransit = model == nil || model!.transits.isEmpty
+        if isFirstTransit { model = TripModel(id: -1, transits: [transitModel]) }
         else { model!.transits.append(transitModel) }
         
+        // update view model
+        
+        let viewModel = OnTripVM(currentType, currentLocation: location)
+        self.viewModel = viewModel
+        
+        cancellables = [
+            viewModel.$distanceInKmText.sink(receiveValue: { [unowned self] in currentTransportationVC.distanceLabel.text = $0 }),
+            viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
+            viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
+        ]
+        
+        // update annotation in the map
+        
+        if let model = model,
+           let prevAnnotation = currAnnotation
+        {
+            let transitModel = model[prevAnnotation.indexInModel]
+            updateAnnotation(prevAnnotation, model: transitModel)
+        }
+        
+        // create map annotation
+        
         let annotation = TransportAnnotation.initOngoing(
-            coordinate: currCoordinate,
+            coordinate: location.coordinate,
             indexInModel: model!.transits.count - 1,
             type: currentType,
             beginDate: nowDate
         )
         mapView.addAnnotation(annotation)
+        currAnnotation = annotation
+        
+        // update current transport view in this subview
         
         let selectedRadioButton = manager.selected
         currentTransportationVC.imageView.image = selectedRadioButton?.image
@@ -318,22 +303,108 @@ class OnTripViewController: UIViewController
     }
 }
 
+// MARK: Notification Center Observer
 extension OnTripViewController
 {
-    // this method can be called twice even though keyboard already showed up
-    @objc func keyboardWillShow(notification: NSNotification)
+    @objc func applicationStateChanged(_ notification: Notification)
     {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        if notification.name == UIApplication.didBecomeActiveNotification
         {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            keyboardHeight = keyboardRectangle.height
+            isInForeground = true
         }
-        isCostViewElevated = true
+        else if notification.name == UIApplication.willResignActiveNotification
+        {
+            isInForeground = false
+        }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification)
+    @objc func keyboardStateChanged(_ notification: Notification)
     {
-        isCostViewElevated = false
+        if notification.name == UIApplication.keyboardWillShowNotification
+        {
+            if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+            {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                keyboardHeight = keyboardRectangle.height
+            }
+            isCostViewElevated = true
+        }
+        else if notification.name == UIApplication.keyboardWillHideNotification
+        {
+            isCostViewElevated = false
+        }
+    }
+}
+
+// MARK: Timer Task (Background & Foreground Process)
+extension OnTripViewController
+{
+    // this method job was to present the alert indicating location lost
+    // CLLocationManagerDelegate didUpdateLocations is responsible for
+    // dismissing the alert in order to provide better response time
+    @objc func taskLocationAvailability()
+    {
+        // this is easier than invalidate the timer and re-schedule it
+        guard isInForeground else { return }
+        
+        // only present the alert while no user input is in progress because of:
+        // [1] ViewController can only present once at a time and [2] provide better ux
+        if self.presentedViewController == nil && isRequestingLocationLostAlert
+        {
+            self.present(locationLostAlert, animated: true)
+        }
+    }
+    
+    @objc func taskDrawAndModelUpdate()
+    {
+        // this is easier than invalidate the timer and re-schedule it
+        guard isInForeground else { return }
+        
+        let image = mapView?.userTrackingMode == .follow ? trackingModeFollowImage : trackingModeNofollowImage
+        locationButton.setImage(image, for: .normal)
+        
+        // model only gets updated when there's no modal presentation
+        // it means that there's no pending user input for affirmation
+        guard let viewModel = viewModel,
+              model != nil,
+              model?.transits.isEmpty == false,
+              self.presentedViewController == nil
+        else { return }
+        
+        var coords = pendingLocations
+        pendingLocations = []
+        
+        // in order to connect the stroke correctly, make sure to get
+        // before updating the viewModel.currLocation
+        let lastStrokeLocation = viewModel.currLocation
+        
+        coords.forEach
+        {
+            let location = CLLocation(latitude: $0.latitude, longitude: $0.longitude)
+            viewModel.currLocation = location
+        }
+        
+        // make sure there's a pending coordinate which needs to be processed
+        guard let lastCoord = coords.last
+        else { return }
+        
+        // update the model
+        let currIndex = model!.transits.endIndex - 1
+        model![currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
+        model![currIndex].endDate = Date()
+        model![currIndex].distanceInKm = viewModel.distanceInKm
+        model![currIndex].transitPath.endLatitude = lastCoord.latitude
+        model![currIndex].transitPath.endLongitude = lastCoord.longitude
+        
+        GlobalPublisher.shared.onTripTransitModelUpdated(model![currIndex])
+        
+        // connecting the last stroke with current stroke
+        if let prevLocation = lastStrokeLocation
+        {
+            coords.insert(prevLocation.coordinate, at: 0)
+        }
+        let polyline = MKPolyline(coordinates: coords, count: coords.count)
+        mapView.addOverlay(polyline, level: .aboveRoads)
     }
 }
 
@@ -391,7 +462,7 @@ extension OnTripViewController: MKMapViewDelegate
             distanceInKm: model.distanceInKm,
             costInIDR: model.costInIDR
         )
-    
+
         mapView.removeAnnotation(annotation)
         mapView.addAnnotation(updatedAnnotation)
     }
@@ -402,8 +473,57 @@ extension OnTripViewController: CLLocationManagerDelegate
 {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
+        isRequestingLocationLostAlert = false
+        
+        // to provide better response time, this delegate is responsible to dismiss
+        // the alert only if necessary
+        if isInForeground && self.presentedViewController === locationLostAlert
+        {
+            locationLostAlert.dismiss(animated: true)
+        }
+        
+        if let first = locations.first, isTripInitiated == false
+        {
+            isTripInitiated = true
+            updateTransportLocation = first
+            // choose transport and layout subviews for the first time
+            self.present(chooseTransportationVC, animated: true) { [unowned self] in
+                // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
+                UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
+                    mapViewBottomConstraint.constant = 330
+                }
+                // current transporation view always exists on the bottom of the container view
+                currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
+                    currentTransportationVC.view,
+                    containerView: self.view,
+                    elevated: true
+                )
+                self.view.addSubview(currentTransportationVC.view)
+                // follow user location button must be on top of currentTransportationVC
+                let yFromBottom = currentTransportationVC.view.frame.height + 16
+                locationButtonYConstraint.constant = yFromBottom
+            }
+        }
+        
         let coords = locations.map({ $0.coordinate })
         pendingLocations.append(contentsOf: coords)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
+    {
+        guard manager.authorizationStatus == .denied || manager.authorizationStatus == .notDetermined
+        else { return }
+        // forcefully cancel ongoing trip
+        GlobalPublisher.shared.onTripEnded()
+        self.view.window?.rootViewController?.dismiss(animated: true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        // we should not try to present the alert immediately because of
+        // [1] user input may stil be in progress. The job of presenting the alert
+        // is handled by timerLocationAvailability.
+        isRequestingLocationLostAlert = true
     }
 }
 
@@ -412,11 +532,19 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
 {
     func onChangeTransportationButton(_ sender: UIButton)
     {
+        guard let location = viewModel?.currLocation
+        else { return }
+        
+        updateTransportLocation = location
         presentCostVC()
     }
     
     func onEndTripButton(_ sender: UIButton)
     {
+        guard let location = viewModel?.currLocation
+        else { return }
+        
+        updateTransportLocation = location
         let alert = UIAlertController(
             title: "Are you sure?",
             message: "Confirm arrival at final destination? This action cannot be undone",
@@ -436,16 +564,7 @@ extension OnTripViewController: ChooseTransportationViewControllerDelegate
 {
     func onConfirmChoose(_ selected: TransportRadioButton?)
     {
-        // start updating location after choose transport
-        // this will trigger CLLocationManagerDelegate when in background only
-        locationManager.startUpdatingLocation()
         updateTransportation(chooseTransportationVC.radioButton!)
-        timerUpdate = Timer.scheduledTimer(
-            timeInterval: 1,
-            target: self,
-            selector: #selector(onUpdate),
-            userInfo: nil, repeats: true
-        )
         GlobalPublisher.shared.onTripStarted()
     }
 }
