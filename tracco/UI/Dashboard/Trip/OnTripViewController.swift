@@ -128,6 +128,8 @@ class OnTripViewController: UIViewController
     {
         super.viewDidLoad()
         
+        GlobalPublisher.addObserver(self)
+        
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
         
@@ -285,6 +287,10 @@ class OnTripViewController: UIViewController
         let selectedRadioButton = manager.selected
         currentTransportationVC.imageView.image = selectedRadioButton?.image
         currentTransportationVC.nameLabel.text = selectedRadioButton?.title
+        
+        // inform a new transit model has been added
+        
+        GlobalPublisher.shared.onTripTransitModelUpdated(transitModel)
     }
     
     private func presentCostVC()
@@ -295,6 +301,25 @@ class OnTripViewController: UIViewController
             useApproximation: true
         )
         present(costTransportationVC, animated: true)
+    }
+}
+
+// MARK: Global Event
+extension OnTripViewController: GlobalEvent
+{
+    // the reason that we update the view in this method event
+    // instead from the internal implementation it gives the benefit of
+    // clear instruction and remove code redundancy.
+    // see all calls from GlobalPublisher.shared.onTripTransitModelUpdated()
+    func onTripTransitModelUpdated(_ model: TransitModel)
+    {
+        guard let viewModel = viewModel
+        else { return }
+        // update the view
+        let vc = currentTransportationVC
+        vc.distanceLabel.text = viewModel.distanceInKmText
+        vc.approxCostLabel.text = viewModel.totalCostInIDRText
+        vc.carbonEmissionLabel.text = viewModel.carbonEmissionInKgText
     }
 }
 
@@ -394,12 +419,6 @@ extension OnTripViewController: ULProcessorDelegate
         model![currIndex].distanceInKm = viewModel.distanceInKm
         model![currIndex].transitPath.endLatitude = location.coordinate.latitude
         model![currIndex].transitPath.endLongitude = location.coordinate.longitude
-        
-        // update the view
-        let vc = currentTransportationVC
-        vc.distanceLabel.text = viewModel.distanceInKmText
-        vc.approxCostLabel.text = viewModel.totalCostInIDRText
-        vc.carbonEmissionLabel.text = viewModel.carbonEmissionInKgText
         
         // connecting the last stroke with current stroke
         if let prevLocation = viewModel.prevValidLocation
