@@ -29,7 +29,7 @@ class DashboardViewController: UIViewController
     
     @IBAction func onSettingsButton(_ sender: UIBarButtonItem)
     {
-        self.onGoToSettings()
+        SystemDevice.openAppSettings()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -61,6 +61,3 @@ extension DashboardViewController: GlobalEvent
         GlobalPublisher.removeObserver(self)
     }
 }
-
-extension DashboardViewController: AuthorizationSecondaryPlanDelegate
-{}

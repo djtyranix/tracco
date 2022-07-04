@@ -54,16 +54,11 @@ class OnTripViewController: UIViewController
         return vc
     }()
     
-    private let locationLostAlert: AuthorizationSecondaryPlanController = {
-        let alert = AuthorizationSecondaryPlanController(
-            message: "Tracking is paused because we were unable to obtain user location",
-            image: UIImage(named: "Location")
-        )
-        alert.view.layer.cornerRadius = 12
-        alert.modalPresentationStyle = .custom
-        alert.transitioningDelegate = AlertPresentationTransitioningManager.shared
-        return alert
-    }()
+    public let connectionLost = AppAlertController(
+        title: "Connection Lost",
+        message: "Don’t worry, we will continue tracking as soon as you are back online.",
+        image: UIImage(named: "Connection")
+    )
     
     private let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -167,6 +162,15 @@ class OnTripViewController: UIViewController
             userInfo: nil, repeats: true
         )
         
+        // trip will ended when user trigger cancel my trip action
+        connectionLost.addAction(AppAlertAction(
+            title: "Cancel My Trip Instead",
+            style: .destructive
+        ) { _ in
+            GlobalPublisher.shared.onTripEnded()
+            self.view.window?.rootViewController?.dismiss(animated: true)
+        })
+        
         // add observer to handle keyboard covering cost view
         let keyboardListeningStates = [
             UIResponder.keyboardWillHideNotification,
@@ -194,6 +198,12 @@ class OnTripViewController: UIViewController
                 object: nil
             )
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        OnTripViewController.instanceOnPause = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -371,7 +381,7 @@ extension OnTripViewController
         // [1] ViewController can only present once at a time and [2] provide better ux
         if self.presentedViewController == nil && isRequestingLocationLostAlert
         {
-            self.present(locationLostAlert, animated: true)
+            self.present(connectionLost, animated: true)
         }
     }
     
@@ -398,6 +408,7 @@ extension OnTripViewController
     }
 }
 
+// MARK: ULProcessorDelegate
 extension OnTripViewController: ULProcessorDelegate
 {
     func location(_ processor: ULProcessor, didRefactor index: Int)
@@ -503,9 +514,9 @@ extension OnTripViewController: CLLocationManagerDelegate
         
         // to provide better response time, this delegate is responsible to dismiss
         // the alert only if necessary
-        if isInForeground && self.presentedViewController === locationLostAlert
+        if isInForeground && self.presentedViewController === connectionLost
         {
-            locationLostAlert.dismiss(animated: true)
+            connectionLost.dismiss(animated: true)
         }
         
         if let first = locations.first, isTripInitiated == false
@@ -538,11 +549,24 @@ extension OnTripViewController: CLLocationManagerDelegate
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
     {
         guard   manager.authorizationStatus == .denied ||
-                manager.authorizationStatus == .notDetermined
+                manager.authorizationStatus == .notDetermined,
+                let rootViewController = self.view.window?.rootViewController
         else { return }
+        
+        // alert
+        let alert = AppAlertController(
+            title: "Tracking Stopped",
+            message: "We were unable to locate you due to changes in location access permission.",
+            image: UIImage(named: "Lost")
+        )
+        alert.addAction(AppAlertAction(title: "I Understand", style: .default) { _ in
+            alert.dismiss(animated: true)
+        })
+        
         // forcefully cancel ongoing trip
         GlobalPublisher.shared.onTripEnded()
-        self.view.window?.rootViewController?.dismiss(animated: true)
+        rootViewController.dismiss(animated: true)
+        rootViewController.present(alert, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

@@ -60,10 +60,27 @@ class StateBackgroundButton: UIButton
         self.alpha = isHighlighted ? 0.7 : 1.0
     }}
     
+    static let appButtonFont = UIFont(name: "Nunito-SemiBold", size: 16)!
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
         self.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+    }
+    
+    override func setTitle(_ title: String?, for state: UIControl.State)
+    {
+        guard let title = title
+        else
+        {
+            super.setTitle(title, for: state)
+            return
+        }
+        let attributed = NSAttributedString(
+            string: title,
+            attributes: [.font : StateBackgroundButton.appButtonFont]
+        )
+        super.setAttributedTitle(attributed, for: state)
     }
     
     @objc private func buttonPressed()

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeTripViewController: TripTableViewController
 {
@@ -23,6 +24,7 @@ class HomeTripViewController: TripTableViewController
     public var historyDataCount: Int = 0
     public var historyDataSource: [TripModel]?
     
+    private var alertNotifier: LocationPermissionAlertNotifier!
     // data max will adjust according to the device table view height
     // this view will only contain just a few latest history
     private var dataMaxSize: Int!
@@ -33,7 +35,10 @@ class HomeTripViewController: TripTableViewController
     {
         super.provider = self
         super.viewDidLoad()
+        
         GlobalPublisher.addObserver(self)
+        alertNotifier = LocationPermissionAlertNotifier(parent: self)
+        
         updateViewWithModel()
     }
     
@@ -51,9 +56,18 @@ class HomeTripViewController: TripTableViewController
     
     @IBAction func onStartTripButton(_ sender: UIButton)
     {
-        let showPlanTrip = StoredModel.showRouteRecommendation ?? true
-        let segueTrip: Segue = showPlanTrip ? .onPlanTrip : .onTrip
-        performSegue(withIdentifier: segueTrip.rawValue, sender: self)
+        if StoredModel.showRouteRecommendation ?? true
+        {
+            performSegue(withIdentifier: Segue.onPlanTrip.rawValue, sender: self)
+        }
+        else if alertNotifier.isAbleToTrack
+        {
+            performSegue(withIdentifier: Segue.onTrip.rawValue, sender: self)
+        }
+        else
+        {
+            alertNotifier.requestPermission()
+        }
     }
     
     @IBAction func onViewAllButton(_ sender: UIButton)
