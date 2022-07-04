@@ -52,6 +52,7 @@
 		3FA0FE85286B23FC0002D514 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE83286B23FC0002D514 /* SplashViewController.swift */; };
 		3FA0FE86286B23FC0002D514 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA0FE84286B23FC0002D514 /* SplashViewController.xib */; };
 		3FA0FE88286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0FE87286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift */; };
+		3FA131722871541600C67D2A /* ULProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA131712871541600C67D2A /* ULProcessor.swift */; };
 		3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */; };
 		3FA3E8952855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */; };
 		3FA4A8532868AF7B0094D8CD /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */; };
@@ -170,6 +171,7 @@
 		3FA0FE83286B23FC0002D514 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3FA0FE84286B23FC0002D514 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		3FA0FE87286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AnimationCompletionBlock.swift"; sourceTree = "<group>"; };
+		3FA131712871541600C67D2A /* ULProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULProcessor.swift; sourceTree = "<group>"; };
 		3FA3E8922855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationSecondaryPlanController.swift; sourceTree = "<group>"; };
 		3FA3E8932855AD1D006DCE5D /* AuthorizationSecondaryPlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationSecondaryPlanController.xib; sourceTree = "<group>"; };
 		3FA4A8522868AF7B0094D8CD /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				3FEE0722286427A700DAA5EB /* GlobalPublisher.swift */,
 				3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */,
 				3F9E56C3286844F100A566C6 /* PartsOfDay.swift */,
+				3FA131712871541600C67D2A /* ULProcessor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				3FA0FE85286B23FC0002D514 /* SplashViewController.swift in Sources */,
 				3FA3E8942855AD1D006DCE5D /* AuthorizationSecondaryPlanController.swift in Sources */,
 				3F94CCC92858581300BD5176 /* ChangeTransportViewController.swift in Sources */,
+				3FA131722871541600C67D2A /* ULProcessor.swift in Sources */,
 				3F94CCE32858599B00BD5176 /* SystemUnits.swift in Sources */,
 				A8CC9D82285A307D00F30DBE /* Extensions.swift in Sources */,
 				3F94CCC82858581300BD5176 /* SheetPresentationController.swift in Sources */,

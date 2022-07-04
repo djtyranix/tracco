@@ -257,13 +257,8 @@ class OnTripViewController: UIViewController
         // update view model
         
         let viewModel = OnTripVM(currentType, currentLocation: location)
+        viewModel.processor.delegate = self
         self.viewModel = viewModel
-        
-        cancellables = [
-            viewModel.$distanceInKmText.sink(receiveValue: { [unowned self] in currentTransportationVC.distanceLabel.text = $0 }),
-            viewModel.$totalCostInIDRText.sink(receiveValue: { [unowned self] in currentTransportationVC.approxCostLabel.text = $0 }),
-            viewModel.$carbonEmissionInKgText.sink(receiveValue: { [unowned self] in currentTransportationVC.carbonEmissionLabel.text = $0 })
-        ]
         
         // update annotation in the map
         
@@ -365,27 +360,31 @@ extension OnTripViewController
         
         // model only gets updated when there's no modal presentation
         // it means that there's no pending user input for affirmation
-        guard let viewModel = viewModel,
-              model != nil,
-              model?.transits.isEmpty == false,
-              self.presentedViewController == nil
+        guard let viewModel = viewModel, self.presentedViewController == nil
         else { return }
         
-        var coords = pendingLocations
+        let coords = pendingLocations
         pendingLocations = []
-        
-        // in order to connect the stroke correctly, make sure to get
-        // before updating the viewModel.currLocation
-        let lastStrokeLocation = viewModel.currLocation
-        
         coords.forEach
         {
             let location = CLLocation(latitude: $0.latitude, longitude: $0.longitude)
-            viewModel.currLocation = location
+            viewModel.processor.update(location)
         }
+    }
+}
+
+extension OnTripViewController: ULProcessorDelegate
+{
+    func location(_ processor: ULProcessor, didRefactor index: Int)
+    {
+        viewModel?.location(processor, didRefactor: index)
+    }
+    
+    func location(_ processor: ULProcessor, didAdd location: CLLocation)
+    {
+        viewModel?.location(processor, didAdd: location)
         
-        // make sure there's a pending coordinate which needs to be processed
-        guard let lastCoord = coords.last
+        guard let viewModel = viewModel
         else { return }
         
         // update the model
@@ -393,18 +392,26 @@ extension OnTripViewController
         model![currIndex].carbonEmissionInKg = viewModel.carbonEmissionInKg
         model![currIndex].endDate = Date()
         model![currIndex].distanceInKm = viewModel.distanceInKm
-        model![currIndex].transitPath.endLatitude = lastCoord.latitude
-        model![currIndex].transitPath.endLongitude = lastCoord.longitude
+        model![currIndex].transitPath.endLatitude = location.coordinate.latitude
+        model![currIndex].transitPath.endLongitude = location.coordinate.longitude
         
-        GlobalPublisher.shared.onTripTransitModelUpdated(model![currIndex])
+        // update the view
+        let vc = currentTransportationVC
+        vc.distanceLabel.text = viewModel.distanceInKmText
+        vc.approxCostLabel.text = viewModel.totalCostInIDRText
+        vc.carbonEmissionLabel.text = viewModel.carbonEmissionInKgText
         
         // connecting the last stroke with current stroke
-        if let prevLocation = lastStrokeLocation
+        if let prevLocation = viewModel.prevValidLocation
         {
-            coords.insert(prevLocation.coordinate, at: 0)
+            let currLocation = viewModel.currValidLocation
+            let coords = [prevLocation.coordinate, currLocation.coordinate]
+            let polyline = MKPolyline(coordinates: coords, count: coords.count)
+            mapView.addOverlay(polyline, level: .aboveRoads)
         }
-        let polyline = MKPolyline(coordinates: coords, count: coords.count)
-        mapView.addOverlay(polyline, level: .aboveRoads)
+        
+        // inform transit model updated
+        GlobalPublisher.shared.onTripTransitModelUpdated(model![currIndex])
     }
 }
 
@@ -490,7 +497,7 @@ extension OnTripViewController: CLLocationManagerDelegate
             self.present(chooseTransportationVC, animated: true) { [unowned self] in
                 // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
                 UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
-                    mapViewBottomConstraint.constant = 330
+                    mapViewBottomConstraint.constant = 340
                 }
                 // current transporation view always exists on the bottom of the container view
                 currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
@@ -511,7 +518,8 @@ extension OnTripViewController: CLLocationManagerDelegate
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
     {
-        guard manager.authorizationStatus == .denied || manager.authorizationStatus == .notDetermined
+        guard   manager.authorizationStatus == .denied ||
+                manager.authorizationStatus == .notDetermined
         else { return }
         // forcefully cancel ongoing trip
         GlobalPublisher.shared.onTripEnded()
@@ -532,7 +540,7 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
 {
     func onChangeTransportationButton(_ sender: UIButton)
     {
-        guard let location = viewModel?.currLocation
+        guard let location = viewModel?.currValidLocation
         else { return }
         
         updateTransportLocation = location
@@ -541,7 +549,7 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
     
     func onEndTripButton(_ sender: UIButton)
     {
-        guard let location = viewModel?.currLocation
+        guard let location = viewModel?.currValidLocation
         else { return }
         
         updateTransportLocation = location
