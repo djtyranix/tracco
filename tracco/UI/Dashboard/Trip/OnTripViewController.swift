@@ -150,7 +150,8 @@ class OnTripViewController: UIViewController
         changeTransportationVC.transitioningDelegate    = self
         
         // start updating location after choose transport
-        // this will trigger CLLocationManagerDelegate when in background only
+        // this will trigger CLLocationManagerDelegate in bg and fg
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()

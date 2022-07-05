@@ -14,7 +14,7 @@ import MapKit
 struct StaticNotification
 {
     let key: String
-    var wrappedValue: NotificationContent
+    let wrappedValue: NotificationContent
 }
 
 struct NotificationContent
@@ -60,12 +60,21 @@ class NotificationTrigger: NSObject
     ))
     var longAbsentNotificationContent
     
+    // contain the previous location of the user for every movement
+    // that is >= proximityArrivalCertainty
+    private var locationCheckpointArrivalCertainty: CLLocation?
+    
+    // ask the user about certainty of the arrival if user
+    // hasn't been moved for this distance since (locationCheckpointArrivalCertainty)
+    // this will handle the cases where user is moving inside building
+    private let proximityArrivalCertainty: CLLocationDistance = 200
+    
     // the app will notify the user about the certainty of the arrival if
-    // user doesn't move (ie: location doesn't get updated) for this long
+    // user doesn't move for proximityArrivalCertainty for this long
     private let intervalArrivalCertainty: TimeInterval = 10 * 60
     
     // the app will notify the user to encouragement them to use the app
-    // if user doesn't open the app for every this date
+    // for every watching date component of this
     private let dateCallToUse: DateComponents = {
         var components      = DateComponents(calendar: Calendar.current)
         components.hour     = 07
@@ -104,12 +113,18 @@ class NotificationTrigger: NSObject
         })()
     }
     
-    public func notifyLocationUpdate()
+    public func notifyLocationUpdate(_ location: CLLocation)
     {
-        // remove all notification if user start his trip or detects location update
-        // meaning that [1] locations not lost, [2] he's not arrived yet, [3] he uses the app
-        // so it kill the purpose of the all static notification
+        // if user hasn't been moved for proximityArrivalCertainty
+        // the interval of notification will not be updated
+        if  let locationCheckpointArrivalCertainty = locationCheckpointArrivalCertainty,
+            location.distance(from: locationCheckpointArrivalCertainty) < proximityArrivalCertainty
+            { return }
+        
         let notifcenter = UNUserNotificationCenter.current()
+        
+        // remove all notification if user start his trip or detects location update
+        // meaning that [1] locations not lost ans [2] he's not arrived yet
         let expiringTriggerIdentifiers = [
             _arrivalCertaintyNotificationContent.key,
             _trackingLostNotificationContent.key
@@ -124,10 +139,13 @@ class NotificationTrigger: NSObject
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: intervalArrivalCertainty, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         notifcenter.add(request)
+        
+        locationCheckpointArrivalCertainty = location
     }
     
     public func removeLocationUpdateNotification()
     {
+        locationCheckpointArrivalCertainty = nil
         let identifier = _arrivalCertaintyNotificationContent.key
         let notifcenter = UNUserNotificationCenter.current()
         notifcenter.removePendingNotificationRequests(withIdentifiers: [identifier])
@@ -150,14 +168,10 @@ extension NotificationTrigger: UNUserNotificationCenterDelegate
 
 extension NotificationTrigger: GlobalEvent
 {
+    // make sure to be lightweight because this can be run in background
     func onTripLocationUpdate(_ locations: [CLLocation])
     {
-        self.notifyLocationUpdate()
-    }
-    
-    func onTripStarted()
-    {
-        self.notifyLocationUpdate()
+        if let location = locations.last { self.notifyLocationUpdate(location) }
     }
     
     func onTripEnded()

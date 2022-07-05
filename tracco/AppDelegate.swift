@@ -13,9 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
         NotificationTrigger.shared.notifyUserOpen()
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication)
+    {
+        // if user force close the app while on trip is happening,
+        // this will remove pending or delivered notification about on trip event
+        NotificationTrigger.shared.removeLocationUpdateNotification()
     }
 
     // MARK: UISceneSession Lifecycle
