@@ -18,6 +18,7 @@
 		3F1877892872D811009684A6 /* AppAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1877882872D811009684A6 /* AppAlertAction.swift */; };
 		3F18778B2872E6FE009684A6 /* SystemDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18778A2872E6FE009684A6 /* SystemDevice.swift */; };
 		3F18778F28730FD9009684A6 /* LocationPermissionAlertNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18778E28730FD9009684A6 /* LocationPermissionAlertNotifier.swift */; };
+		3F187791287329C1009684A6 /* NotificationTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F187790287329C1009684A6 /* NotificationTrigger.swift */; };
 		3F3131DD28635499005B7640 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131DC28635499005B7640 /* UserDefaults.swift */; };
 		3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E0286359AA005B7640 /* ProfileModel.swift */; };
 		3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E228635C84005B7640 /* CO2ETimer.swift */; };
@@ -141,6 +142,7 @@
 		3F1877882872D811009684A6 /* AppAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertAction.swift; sourceTree = "<group>"; };
 		3F18778A2872E6FE009684A6 /* SystemDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDevice.swift; sourceTree = "<group>"; };
 		3F18778E28730FD9009684A6 /* LocationPermissionAlertNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionAlertNotifier.swift; sourceTree = "<group>"; };
+		3F187790287329C1009684A6 /* NotificationTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTrigger.swift; sourceTree = "<group>"; };
 		3F3131DC28635499005B7640 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		3F3131E0286359AA005B7640 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		3F3131E228635C84005B7640 /* CO2ETimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2ETimer.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				3FF8DCA428670A4B00EEE490 /* OffsetEntity.swift */,
 				3F9E56C3286844F100A566C6 /* PartsOfDay.swift */,
 				3FA131712871541600C67D2A /* ULProcessor.swift */,
+				3F187790287329C1009684A6 /* NotificationTrigger.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				A87463F028546D4F009AB0DC /* HistoryViewController.swift in Sources */,
 				3FF1013D2854BC2F0048013A /* TransportationCostViewController.swift in Sources */,
 				3FC825A32856177C0074B88D /* TransportType.swift in Sources */,
+				3F187791287329C1009684A6 /* NotificationTrigger.swift in Sources */,
 				3FA0FE88286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift in Sources */,
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
 				3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */,

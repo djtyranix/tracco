@@ -544,6 +544,7 @@ extension OnTripViewController: CLLocationManagerDelegate
         
         let coords = locations.map({ $0.coordinate })
         pendingLocations.append(contentsOf: coords)
+        GlobalPublisher.shared.onTripLocationUpdate(locations)
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
@@ -575,6 +576,7 @@ extension OnTripViewController: CLLocationManagerDelegate
         // [1] user input may stil be in progress. The job of presenting the alert
         // is handled by timerLocationAvailability.
         isRequestingLocationLostAlert = true
+        GlobalPublisher.shared.onTripLocationLost(manager)
     }
 }
 
