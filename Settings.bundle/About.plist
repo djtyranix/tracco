@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>About</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Current Version</string>
+			<key>Key</key>
+			<string>_</string>
+			<key>DefaultValue</key>
+			<string>1.1.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>About Tracco</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Key</key>
+			<string>_</string>
+			<key>DefaultValue</key>
+			<string>Tracco is an iOS app that calculates users&apos; carbon emissions and gives recommendations to other transportation modes that has far more efficient in terms of carbon emission and cost. This is a solution to the challenge of helping people reduce their transportation carbon emissions by giving them information about the emission produced by their chosen transportation, logging users&apos; carbon emission, and providing information on alternative public transportation with lower cost and lower carbon emission transportation.</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Attributions</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Key</key>
+			<string>_</string>
+			<key>DefaultValue</key>
+			<string>Images provided on onboarding, alerts, home, profile, and history pages are from Storyset (http://storyset.com)</string>
+		</dict>
+	</array>
+</dict>
+</plist>
