@@ -13,7 +13,7 @@ import UIKit
 // TODO: right now, we are only able to update nextLocation
 class OnTripVM
 {
-    public let processor = ULProcessor(sampleSize: 2, minDistanceMovement: 50)
+    public let processor = ULProcessor(sampleSize: 2, minDistanceMovement: 70)
     
     private let repository = TripRepository.sharedInstance
     
