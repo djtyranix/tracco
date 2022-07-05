@@ -37,6 +37,7 @@ class SlidingOnboardingViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        updatePage()
         scrollView.delegate = self
     }
     
@@ -51,34 +52,26 @@ class SlidingOnboardingViewController: UIViewController
     
     private func updatePage()
     {
-        let isLastPage = currentPage == 2
+        let isLastPage = currentPage == totalPage - 1
         skipButton.isHidden = isLastPage
         
-        if let attributedTitle = upperButton.attributedTitle(for: .normal)
-        {
-            let buttonText = isLastPage ? "Get Started" : "Next"
-            let mutableAttributedTitle = NSMutableAttributedString(attributedString: attributedTitle)
-            mutableAttributedTitle.replaceCharacters(
-                in: NSMakeRange(0, mutableAttributedTitle.length),
-                with: buttonText
-            )
-            upperButton.setAttributedTitle(mutableAttributedTitle, for: .normal)
-        }
+        let buttonText = isLastPage ? "Get Started" : "Next"
+        upperButton.setTitle(buttonText, for: .normal)
         
         if (currentPage == 0)
         {
-            upperLabel.text = "Choose Your Transportation"
-            lowerLabel.text = "Choose what kind of transportations you take for each transit you use"
+            upperLabel.text = "Choose Transportation"
+            lowerLabel.text = "Choose what kind of transportations you take for each transit of the trip"
         }
         else if (currentPage == 1)
         {
-            upperLabel.text = "Track Your Emmission & Cost"
-            lowerLabel.text = "Input your transportations and we’ll count the estimated cost and carbon emmission for you"
+            upperLabel.text = "Track Your Emmission"
+            lowerLabel.text = "Start your trip and we’ll count the estimated cost and carbon emmission"
         }
         else
         {
             upperLabel.text = "See How Well You Do"
-            lowerLabel.text = "Check your profile to see how much your carbon emission and how well you reduce it!"
+            lowerLabel.text = "Check your profile to see how well you reduce it and share with others"
         }
     }
 }
