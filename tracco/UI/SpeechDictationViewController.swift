@@ -16,6 +16,7 @@ import Speech
     @objc optional func specehDictation(didNotGranted micPermission: Bool)
 }
 
+@MainActor
 class SpeechDictationViewController: UIViewController
 {
     public weak var delegate: SpeechDictationDelegate?
@@ -25,6 +26,17 @@ class SpeechDictationViewController: UIViewController
     private var request = SFSpeechAudioBufferRecognitionRequest()
     private var recognizer: SFSpeechRecognizer?
     private var task: SFSpeechRecognitionTask?
+    
+    private var isMicGranted: Bool? { didSet {
+        guard isMicGranted == true && isSpeechGranted == true
+        else { return }
+        DispatchQueue.main.async { [unowned self] in startSpeechRecognition() }
+    }}
+    private var isSpeechGranted: Bool? { didSet {
+        guard isMicGranted == true && isSpeechGranted == true
+        else { return }
+        DispatchQueue.main.async { [unowned self] in startSpeechRecognition() }
+    }}
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var micImageView: UIImageView!
@@ -68,28 +80,13 @@ class SpeechDictationViewController: UIViewController
     
     private func requestPermission()
     {
-        var isMicGranted: Bool?
-        var isSpeechGranted: Bool?
-        
-        AVAudioSession.sharedInstance().requestRecordPermission { granted in
-            isMicGranted = granted
-            if isMicGranted == false { self.delegate?.specehDictation?(didNotGranted: granted) }
+        AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
+            self?.isMicGranted = granted
+            if granted == false { self?.delegate?.specehDictation?(didNotGranted: granted) }
         }
         SFSpeechRecognizer.requestAuthorization { [weak self] auth in
-            isSpeechGranted = auth != .denied && auth != .notDetermined
-            if isSpeechGranted == false { self?.delegate?.speechDictation?(didNotAuthorized: auth) }
-        }
-        Task(priority: .high) { [weak self] in
-            while (true)
-            {
-                if isMicGranted == false || isSpeechGranted == false { break }
-                if isMicGranted == true && isSpeechGranted == true
-                {
-                    DispatchQueue.main.async { self?.startSpeechRecognition() }
-                    break
-                }
-                Thread.sleep(forTimeInterval: 1)
-            }
+            self?.isSpeechGranted = auth != .denied && auth != .notDetermined
+            if self?.isSpeechGranted == false { self?.delegate?.speechDictation?(didNotAuthorized: auth) }
         }
     }
     
