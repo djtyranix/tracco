@@ -32,7 +32,7 @@ class SearchLocationViewController: UIViewController
         return vc
     }()
     
-    private var alertSpeechRecognitionAuthorization: AuthorizationSecondaryPlanController?
+    private var alertAuthorization: AppAlertController?
     
     private var dataSource: [MKMapItem]?
     private var searchActor: MKLocalSearch?
@@ -83,24 +83,33 @@ class SearchLocationViewController: UIViewController
     
     private func tryPresentSpeechDictation()
     {
-        let status = SFSpeechRecognizer.authorizationStatus()
-        if (status == .denied)
+        let speechStatus = SFSpeechRecognizer.authorizationStatus()
+        let micStatus = AVAudioSession.sharedInstance().recordPermission
+        
+        if (speechStatus == .denied || micStatus == .denied)
         {
-            if let vc = alertSpeechRecognitionAuthorization, vc.isBeingPresented { return }
-            let alert = AuthorizationSecondaryPlanController(
-                message: "Please allow speech recognition in settings to use this feature",
-                image: UIImage(named: "Location")
+            if  alertAuthorization != nil && self.presentedViewController == alertAuthorization
+            { return }
+            
+            let alert = AppAlertController(
+                title: "Speech Recognition & Mic",
+                message: "Activate speech recognition & microphone in settings to access this feature.",
+                image: UIImage(named: "Speech")
             )
-            alert.delegate                 = self
-            alert.view.layer.cornerRadius  = 12
-            alert.modalPresentationStyle   = .custom
-            alert.transitioningDelegate    = AlertPresentationTransitioningManager.shared
+            alert.addAction(AppAlertAction(title: "Cancel", style: .cancel) { [unowned self] _ in
+                alert.dismiss(animated: true)
+                textField.becomeFirstResponder()
+            })
+            alert.addAction(AppAlertAction(title: "Go To Settings", style: .default) { _ in
+                SystemDevice.openAppSettings()
+            })
             self.present(alert, animated: true)
-            alertSpeechRecognitionAuthorization = alert
+            
+            alertAuthorization = alert
         }
         else
         {
-            alertSpeechRecognitionAuthorization?.dismiss(animated: true)
+            alertAuthorization?.dismiss(animated: true)
             self.present(speechDictationVC, animated: true)
         }
     }
@@ -224,13 +233,5 @@ extension SearchLocationViewController: SpeechDictationDelegate
             self?.speechDictationVC.dismiss(animated: true)
             self?.tryPresentSpeechDictation()
         }
-    }
-}
-
-extension SearchLocationViewController: AuthorizationSecondaryPlanDelegate
-{
-    func onCancel()
-    {
-        textField.becomeFirstResponder()
     }
 }

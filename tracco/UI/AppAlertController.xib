@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppAlertController" customModule="tracco" customModuleProvider="target">
+            <connections>
+                <outlet property="actionContainerView" destination="2tH-Pe-MMa" id="Svu-Fy-g2j"/>
+                <outlet property="imageView" destination="Qp9-29-3Ld" id="36S-Wc-ySP"/>
+                <outlet property="messageLabel" destination="eW9-lz-kZ9" id="e1d-Rk-qBS"/>
+                <outlet property="titleLabel" destination="67T-ib-TwR" id="YIG-Pp-CMI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-29-3Ld">
+                    <rect key="frame" x="40" y="40" width="278" height="295"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67T-ib-TwR">
+                    <rect key="frame" x="39" y="351" width="280" height="23.5"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW9-lz-kZ9">
+                    <rect key="frame" x="39" y="378.5" width="280" height="19.5"/>
+                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tH-Pe-MMa">
+                    <rect key="frame" x="24" y="414" width="310" height="46"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Dwz-eI-u2J"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="eW9-lz-kZ9" firstAttribute="top" secondItem="67T-ib-TwR" secondAttribute="bottom" constant="4" id="92F-LH-YLz"/>
+                <constraint firstAttribute="trailing" secondItem="Qp9-29-3Ld" secondAttribute="trailing" constant="40" id="D1f-3O-1Mv"/>
+                <constraint firstItem="eW9-lz-kZ9" firstAttribute="leading" secondItem="67T-ib-TwR" secondAttribute="leading" id="DL6-G8-qZa"/>
+                <constraint firstItem="2tH-Pe-MMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="KuP-lt-dTz"/>
+                <constraint firstItem="eW9-lz-kZ9" firstAttribute="trailing" secondItem="67T-ib-TwR" secondAttribute="trailing" id="Rak-nH-W8j"/>
+                <constraint firstItem="67T-ib-TwR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="39" id="SAM-qL-4bY"/>
+                <constraint firstItem="2tH-Pe-MMa" firstAttribute="top" secondItem="eW9-lz-kZ9" secondAttribute="bottom" constant="16" id="YrS-h4-QgR"/>
+                <constraint firstAttribute="trailing" secondItem="2tH-Pe-MMa" secondAttribute="trailing" constant="24" id="ZcS-hq-PIj"/>
+                <constraint firstItem="Qp9-29-3Ld" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="o2x-fp-hNl"/>
+                <constraint firstAttribute="trailing" secondItem="67T-ib-TwR" secondAttribute="trailing" constant="39" id="ptu-UE-IDR"/>
+                <constraint firstItem="Qp9-29-3Ld" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="qu5-Bv-9Am"/>
+                <constraint firstItem="67T-ib-TwR" firstAttribute="top" secondItem="Qp9-29-3Ld" secondAttribute="bottom" constant="16" id="uYm-BK-WLd"/>
+                <constraint firstAttribute="bottom" secondItem="2tH-Pe-MMa" secondAttribute="bottom" constant="40" id="z5a-1f-EOU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="85.044642857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -19,14 +19,6 @@ class LottieFactory
         return lottieView
     }
     
-    static func makeLogoView(on: UIView) -> AnimationView
-    {
-        let lottieView = AnimationView(name: "Lottie2")
-        layout(lottieView, on: on)
-        lottieView.loopMode = .playOnce
-        return lottieView
-    }
-    
     static private func layout(_ lottieView: AnimationView, on: UIView)
     {
         lottieView.contentMode = .scaleAspectFill

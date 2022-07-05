@@ -24,14 +24,12 @@ class DestinationPlanViewController: UIViewController
     @IBOutlet weak var checkboxImageView: UIImageView!
     @IBOutlet weak var dontShowAgainLabel: UILabel!
     
-    var activateLocationVC: AuthorizationSecondaryPlanController?
-    
     private var viewModel: DestinationPlanVM?
     private var cancellables: [AnyCancellable]?
+    private var alertNotifier: LocationPermissionAlertNotifier?
     
     private var isUserLocationInitialized = false
     private var isRequestingSpeechDictation = false
-    
     private var isDontShowRecommendationAgain = false
     
     private var isSpeechDictationNeedElevation = true
@@ -53,7 +51,11 @@ class DestinationPlanViewController: UIViewController
         
         mapView.delegate = self
         mapView.showsUserLocation = true
-        locationManager.delegate = self
+        
+        alertNotifier = LocationPermissionAlertNotifier(parent: self)
+        alertNotifier?.onCancel = { [unowned self] in dismiss(animated: true) }
+        alertNotifier?.startMonitoring()
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         locationManager.allowsBackgroundLocationUpdates = false
@@ -136,52 +138,6 @@ class DestinationPlanViewController: UIViewController
             vc.baseRegion = mapView.region
             vc.baseLocation = mapView.userLocation.location
             vc.isRequestingSpeechDictation = isRequestingSpeechDictation
-        }
-    }
-}
-
-extension DestinationPlanViewController: AuthorizationSecondaryPlanDelegate
-{
-    func onCancel()
-    {
-        self.dismiss(animated: true)
-    }
-}
-
-extension DestinationPlanViewController: CLLocationManagerDelegate
-{
-    @available(iOS 14.0, *)
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
-    {
-        determineLocationAlert(manager.authorizationStatus)
-    }
-    
-    // for compatibility version iOS <= 13
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
-    {
-        determineLocationAlert(status)
-    }
-    
-    private func determineLocationAlert(_ status: CLAuthorizationStatus)
-    {
-        if (status == .denied)
-        {
-            if let vc = activateLocationVC, vc.isBeingPresented { return }
-    
-            let vc = AuthorizationSecondaryPlanController(
-                message: "Please allow location access in settings to proceed",
-                image: UIImage(named: "Location")
-            )
-            vc.delegate                 = self
-            vc.transitioningDelegate    = AlertPresentationTransitioningManager.shared
-            vc.modalPresentationStyle   = .custom
-            vc.view.layer.cornerRadius  = 12
-            present(vc, animated: true)
-            activateLocationVC = vc
-        }
-        else
-        {
-            activateLocationVC?.dismiss(animated: true)
         }
     }
 }

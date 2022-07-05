@@ -14,9 +14,12 @@ class HomeNoTripViewController: UIViewController
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var trackButton: UIButton!
     
+    private var alertNotifier: LocationPermissionAlertNotifier!
+    
     override func viewDidLoad()
     {
         GlobalPublisher.addObserver(self)
+        alertNotifier = LocationPermissionAlertNotifier(parent: self)
         super.viewDidLoad()
     }
     
@@ -28,9 +31,18 @@ class HomeNoTripViewController: UIViewController
     
     @IBAction func onStartTripButton(_ sender: UIButton)
     {
-        let showPlanTrip = StoredModel.showRouteRecommendation ?? true
-        let segueTrip: Segue = showPlanTrip ? .onPlanTrip : .onTrip
-        performSegue(withIdentifier: segueTrip.rawValue, sender: self)
+        if StoredModel.showRouteRecommendation ?? true
+        {
+            performSegue(withIdentifier: Segue.onPlanTrip.rawValue, sender: self)
+        }
+        else if alertNotifier.isAbleToTrack
+        {
+            performSegue(withIdentifier: Segue.onTrip.rawValue, sender: self)
+        }
+        else
+        {
+            alertNotifier.requestPermission()
+        }
     }
 }
 

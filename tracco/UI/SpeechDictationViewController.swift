@@ -13,6 +13,7 @@ import Speech
     @objc optional func speechDictation(didFinishRecognizing text: String?)
     @objc optional func speechDictation(didCancelRecognizing text: String?)
     @objc optional func speechDictation(didNotAuthorized auth: SFSpeechRecognizerAuthorizationStatus)
+    @objc optional func specehDictation(didNotGranted micPermission: Bool)
 }
 
 class SpeechDictationViewController: UIViewController
@@ -67,21 +68,33 @@ class SpeechDictationViewController: UIViewController
     
     private func requestPermission()
     {
+        var isMicGranted: Bool?
+        var isSpeechGranted: Bool?
+        
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            isMicGranted = granted
+            if isMicGranted == false { self.delegate?.specehDictation?(didNotGranted: granted) }
+        }
         SFSpeechRecognizer.requestAuthorization { [weak self] auth in
-            if auth == .denied || auth == .notDetermined
+            isSpeechGranted = auth != .denied && auth != .notDetermined
+            if isSpeechGranted == false { self?.delegate?.speechDictation?(didNotAuthorized: auth) }
+        }
+        Task(priority: .high) { [weak self] in
+            while (true)
             {
-                self?.delegate?.speechDictation?(didNotAuthorized: auth)
-                return
+                if isMicGranted == false || isSpeechGranted == false { break }
+                if isMicGranted == true && isSpeechGranted == true
+                {
+                    DispatchQueue.main.async { self?.startSpeechRecognition() }
+                    break
+                }
+                Thread.sleep(forTimeInterval: 1)
             }
-            DispatchQueue.main.async { self?.startSpeechRecognition() }
         }
     }
     
     private func startSpeechRecognition()
     {
-        label.text = "Speak Now..."
-        micImageView.tintColor = UIColor(named: "MainGreen80")
-        
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
         audioEngine.prepare()
@@ -107,6 +120,9 @@ class SpeechDictationViewController: UIViewController
         
         recognizer = SFSpeechRecognizer()
         recognizer?.recognitionTask(with: self.request, delegate: self)
+        
+        label.text = "Speak Now..."
+        micImageView.tintColor = UIColor(named: "MainGreen80")
     }
     
     private func cancelSpeechRecognition()
