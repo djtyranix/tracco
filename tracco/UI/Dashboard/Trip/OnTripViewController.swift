@@ -123,6 +123,14 @@ class OnTripViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // user can bypass the notification request in the onboarding by clicking not now.
+        // make sure to ask permission request once so the user can tweak notification in
+        // the settings later. if never asked, there will be no notif settings
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.sound, .alert, .badge],
+            completionHandler: { _,_ in }
+        )
+        
         GlobalPublisher.addObserver(self)
         
         mapView.showsUserLocation = true
