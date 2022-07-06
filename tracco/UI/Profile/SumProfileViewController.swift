@@ -41,6 +41,10 @@ class SumProfileViewController: UIViewController
         setupHeaderCardView(reduceCarbonCard)
         setupHeaderCardView(reduceCarbonFullCard)
         updateViewWithModel()
+        
+        // adjust bottom constraint if on going trip sheet is displayed or not
+        if let mostBottomConstraint = scrollView.constraints.first(where: { $0.firstAttribute == .bottom })
+            { AnimTabBarController.shared?.observeAdjustment(mostBottomConstraint, owner: self) }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

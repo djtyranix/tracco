@@ -29,6 +29,10 @@ class TripTableViewController: UIViewController
         tableView?.delaysContentTouches = false
         tableView?.rowHeight = HistoryTableViewCell.cellDesiredHeight
         tableView?.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
+        
+        // adjust bottom constraint if on going trip sheet is displayed or not
+        if let mostBottomConstraint = self.view.constraints.first(where: { $0.firstAttribute == .bottom })
+            { AnimTabBarController.shared?.observeAdjustment(mostBottomConstraint, owner: self) }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

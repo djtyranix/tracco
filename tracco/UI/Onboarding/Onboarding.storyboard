@@ -308,6 +308,11 @@
             <point key="canvasLocation" x="1282.608695652174" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="sPF-0J-2Vo">
+            <size key="intrinsicContentSize" width="59" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Notification" width="280" height="280"/>
         <image name="Onboarding1" width="1106" height="1417"/>

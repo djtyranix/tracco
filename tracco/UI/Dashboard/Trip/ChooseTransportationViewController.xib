@@ -29,10 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqm-DZ-WO0" customClass="StateBackgroundButton" customModule="tracco" customModuleProvider="target">
-                    <rect key="frame" x="16" y="298" width="358" height="46"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="46" id="0Nl-W7-cDB"/>
-                    </constraints>
+                    <rect key="frame" x="203" y="298" width="171" height="46"/>
                     <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Confirm"/>
@@ -69,7 +66,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToV-wE-Wey">
+                <scrollView verifyAmbiguity="off" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToV-wE-Wey">
                     <rect key="frame" x="0.0" y="146" width="390" height="115"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="115" id="k85-dg-XFm"/>
@@ -81,22 +78,44 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-AW-wok">
+                    <rect key="frame" x="16" y="298" width="171" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="21m-sL-yTL"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                        <backgroundConfiguration key="background" cornerRadius="8" strokeWidth="2">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="strokeColor" name="CancelButton"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="16"/>
+                        <color key="baseForegroundColor" name="CancelButton"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="onCancelChoose:" destination="-1" eventType="touchUpInside" id="1Ib-dj-reb"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="BGR-cG-uib"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="jRD-AW-wok" firstAttribute="top" secondItem="ToV-wE-Wey" secondAttribute="bottom" constant="37" id="9Nl-Ud-VlU"/>
                 <constraint firstAttribute="trailing" secondItem="jfh-oM-gfG" secondAttribute="trailing" constant="16" id="BjL-GZ-SdA"/>
                 <constraint firstItem="ToV-wE-Wey" firstAttribute="top" secondItem="jfh-oM-gfG" secondAttribute="bottom" constant="37" id="G4M-yy-qJM"/>
+                <constraint firstItem="aqm-DZ-WO0" firstAttribute="height" secondItem="jRD-AW-wok" secondAttribute="height" id="JPl-ZE-xaa"/>
+                <constraint firstItem="aqm-DZ-WO0" firstAttribute="width" secondItem="jRD-AW-wok" secondAttribute="width" id="MWy-1W-bOs"/>
                 <constraint firstAttribute="trailing" secondItem="ToV-wE-Wey" secondAttribute="trailing" id="Nkq-ku-Djh"/>
                 <constraint firstItem="ToV-wE-Wey" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PeY-jH-l1v"/>
+                <constraint firstItem="aqm-DZ-WO0" firstAttribute="centerY" secondItem="jRD-AW-wok" secondAttribute="centerY" id="VNK-Uj-XTJ"/>
                 <constraint firstItem="jfh-oM-gfG" firstAttribute="top" secondItem="3dP-YK-Gej" secondAttribute="bottom" constant="8" id="Z3t-s1-AM9"/>
-                <constraint firstItem="aqm-DZ-WO0" firstAttribute="leading" secondItem="BGR-cG-uib" secondAttribute="leading" constant="16" id="ZBV-gd-hah"/>
-                <constraint firstItem="aqm-DZ-WO0" firstAttribute="top" secondItem="ToV-wE-Wey" secondAttribute="bottom" constant="37" id="aLn-Kk-EiG"/>
                 <constraint firstItem="BGR-cG-uib" firstAttribute="trailing" secondItem="aqm-DZ-WO0" secondAttribute="trailing" constant="16" id="cIt-ra-tlf"/>
+                <constraint firstItem="jRD-AW-wok" firstAttribute="leading" secondItem="BGR-cG-uib" secondAttribute="leading" constant="16" id="dOP-ES-Zol"/>
                 <constraint firstAttribute="trailing" secondItem="3dP-YK-Gej" secondAttribute="trailing" constant="16" id="dua-pH-vlw"/>
                 <constraint firstItem="jfh-oM-gfG" firstAttribute="leading" secondItem="BGR-cG-uib" secondAttribute="leading" constant="16" id="glK-mL-BFK"/>
-                <constraint firstItem="BGR-cG-uib" firstAttribute="bottom" secondItem="aqm-DZ-WO0" secondAttribute="bottom" constant="22" id="u9G-Ot-VH6"/>
                 <constraint firstItem="3dP-YK-Gej" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="uxe-JV-5bz"/>
+                <constraint firstItem="aqm-DZ-WO0" firstAttribute="leading" secondItem="jRD-AW-wok" secondAttribute="trailing" constant="16" id="v7o-eI-NmR"/>
+                <constraint firstItem="BGR-cG-uib" firstAttribute="bottom" secondItem="jRD-AW-wok" secondAttribute="bottom" constant="22" id="yKL-oF-42t"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="593.84615384615381" y="49.052132701421797"/>
@@ -108,6 +127,9 @@
         </designable>
     </designables>
     <resources>
+        <namedColor name="CancelButton">
+            <color red="0.62000000476837158" green="0.62000000476837158" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainButtonBackground">
             <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -9,6 +9,7 @@ import UIKit
 
 @objc protocol ChooseTransportationViewControllerDelegate: AnyObject
 {
+    @objc optional func onCancelChoose()
     @objc optional func onConfirmChoose(_ selected: TransportRadioButton?)
 }
 
@@ -30,6 +31,12 @@ class ChooseTransportationViewController: ChooseChangeTransportBase<ChooseTransp
     {
         super.onRadioButtonSelected(sender)
         confirmButton.isEnabled = true
+    }
+    
+    @IBAction func onCancelChoose(_ sender: UIButton)
+    {
+        self.dismiss(animated: true)
+        delegate?.onCancelChoose?()
     }
 
     @IBAction func onConfirmChanges(_ sender: UIButton)

@@ -64,10 +64,6 @@ class HistoryTableViewCell: UITableViewCell
         }
         
         dateText += formatter.string(from: tripDate)
-        if let timeZoneAbbreviation = TimeZone.current.abbreviation()
-        {
-            dateText += " " + timeZoneAbbreviation
-        }
         
         let descriptionText = String(
             format: "%@ to %@",

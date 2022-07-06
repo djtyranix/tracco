@@ -533,22 +533,7 @@ extension OnTripViewController: CLLocationManagerDelegate
             isTripInitiated = true
             updateTransportLocation = first
             // choose transport and layout subviews for the first time
-            self.present(chooseTransportationVC, animated: true) { [unowned self] in
-                // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
-                UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
-                    mapViewBottomConstraint.constant = 340
-                }
-                // current transporation view always exists on the bottom of the container view
-                currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
-                    currentTransportationVC.view,
-                    containerView: self.view,
-                    elevated: true
-                )
-                self.view.addSubview(currentTransportationVC.view)
-                // follow user location button must be on top of currentTransportationVC
-                let yFromBottom = currentTransportationVC.view.frame.height + 16
-                locationButtonYConstraint.constant = yFromBottom
-            }
+            self.present(chooseTransportationVC, animated: true)
         }
         
         let coords = locations.map({ $0.coordinate })
@@ -624,8 +609,28 @@ extension OnTripViewController: CurrentTransportationViewControllerDelegate
 // MARK: ChooseTransportationViewControllerDelegate
 extension OnTripViewController: ChooseTransportationViewControllerDelegate
 {
+    func onCancelChoose()
+    {
+        self.view.window?.rootViewController?.dismiss(animated: true)
+    }
+    
     func onConfirmChoose(_ selected: TransportRadioButton?)
     {
+        // set bottom constraint to adjust the center of the map after adding CurrentTransportation view from the bottom
+        UIView.animate(withDuration: 0.5, delay: 2, options: .curveEaseIn) { [unowned self] in
+            mapViewBottomConstraint.constant = 340
+        }
+        // current transporation view always exists on the bottom of the container view
+        currentTransportationVC.view.frame = SheetPresentationController.getFrameOfPresentedViewInContainerView(
+            currentTransportationVC.view,
+            containerView: self.view,
+            elevated: true
+        )
+        self.view.addSubview(currentTransportationVC.view)
+        // follow user location button must be on top of currentTransportationVC
+        let yFromBottom = currentTransportationVC.view.frame.height + 16
+        locationButtonYConstraint.constant = yFromBottom
+        // notify trip started
         updateTransportation(chooseTransportationVC.radioButton!)
         GlobalPublisher.shared.onTripStarted()
     }

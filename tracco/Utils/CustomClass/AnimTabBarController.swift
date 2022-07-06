@@ -7,24 +7,32 @@
 
 import UIKit
 
+struct BottomViewAdjustment
+{
+    weak var owner: UIViewController?
+    weak var mostBottomLayoutConstraint: NSLayoutConstraint?
+    var isRaised: Bool
+}
+
 class AnimTabBarController: UITabBarController
 {
-    private let onGoingPendingDisplayed = false
+    public static var shared: AnimTabBarController?
     
-    private let onGoingTripSheet: OnGoingTripSheet = {
-        
+    private var adjustments: [BottomViewAdjustment] = []
+    
+    public let onGoingTripSheet: OnGoingTripSheet = {
         let view = OnGoingTripSheet()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius     = 8
         view.backgroundColor        = UIColor(named: "OnGoingButtonBackground")
         view.labelColor             = UIColor(named: "OnGoingButtonForeground")
-        
         return view
     }()
     
     override func viewDidLoad()
     {
+        AnimTabBarController.shared = self
+        
         self.view.addSubview(onGoingTripSheet)
         
         GlobalPublisher.addObserver(self)
@@ -44,12 +52,42 @@ class AnimTabBarController: UITabBarController
         delegate = self
     }
     
-    @objc func onGoingTripButton(_ sender: OnGoingTripSheet)
+    @objc private func onGoingTripButton(_ sender: OnGoingTripSheet)
     {
         if let instanceOnPause = OnTripViewController.instanceOnPause
         {
             self.present(instanceOnPause, animated: true)
         }
+    }
+    
+    public func observeAdjustment(_ mostBottom: NSLayoutConstraint, owner: UIViewController)
+    {
+        let adjustment = BottomViewAdjustment(
+            owner: owner,
+            mostBottomLayoutConstraint: mostBottom,
+            isRaised: false
+        )
+        adjustments.append(adjustment)
+        doCheckAdjustment(adjustments.count - 1)
+    }
+    
+    private func doCheckAdjustment(_ index: Int)
+    {
+        let isSheetShown = onGoingTripSheet.isHidden == false
+        
+        // make sure the sate is not equal to be adjusted
+        guard isSheetShown != adjustments[index].isRaised,
+              let bottomConstaint = adjustments[index].mostBottomLayoutConstraint
+        else { return }
+        
+        let onGoingTripSheetHeight  = onGoingTripSheet.frame.height
+        let bottomViewPadding       = 24.0
+        var heightAdjustment        = onGoingTripSheetHeight + bottomViewPadding
+        
+        if adjustments[index].isRaised { heightAdjustment *= -1 }
+        bottomConstaint.constant    += heightAdjustment
+        
+        adjustments[index].isRaised = !adjustments[index].isRaised
     }
 }
 
@@ -65,11 +103,23 @@ extension AnimTabBarController: GlobalEvent
     func onTripStarted()
     {
         onGoingTripSheet.isHidden = false
+        // adjust every view that is overlayed by trip sheet
+        if let counts = AnimTabBarController.shared?.adjustments.count
+        {
+            for i in 0..<counts
+                { AnimTabBarController.shared?.doCheckAdjustment(i) }
+        }
     }
     
     func onTripEnded()
     {
         onGoingTripSheet.isHidden = true
+        // adjust every view that is overlayed by trip sheet
+        if let counts = AnimTabBarController.shared?.adjustments.count
+        {
+            for i in 0..<counts
+                { AnimTabBarController.shared?.doCheckAdjustment(i) }
+        }
     }
 }
 
