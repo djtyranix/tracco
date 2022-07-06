@@ -54,13 +54,13 @@ class ProfileVM
         switch (performance)
         {
         case .bad:
-            text = "Oh No! You used cars or motorcycles too much ☹️ You should try using public transportation to reduce your carbon emission"
+            text = "Oh No! You used cars or motorcycles too much ☹️ You should try using public transportation more to reduce your carbon emission"
             break
         case .moderate:
-            text = "You are on the right track to help reduce carbon emission ☺️ Please continue using public transportation 👍"
+            text = "You are on the right track to help reducing carbon emission ☺️ Please continue using public transportation 👍"
             break
         case .good:
-            text = "Your performance is truly outstanding to shaping a greener earth ❤️ Please maintain it chief 😆👍"
+            text = "Your performance is truly outstanding to help shaping a greener earth ❤️ Please maintain it chief 😆👍"
             break
         }
         
