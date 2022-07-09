@@ -24,11 +24,7 @@ class OnGoingTripSheet: UIControl
     }}
     
     @IBInspectable var durationInSeconds: Double = 0 { didSet {
-        let hours   = Int(durationInSeconds / (60 * 60))
-        let minutes = Int(durationInSeconds / 60)
-        durationLabel.text = hours == 0 ?
-            String(format: "%d minutes", minutes) :
-            String(format: "%d hours %d minutes", hours, minutes)
+        durationLabel.text = TimeInterval(durationInSeconds).string
     }}
     
     @IBInspectable var image: UIImage! { didSet {

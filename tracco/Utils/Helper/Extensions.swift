@@ -38,6 +38,16 @@ extension UIColor {
     }
 }
 
+extension TimeInterval
+{
+    var string: String { get {
+        let hours   = Int(self / (60 * 60))
+        let minutes = Int(self / 60) % 60
+        if hours == 0 { return String(format: "%d minutes", minutes) }
+        return String(format: "%d hours %d minutes", hours, minutes)
+    }}
+}
+
 extension UIView
 {
     func snapshot() -> UIImage?

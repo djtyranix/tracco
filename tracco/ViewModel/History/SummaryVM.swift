@@ -71,11 +71,7 @@ class SummaryVM
         {
             tripDuration = 0.0
         }
-        let hours   = UInt(tripDuration / (60 * 60))
-        let minutes = UInt(tripDuration / 60)
-        tripDurationText = hours == 0 ?
-            String(format: "%d minutes", minutes) :
-            String(format: "%d hours %d minutes", hours, minutes)
+        tripDurationText = tripDuration.string
         // trip detail contents
         var contents = model.transits.map({
             return TripDetailContent(
