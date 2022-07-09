@@ -7,22 +7,54 @@
 
 import UIKit
 
+// view controllers who gets overlaid by OnGoingTripSheet
 struct BottomViewAdjustment
 {
-    weak var owner: UIViewController?
-    weak var mostBottomLayoutConstraint: NSLayoutConstraint?
     var isRaised: Bool
+    let isReversed: Bool
+    weak var vc: UIViewController?
+    weak var constraint: NSLayoutConstraint?
+    
+    init(vc: UIViewController)
+    {
+        self.vc = vc
+        self.isRaised = false
+        constraint = vc.view.constraints.first(where: { $0.firstAttribute == .bottom && $0.secondAttribute == .bottom })
+        isReversed = constraint?.secondItem === vc.view
+    }
+    
+    mutating func adjust(_ sheet: OnGoingTripSheet)
+    {
+        let isSheetShown = sheet.isHidden == false
+        
+        // make sure to adjust only when needed
+        guard isSheetShown != self.isRaised
+        else { return }
+        
+        let onGoingTripSheetHeight  = sheet.frame.height
+        let bottomViewPadding       = 20.0
+        var heightAdjustment        = onGoingTripSheetHeight + bottomViewPadding
+        if self.isRaised            { heightAdjustment *= -1 }
+        if isReversed == true       { heightAdjustment *= -1 }
+        
+        constraint?.constant        += heightAdjustment
+        
+        self.isRaised = !self.isRaised
+    }
 }
 
 class AnimTabBarController: UITabBarController
 {
-    public static var shared: AnimTabBarController?
+    public static weak var shared: AnimTabBarController?
     
+    private var onTripTimer: Timer?
+    private var prevModel: TransitModel?
     private var adjustments: [BottomViewAdjustment] = []
     
     public let onGoingTripSheet: OnGoingTripSheet = {
         let view = OnGoingTripSheet()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden               = true
         view.layer.cornerRadius     = 8
         view.backgroundColor        = UIColor(named: "OnGoingButtonBackground")
         view.labelColor             = UIColor(named: "OnGoingButtonForeground")
@@ -38,8 +70,6 @@ class AnimTabBarController: UITabBarController
         GlobalPublisher.addObserver(self)
         onGoingTripSheet.isUserInteractionEnabled = true
         onGoingTripSheet.addTarget(self, action: #selector(onGoingTripButton(_:)), for: .touchUpInside)
-        
-        onGoingTripSheet.isHidden = true
         
         NSLayoutConstraint.activate([
             onGoingTripSheet.bottomAnchor.constraint(equalTo: self.tabBar.topAnchor, constant: -20),
@@ -60,72 +90,71 @@ class AnimTabBarController: UITabBarController
         }
     }
     
-    public func observeAdjustment(_ mostBottom: NSLayoutConstraint, owner: UIViewController)
+    public func observeAdjustment(_ vc: UIViewController)
     {
-        let adjustment = BottomViewAdjustment(
-            owner: owner,
-            mostBottomLayoutConstraint: mostBottom,
-            isRaised: false
-        )
+        let mostBottom = vc.view.constraints.first(where: {
+            $0.firstAttribute == .bottom && $0.secondAttribute == .bottom
+        })
+        if mostBottom == nil { return }
+        var adjustment = BottomViewAdjustment(vc: vc)
+        adjustment.adjust(onGoingTripSheet)
         adjustments.append(adjustment)
-        doCheckAdjustment(adjustments.count - 1)
-    }
-    
-    private func doCheckAdjustment(_ index: Int)
-    {
-        let isSheetShown = onGoingTripSheet.isHidden == false
-        
-        // make sure the sate is not equal to be adjusted
-        guard isSheetShown != adjustments[index].isRaised,
-              let bottomConstaint = adjustments[index].mostBottomLayoutConstraint
-        else { return }
-        
-        let onGoingTripSheetHeight  = onGoingTripSheet.frame.height
-        let bottomViewPadding       = 24.0
-        var heightAdjustment        = onGoingTripSheetHeight + bottomViewPadding
-        
-        if adjustments[index].isRaised { heightAdjustment *= -1 }
-        bottomConstaint.constant    += heightAdjustment
-        
-        adjustments[index].isRaised = !adjustments[index].isRaised
     }
 }
 
 extension AnimTabBarController: GlobalEvent
 {
+    // this will not get updated if user doesn't move
     func onTripTransitModelUpdated(_ model: TransitModel)
     {
+        prevModel = model
         onGoingTripSheet.type = model.type
         onGoingTripSheet.distance = model.distanceInKm
-        onGoingTripSheet.durationInSeconds = model.endDate.timeIntervalSince(model.beginDate)
+    }
+    
+    // this will update the time even though user doesn't move
+    @objc func onTripTimeUpdate()
+    {
+        guard let prevModel = prevModel
+        else { return }
+        
+        let seconds = Date().timeIntervalSince(prevModel.beginDate)
+        onGoingTripSheet.durationInSeconds = seconds
     }
     
     func onTripStarted()
     {
+        onTripTimer = Timer.scheduledTimer(
+            timeInterval: 10,
+            target: self,
+            selector: #selector(onTripTimeUpdate),
+            userInfo: nil,
+            repeats: true
+        )
+        
         onGoingTripSheet.isHidden = false
         // adjust every view that is overlayed by trip sheet
-        if let counts = AnimTabBarController.shared?.adjustments.count
-        {
-            for i in 0..<counts
-                { AnimTabBarController.shared?.doCheckAdjustment(i) }
+        for i in 0..<(AnimTabBarController.shared?.adjustments.count ?? 0) {
+            AnimTabBarController.shared?.adjustments[i].adjust(onGoingTripSheet)
         }
     }
     
     func onTripEnded()
     {
+        onTripTimer?.invalidate()
+        onTripTimer = nil
+        
         onGoingTripSheet.isHidden = true
         // adjust every view that is overlayed by trip sheet
-        if let counts = AnimTabBarController.shared?.adjustments.count
-        {
-            for i in 0..<counts
-                { AnimTabBarController.shared?.doCheckAdjustment(i) }
+        for i in 0..<(AnimTabBarController.shared?.adjustments.count ?? 0) {
+            AnimTabBarController.shared?.adjustments[i].adjust(onGoingTripSheet)
         }
     }
 }
 
 extension AnimTabBarController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool
+    {
         let tabViewControllers = tabBarController.viewControllers!
         guard let toIndex = tabViewControllers.firstIndex(of: viewController) else {
             return false
@@ -136,7 +165,8 @@ extension AnimTabBarController: UITabBarControllerDelegate {
         return true
     }
     
-    func animateToTab(toIndex: Int) {
+    func animateToTab(toIndex: Int)
+    {
         let tabViewControllers = viewControllers!
         let fromView = selectedViewController!.view
         let toView = tabViewControllers[toIndex].view

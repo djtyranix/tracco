@@ -25,6 +25,8 @@ class SummaryVM
     // for updating geolocation in summary vc
     public var model: TripModel
     
+    public var title: String = "Trip Summary"
+    
     // this will contain all information of each transit (tranport change)
     // including the arrival destination information
     // example:

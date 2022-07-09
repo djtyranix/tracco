@@ -23,8 +23,9 @@
 		3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E0286359AA005B7640 /* ProfileModel.swift */; };
 		3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E228635C84005B7640 /* CO2ETimer.swift */; };
 		3F3131E528635D50005B7640 /* TimeFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E428635D50005B7640 /* TimeFrequency.swift */; };
-		3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */; };
 		3F3131EB28638924005B7640 /* SummaryHistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */; };
+		3F4111B8287949770018EB95 /* EmptyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4111B7287949770018EB95 /* EmptyProfileViewController.swift */; };
+		3F4111BA287949C50018EB95 /* EmptyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4111B9287949C50018EB95 /* EmptyHistoryViewController.swift */; };
 		3F4D588E2859CEE200F6D19B /* RoundingDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */; };
 		3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */; };
 		3F84CB68285E163500EFDD71 /* SummaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84CB67285E163500EFDD71 /* SummaryVM.swift */; };
@@ -147,8 +148,9 @@
 		3F3131E0286359AA005B7640 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		3F3131E228635C84005B7640 /* CO2ETimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2ETimer.swift; sourceTree = "<group>"; };
 		3F3131E428635D50005B7640 /* TimeFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrequency.swift; sourceTree = "<group>"; };
-		3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderTripViewController.swift; sourceTree = "<group>"; };
 		3F3131EA28638924005B7640 /* SummaryHistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHistoryVM.swift; sourceTree = "<group>"; };
+		3F4111B7287949770018EB95 /* EmptyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProfileViewController.swift; sourceTree = "<group>"; };
+		3F4111B9287949C50018EB95 /* EmptyHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyHistoryViewController.swift; sourceTree = "<group>"; };
 		3F4D588D2859CEE200F6D19B /* RoundingDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingDigit.swift; sourceTree = "<group>"; };
 		3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		3F84CB67285E163500EFDD71 /* SummaryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVM.swift; sourceTree = "<group>"; };
@@ -457,13 +459,13 @@
 			children = (
 				A8AD59B328602DAA00104B58 /* Summary.storyboard */,
 				A8AD59B728602DAA00104B58 /* SummaryDetailViewController.swift */,
-				3F3131E828638812005B7640 /* SummaryHeaderTripViewController.swift */,
 				A8AD59B428602DAA00104B58 /* SummaryViewController.swift */,
 				A8AD59B628602DAA00104B58 /* TripDetailContentView.swift */,
 				A8AD59B828602DAA00104B58 /* TripDetailContentView.xib */,
 				A8AD59B228602DAA00104B58 /* TripDetailViewController.swift */,
 				A87463F328546D97009AB0DC /* History.storyboard */,
 				A87463EF28546D4F009AB0DC /* HistoryViewController.swift */,
+				3F4111B9287949C50018EB95 /* EmptyHistoryViewController.swift */,
 				D9DF377F2860329400CA9F9C /* HistoryTripViewController.swift */,
 				3FEE071C2864109A00DAA5EB /* HistoryTableViewCell.xib */,
 				3F7B6C7F2860C73100529CD3 /* HistoryTableViewCell.swift */,
@@ -480,6 +482,7 @@
 				3B9293EF2860B0CE005EF46E /* ReduceCarbonConciseCardView.swift */,
 				A87463ED28546D09009AB0DC /* Profile.storyboard */,
 				A87463F128546D72009AB0DC /* ProfileViewController.swift */,
+				3F4111B7287949770018EB95 /* EmptyProfileViewController.swift */,
 				3B2BA0742860369500104AAF /* SumProfileViewController.swift */,
 				3FF8DC9E2866B6A400EEE490 /* ShareOptionViewController.swift */,
 				3F0BD0C1286568770049925B /* ShareViewController.xib */,
@@ -685,12 +688,14 @@
 				3F94CCCA2858581300BD5176 /* TransportAnnotation.swift in Sources */,
 				3FA4A85F2869BAB50094D8CD /* TripModel.swift in Sources */,
 				A8411BE42865574A00C3B5E2 /* TripRepository.swift in Sources */,
+				3F4111B8287949770018EB95 /* EmptyProfileViewController.swift in Sources */,
 				3FF8DC9F2866B6A400EEE490 /* ShareOptionViewController.swift in Sources */,
 				3FA4A858286952130094D8CD /* SpeechDictationViewController.swift in Sources */,
 				3F3131E328635C84005B7640 /* CO2ETimer.swift in Sources */,
 				A8AD59BE28602DAA00104B58 /* SummaryDetailViewController.swift in Sources */,
 				3F7B6C802860C73100529CD3 /* HistoryTableViewCell.swift in Sources */,
 				A894047F286949940080D5D5 /* HistoryViewModel.swift in Sources */,
+				3F4111BA287949C50018EB95 /* EmptyHistoryViewController.swift in Sources */,
 				A8CC9D782859894E00F30DBE /* HomeNoTripViewController.swift in Sources */,
 				A87463D02854596D009AB0DC /* DashboardViewController.swift in Sources */,
 				3FCB1228286D6E9D00E9A348 /* TransportCalloutView.swift in Sources */,
@@ -740,7 +745,6 @@
 				3FA0FE88286B33F70002D514 /* UIImageView+AnimationCompletionBlock.swift in Sources */,
 				3FC88A74285B24680022BA2C /* TransitModel.swift in Sources */,
 				3FEE0723286427A700DAA5EB /* GlobalPublisher.swift in Sources */,
-				3F3131E928638812005B7640 /* SummaryHeaderTripViewController.swift in Sources */,
 				3F3131E1286359AA005B7640 /* ProfileModel.swift in Sources */,
 				3FF101392854BC200048013A /* CurrentTransportationViewController.swift in Sources */,
 				3B2BA0752860369500104AAF /* SumProfileViewController.swift in Sources */,
@@ -908,7 +912,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 280;
+				CURRENT_PROJECT_VERSION = 285;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;
@@ -940,7 +944,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = tracco/tracco.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 280;
+				CURRENT_PROJECT_VERSION = 285;
 				DEVELOPMENT_TEAM = 6BV79TUAG4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tracco/Info.plist;

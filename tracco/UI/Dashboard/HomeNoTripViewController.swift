@@ -18,9 +18,10 @@ class HomeNoTripViewController: UIViewController
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         GlobalPublisher.addObserver(self)
         alertNotifier = LocationPermissionAlertNotifier(parent: self)
-        super.viewDidLoad()
+        AnimTabBarController.shared?.observeAdjustment(self)
     }
     
     override func viewWillAppear(_ animated: Bool)

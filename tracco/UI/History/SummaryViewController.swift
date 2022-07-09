@@ -10,9 +10,11 @@ import MapKit
 
 class SummaryViewController: UIViewController
 {
-    @IBOutlet weak var headerTripContainerView: UIView!
-    @IBOutlet weak var headerHistoryView: UIView!
-    @IBOutlet weak var headerHistoryTitleLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var headerSeparator: UIView!
     @IBOutlet weak var tripDetailView: UIView!
@@ -31,17 +33,8 @@ class SummaryViewController: UIViewController
     @IBOutlet weak var otherTransportCarbonCardView: CardInfoView!
     @IBOutlet weak var otherTransportCostCardView: CardInfoView!
     
-    public var viewModel: SummaryVM? { didSet {
-        if (viewModelHistory == nil) { refViewModel = viewModel }
-    }}
-    public var viewModelHistory: SummaryHistoryVM? { didSet {
-        refViewModel = viewModelHistory
-    }}
-    
-    // either reference to viewModel (trip) or viewModelHistory
-    // this vc will favor history if both are set
-    private var refViewModel: SummaryVM?
-    
+    public var viewModel: SummaryVM?
+    public var isFromHistory: Bool = false
     
     required init?(coder: NSCoder)
     {
@@ -51,15 +44,26 @@ class SummaryViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if viewModel == nil { self.dismiss(animated: true) }
+        if isFromHistory { doneButton.isHidden = true }
+        
         layoutTripDetail()
         updateViewWithModel()
+        
+        AnimTabBarController.shared?.observeAdjustment(self)
+    }
+    
+    @IBAction func onDoneButton(_ sender: UIButton)
+    {
+        self.view.window?.rootViewController?.dismiss(animated: true)
     }
     
     @IBAction func onCheckTransportMoovitButton(_ sender: UIButton)
     {
-        guard let firstModel    = refViewModel?.tripDetailContents.first,
-              let lastModel     = refViewModel?.tripDetailContents.last,
-              let transitDate   = refViewModel?.tripDetailContents.first?.date
+        guard let firstModel    = viewModel?.tripDetailContents.first,
+              let lastModel     = viewModel?.tripDetailContents.last,
+              let transitDate   = viewModel?.tripDetailContents.first?.date
         else { return }
         
         if (MoovitAPI.canLink)
@@ -88,35 +92,27 @@ class SummaryViewController: UIViewController
     
     private func updateViewWithModel()
     {
-        if (viewModelHistory != nil)
-        {
-            headerTripContainerView.removeFromSuperview()
-            headerHistoryTitleLabel.text = viewModelHistory?.headerOverviewText
-        }
-        else
-        {
-            headerHistoryView.removeFromSuperview()
-        }
+        titleLabel.text = viewModel?.title
         
-        currentTransportCarbonCardView.value    = refViewModel?.currentCarbonEmissionInKgText
-        currentTransportCostCardView.value      = refViewModel?.currentCostInIDRText
+        currentTransportCarbonCardView.value            = viewModel?.currentCarbonEmissionInKgText
+        currentTransportCostCardView.value              = viewModel?.currentCostInIDRText
         
-        otherTransportCostCardView.value        = refViewModel?.otherCostInIDRText
-        otherTransportCarbonCardView.value      = refViewModel?.otherCarbonEmissionInKgText
-        otherTransportTitleLabel.text           = refViewModel?.otherTitleText
+        otherTransportCostCardView.value                = viewModel?.otherCostInIDRText
+        otherTransportCarbonCardView.value              = viewModel?.otherCarbonEmissionInKgText
+        otherTransportTitleLabel.text                   = viewModel?.otherTitleText
         
-        otherTransportCostCardView.backgroundColor = refViewModel?.otherCardBackgroundColor
-        otherTransportCarbonCardView.backgroundColor = refViewModel?.otherCardBackgroundColor
+        otherTransportCostCardView.backgroundColor      = viewModel?.otherCardBackgroundColor
+        otherTransportCarbonCardView.backgroundColor    = viewModel?.otherCardBackgroundColor
         
-        otherTransportCostCardView.labelColor = refViewModel?.otherCardForegroundColor
-        otherTransportCarbonCardView.labelColor = refViewModel?.otherCardForegroundColor
+        otherTransportCostCardView.labelColor           = viewModel?.otherCardForegroundColor
+        otherTransportCarbonCardView.labelColor         = viewModel?.otherCardForegroundColor
         
-        comparisonLabel.text = refViewModel?.comparisonEncouragementText
+        comparisonLabel.text                            = viewModel?.comparisonEncouragementText
     }
     
     private func layoutTripDetail()
     {
-        let noTransit = refViewModel?.tripDetailContents.count ?? 0 <= 2
+        let noTransit = viewModel?.tripDetailContents.count ?? 0 <= 2
         if (noTransit)
         {
             tripDetailViewAllButton.isHidden = true
@@ -128,12 +124,12 @@ class SummaryViewController: UIViewController
     {
         if let vc = segue.destination as? TripDetailViewController
         {
-            vc.viewModel = refViewModel
+            vc.viewModel = viewModel
             vc.isScrollEnable = false
         }
         if let vc = segue.destination as? SummaryDetailViewController
         {
-            vc.viewModel = refViewModel
+            vc.viewModel = viewModel
         }
     }
 

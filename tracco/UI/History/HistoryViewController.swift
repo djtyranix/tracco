@@ -12,7 +12,6 @@ class HistoryViewController: UIViewController
     @IBOutlet var ContainerViewHistoryNoTrip: UIView!
     @IBOutlet var ContainerViewHistoryTrip: UIView!
     
-    private var historyDataSource: [TripModel]?
     private var isAlreadyHavingTrip: Bool = false
     
     override func viewDidLoad()
@@ -32,11 +31,9 @@ class HistoryViewController: UIViewController
         {
             // initialize data here, this will handle if this current view
             // is not loaded but already initialized (init)
-            historyDataSource = StoredModel.history
-            isAlreadyHavingTrip = historyDataSource != nil
-            
-            vc.dataSource = historyDataSource
-            historyDataSource = nil
+            let historyDataSource   = StoredModel.history
+            isAlreadyHavingTrip     = historyDataSource != nil
+            vc.dataSource           = historyDataSource
         }
     }
 }

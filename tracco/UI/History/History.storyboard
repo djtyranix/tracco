@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OpR-5m-nhF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21208.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OpR-5m-nhF">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21191"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -78,14 +79,14 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="91.741071428571431"/>
         </scene>
-        <!--History No Trip View Controller-->
+        <!--Empty History View Controller-->
         <scene sceneID="62f-mV-Spo">
             <objects>
-                <viewController id="Iz7-AL-XuK" customClass="HistoryNoTripViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Iz7-AL-XuK" customClass="EmptyHistoryViewController" customModule="tracco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEg-E3-k4H">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="History" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-bn-lsg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="History" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-bn-lsg">
                                 <rect key="frame" x="55" y="173" width="280" height="265"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VPY-bn-lsg" secondAttribute="height" multiplier="280:265" id="Oig-JW-8O1"/>
@@ -109,7 +110,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-sq-ULj">
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-sq-ULj">
                                 <rect key="frame" x="145" y="546.66666666666663" width="100" height="126.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -124,7 +125,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="9wR-XE-eGd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Aae-4e-KIq" firstAttribute="top" secondItem="MEg-E3-k4H" secondAttribute="top" id="1ja-Km-eB7"/>
@@ -132,13 +132,13 @@
                             <constraint firstItem="Aae-4e-KIq" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="16" id="4Tk-R3-gm4"/>
                             <constraint firstItem="VPY-bn-lsg" firstAttribute="top" secondItem="OZA-as-unq" secondAttribute="bottom" id="72f-tv-9FT"/>
                             <constraint firstAttribute="trailing" secondItem="XYJ-MP-sMZ" secondAttribute="trailing" constant="16" id="78g-mN-f5y"/>
-                            <constraint firstAttribute="trailing" secondItem="VPY-bn-lsg" secondAttribute="trailing" constant="55" id="7wb-8r-XeF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VPY-bn-lsg" secondAttribute="trailing" constant="55" id="7wb-8r-XeF"/>
                             <constraint firstAttribute="trailing" secondItem="BKi-jB-Ia8" secondAttribute="trailing" constant="44" id="8gS-sn-ZZB"/>
                             <constraint firstAttribute="trailing" secondItem="Aae-4e-KIq" secondAttribute="trailing" constant="16" id="ER4-bR-7W4"/>
                             <constraint firstItem="J2Y-sq-ULj" firstAttribute="top" secondItem="BKi-jB-Ia8" secondAttribute="bottom" id="QTX-XT-ly6"/>
                             <constraint firstItem="OZA-as-unq" firstAttribute="centerX" secondItem="MEg-E3-k4H" secondAttribute="centerX" id="RLA-0k-Kw0"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="J2Y-sq-ULj" secondAttribute="bottom" id="bjP-IU-LQ1"/>
-                            <constraint firstItem="VPY-bn-lsg" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="55" id="c3L-oG-kWq"/>
+                            <constraint firstItem="VPY-bn-lsg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="55" id="c3L-oG-kWq"/>
+                            <constraint firstAttribute="bottom" secondItem="J2Y-sq-ULj" secondAttribute="bottom" id="ecF-hB-dFl"/>
                             <constraint firstItem="XYJ-MP-sMZ" firstAttribute="leading" secondItem="MEg-E3-k4H" secondAttribute="leading" constant="16" id="fZa-g9-TDG"/>
                             <constraint firstItem="OZA-as-unq" firstAttribute="height" secondItem="J2Y-sq-ULj" secondAttribute="height" id="ir8-ly-B6x"/>
                             <constraint firstItem="XYJ-MP-sMZ" firstAttribute="top" secondItem="VPY-bn-lsg" secondAttribute="bottom" constant="24" id="mMl-7h-agC"/>
@@ -184,7 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Dm1-jF-4RB" id="6Pf-Q5-Ay7"/>
+                        <outlet property="outletTableView" destination="Dm1-jF-4RB" id="6Pf-Q5-Ay7"/>
                         <segue destination="Wto-9j-UMN" kind="show" identifier="summarySegue" id="wdD-0q-ngC"/>
                     </connections>
                 </viewController>
@@ -206,9 +206,9 @@
     <color key="tintColor" name="LinkButton"/>
     <resources>
         <image name="History" width="280" height="265"/>
-        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
         <namedColor name="LinkButton">
-            <color red="0.12156862745098039" green="0.52156862745098043" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.5220000147819519" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

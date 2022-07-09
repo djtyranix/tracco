@@ -12,7 +12,6 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var emptySumProfileView: UIView!
     @IBOutlet weak var sumProfileView: UIView!
     
-    private var model: ProfileModel?
     private var isAlreadyHavingTrip: Bool = false
     
     override func viewDidLoad()
@@ -33,11 +32,9 @@ class ProfileViewController: UIViewController
         {
             // initialize data here, this will handle if this current view
             // is not loaded but already initialized (init)
-            model = StoredModel.profile
+            let model           = StoredModel.profile
             isAlreadyHavingTrip = model != nil
-            
-            vc.model = model
-            self.model = nil
+            vc.model            = model
         }
     }
 }

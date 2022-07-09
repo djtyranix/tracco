@@ -9,21 +9,17 @@ import UIKit
 
 class HistoryTripViewController: TripTableViewController
 {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var outletTableView: UITableView!
+    
+    override var tableView: UITableView? { get { outletTableView } }
+    override var summarySegueIdentifier: String? { get { "summarySegue" } }
     
     override func viewDidLoad()
     {
-        super.provider = self
         super.viewDidLoad()
         GlobalPublisher.addObserver(self)
+        AnimTabBarController.shared?.observeAdjustment(self)
     }
-}
-
-extension HistoryTripViewController: TripTableViewControllerProvider
-{
-    func getTableView() -> UITableView { return tableView }
-    
-    func summarySegueIdentifier() -> String { return "summarySegue" }
 }
 
 extension HistoryTripViewController: GlobalEvent
@@ -32,7 +28,7 @@ extension HistoryTripViewController: GlobalEvent
     {
         if (dataSource == nil) { dataSource = [] }
         dataSource?.append(model)
-        tableView.reloadData()
+        outletTableView.reloadData()
     }
     
     func tripModelUpdated(_ model: TripModel)
@@ -43,7 +39,7 @@ extension HistoryTripViewController: GlobalEvent
             self.dataSource?[dataIndex] = model
             let tableIndex = getTableIndex(dataIndex, data: dataSource)
             let tableIndexPath = IndexPath(row: tableIndex, section: 0)
-            tableView.reloadRows(at: [tableIndexPath], with: .automatic)
+            outletTableView.reloadRows(at: [tableIndexPath], with: .automatic)
         }
     }
 }

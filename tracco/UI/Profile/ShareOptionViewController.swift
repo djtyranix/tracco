@@ -26,6 +26,8 @@ class ShareOptionViewController: UIViewController
             return
         }
         imageView.image = image
+        
+        AnimTabBarController.shared?.observeAdjustment(self)
     }
 
     @IBAction func onShareButton(_ sender: UIButton)

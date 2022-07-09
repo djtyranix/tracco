@@ -17,7 +17,10 @@ class HomeTripViewController: TripTableViewController
     @IBOutlet weak var carbonEmissionCard: CardInfoView!
     @IBOutlet weak var mostUsedTransportCard: CardInfoView!
     @IBOutlet weak var trackButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var outletTableView: UITableView!
+    
+    override var tableView: UITableView? { get { outletTableView } }
+    override var summarySegueIdentifier: String? { get { "summarySegue" } }
     
     public var greetingTitleText: String?
     public var profileModel: ProfileModel?
@@ -33,11 +36,11 @@ class HomeTripViewController: TripTableViewController
     
     override func viewDidLoad()
     {
-        super.provider = self
         super.viewDidLoad()
         
         GlobalPublisher.addObserver(self)
         alertNotifier = LocationPermissionAlertNotifier(parent: self)
+        AnimTabBarController.shared?.observeAdjustment(self)
         
         updateViewWithModel()
     }
@@ -89,7 +92,7 @@ class HomeTripViewController: TripTableViewController
     private func limitLatestTripBasedOnDeviceHeight()
     {
         if isTableViewDataSourceInitialized { return }
-        let tableViewHeight = tableView.bounds.size.height
+        let tableViewHeight = outletTableView.bounds.size.height
         let contentSize = HistoryTableViewCell.cellDesiredHeight
         dataMaxSize = Int(ceil(tableViewHeight / contentSize))
         // get the data from the back because the newest are push to the back
@@ -105,13 +108,6 @@ class HomeTripViewController: TripTableViewController
         self.historyDataSource = nil
         isTableViewDataSourceInitialized = true
     }
-}
-
-extension HomeTripViewController: TripTableViewControllerProvider
-{
-    func getTableView() -> UITableView { return tableView }
-    
-    func summarySegueIdentifier() -> String { return "summarySegue" }
 }
 
 extension HomeTripViewController: GlobalEvent
@@ -134,7 +130,7 @@ extension HomeTripViewController: GlobalEvent
         if (isFull) { dataSource?.removeFirst() }
         // append the newest data and reload table
         dataSource?.append(model)
-        tableView.reloadData()
+        outletTableView.reloadData()
     }
     
     func profileModelUpdated(_ model: ProfileModel)
@@ -151,7 +147,7 @@ extension HomeTripViewController: GlobalEvent
             self.dataSource?[dataIndex] = model
             let tableIndex = getTableIndex(dataIndex, data: dataSource)
             let tableIndexPath = IndexPath(row: tableIndex, section: 0)
-            tableView.reloadRows(at: [tableIndexPath], with: .automatic)
+            outletTableView.reloadRows(at: [tableIndexPath], with: .automatic)
         }
     }
 }

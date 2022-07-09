@@ -10,29 +10,25 @@ import UIKit
 
 protocol TripTableViewControllerProvider: AnyObject
 {
-    func getTableView() -> UITableView
-    func summarySegueIdentifier() -> String
+    var tableView: UITableView? { get }
+    var summarySegueIdentifier: String? { get }
 }
 
-class TripTableViewController: UIViewController
+class TripTableViewController: UIViewController, TripTableViewControllerProvider
 {
     var dataSource: [TripModel]?
     var selectedIndex: IndexPath?
     
-    weak var provider: TripTableViewControllerProvider?
+    var tableView: UITableView? { get { return nil } }
+    var summarySegueIdentifier: String? { get { return nil } }
     
     override func viewDidLoad()
     {
-        let tableView = provider?.getTableView()
         tableView?.dataSource = self
         tableView?.delegate = self
         tableView?.delaysContentTouches = false
         tableView?.rowHeight = HistoryTableViewCell.cellDesiredHeight
         tableView?.register(HistoryTableViewCell.nib, forCellReuseIdentifier: "historyCell")
-        
-        // adjust bottom constraint if on going trip sheet is displayed or not
-        if let mostBottomConstraint = self.view.constraints.first(where: { $0.firstAttribute == .bottom })
-            { AnimTabBarController.shared?.observeAdjustment(mostBottomConstraint, owner: self) }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -40,17 +36,18 @@ class TripTableViewController: UIViewController
         if let vc = segue.destination as? SummaryViewController
         {
             vc.title = "History Detail"
+            vc.isFromHistory = true
             
             guard let selectedIndex = selectedIndex,
                   let dataSource = dataSource,
-                  let cell = provider?.getTableView().cellForRow(at: selectedIndex) as? HistoryTableViewCell
+                  let cell = tableView?.cellForRow(at: selectedIndex) as? HistoryTableViewCell
             else { return }
             
             let dataIndex = getDataIndex(selectedIndex.row, data: dataSource)
             let data = dataSource[dataIndex]
             
-            vc.viewModelHistory = SummaryHistoryVM(data)
-            vc.viewModelHistory?.headerOverviewText = "Trip from \(cell.descriptionLabel.text!)"
+            vc.viewModel = SummaryHistoryVM(data)
+            vc.viewModel?.title = "Trip from \(cell.descriptionLabel.text!)"
         }
     }
 }
@@ -73,9 +70,11 @@ extension TripTableViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        guard let summarySegueIdentifier = summarySegueIdentifier
+        else { return }
+        
         selectedIndex = indexPath
-        if (provider == nil) { return }
-        performSegue(withIdentifier: provider!.summarySegueIdentifier(), sender: self)
+        performSegue(withIdentifier: summarySegueIdentifier, sender: self)
     }
 }
 
