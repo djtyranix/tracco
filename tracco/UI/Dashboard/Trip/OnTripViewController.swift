@@ -21,7 +21,7 @@ class OnTripViewController: UIViewController
 {
     enum Segue: String { case summarizing = "summarizingSegue" }
     
-    public static var instanceOnPause: OnTripViewController?
+    public weak static var instanceOnPause: OnTripViewController?
     
     // first time vc elevation adjustment by SheetPresentationController
     private var elevationAdjustments: Set<UIViewController> = []
@@ -109,7 +109,6 @@ class OnTripViewController: UIViewController
     private var timerUpdate: Timer?
     private var timerLocationAvailability: Timer?
     private var currAnnotation: TransportAnnotation?
-    
     
     // this should not be empty while choosing / switching transport
     private var updateTransportLocation: CLLocation!
@@ -219,16 +218,9 @@ class OnTripViewController: UIViewController
     {
         if let vc = segue.destination as? SummarizingViewController
         {
-            // stop updating location
-            locationManager.stopUpdatingLocation()
-            timerUpdate?.invalidate()
-            timerLocationAvailability?.invalidate()
-            
             GlobalPublisher.shared.onTripEnded()
-            
             vc.modelToSummarize = self.model
             self.model = nil
-            
             // TODO: wait for all pendingLocations to be processed
             // right now we force update by timerUpdate.invalidate()
             // maybe we could wait using summarizing trip view
@@ -339,6 +331,13 @@ extension OnTripViewController: GlobalEvent
         vc.distanceLabel.text = viewModel.distanceInKmText
         vc.approxCostLabel.text = viewModel.totalCostInIDRText
         vc.carbonEmissionLabel.text = viewModel.carbonEmissionInKgText
+    }
+    
+    func onTripEnded()
+    {
+        locationManager.stopUpdatingLocation()
+        timerUpdate?.invalidate()
+        timerLocationAvailability?.invalidate()
     }
 }
 
@@ -539,29 +538,6 @@ extension OnTripViewController: CLLocationManagerDelegate
         let coords = locations.map({ $0.coordinate })
         pendingLocations.append(contentsOf: coords)
         GlobalPublisher.shared.onTripLocationUpdate(locations)
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
-    {
-        guard   manager.authorizationStatus == .denied ||
-                manager.authorizationStatus == .notDetermined,
-                let rootViewController = self.view.window?.rootViewController
-        else { return }
-        
-        // alert
-        let alert = AppAlertController(
-            title: "Tracking Stopped",
-            message: "We were unable to locate you due to changes in location access permission.",
-            image: UIImage(named: "Lost")
-        )
-        alert.addAction(AppAlertAction(title: "I Understand", style: .default) { _ in
-            alert.dismiss(animated: true)
-        })
-        
-        // forcefully cancel ongoing trip
-        GlobalPublisher.shared.onTripEnded()
-        rootViewController.dismiss(animated: true)
-        rootViewController.present(alert, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

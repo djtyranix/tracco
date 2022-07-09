@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+class SceneDelegate: UIResponder, UIWindowSceneDelegate
+{
     var window: UIWindow?
+    var locationManager = CLLocationManager()
 
-
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
+    {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
@@ -38,6 +40,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         self.window?.rootViewController = launchAnimation
+        
+        GlobalPublisher.addObserver(self)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -73,6 +77,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
-
 }
 
+extension SceneDelegate: GlobalEvent
+{
+    func onTripStarted() { locationManager.delegate = self }
+    func onTripEnded()   { locationManager.delegate = nil }
+}
+
+// scene will listen if only trip has started and checked for authorization change
+// and warns the user anywhere in the app that tracking has been forcefully ended
+// because the app can no longer track the user
+extension SceneDelegate: CLLocationManagerDelegate
+{
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
+    {
+        guard   manager.authorizationStatus == .denied ||
+                manager.authorizationStatus == .notDetermined,
+                let rootViewController = window?.rootViewController
+        else { return }
+        
+        // alert
+        let alert = AppAlertController(
+            title: "Tracking Stopped",
+            message: "We were unable to locate you due to changes in location access permission.",
+            image: UIImage(named: "Lost")
+        )
+        alert.addAction(AppAlertAction(title: "I Understand", style: .default) { _ in
+            alert.dismiss(animated: true)
+        })
+        
+        // forcefully cancel ongoing trip
+        GlobalPublisher.shared.onTripEnded()
+        rootViewController.dismiss(animated: true)
+        rootViewController.present(alert, animated: true)
+    }
+}
