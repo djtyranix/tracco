@@ -11,10 +11,10 @@ import UIKit
 // transportation and their average carbon emission
 enum TransportType: CO2EBase, Codable, CaseIterable
 {
+    case train  = 0.04
+    case bus    = 0.08
     case car    = 0.27
     case motor  = 0.15
-    case bus    = 0.08
-    case train  = 0.04
     
     public var color: UIColor { get {
         if (self == .car)       { return .green }
@@ -55,11 +55,10 @@ enum TransportType: CO2EBase, Codable, CaseIterable
         if (self == .bus)       { return 3000 * kilometers }
         if (self == .train)
         {
-            let firstFixedFairForKm: Double = 25
             // first 25 km fare is 3000
             let first25 = 3000.0
             // next 10 km fare is 1000
-            let every10 = kilometers <= firstFixedFairForKm ? 0 : ceil((kilometers - firstFixedFairForKm) / 10) * 1000
+            let every10 = kilometers <= 25 ? 0 : ceil((kilometers - 25) / 10) * 1000
             // first 25 + every 10 multiply of 10
             return first25 + every10
         }
